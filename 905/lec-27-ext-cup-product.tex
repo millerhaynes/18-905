@@ -1,0 +1,220 @@
+\section{Ext and UCT}
+Let $R$ be a ring (probably a PID) and $N$ an $R$-module. The singular cochains
+on $X$ with values in $N$, 
+\[S^\ast(X;N)=\Map(\Sin_\ast(X),N)\,,
+\]
+then forms a cochain complex of $R$-modules. It is contravariantly functorial
+in $X$ and covariantly functorial in $N$. The Kronecker pairing defines a map
+\[
+H^n(X;N)\otimes_R H_n(X;R)\to N
+\]
+whose adjoint 
+\[
+\beta:H^n(X;N)\rightarrow\Hom_R( H_n(X;R),N)
+\]
+gives us an estimate of the cohomology in terms of the homology of $X$. 
+Here's how well it does:
+\begin{theorem}[Mixed variance Universal Coefficient Theorem]
+\label{thm-mvuct}
+Let $R$ be a PID and $N$ an $R$-module, and let $C_*$ 
+be a chain-complex of free $R$-modules. Then there is a short exact sequence
+of $R$-modules,
+\[
+0\to\Ext_R^1(H_{n-1}(C_*),N)\to H^n(\Hom_R(C_*,N))\to\Hom_R(H_n(C_*),N)\to0\,,
+\]
+natural in $C_*$ and $N$, that splits (but not naturally). 
+\end{theorem}
+Taking $C_*=S_*(X;R)$, we the short exact sequence
+\begin{equation*}
+0\to\Ext^1_R( H_{n-1}(X;R),N)\to H^n(X;N)\xrightarrow{\beta}\Hom_R( H_n(X;R),N)\to 0
+\end{equation*}
+that splits, but not naturally. This also holds for relative cohomology.
+
+What is this Ext?
+
+The problem that arises is that $\Hom_R(-,N):\mathbf{Mod}_R\to\mathbf{Mod}_R$ is not exact. 
+Suppose I have an injection $M^\prime\to M$. Is $\Hom(M,N)\to\Hom(M^\prime,N)$ surjective? Does a map $M^\prime\to N$ necessarily extend to a map $M\to N$? No! For example, $\Z/2\Z\hookrightarrow\Z/4\Z$ is an injection, but the identity
+map $\Z/2\Z\to\Z/2\Z$ does not extend over $\Z/4\Z$. 
+
+On the other hand, if $M^\prime\xrightarrow{i} M\xrightarrow{p} M^{\prime\prime}\to 0$ is an exact sequence of $R$-modules then 
+\[
+0\to \Hom_R(M^{\prime\prime},N)\to\Hom_R(M,N)\to \Hom_R(M^{\prime},N)
+\]
+is again exact. Check this statement! 
+
+Now homological algebra comes to the rescue to repair the failure of exactness! Pick a free resolution of $M$,
+\[
+\cdots\to F_2\to F_1\to F_0\to M\to 0\,.
+\]
+Apply $\Hom$ to get a chain complex 
+\[
+0\to \Hom(F_0,N)\to \Hom(F_1,N)\to \Hom(F_2,N)\to\cdots\,.
+\]
+\begin{definition} 
+$\Ext_R^n(M,N)= H^n(\Hom_R(F_\ast,N))$.
+\end{definition}
+\begin{remark}
+$\Ext$ is well-defined and functorial, by the fundamental lemma of homological algebra. If $M$ is free (or projective) then $\Ext^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext^n=0$ if $n>1$. If $R$ is a field, then $\Ext^n=0$ for $n>0$. 
+\end{remark}
+
+\begin{example}
+Let $R=\Z$ and take $M=\Z/k\Z$. This admits a simple free resolution:
+$0\to \Z\xrightarrow{k}\Z\to\Z/k\Z\to 0$. Apply $\Hom(-,N)$ to it,
+and remember that $\Hom(\ZZ,N)=N$, to get 
+the very short cochain complex, with entries in dimensions 0 and 1:
+\[
+0\to N\xrightarrow{k} N\to0\,.
+\]
+Taking homology gives us
+\[
+\Hom(\Z/k\Z,N)=\ker(k|N)\,\quad\Ext^1(\Z/k\Z,N)=N/kN\,.
+\]
+\end{example}
+
+
+
+\begin{proof} of Theorem \ref{thm-mvuct}
+First of all, notice that 
+\[
+C_n/Z_n\cong B_{n-1}
+\]
+is a submodule $C_{n-1}$ and hence is free. Thus both of the following short
+exact sequences split:
+\begin{equation}
+0\to Z_n\to C_n\to C_n/Z_n\to0
+\label{one}
+\end{equation}
+\begin{equation}
+0\to Z_n/B_n\to C_n/B_n\to C_n/Z_n\to0\,.
+\label{two}
+\end{equation}
+Note that the second one can be rewritten as
+\begin{equation*}
+0\to H_n\to C_n/B_n\to B_{n-1}\to0\,.
+\end{equation*}
+Start with the diagram
+\[
+\xymatrix{
+0 \ar[r] & B^n\Hom(C_*,N) \ar[r] \ar@{.>}[d] & Z^n\Hom(C_*,N) \ar[d]^\cong \ar[r]
+& H^n(\Hom(C_*,N)) \ar@{.>}[d] \ar[r] & 0\\
+0 \ar[r] & \Hom(B_{n-1},N) \ar[r] & \Hom(C_n/B_n,N) \ar[r] & 
+\Hom(H_n,N) \ar[r] & 0
+}\]
+The bottom row arises from \eqref{two} and is exact because 
+\eqref{two} splits.
+The middle arrow starts with $f:C_n\to N$ such that 
+$C_{n+1}\xrightarrow{d}C_n\xrightarrow{f}N$ 
+is zero. This condition is equivalent to requiring that $f$ kill boundaries,
+and so it factors through a unique map $C_n/B_n\to N$. 
+
+We claim that the composite $B^n\Hom(C_*,N)\to\Hom(H_n,N)$ is trivial.
+So start with $f:C_n\to N$ such that $C_{n+1}\to C_n\to N$ is trivial. 
+Then $f$ kills $B_n$ and so factors through $C_n/B_n$, giving an element 
+of $\Hom(C_n/B_n,N)$; but it also kills the larger submodule $Z_n$, and
+hence factors through $C_n/Z_n$. This implies that the composite
+$H_n\to C_n/B_n\to N$ is trivial since $H_n\to C_n/B_n\to C_n/Z_n$ is. 
+
+So we can fill in the maps to get a map of short exact sequences. By the
+snake lemma, the right arrow is surjective and its kernel $K$ fits into the 
+short exact sequence at the top of the following diagram.
+\[
+\xymatrix{
+0 \ar[r] & B^n\Hom(C_*,N) \ar[r] \ar@{.>>}[d] & \Hom(B_{n-1},N) \ar[d]^= \ar[r]
+& K \ar[r] \ar@{.>}[d] & 0 \\
+0 \ar[r] & I \ar[r] & \Hom(B_{n-1},N) \ar[r] & \Ext^1(H_{n-1},N) \ar[r] & 0 
+}\]
+The bottom row of this diagram comes from the long exact sequence 
+associated to the short exact sequence 
+\[
+0\to B_{n-1}\to Z_{n-1}\to H_{n-1}\to0\,,
+\]
+so
+\[
+I=\img\left(\Hom(Z_{n-1},N)\to\Hom(B_{n-1},N)\right)\,.
+\]
+
+We claim that there is a surjection on the left as shown (making the square
+commutative). This completes the proof, since the snake lemma then implies
+that the right arrow is an isomorphism.
+
+The left arrow occurs at the right of the diagram
+\[
+\xymatrix{
+0 \ar[r] & Z^{n-1}\Hom(C_*,N) \ar@{.>}[d] \ar[r] & 
+\Hom(C_{n-1},N) \ar@{->>}[d] \ar[r] & B^n \ar@{.>}[d] \ar[r] & 0 \\
+0 \ar[r] & \Hom(H_{n-1},N) \ar[r] & \Hom(Z_{n-1},N) \ar[r] & I \ar[r] & 0 
+}\]
+Here the middle surjection is induced from the split injection 
+$Z_{n-1}\to C_{n-1}$. We need to construct the left arrow; this will
+finish the proof, since then the right arrow exists and is surjective again by
+the snake lemma. 
+
+So let $f:C_{n-1}\to N$ be such that $C_n\to C_{n-1}\to N$ is trivial. Its 
+image under the vertical surjection is the composite $Z_{n-1}\to C_{n-1}\to N$.
+Now 
+\[
+\xymatrix{
+C_n \ar@{->>}[d] \ar[r] & C_{n-1} \ar[r] & N \\
+B_{n-1} \ar[r] & Z_{n-1} \ar[u] \ar[ur] \ar[r] & H_{n-1} \ar@{.>}[u] \ar[r] & 0 
+}\]
+The composite $B_{n-1}\to N$ is trivial since $C_n\to B_{n-1}$ is surjective,
+and the desired factorization through $H_{n-1}$ follows. 
+\end{proof}
+
+\begin{remark}
+\textbf{Question:} Why is $\Ext$ called Ext?
+
+\noindent
+\textbf{Answer:} It classifies extensions. Let $R$ be a commutative ring, and let $M,N$ be two $R$-modules. I can think about ``extensions of $M$ by $N$, that is, short exact sequences of the form
+\[
+0\to N\to L\to M\to 0\,.
+\]
+For example, I have two extensions of $\Z/2\Z$ by $\Z/2\Z$: 
+\[
+0\to\Z/2\Z\to\Z/2\Z\oplus\Z/2\Z\to\Z/2\Z\to 0
+\]
+and
+\[0\to \Z/2\Z\to\Z/4\Z\to\Z/2\Z\to 0\,.
+\]
+We'll say that two extensions are equivalent if there's a map of short exact sequences between them is the identity on $N$ and $M$. The two extensions above aren't equivalent, for example.
+
+Another definition of $\Ext^1_R(M,N)$ is the set of extensions like this modulo this notion of equivalence. The zero in the group is the split extension.
+\end{remark}
+
+The universal coefficient theorem is useful in transferring properties of 
+homology to cohomology. For example, if $f:X\to Y$ is a map that induces an
+isomorphism in $H_*(-;R)$, then it induces an isomorphism in $H^*(-;N)$ for
+any $R$-module $N$, at least provided that $R$ is a PID. (This is true in 
+general, however.) 
+
+Cohomology satisfies the appropriate analogues of the Eilenber Steenrod axioms.
+
+\noindent
+\textbf{Homotopy invariance:}
+If $f_0\sim f_1:(X,A)\to (Y,B)$, then 
+\[
+f_0^*=f_1^*:H^\ast(Y,B;N)\to H^\ast(X,A;N)\,.
+\]
+I can't use the UCT to address this because the UCT only tells you that things are isomorphic. But we did establish a chain homotopy $f_{0,\ast}\sim f_{1,\ast}:S_\ast(X,A)\to S_\ast(Y,B)$, and applying $\Hom$ converts chain homotopies to cochain homotopies. 
+
+\noindent
+\textbf{Excision:} If $U\subseteq A\subseteq X$ such that $\overline{U}\subseteq\mathrm{Int}(A)$, then $ H^\ast(X,A;N)\to H^\ast(X-U,A-U;N)$ is an isomorphism. This follows from excision in homology and by the mixed variance UCT.
+
+\noindent
+\textbf{Mayer-Vietoris sequence:} If $A,B\subseteq X$ are such that their interiors cover $X$, then there is a long exact sequence
+\begin{equation*}
+\xymatrix{ & & \cdots\ar[dll]\\
+ H^n(X;N)\ar[r] & H^n(A;N)\oplus H^n(B;N)\ar[r] & H^n(A\cap B;N)\ar[dll]\\
+ H^{n+1}(X;N)\ar[r] & \cdots & }
+\end{equation*}
+
+\noindent
+\textbf{Milnor axiom:} The inclusions induce an isomorphism
+\[
+H^*(\coprod_\alpha X_\alpha;N)\to \prod_\alpha H^*(X_\alpha;N)\,.
+\]
+
+
+
+
+

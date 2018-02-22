@@ -1,0 +1,142 @@
+\section{Tensor and Tor}
+
+We continue to study properties of the tensor product. Recall that 
+\[
+A\otimes \Z/n\Z=A/nA\,.
+\]
+Consider the exact sequence 
+\[
+0\to \Z\xrightarrow{2}\Z\to \Z/2\Z\to 0\,.
+\]
+Let's tensor it with $\Z/2\Z$. We get
+\[
+0\to \Z/2\Z\to\Z/2\Z\to\Z/2\Z\to 0\,.
+\]
+This cannot be a short exact sequence! 
+This is a major tragedy: tensoring doesn't preserve exact sequences; one says that $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $A$ by simply tensoring homology with $A$. 
+
+Tensoring does respect certain exact sequences:
+\begin{prop}
+The functor $N\mapsto M\otimes_R N$ preserves cokernels; it is \emph{right exact}. 
+\end{prop}
+\begin{proof}
+Suppose that $N\to N''$ is a surjection of $R$-modules, and $M$ is any $R$-module. Then 
+\[
+\xymatrix{
+M\otimes_RN \ar[r] & M\otimes_RN'' \\
+M\times N \ar[u] \ar@{->>}[r] & M\times N'' \ar[u]\,.
+}\]
+At least we know that $M\times-$ preserves surjections. But the image of 
+$M\times N''$ generates $M\otimes_RN''$ as an $R$-module, so the image of
+$M\times N$ generates it as well. This implies that 
+$M\otimes_RN\to M\otimes_RN''$ is surjective.
+\end{proof}
+
+How about this failure of exactness? What can we do about that? Failure of exactness is bad, so let's try to repair it. A key observation is that if 
+$M$ is {\em free}, then $M\tensor_R-$ is exact. If $M=R\langle S\rangle$, the
+free $R$-module on a set $S$, then $M\tensor_RN=\oplus_SN$, since tensoring
+distributes over direct sums. Then we remember:
+\begin{lemma}
+If $M'_i\to M_i\to M''_i$ is exact for all $i\in I$, then so is 
+\[
+\bigoplus M'_i\to\bigoplus M_i\to\bigoplus M''_i\,.
+\]
+\end{lemma}
+\begin{proof} Clearly the composite is zero. Let 
+$(x_i\in M_i,i\in I)\in\bigoplus M_i$ and suppose it maps to zero. 
+That means that each $x_i$ maps to zero in $M''_i$ and hence is in the
+image of some $x'_i\in M'_i$. Just make sure to take $x'_i=0$ if $x_i=0$. 
+\end{lemma}
+
+
+
+Long exact sequences to the rescue!
+Inspired by the example of singular homology, we have the following theorem.
+\begin{theorem}
+Fix a ring $R$ and an $R$-module $M$. 
+There is are functors
+\[
+\Tor^R_n(M,-):\mathbf{Mod}_R\to\mathbf{Mod}_R
+\]
+for $n\geq 0$, natural isomorphisms 
+\[
+M\otimes_RN\xrightarrow{\cong}\Tor^R_0(M,N)
+\]
+and homomorphisms
+\[
+\partial:\Tor^R_n(M,N'')\to\Tor^R_{n-1}(M,N')
+\]
+natural in the short exact sequence
+\[
+0\to N'\to N\to N''\to0
+\]
+such that 
+\[
+\Tor^R_n(M,F)=0\,\,\text{for}\,\,n>0\,\,\text{ if $F$ is free}
+\]
+and 
+\begin{equation*}
+\xymatrix{\cdots\ar[r] & \Tor^R_n(M,N)\ar[r] & \Tor^R_n(M,N^{\prime\prime})\ar[dll]\\
+\Tor^R_{n-1}(M,N^\prime)\ar[r] & \Tor^R_{n-1}(M,N)\ar[r] & \cdots}
+\end{equation*}
+is exact.
+\end{theorem}
+You can think of $\Tor^R_*(M,N)$ as the ``homology of $M$ with coefficients
+in $N$.'' 
+
+Let's explore what this gives us before we construct it.
+\begin{example}
+Let $R=\Z$, and consider the short exact sequence 
+\[
+0\to\Z\xrightarrow{n}\Z\to\Z/n\Z\to 0\,.
+\] 
+Tensor this with $A$. Because $\Z$ is free, we have an exact sequence:
+\[
+0\to\Tor_1^\Z(A,\Z/n\Z)\to A\to A\to A/nA\to0\,.
+\]
+That is to say, $\Tor_1^\Z(A,\Z/n\Z)$ is the $n$-{\em torsion} in $A$:
+\[
+\Tor_1^\Z(A,\Z/n\Z)=\ker(n|A)\,.
+\]
+This is the origin of the symbol $\Tor$. 
+ 
+\end{example}
+Take a general $R$-module $N$. You can always take a free module $F_0$ that surjects onto $N$, i.e., $F_0\to N\to 0$. For example, you can let $F_0$ be the free $R$-module on the underlying set of $N$. Form a short exact sequence
+\[
+0\to K_0\to F_0\to N\to 0\,.
+\]. 
+By our axioms, we find that
+\begin{equation*}
+\Tor^R_n(M,N)\xrightarrow{\partial}\Tor^R_{n-1}(M,K_0)
+\end{equation*}
+is an isomorphism for $n>1$, and
+\begin{equation*}
+0\rightarrow\Tor^R_1(M,N)\xrightarrow{\partial}
+M\otimes_R K_0\rightarrow M\otimes_R F_0\rightarrow M\otimes_R N\rightarrow0
+\end{equation*}
+is exact. This is good, but not quite a construction yet because it appears
+that these values probably depend upon the map $F_0\to N$. Moreover, when
+I come to compute $\Tor_{n-1}^R(M,K_0)$, I'll need to pick a surjection
+from a free module $F_1$ onto $K_0$. 
+
+Let's pursue the second idea now, and come back to uniqueness later. 
+By continuing to find surjections from frees, we get a diagram like this:
+\begin{equation*}
+\xymatrix{\cdots\ar[rr] & & F_2\ar[dr]\ar[rr]^d & & F_1\ar[dr]\ar[rr]^d & & F_0\ar[dr]\\
+& K_2\ar[ur]\ar[dr] & & K_1\ar[ur]\ar[dr] & & K_0\ar[ur]\ar[dr] & & N\ar[dr]\\
+0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0}
+\end{equation*}
+-- in which the upside-down V subdiagrams are short exact sequences.
+and $F_s$ is free for all $s$. Splicing these exact sequences gives you a exact sequence in the top row. This is a \emph{free resolution of $N$}.
+The top row, $F_*$, is a chain complex. It maps to the very short chain
+complex with $N$ in degree 0 and 0 elsewhere, and this chain map is a 
+homology isomorphism (or ``quasi-isomorphism''). We have in effect replaced
+$N$ with this chain complex of free modules. The module $N$ may be very
+complicated, with generators, relations, relations between relations \ldots.
+All this is laid out in front of us by the free resolution. Generators of $F_0$
+map to generators for $N$, and generators for $F_1$ map to relations among
+those generators. 
+
+
+
+

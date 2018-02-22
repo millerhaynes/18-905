@@ -1,0 +1,10 @@
+Recall that if I have a short exact sequence $0\to A\to B\to C\to 0$ and free resolutions $F^\prime_\ast\to A$ and $F^{\prime\prime}_\ast\to 0$, I can get a free resolution $F_\ast\to B$ that fits into a short exact sequence of chain complexes, $0\to F^\prime_\ast\to F_\ast\to F^{\prime\prime}_\ast\to 0$. Now apply $\Hom_R(-,N)$. You get a short exact sequence of cochain complexes, because this sequence splits in any given degree. Thus I get a long exact sequence:
+\begin{equation*}
+\xymatrix{
+& \cdots \\
+& \Ext^1_R(M^{\prime\prime},N)\ar[r] & \Ext^1_R(M,N)\ar[r] & \Ext^1_R(M^{\prime},N)\ar[ull]\\
+0 \ar[r] & \Hom_R(M^{\prime\prime},N)\ar[r] & \Hom_R(M,N)\ar[r] & \Hom_R(M^{\prime},N)\ar[ull]
+\end{equation*}
+In this sense, $\Ext_R^*(-,N)$ is like a cohomology theory for $R$-modules.
+
+Let's use this to make a calculation.

@@ -1,0 +1,106 @@
+\section{Proof of the Locality Principle}
+
+We have constructed the subdivision operator $\$:S_*(X)\to S_*(X)$, with the
+idea that it will shink chains and by iteration eventually render any chain 
+$\mathscr{A}$-small. Does $\$$ succeed in making simplices smaller? Let's 
+look first at the affine case. Recall that the ``diameter'' of a subset $X$ of 
+a metric space is given by
+\[
+\mathrm{diam}(X)=\sup\{d(x,y):x,y\in X\}\,.
+\]
+
+\begin{lemma}
+Let $\sigma$ be an affine $n$-simplex, and $\tau$ a simplex in $\$\sigma$.
+Then $\mathrm{diam}(\tau)\leq \frac{n}{n+1}\mathrm{diam}(\sigma)$.
+\end{lemma}
+\begin{proof}
+Suppose that the vertices of $\sigma$ are $v_0,v_1,\ldots,v_n$. Let $b$ be the 
+barycenter of $\sigma$, and write the vertices of $\tau$ as $w_0=b,w_1,\ldots,w_n$. We compute
+\[
+|b-v_i|  =\left|\frac{v_0+\cdots+v_n-(n+1)v_i}{n+1}\right|
+=\left|\frac{(v_0-v_i)+(v_1-v_i)+\cdots+(v_n-v_i)}{n+1}\right|\,.
+\]
+One of the terms in the numerator is zero, so we can continue: 
+\[
+|b-v_i| \leq \frac{n}{n+1}\max_{i,j}|v_i-v_j| 
+= \frac{n}{n+1}\mathrm{diam}(\sigma)
+\]
+Since $w_i\in\sigma$, 
+\[
+|b-w_i| \leq\max_i|b-v_i| \leq \frac{n}{n+1}\mathrm{diam}(\sigma)\,.
+\]
+For the other cases, well, we use induction:
+\[
+|w_i-w_j| \leq \mathrm{diam}(\text{simplex in }\$d\sigma)
+\leq \frac{n-1}{n}\mathrm{diam}(d\sigma)
+< \frac{n}{n+1}\mathrm{diam}(\sigma)\,.
+\]
+\end{proof}
+
+Now let's transfer this calculation to singular simplices in a space $X$ 
+equipped with a cover $\mathscr{A}$. 
+\begin{lemma}
+For any singular chain $c$, some iterate of the subdivision operator sends $c$ to an $\mathscr{A}$-small chain.
+\end{lemma}
+\begin{proof} We may assume that $c$ is a single simplex $\sigma:\Delta^n\to X$, because in generaly you just take the largest iterate of $\$$ needed to send each simplex in $c$ to an $\mathscr{A}$-small chain.
+We now encounter another of the great virtues of singular homology:
+we pull $\mathscr{A}$ back to a cover of the standard simplex. 
+Define an open cover $\sigma^{-1}\mathscr{A}$ of $\Delta^n$ defined by 
+\[
+\mathscr{U}:=\{\sigma^{-1}(\mathrm{Int}(A)):A\in\sca\}\,.
+\]
+The space $\Delta^n$ is a compact Hausdorff space, and so is subject to the
+Lebsegue covering lemma, which we apply to the open cover 
+$\{\mathrm{Int}B:B\in\sigma^{-1}\mathscr{A}\}$. 
+\begin{lemma}[Lebsegue covering lemma]
+Let $M$ be a compact metric space, and let $\mathscr{U}$ be an open cover. Then there is $\epsilon> 0$ such that for all $x\in M$, 
+$B_\epsilon(x)\subseteq U$ for some $U\in \mathscr{U}$.
+\end{lemma}
+\end{proof}
+
+To apply this, we will have to understand iterates of the subdivision operator.
+
+\begin{lemma} For any $k\geq1$,
+$\$^k\sim 1:S_\ast(X)\to S_\ast(X)$.
+\end{lemma}
+\begin{proof}
+We construct $T_k$ such that $dT_k+T_kd=\$^k-1$. To begin, we take $T_1=T$, since $dT+Td=\$-1$. Let's apply $\$$ to this equation. We get $\$dT+\$Td=\$^2-\$$.Sum up these two equations to get 
+\[
+dT+Td+\$dT+\$Td = \$^2-1\,,
+\] 
+which simplifies to 
+\[
+d(\$+1)T+(\$+1)Td=\$^2-1
+\]
+since $\$d=d\$$.
+
+So define $T_2=(\$+1)T$, and continuing, you see that we can define
+\[
+T_k=(\$^{k-1}+\$^{k-2}+\cdots+1)T\,.
+\]
+\end{proof}
+
+We are now in position to prove the Locality Principle, which we recall:
+\begin{theorem}
+Let $\mathscr{A}$ be a cover of a space $X$. 
+The inclusion $S^\mathscr{A}_\ast(X)\subseteq S_\ast(X)$ is a chain homotopy equivalence, so $H^\mathscr{A}_\ast(X)\to H_\ast(X)$ is an isomorphism.
+\end{theorem}
+\begin{proof}
+To prove surjectivity let $c$ be an $n$-cycle in $X$. We want to find an $\sca$-small $n$-cycle that is homologous to $c$. There's only one thing to do. Pick $k$ such that $\$^k c$ is $\sca$-small. This is a cycle because because $\$^k$ is a chain map. I want to compare this new cycle with $c$. That's what the chain homotopy $T_k$ is designed for: 
+\[
+\$^kc-c=dT_k c+T_kdc=dT_kc
+\]
+since $c$ is a cycle. So $\$^kc$ and $c$ are homologous.
+
+Now for injectivity. Suppose $c$ is a cycle in $S^\sca_n(X)$ such that $c=db$ for some $b\in S_{n+1}(X)$. We want $c$ to be a boundary of an $\sca$-small chain. Use the chain homotopy $T_k$ again: Suppose that $k$ is such that $\$^kc$ is $\sca$-small. Compute:
+\[
+d\$^kb-c=d(\$^k-1)b=d(dT_k+T_kd)b=dT_kc
+\]
+so 
+\[
+c=d\$^kb-dT_kc=d(\$^kb-T_kc)\,.
+\]
+Now, $\$^kb$ is $\sca$-small, by choice of $k$. Is $T_kc$ also $\sca$-small? I claim that it is. Why? It is enough to show that $T_k\sigma$ is $\sca$-small if $\sigma$ is. We know that $\sigma=\sigma_\ast\iota_n$. Because $\sigma$ is $\sca$-small, we know that $\sigma:\Delta^n\to X$ is the composition $i_\ast\overline{\sigma}$ where $\overline{\sigma}:\Delta^n\to A$ and $i:A\to X$ is the inclusion of some $A\in\sca$. By naturality, then, $T_k\sigma=T_ki_\ast\overline{\sigma}=i_\ast T_k\overline{\sigma}$, which certainly is $\sca$-small.
+\end{proof}
+
+This completes the proof of the Eilenberg Mac Lane axioms for singular homology. In the next chapter, we will develop a variety of practical tools, using these axioms to compute the singular homology of many spaces. 

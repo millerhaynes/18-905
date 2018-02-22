@@ -1,0 +1,159 @@
+\section{Homology of CW-complexes}
+
+
+The skeleton filtration of a CW complex leads to a long exact sequence in 
+homology, showing that the relative homology $H_*(X_k,X_{k-1})$ controls how
+the homology changes when you  pass from $X_{k-1}$ to $X_k$. What is this
+relative homology? If we pick a set of attaching maps, we get the following 
+diagram.
+\begin{equation*}
+\xymatrix{\coprod_{\alpha}S^{k-1}\ar@{^(->}[r]\ar[d]^f & \coprod_{\alpha}D^k_\alpha\ar[r]\ar[d] & \bigvee_{\alpha}S^k_\alpha\ar@{-->}[d]\\
+X_{k-1}\ar@{^(->}[r] & X_k\cup_f B\ar[r] & X_k/X_{k-1}}
+\end{equation*}
+where $\bigvee$ is the wedge sum (disjoint union with all basepoints identified): $\bigvee_{\alpha}S^k_\alpha$ is a bouquet of spheres. The dotted
+map exists and is easily seen to be a homeomorphism. 
+
+Luckily, the inclusion $X_{k-1}\subseteq X_k$ satisfies what's needed to conclude that 
+\[
+H_q(X_k,X_{k-1})\to H_q(X_k/X_{k-1},\ast)
+\]
+is an isomorphism. After all, $X_{k-1}$ is a deformation retract of the space 
+you get from $X_k$ by deleting the center of each $k$-cell. 
+
+We know $ H_q(X_k/X_{k-1},\ast)$ very well:
+\[
+\widetilde{ H}_q(\bigvee_{\alpha\in A_k}S^k_\alpha)\cong\begin{cases}\Z[A_k] & q=k \\ 0 & q\neq k\end{cases}\,.
+\]
+Lesson: The relative homology $ H_q(X_k,X_{k-1})$ keeps track of the $k$-cells of $X$.
+\begin{definition}
+The group of {\em cellular $n$-chains} in a CW complex $X$ is
+\[
+C_k(X):= H_k(X_k,X_{k-1})=\Z[A_k]\,.
+\]
+\end{definition}
+If we put the fact that $H_q(X_k,X_{k-1})=0$ for $q\neq k,k+1$
+into the homology long exact sequence of the pair, we find first that
+\[
+H_q(X_{k-1})\xrightarrow{\cong}H_q(X_k)\,\hbox{for}\,1\neq k,k-1\,,
+\]
+and then that there is a short exact sequence
+\[
+0\to H_k(X_k)\to C_k(X) \to H_{k-1}(X_{k-1}) \to 0\,.
+\]
+
+So if we fix a dimension $q$, and watch how $H_q$ varies as we move through the
+skelata of $X$, we find the following picture. Say $q>0$. Since $X_0$ is
+discrete, $H_q(X_0)=0$. Then $H_q(X_k)$ continues to be 0 till you get up to
+$X_q$. $H_q(X_q$ is a subgroup of the free abelian group $C_k(X)$ and hence is
+free abelian. Relations may get introduced into it when we pass to $X_{q+1}$; 
+but thereafter all the maps 
+\[
+H_q(X_{q+1})\to H_q(X_{q+2})\to\cdots
+\]
+are isomorphisms. All the $q$-dimensional homology of $X$ is created on $X_q$,
+and all the relations in $H_q(X)$ occur by $X_{q+1}$. 
+
+This stable value of $H_q(X_k)$ maps isomorphically to $H_q(X)$, 
+even if $X$ is infinite 
+dimensional. This is because the union of the images of any finite set of 
+singular simplices in $X$ is compact and so lies in a finite subcomplex and in
+particular lies in a finite skeleton. So any chain in $X$ is the image of 
+a chain in some skeleton. Since $H_q(X_k)\xrightarrow{\cong}H_q(X_{k+1})$ for 
+$k>q$, we find that $H_q(X_q)\to H_q(X)$ is surjective. Similarly, 
+if $c\in S_q(X_k)$ is a boundary in $X$, then it's a boundary in $X_\ell$ 
+for some $\ell\geq k$. This shows that the map $H_q(X_{q+1})\to H_q(X)$ is
+injective. We summarize:
+\begin{lemma} 
+Let $q\geq 0$. Then 
+\[
+H_q(X_k)=0\,\,\hbox{\em for}\,\,q<k
+\]
+and
+\[
+H_q(X_k)\xrightarrow{\cong}H_q(X)\,\,\hbox{\em for}\,\,q>k\,.
+\]
+In particular, $H_q(X)=0$ if $q$ exceeds the dimension of $X$. 
+\end{lemma}
+
+
+
+
+
+
+We have defined the cellular $n$-chains of a CW complex $X$,
+\[
+C_n(X)=H_n(X_n,X_{n-1})\,,
+\]
+and found that it is the free abelian group on the set of $n$ cells. 
+We claim that these abelian groups are related to each other; they form 
+the groups in a chain complex. 
+
+What should the boundary of an $n$-cell be? It is represented by 
+a characteristic map $D^n\to X_n$ whose boundary is the attaching map 
+\[
+\alpha:S^{n-1}\to X_{n-1}
+\]
+This is a lot of information, and hard to interpret because $X_{n-1}$ is itself
+potentially a complicated space. But things get much simpler if I pinch out
+$X_{n-2}$. This suggests defining 
+\[
+d:C_n(X)=H_n(X_n,X_{n-1})\xrightarrow{\partial} H_{n-1}(X_n)\rightarrow 
+H_{n-1}(X_{n-1},X_{n-2})=C_{n-1}(X)\,.
+\]
+
+The fact that $d^2=0$ is embedded in the following large diagram, in which 
+the two columns and the central row are exact. 
+\begin{equation*}
+\xymatrix{C_{n+1}(X)= H_{n+1}(X_{n+1},X_n)\ar[d]^{\partial_n}\ar[dr]^d & & 0= H_{n-1}(X_{n-2})\ar[d]\\
+ H_n(X_n)\ar@{>->}[r]^{j_n}\ar[d] & C_n(X)= H_n(X_n,X_{n-1})\ar[r]^{\partial_{n-1}}\ar[dr]^d & H_{n-1}(X_{n-1})\ar[d]^{j_{n-1}}\\
+ H_n(X_{n+1})\ar[d] & & C_{n-1}(X)= H_{n-1}(X_{n-1},X_{n-2})\\
+0 = H_n(X_{n+1},X_n)}
+\end{equation*}
+Now, $\partial_{n-1}\circ j_n=0$. So the composite of the diagonals is zero, i.e., $d^2=0$, and we have a chain complex! This is the ``cellular chain complex'' of $X$. 
+
+We should compute the homology of this chain complex, $ H_n(C_\ast(X))=\ker d/\img d$. Now, $\ker d=\ker (j_{n-1}\circ\partial_{n-1})$. But $j_{n-1}$ is injective, so 
+\[
+\ker d=\ker\partial_{n-1}=\img j_n=H_n(X_n)\,.
+\]
+
+On the other hand 
+\[
+\img d=j_n(\img\partial_n)=\img\partial_n\subseteq H_n(X_n)\,.
+\]
+So 
+\[
+H_n(C_*(X))=H_n(X_n)/\img\partial_n=H_n(X_{n+1})
+\]
+by exactness of the left column; but as we know this is exactly $H_n(X)$!
+\begin{theorem} 
+For a CW complex $X$, there is an isomorpphism
+\[
+H_\ast(C_\ast(X))\cong H_\ast(X)
+\]
+natural with respect to filtration-preserving maps between CW complexes.
+\end{theorem}
+This has an immediate and surprisingly useful corollary.
+\begin{corollary}
+Suppose that the CW complex $X$ has only even cells -- that is, 
+$X_{2k}\hookrightarrow X_{2k+1}$ is an isomorphism. Then $d=0$ in the
+cellular chain complex of $X$, and 
+\[
+H_*(X)\cong C_*(X)\,.
+\]
+That is, $H_n(X)=0$ for $n$ odd, is free abelian for all $n$, 
+and the rank of $H_n(X)$ for $n$ even is the number of $n$-cells. 
+\end{corollary}
+\begin{example}
+Complex projective space $\CP^n$ has a CW structure in which 
+\[
+\Sk_{2k}\CP^n=\Sk_{2k+1}\CP^n=\CP^k\,.
+\] 
+The attaching $S^{2k-1}\to\CP^k$
+sends $v\in S^{2k-1}\subseteq\CC^n$ to the complex line through $v$. So 
+\[
+H_k(\CP^n)=\begin{cases}\Z & \hbox{for}\,\,0\leq k\leq 2n,\, k\,\,\hbox{even}\\
+0 & \hbox{otherwise}
+\,.\end{cases}
+\]
+\end{example}
+

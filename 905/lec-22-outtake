@@ -1,0 +1,65 @@
+
+Now let's check the long exact sequence induced by a short exact sequence
+\[
+0\to N'\to N\to N''\to0\,.
+\]
+We first come up with a short exact sequence of resolutions. This again is a
+general observation.
+
+\begin{prop}
+Let $0\to N''\to N\to N'\to0$ be a short exact sequence of $R$-modules, and 
+choose projective resolutions $F''_*$ for $N''$ and $F'_*$ for $N'$. 
+Then there is a projective resolution $F_*$ of $N$ that fits into a short
+exact sequence $0\to F'_*\to F_*\to F''_*\to0$ covering the given short
+exact sequence.
+\end{prop}
+\begin{proof}
+Consider
+\begin{equation*}
+\xymatrix{0\ar[r] & N'\ar[r] & N\ar[r] & N''\ar[r] & 0\\
+ & F^\prime_0\ar[u]_{\epsilon'} & & F^{\prime\prime}_0\ar[u]_{\epsilon''} & \\
+ & F^\prime_1\ar[u] & & F^{\prime\prime}_1\ar[u] & \\
+ & \vdots\ar[u] & & \vdots\ar[u] & }
+\end{equation*}
+We want to get a free resolution in the middle. Since $F_n''$ is projective,
+the proposed short exact sequence $0\to F'_n\to F_n\to F''_n\to 0$ must split;
+so we might as well write $F_n=F'_n\oplus F''_n$. 
+
+We need the augmentation $\epsilon:F_0\to N$. We can think of $\epsilon$ 
+as a row vector, sending $F_0'\oplus F_0''$ to $N$. The first entry obviously has to be $i\epsilon'$. To get the second entry, note that $\epsilon''$ lifts
+as shown below, since $N\to N''$ is surjective and $F''_0$ is projective.
+\begin{equation*}
+\xymatrix{0\ar[r] & N'\ar[r]^i & N\ar[r] & N''\ar[r] & 0\\
+0\ar[r] & F^\prime_0\ar[u]_{\epsilon'}\ar[r] & F^\prime_0\oplus F^{\prime\prime}_0\ar@{-->}[u]_{\epsilon}\ar[r] & F^{\prime\prime}_0\ar[u]_{\epsilon''}\ar@{-->}[ul]_{\overline{\epsilon''}}\ar[r] & 0 \\
+ & F^\prime_1\ar[u] & & F^{\prime\prime}_1\ar[u] & \\
+ & \vdots\ar[u] & & \vdots\ar[u] & }
+\end{equation*}
+So let $\epsilon=[i\epsilon',\overline{\epsilon}]$. This is surjective by the Snake lemma. 
+
+Now consider:
+\begin{equation*}
+\xymatrix{& 0 & 0 & 0 & \\
+0\ar[r] & N'\ar[r]^i\ar[u] & N\ar[r]\ar[u] & N''\ar[r]\ar[u] & 0\\
+0\ar[r] & F^\prime_0\ar[u]_{\epsilon'}\ar[r] & F^\prime_0\oplus F^{\prime\prime}_0\ar@{-->}[u]_{\epsilon}\ar[r] & F^{\prime\prime}_0\ar[u]_{\epsilon''}\ar@{-->}[ul]_{\overline{\epsilon''}}\ar[r] & 0\\
+ 0\ar[r] & K^\prime_0=\ker\epsilon'\ar[u]\ar[r] & K_0\ar[r]\ar[u] & K^{\prime\prime}_0=\ker\epsilon''\ar[u]\ar[r] & 0\\
+ & 0\ar[u] & 0\ar[u] & 0\ar[u] & }
+\end{equation*}
+The bottom row is exact by the $3\times 3$-lemma. It's why I gave it to you for homework! 
+
+So now, as in earlier proofs, we can replace the original short exact sequence
+by $0\to K'_0\to K_0\to K''_0\to0$ and continue. 
+\end{proof}
+
+Now take this short exact sequence of resolutions, 
+$0\to F'_*\to F_*\to F''_*\to0$, and tensor with $N$. 
+There's a worry here; is the result still short exact? 
+The answer is yes! -- because $0\to F_n'\to F_n\to F_n''\to0$ is a {\em split}
+short exact sequence of $R$-modules! 
+
+Thus we get a long exact sequence in homology, which is to say in 
+$\Tor^R_*(M,-)$. 
+
+We should check that the boundary map 
+$\partial:\Tor_n^R(M,N'')\to\Tor_{n-1}^R(M,N')$ 
+is well defined; we leave that to you. 
+

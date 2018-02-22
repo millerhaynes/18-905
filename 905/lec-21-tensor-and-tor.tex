@@ -1,0 +1,133 @@
+\section{Tensor and Tor}
+
+We continue to study properties of the tensor product. Recall that 
+\[
+A\otimes \Z/n\Z=A/nA\,.
+\]
+Consider the exact sequence 
+\[
+0\to \Z\xrightarrow{2}\Z\to \Z/2\Z\to 0\,.
+\]
+Let's tensor it with $\Z/2\Z$. We get
+\[
+0\to \Z/2\Z\to\Z/2\Z\to\Z/2\Z\to 0\,.
+\]
+This cannot be a short exact sequence! 
+This is a major tragedy: tensoring doesn't preserve exact sequences; one says that $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $A$ by simply tensoring homology with $A$. 
+
+Tensoring does respect certain exact sequences:
+\begin{prop}
+The functor $N\mapsto M\otimes_R N$ preserves cokernels; it is \emph{right exact}. 
+\end{prop}
+\begin{proof}
+Suppose that $N\to N''$ is a surjection of $R$-modules, and $M$ is any $R$-module. Then 
+\[
+\xymatrix{
+M\otimes_RN \ar[r] & M\otimes_RN'' \\
+M\times N \ar[u] \ar@{->>}[r] & M\times N'' \ar[u]\,.
+}\]
+At least we know that $M\times-$ preserves surjections. But the image of 
+$M\times N''$ generates $M\otimes_RN''$ as an $R$-module, so the image of
+$M\times N$ generates it as well. This implies that 
+$M\otimes_RN\to M\otimes_RN''$ is surjective.
+\end{proof}
+
+How about this failure of exactness? What can we do about that? Failure of exactness is bad, so let's try to repair it. A key observation is that if 
+$M$ is {\em free}, then $M\otimes_R-$ is exact. If $M=R\langle S\rangle$, the
+free $R$-module on a set $S$, then $M\otimes_RN=\oplus_SN$, since tensoring
+distributes over direct sums. Then we remember:
+\begin{lemma}
+If $M'_i\to M_i\to M''_i$ is exact for all $i\in I$, then so is 
+\[
+\bigoplus M'_i\to\bigoplus M_i\to\bigoplus M''_i\,.
+\]
+\end{lemma}
+\begin{proof} Clearly the composite is zero. Let 
+$(x_i\in M_i,i\in I)\in\bigoplus M_i$ and suppose it maps to zero. 
+That means that each $x_i$ maps to zero in $M''_i$ and hence is in the
+image of some $x'_i\in M'_i$. Just make sure to take $x'_i=0$ if $x_i=0$. 
+\end{proof}
+
+To exploit this observation, let's ``resolve'' $M$ by free modules. This means:
+find a surjection from a free $R$-module, $F_0\to M$. This amounts to specifying $R$-module generators. The kernel of $F_0\to M$ won't generally be free. 
+Let's make sure that it is by assuming that $R$ is a PID, and write $F_1$ for
+the kernel. The failure of $M\otimes-$ to be exact is measured, at least
+partially, by the leftmost term (defined as a kernel) in the exact sequence
+\[
+0\to\Tor_1^R(M,N)\to F_1\otimes_RN\to F_0\otimes_RN\to M\otimes_RN\to0\,.
+\]
+
+The notation suggests that this Tor term is independent of the resolution. 
+This is indeed the case, as we shall show presently. But before we do, let's 
+compute some Tor groups. 
+
+\begin{example} 
+For any PID $R$, if $M=F$ is free over $R$ we can take $F_0=F$
+and $F_1=0$, and discover that then $\Tor_1^R(F,N)=0$ for any $N$. 
+\end{example}
+\begin{example} 
+Let $R=\Z$ and $M=\Z/n\Z$, and $N$ any abelian group. When $R=\Z$ it is often
+omitted from the notation for Tor.
+There is a nice free resolution staring at us:
+$F_0=F_1=\Z$, and $F_1\to F_0$ given by multiplication by $n$. The sequence
+looks like 
+\[
+0\to\Tor_1(\Z/n\Z,N)\to\Z\otimes N\xrightarrow{n\otimes1}\Z\otimes N\to
+\Z/n\Z\otimes N\to 0\,,
+\]
+so
+\[
+\Z/n\Z\otimes N=N/nN\,,\quad\Tor_1(\Z/n\Z,N)=\ker(n|N)\,.
+\]
+The torsion in this case is the ``$n$-torsion'' in $N$. This accounts for
+the name.
+\end{example}
+
+Functors like $\Tor_1$ can be usefully defined for any ring, and moving to that
+general case makes their significance clearer and illuminates the reason why 
+$\Tor_1$ is independent of choice of generators. 
+
+So let $R$ be any ring and $M$ a module over it. By picking $R$-module
+generators I can produce a surjection from a free $R$-module, $F_0\to M$.
+Write $K_0$ for the kernel of this map. It is the module of relations among
+the generators. We can no longer guarantee that it's free, but we can at 
+least find a set of module generators for it, and construct a surjection
+from a free $R$-module, $F_1\to K_0$. Continuing in this way, we get a 
+diagram like this -- 
+\begin{equation*}
+\xymatrix{\cdots\ar[rr] & & F_2\ar[dr]\ar[rr]^d & & F_1\ar[dr]\ar[rr]^d & & F_0\ar[dr]\\
+& K_2\ar[ur]\ar[dr] & & K_1\ar[ur]\ar[dr] & & K_0\ar[ur]\ar[dr] & & N\ar[dr]\\
+0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0}
+\end{equation*}
+-- in which the upside-down V subdiagrams are short exact sequences
+and $F_s$ is free for all $s$. Splicing these exact sequences gives you an 
+exact sequence in the top row. This is a \emph{free resolution of $N$}.
+The top row, $F_*$, is a chain complex. It maps to the very short chain
+complex with $N$ in degree 0 and 0 elsewhere, and this chain map is a 
+homology isomorphism (or ``quasi-isomorphism''). We have in effect replaced
+$N$ with this chain complex of free modules. The module $N$ may be very
+complicated, with generators, relations, relations between relations \ldots.
+All this is laid out in front of us by the free resolution. Generators of $F_0$
+map to generators for $N$, and generators for $F_1$ map to relations among
+those generators. 
+
+Now we can try to define higher Tor functors by tensoring $F_*$ with $N$
+and taking homology. If $R$ is a PID and the resolution is just $F_1\to F_0$,
+forming homology is precisely taking cokernel and kernel, as we did above. 
+In general, we define
+\[
+\Tor^R_n(M,N)=H_n(M\otimes_R F_\ast)\,.
+\]
+
+In the next lecture we will check that this is well-defined -- independent 
+of free resolution, and functorial in the arguments. For the moment, notice 
+that \[
+\Tor^R_n(M,F)=0\,\,\hbox{for}\, n>0 \quad\hbox{if $F$ is free}\,,
+\]
+since I can take $F\xleftarrow{\cong}F\leftarrow0\leftarrow\cdots$ as a
+free resolution; and that 
+\[
+\Tor^R_0(M,N)=M\otimes_RN
+\]
+since we know that $M\otimes_R-$ is right-exact.
+

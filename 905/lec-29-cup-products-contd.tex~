@@ -1,0 +1,133 @@
+\section{Cup product, continued}
+We have constructed an explicit map $S^p(X)\otimes S^q(Y)\xrightarrow{\times} S^{p+q}(Y)$ via:
+\begin{equation*}
+(f\times g)(\sigma)=(-1)^{pq}f(\sigma_1\circ\alpha_p)g(\sigma_2\circ\omega_q)
+\end{equation*}
+where $\alpha_p:\Delta^p\to\Delta^{p+q}$ takes $k\mapsto k$ for 
+$0\leq k\leq p$ and $\omega_q:\Delta^q\to\Delta^{p+q}$ sends $h\mapsto j+p$ 
+for  $0\leq j\leq q$. This is a chain map, and it induces a ``cross product''
+$ H(S^p(X)\otimes S^q(Y))\to H_{p+q}(X\times Y)$ and, by composing with the
+map induced by the diagonal embedding, a ``cup product''
+\[
+\cup:H^p(X)\otimes H^q(X)\to H^{p+q}(X)\,.
+\]
+We formalize the structure that this product imposes on cohomology.
+\begin{definition}
+Let $R$ be a commutative ring. A \emph{graded $R$-algebra} is a graded $R$-module $\cdots,A_{-1},A_0, A_1,A_2,\cdots$ equipped with maps $A_p\otimes_R A_q\to A_{p+q}$ and a map $\eta:R\to A_0$ that make the following diagram commute.
+\[
+\xymatrix{
+A_p\otimes_R R \ar[r]^{1\otimes\eta} \ar[dr]^= &A_p\otimes_R A_0 \ar[d] &
+A_0\otimes_R A_q \ar[d] & R\otimes_R A_q \ar[l]_{\eta\otimes1} \ar[dl]_= \\
+& A_p & A_q 
+}\]
+\begin{equation*}
+\xymatrix{
+A_p\otimes_R (A_q\otimes_R A_r)\ar[r]\ar[d] & A_p\otimes_R A_{q+r}\ar[d]\\
+A_{p+q}\otimes_R A_r \ar[r] & A_{p+q+r}
+}
+\end{equation*}
+A graded $R$-algebra $A$ is {\em commutative} if the following diagram commutes:
+\begin{equation*}
+\xymatrix{
+	A_p\otimes_R A_q\ar[rr]^{\tau}\ar[dr] & & A_q\otimes_R A_p \ar[dl]\\
+	 & A_{p+q} & 
+}
+\end{equation*}
+where $\tau(x\otimes y)=(-1)^{pq}y\otimes x$. 
+\end{definition}
+We claim that $ H^\ast(X;R)$ forms a commutative graded $R$-algebra under the cup product. This is nontrivial. On the cochain level, this is clearly not graded commutative. We're going to have to work hard -- in fact, so hard that you're going to do some of it for homework. What needs to be checked is that the following 
+diagram commutes up to natural chain homotopy.
+\begin{equation*}
+\xymatrix{S_\ast(X\times Y)\ar[r]^{T_\ast}\ar[d]_{\alpha_{X,Y}} & S_\ast(Y\times X)\ar[d]^{\alpha_{Y,X}}\\
+S_\ast(X)\otimes_R S_\ast(Y)\ar[r]^{\tau} & S_\ast(Y)\otimes_R S_\ast(X)}
+\end{equation*}
+Acyclic models helps us prove things like this.
+
+You might hope that there is some way to produce a commutative product on 
+a chain complex modeling $H^\ast(X)$. With coefficients in $\QQ$, this is 
+possible, by a construction due to Dennis Sullivan. 
+With coefficients in a field of nonzero characteristic, it is not possible.
+Steenrod operations provide the obstruction.
+
+My goal now is to compute the cohomology algebras of some spaces. 
+Some spaces are
+easy! There is no choice for the product structure on $H^*(S^n)$, for example.
+(When $n=0$, we get a free module of rank 2 in dimension 0. This admits
+a variety of commutative algebra structures; but we have already seen that
+$H^0(S_0)=\Z\times\Z$ as an algebra.) Maybe the next thing to try is a 
+product of spheres. More generally, we should ask whether there is an 
+algebra structure on $H^\ast(X)\otimes H^\ast(Y)$ making the cross product an
+algebra map. If $A$ and $B$ are two graded algebras, there {\em is} a natural
+algebra structure on $A\otimes B$, given by $1=1\otimes1$ and
+\[
+(a'\otimes b')(a\otimes b)=(-1)^{|b^\prime|\cdot|a|}a'a\otimes b'b\,.
+\]
+If $A$ and $B$ are commutative, then so is $A\otimes B$ with this algebra
+structure. 
+\begin{prop} The cohomology cross product
+\[
+\times:H^\ast(X)\otimes H^\ast(Y)\rightarrow H^\ast(X\times Y)
+\]
+is an $R$-algebra homomorphism.
+\end{prop}
+\begin{proof}
+I have diagonal maps $\Delta_X:X\to X\times X$ and $\Delta_Y:Y\to Y\times Y$. 
+The diagonal on $X\times Y$ factors as
+\[
+\xymatrix{
+X\times Y \ar[rr]^{\Delta_{X\times Y}} \ar[dr]^{\Delta_X\times\Delta_Y}} &&
+(X\times Y)\times(X\times Y) \\
+& (X\times X)\times(Y\times Y) \ar[ur]^{1\times T\times1}\,.
+}\]
+Let $\alpha_1,\alpha_2\in H^\ast(X)$ and $\beta_1,\beta_2\in H^\ast(Y)$. Then $\alpha_1\times \beta_1,\alpha_2\times\beta_2\in H^\ast(X\times Y)$, and I want to calculate $(\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2)$. Let's see:
+\begin{align*}
+(\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2) & = \Delta_{X\times Y}^\ast(\alpha_1\times\beta_1\times\alpha_2\times\beta_2)\\
+& = (\Delta_X\times\Delta_Y)^\ast(1\times T\times 1)^\ast(\alpha_1\times\beta_1\times\alpha_2\times\beta_2)\\
+& = (\Delta_X\times\Delta_Y)^\ast(\alpha_1\times T^\ast(\beta_1\times\alpha_2)\times\beta_2)\\
+& = (-1)^{|\alpha_2|\cdot|\beta_1|}(\Delta_X\times\Delta_Y)^\ast(\alpha_1\times\alpha_2\times\beta_1\times\beta_2)
+\end{align*}
+Now, I have a diagram:
+\begin{equation*}
+\xymatrix{
+	 H^\ast(X\times Y) & \ar[l]^{\times_{X\times Y}} H^\ast(X)\otimes_R H^\ast(Y)\\
+	 H^\ast(X\times X\times Y\times Y)\ar[u]^{(\Delta_X\times\Delta_Y)^\ast} & H^\ast(X\times X)\otimes H^\ast(Y\times Y)\ar[l]_{\times_{X\times X,Y\times Y}}\ar[u]^{\Delta_X^\times\otimes\Delta_Y^\ast}
+}
+\end{equation*}
+This diagram commutes because the cross product is natural. We learn:
+\begin{align*}
+(\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2) & = (-1)^{|\alpha_2|\cdot|\beta_1|}(\Delta_X\times\Delta_Y)^\ast(\alpha_1\times\alpha_2\times\beta_1\times\beta_2)\\
+& = (-1)^{|\alpha_2|\cdot|\beta_1|}(\alpha_1\cup\alpha_2)\times(\beta_1\cup\beta_2)\,.
+\end{align*}
+That's exactly what we wanted.
+\end{proof}
+\begin{example}
+How about $H^\ast(S^p\times S^q)$? I'll assume that $p$ and $q$ are both
+positive, and leave the other cases to you. The K\"unneth theorem guarantees
+that $\times:H^*(S^p)\otimes H^*(S^q)\to H^*(S^p\times S^q)$ is an isomorphism.
+Write $\alpha$ for a generator of $S^p$ and $\beta$ for a generator of 
+$S^q$; and use the same notations for the pullbacks of these elements to
+$S^p\times S^q$ under the projections. Then 
+\[
+H^*(S^p\times S^q)=\Z\langle1,\alpha,\beta,\alpha\beta\rangle\,,
+\]
+and
+\[
+\alpha^2=0\,,\quad\beta^2=0\,,\quad\alpha\beta=(-1)^{pq}\beta\alpha\,.
+\]
+
+This calculation is useful!
+\begin{corollary} Let $p,q>0$.
+Any map $S^{p+q}\to S^p\times S^q$ induces the zero map in $H^{p+q}(-)$. 
+\end{corollary}
+\begin{proof}
+Let $f:S^{p+q}\to S^p\times S^q$ be such a map. It induces an algebra map
+$f^*:H^*(S^p\times S^q)\to H^*(S^{p+q})$. This map must kill $\alpha$ and
+$\beta$, for degree reasons. But then it also kills their product, since
+$f^*$ is multiplicative. 
+\end{proof}
+The space $S^p\vee S^q\vee S^{p+q}$ has the same cohomology groups as
+$S^p\times S^q$. Both are built as CW complexes with cells in dimensions
+$0, p, q$, and $p+q$. But they are not homotopy equivalent. We can see this
+now because there {\em is} a map $S^p\vee S^q\vee S^{p+q}\to S^{p+q}$
+inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the map that pinches
+the other two factors to the basepoint. 

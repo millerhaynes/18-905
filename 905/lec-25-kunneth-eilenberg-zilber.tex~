@@ -1,0 +1,233 @@
+\section{K\"{u}nneth and Eilenberg-Zilber}
+We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used was really an example of the fundamental theorem of homological algebra. It works with any coefficient ring, not just the integers. 
+\begin{definition}
+Let $C_\ast,D_\ast$ be chain complexes that are {\em bounded below} (i.e., $C_n=0$ and $D_n=0$ for $n\ll 0$; we'll be looking at the case where they're zero if $n<0$). Define the tensor product chain complex as follows.
+\[
+(C_\ast\otimes D_\ast)_n=\bigoplus_{p+q=n}C_p\otimes D_q\,.
+\]
+The boundedness says that this is a finite sum. The differential $(C_\ast\otimes D_\ast)_n\to (C_\ast\otimes D_\ast)_{n-1}$ sends $C_p\otimes D_q$ into the submodule $C_{p-1}\otimes D_q\bigoplus C_p\otimes D_{q-1}$ by 
+\[
+x\otimes y\mapsto dx\otimes y+(-1)^p x\otimes dy\,.
+\]
+\end{definition}
+So the cross product is a map of chain complexes $S_\ast(X)\otimes S_\ast(Y)\to S_\ast(X\times Y)$. There are two questions:\\
+(1) Is this map an isomorphism in homology? \\
+(2) How is the homology of a tensor product of chain complexes related to the
+tensor product of their homologies? 
+
+It's easy to see what happens in dimension zero, because 
+$\pi_0(X)\times \pi_0(Y)=\pi_0(X\times Y)$
+implies that 
+$H_0(X)\otimes H_0(Y)\xrightarrow{\cong}H_0(X\times Y)$.
+
+Let's dispose of the purely algebraic question (2) first. 
+
+\begin{theorem}
+Let $R$ be a PID and $C_\ast,D_\ast$ be bounded below chain complexes of $R$-modules. Assume that $C_n$ is a free $R$-module for all $n$. There is a short
+exact sequence
+\begin{equation*}
+0\to\bigoplus_{p+q=n} H_p(C)\otimes H_q(D)\to H_n(C_\ast\otimes D_\ast)
+\to \bigoplus_{p+q=n-1}\Tor^R_1( H_p(C), H_q(D))\to 0
+\end{equation*}
+natural in these data.
+\end{theorem}
+\begin{proof}
+This is exactly the same as the proof for the UCT. It's a good idea to work through this on your own.
+\end{proof}
+
+\begin{corollary}\label{acyclic-tensor}
+Under these conditions, if $C_\ast\to R$ and $D_\ast\to R$ are homology
+isomorphisms then so is $C_\ast\otimes D_\ast\to R$. 
+\end{corollary}
+
+Our attack on question (1) is via the method of ``acyclic models.'' This is
+really a special case of the fundamental lemma of homological algebra!
+
+\begin{definition}
+Let $\cc$ be a category, and fix a set $\MM$ of object in $\cc$, 
+to be called the ``models.'' 
+A functor $F:\cc\to\Ab$ is $\MM$-{\em free} if it is the free abelian 
+group of a coproduct of corepresentable functors. That is, $F$ is a 
+direct sum of functors of the form $\Z\Hom_\cc(M,-)$ where $M\in\MM$.
+\end{definition}
+\begin{example}
+Since we are interested in the singular homology of a product of two spaces, 
+it may be sensible to take as $\cc$ the category of ordered pairs of spaces,
+$\cc=\mathbf{Top}^2$, and for $\MM$ the set of pairs of
+simplicies, $\MM=\{(\Delta^p,\Delta^q):p,q\geq0\}$. Then 
+\[
+S_n(X\times Y)=\Z[\Hom_\mathbf{Top}(\Delta^n\times X)\times
+\Hom_{\mathbf{Top}}(\Delta^n,Y)=
+\Z\Hom_{\mathbf{Top}^2}((\Delta^n,\Delta^n),(X,Y))\,.
+\]
+is $\MM$-free.
+\end{example}
+\begin{example}
+With the same category and models, 
+\[
+(S_*(X)\otimes S_*(Y))_n=\bigoplus_{p+q=n}S_p(X)\otimes S_q(Y)\,,
+\]
+is $\MM$-free, since the tensor product has as free basis the set
+\[
+\coprod_{p+q=n}\mathrm{Sin}_p(X)\times\mathrm{Sin}_q(Y)
+=\coprod_{p+q=n}\Hom_{\mathbf{Top}^2}((\Delta^p,\Delta^q),(X,Y))\,.
+\]
+\end{example}
+\begin{definition}
+A natural transformation of functors $\theta:F\to G$ is an $\MM$-{\em epimorphism} if $\theta_M:F(M)\to G(M)$ is a surjection of abelian groups for every $M\in\MM$. A {\em sequence} of natural transformations is a composable pair 
+$G^\prime\to G\to G^{\prime\prime}$ with trivial composition. 
+Let $K$ be the objectwise kernel of $G\to G^{\prime\prime}$. There is a factorization $G^\prime\to K$. The sequence is $\MM$-{\em exact} if $G^\prime\to K$ is a $\MM$-epimorphism. Equivalently, $G^\prime(M)\to G(M)\to G^{\prime\prime}(M)$ is exact for all $M\in\MM$.
+\end{definition}
+\begin{example}
+We claim that 
+\[
+\cdots\to S_n(X\times Y)\to S_{n-1}(X\times Y)\to\cdots\to S_0(X\times Y)\to H_0(X\times Y)\to 0
+\]
+is $\MM$-exact. Just plug in $(\Delta^p,\Delta^q)$: you get an exact sequence, since $\Delta^p\times\Delta^q$ is contractible.
+\end{example}
+\begin{example}
+The sequence
+\[
+\cdots\to(S_\ast(X)\otimes S_\ast(Y))_n\to(S_\ast(X)\otimes S_\ast(Y))_{n-1}\to
+\cdots\to S_0(X)\otimes S_0(Y)\to H_0(X)\otimes H_0(Y)\to 0\,.
+\]
+is also $\MM$-exact, by Corollary \ref{acyclic-tensor}.
+\end{example}
+The terms ``$\MM$-free'' and ``$\MM$-exact'' relate to each other in the 
+expected way:
+\begin{lemma}
+Let $\cc$ be a category with a set of models $\MM$ and let $F,G,G^\prime:\cc\to\mathbf{Ab}$ be functors. Suppose that $F$ is $\MM$-free, let $G^\prime\to G$ be a $\MM$-epimorphism, and let $f:F\to G$ be any natural transformation.  
+Then there is a lifting:
+\begin{equation*}
+\xymatrix{ & G^\prime\ar[d]\\
+F\ar@{-->}[ur]^{\overline{f}}\ar[r]^f & G}
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Clearly we may assume that $F(X)=\Z\Hom_\cc(M,X)$. Suppose that $X=M\in\MM$. 
+We get:
+\begin{equation*}
+\xymatrix{ & G^\prime(M)\ar@{->>}[d]\\
+\Z\Hom_\cc(M,M)\ar@{-->}[ur]^{\overline{f}_M}\ar[r]^{f_M} & G(M)}
+\end{equation*}
+Consider $1_M\in\Z\Hom_\cc(M,M)$. Its image  $f_M(1_M)\in G(M)$ is hit by
+some element in $c_M\in G'(M)$, since $G'\to G$ is an $\MM$-epimorphism. Define
+$\overline f_M(1_M)-c_M$.
+
+Now we exploit naturality! Any $\varphi:M\to X$ should produce a commutative 
+diagram
+\begin{equation*}
+\xymatrix{\cc(M,M)\ar[r]^{\overline{f}_M} \ar[d]^{\varphi_*}
+& G^\prime(M)\ar[d]^{\varphi_*} \\
+\cc(M,X)\ar[r]^{\overline{f}_X} & G^\prime(X)}
+\end{equation*}
+Chase $1_M$ around the diagram, to see what the value of 
+$\overline{f}_X(\varphi)$ must be:
+\[
+\overline{f}_X(\varphi)=\overline{f}_X(\varphi_*(1_M))=
+\varphi_*(\overline{f}_M(1_M))=\varphi_*(c_M)\,.
+\]
+Now extend linearly. You should check that this does define a natural
+transformation. 
+\end{proof}
+
+This is precisely the condition required to prove the Fundamental Lemma
+of Homological Algebra. So we have the 
+\begin{theorem}[Acyclic Models]
+Let $\MM$ be a set of models in a category $\cc$. Let $\theta:F\to G$ be 
+a natural transformation of functors fron $\cc$ to $\Ab$. Let 
+$F_*$ and $G_*$ be functors from $\cc$ to chain complexes, with augmentations
+$F_0\to F$ and $G_0\to G$. Assume that $F_n$ is $\MM$-free for all $n$, and
+that $G_*\to G\to0$ is an $\MM$-exact sequence. Then there is a unique natural
+chain homotopy of chain maps $F_*\to G_*$ covering $\theta$. 
+\end{theorem}
+\begin{corollary}
+Suppose furthermore that $\theta$ is a natural isomorphism. If
+each $G_n$ is $\MM$-free and $F_*\to F\to0$ is an $\MM$-exact
+sequence, then any natural chain map $F_*\to G_*$ covering $\theta$ is  
+a natural chain homotopy equivalence. 
+\end{corollary}
+
+Applying this to our category $\Top^2$ with models as before, we get 
+the following theorem that completes work we did in Lecture 7.
+\begin{theorem}[Eilenberg-Zilber theorem]
+There are unique chain homotopy classes of natural chain maps:
+\begin{equation*}
+S_\ast(X)\otimes S_\ast(Y)\leftrightarrows S_\ast(X\times Y)
+\end{equation*}
+covering the usual isomorphism
+\[
+H_0(X)\otimes H_0(Y)\cong H_0(X\times Y)\,,
+\]
+and they are natural chain homotopy inverses. 
+\end{theorem}
+\begin{corollary}
+There is an isomorphism $H(S_\ast(X)\otimes S_\ast(Y))\cong H_\ast(X\times Y)$.
+\end{corollary}
+
+Combining this theorem with the algebraic K\"unneth theorem, we get:
+\begin{theorem}[K\"{u}nneth theorem]
+Take coefficients in a PID $R$. There is a short exact sequence 
+\begin{equation*}
+0\to\bigoplus_{p+q=n} H_p(X)\otimes H_q(Y)\to
+ H_n(X\times Y)\to\bigoplus_{p+q=n-1}\Tor^R_1( H_p(X), H_q(Y))\to 0
+\end{equation*}
+natural in $X$, $Y$. It splits as $R$-modules, but not naturally.
+\end{theorem}
+\begin{example}
+If $R=k$ is a field, every module is already free, so the $\Tor$ term vanishes, and you get a K\"{u}nneth isomorphism:
+\begin{equation*}
+\times: H_\ast(X;k)\otimes_k H_\ast(Y;k)\xrightarrow{\cong}H_\ast(X\times Y;k)
+\end{equation*}
+\end{example}
+This is rather spectacular. For example, what is $ H_\ast(\RP^3\times\RP^3;k)$,
+where $k$ is a field? Well, if $k$ has characteristic different from 2, 
+$\RP^3$ has the same homology as $S^3$, so the product has the same 
+homology as $S^3\times S^3$: the dimensions are $1,0,0,2,0,0,1$. 
+If $\mathrm{ch}k=2$, on the other hand, the cohomology modules are either
+0 or $k$, and we need to form the graded tensor product:
+\[
+\begin{array}{cccc} k & k & k & k \\ k & k & k & k \\ 
+k & k & k & k \\ k & k & k & k 
+\end{array}
+\]
+so the dimensions of the homology of the product are 
+$1,2,3,4,3,2,1$. 
+
+The palindromic character of this sequence will be explained by Poincar\'e 
+duality. Let's look also at what happens over the integers. Then we have 
+the table of tensor products
+\[
+\begin{array}{c|cccc}
+& \Z & \Z/2\Z & 0 & \Z \\
+\hline
+\Z & \Z & \Z/2\Z & 0 & \Z \\
+\Z/2\Z & \Z/2\Z & \Z/2\Z & 0 & \Z/2\Z \\
+0 & 0 & 0 & 0 & 0 \\
+\Z & \Z & \Z/2\Z & 0 & \Z 
+\end{array}
+\]
+There is only one nonzero $\Tor$ group, namely 
+\[
+\Tor_1^\Z(H_1(\RP^3),H_1(\RP^3))=\Z/2\Z.
+\]
+Putting this together, we get the groups
+\[
+\begin{array}{c|c}
+H_0 & \Z \\
+H_1 & \Z/2\Z\oplus\Z/2\Z\\
+H_2 & \Z/2\Z \\
+H_3 & \Z \oplus \Z \oplus\Z/2\Z \\
+H_4 & \Z/2\Z\oplus\Z/2\Z\\
+H_5 & 0 \\
+H_6 & \Z
+\end{array}
+\]
+The failure of perfect symmetry here is interesting, and will also be explained
+by Poinar\'e duality. 
+
+
+
+
+
+

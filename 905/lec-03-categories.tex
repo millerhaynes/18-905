@@ -1,0 +1,105 @@
+\section{Categories, functors, natural transformations}\label{categories}
+%Office hours. Hood Chatham's are Mondays, 1:30 - 3:30, in 2-390A. Miller's is Tuesdays, 3:00-5:00 in 2-478. (commented out because not relevant to readers)
+%Replaced \mathbf{C} with \cC as brought up in ``Stuff to fix.''
+%Rearranged some stuff. Added a notational remark following the definition of a category.
+From spaces and continuous maps, we constructed graded abelian groups and homomorphisms. We now cast this construction in the more general language of category theory.
+
+Our discussion of category theory will be interspersed throughout the text, introducing new concepts as they are needed. Here we begin by introducing the basic definitions.
+
+\begin{definition}
+A \emph{category} $\cc$ consists of the following data.
+\begin{itemize}
+\item a class $\mathrm{ob}(\cc)$ of objects;
+\item for every pair of objects $X$ and $Y$, a set of \emph{morphisms} 
+$\cc(X,Y)$;
+\item for every object $X$ a {\em identity morphism} $1_X\in\cc(X,X)$; and
+\item for every triple of objects $X,Y,Z$, a {\em composition} map
+$\cc(X,Y)\times\cc(Y,Z)\to\cc(X,Z)$, written $(f,g)\mapsto g \circ f$. 
+\end{itemize}
+These data are required to satisfy the following:
+\begin{itemize}
+\item $1_Y\circ f=f$, and $f\circ 1_X=f$.
+\item Composition is associative: $(h\circ g)\circ f=h\circ(g\circ f)$.
+\end{itemize}
+\end{definition}
+Note that we allow the collection of objects to be a class. This enables us to talk about a ``category of all sets'' for example. But we require each 
+$\cc(X,Y)$ to be set, and not merely a class. Some interesting categories have
+a {\em set} of objects; they are called {\em small categories}.
+
+We will often write $X\in\cc$ to mean $X\in\mathrm{ob}(\cc)$, and $f\colon X\to Y$ to mean $f\in \cc(X,Y)$.
+\begin{definition}
+If $X,Y\in \cc$, then $f\colon X\to Y$ is an \emph{isomorphism} if there exists $g\colon Y\to X$ with $f \circ g=1_Y$ and $g\circ f=1_X$. We may write
+\[
+f:X\xrightarrow{\cong}Y
+\]
+to indicate that $f$ is an isomorphism. 
+\end{definition}
+
+\begin{example}
+Many common mathematical structures can be arranged in categories.
+\begin{itemize}
+\item Sets and functions between them form a category $\set$.
+\item Abelian groups and homomorphisms form a category $\mathbf{Ab}$.
+\item Topological spaces and continuous maps form a category $\mathbf{Top}$.
+\item Simplicial sets and their maps form a category $s\set$.
+\item A monoid is the same as a category with one object, where the elements of the monoid are the morphisms in the category. It's a small category.
+\item The sets $[n]=\{0,\ldots,n\}$ for $n\geq 0$ together with weakly order-preserving maps between them form the {\em simplex category} $\Deltab$, 
+another small category. It contains as a subcategory the {\em semi-simplex
+category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps. 
+\item A poset forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category with this property comes from a poset provided 
+that the only isomorphisms are identities. 
+\end{itemize}
+\end{example}
+
+Categories may be related to each other by rules describing effect on both
+objects and morphisms. 
+\begin{definition}
+Let $\cc,\cd$ be categories. A \emph{functor} $F\colon\cc\to\cd$ consists
+of the data of 
+\begin{itemize}
+\item an assignment  $F:\mathrm{ob}(\cc)\to\mathrm{ob}(\cd)$, and
+\item for all $x,y\in\mathrm{ob}(\cc)$, map $F:\cc(x,y)\to\cc(F(x),F(y))$ \,.
+\end{itemize}
+These data are required to satisfy the following two properties:
+\begin{itemize}
+\item For all $X\in\mathrm{ob}\cc$, $F(1_X)=1_{F(X)}\in\cd(F(X),F(X))$, and
+\item For all composable pairs of morphisms $f,g$ in $\cc$, 
+$F(g\circ f)=F(g)\circ F(f)$.
+\end{itemize}
+\end{definition}
+
+We have defined quite a few functors already:
+\[
+\Sin_n:\Top\to\mathbf{Set}\,,\quad S_n:\Top\to\Ab\,,\quad H_n:\Top\to\Ab\,,
+\]
+for example. We also have defined, for each $X$, 
+a morphism $d:S_n(X)\to S_{n-1}(X)$. This is a ``morphism between 
+functors.'' This property is captured by another definition.
+\begin{definition}
+Let $F,G\colon \cc\to\cd$. A \emph{natural transformation} 
+or \emph{natural map} $\theta\colon F\to G$ consists of maps $\theta_X\colon F(X)\to G(X)$ for all $X\in\mathrm{ob}(\cc)$ such that for all $f\colon X\to Y$ the following diagram commutes. 
+\begin{equation*}
+\xymatrix{F(X)\ar[d]^{F(f)}\ar[r]^{\theta_X} & G(X)\ar[d]^{G(f)}\\
+F(Y)\ar[r]^{\theta_Y} & G(Y)}
+\end{equation*}
+\end{definition}
+So for example 
+the boundary map $d\colon S_n\to S_{n-1}$ is a natural transformation.
+
+Natural transformations are so \ldots well, so {\em natural} that their
+occurance is indicated by a variety of terms: a {\em natural} or 
+{\em canonical} map is precisely a natural transformation. 
+
+\begin{example}
+Suppose that $\cc$ and $\cd$ are two categories, and assume that $\cc$ is
+small. We may then form the {\em category of functors} $\mathrm{Fun}(\cc,\cd)$.
+Its objects are the functors fron $\cc$ to $\cd$, and given two functors
+$F,G$, $\Fun(\cc,\cd)(F,G)$ is the set of natural transformations from $F$
+to $G$. We let the reader define the rest of the structure of this category,
+and check the axioms. We needed to assume that $\cc$ is small in order to
+guarantee that there is no more than a set of natural transformations between
+functors.
+
+For example, let $G$ be a group (or a monoid) viewed as a one-object category. Any element $F\in\mathrm{Fun}(G,\mathbf{Ab})$ is simply a group action of $G$ on $F(\ast)=A$, i.e., a representation of $G$ in abelian groups. Given another $F^\prime\in\mathrm{Fun}(G,\mathbf{Ab})$ with $F^\prime(\ast)=A^\prime$, then a natural transformation from $F\to F^\prime$ is precisely a $G$-equivariant homomorphism $A\to A^\prime$.
+\end{example}
+

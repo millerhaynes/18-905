@@ -1,0 +1,209 @@
+\section{Coproducts, cohomology}
+
+The next topic is cohomology. This is like homology, but it's a
+contravariant rather than covariant functor of spaces. There are three reasons
+why you might like a contravariant functor. \\
+(1) Many geometric contructions {\em pull back}; that is, they behave
+contravariantly.
+For example, if I have some covering space $\widetilde{X}\to X$ and a map $f:Y\to X$, I get a pullback covering space $f^{\ast}\widetilde{X}$. A better example is vector bundles (that we'll talk about in 18.906) -- they don't push out, they pullback. 
+ So if we want to study them by means of ``natural''
+invariants, these invariants will have to lie in a (hopefully computable)
+group that also behaves contravariantly. 
+This will lead to the theory of \emph{characteristic classes}.\\
+(2) The structure induced by the diagonal map from a space to its square
+induces stucture in contravariant functors that is more general and easier
+to study. \\
+(3)  Cohomology turns out to be the target of the Poincar\'{e} duality map.
+
+Let's elaborate on point (2). Every space has a diagonal map 
+\[
+X\xrightarrow{\Delta}X\times X\,.
+\]
+This induces a map $ H_\ast(X;R)\to H_\ast(X\times X;R)$, for any coefficient
+group $R$. Now, if $R$ is a ring, we get a cross product map 
+\[
+\times:H_\ast(X;R)\otimes_R H_\ast(X;R)\to H_\ast(X\times X;R)\,.
+\]
+If $R$ is a PID, the K\"unneth Theorem tells us that this map is
+a monomorphism. If the remaining term in the K\"unneth Theorem is zero, 
+the cross product
+is an isomorphism. So if $H_*(X;R)$ is free over $R$ (or even just flat over
+$R$), we get a ``diagonal'' or ``coproduct''
+\[
+\Delta:H_\ast(X;R)\to H_\ast(X;R)\otimes_R H_\ast(X;R)\,.
+\]
+This map is universally defined, and natural in $X$, if $R$ is a field. 
+
+This kind of structure is unfamiliar, and at first seems a bit strange.
+After all, the tensor product is defined by a universal property for maps
+{\em out} of it; maps {\em into} it just are what they are.
+
+Still, it's often useful, and we pause to fill in some of its properties.
+
+\begin{definition}
+Let $R$ be a ring. A (graded) coalgebra over $R$ is a (graded) $R$-module $M$ equipped with a comultiplication $\Delta:M\to M\otimes_R M$ and a counit map $\varepsilon:M\to R$ such that the following diagrams commute.
+\begin{equation*}
+\xymatrix{ & M\ar[d]^\Delta\ar[dr]^=\ar[dl]_= & \\
+R\otimes_R M & M\otimes_R M\ar[l]_{\varepsilon\otimes 1}\ar[r]^{1\otimes\varepsilon} & M\otimes_R R}
+\end{equation*}
+\begin{equation*}
+\xymatrix{
+	M\ar[r]^{\Delta}\ar[d]^{\Delta} & M\otimes_R M\ar[d]^{\Delta\otimes 1}\\
+	M\otimes_R M\ar[r]^{1\otimes\Delta} & M\otimes_R M\otimes_R M
+}\end{equation*}
+It is {\em commutative} if in addition
+\begin{equation*}
+\xymatrix{
+	 & M\ar[dl]_\Delta\ar[dr]^\Delta &\\
+	M\otimes_R M\ar[rr]^{\tau} & & M\otimes_R M
+}\end{equation*}
+commutes, where $\tau(x\otimes y)=(-1)^{|x|\cdot|y|}y\otimes x$ is the twist map.
+\end{definition}
+
+Using acyclic models, we saw that the 
+the K\"{u}nneth map is coassociative and cocommutative: The diagrams
+\[
+\xymatrix{S_\ast(X)\otimes S_\ast(Y)\otimes S_\ast(Z) \ar[r]^{\times\otimes1}
+\ar[d]^{1\otimes\times} & S_\ast(X\times Y)\otimes S_\ast(Z) \ar[d]^{\times} \\
+S_\ast(X)\otimes S_\ast(Y\times Z) \ar[r]^\times & S_\ast(X\times Y\times Z)
+}\]
+and
+\begin{equation*}
+\xymatrix{S_\ast(X)\otimes S_\ast(Y)\ar[r]^{\tau}\ar[d]^{\times} & S_\ast(Y)\otimes S_\ast(X)\ar[d]^{\times}\\
+S_\ast(X\times Y)\ar[r]^{T_\ast} & S_\ast(Y\times X)
+}\end{equation*}
+commute up to natural chain homotopy, where $\tau$ is as defined above on the tensor product and $TX\times Y\to Y\times X$ is the swap map.
+
+\begin{corollary}
+Suppose $R$ is a PID and $H_*(X;R)$ is free over $R$. 
+Then $ H_\ast(X;R)$ has the natural structure of a commutative graded coalgebra over $R$.
+\end{corollary}
+
+We could now just go on and talk about coalgebras. But they are less familiar,
+and available only if $H_\ast(X;R)$ is free over $R$. 
+So instead we're going to dualize,
+talk about cohomology, and get an algebra structure. Some say that cohomology is better because you have algebras, but that's more of a sociological statement than a mathematical one.
+
+Let's get on with it.
+\begin{definition}
+Let $N$ be an abelian group. A {\em singular} $n$-{\em cochain} on $X$ with values in $N$ is a function $\Sin_n(X)\to N$. 
+\end{definition}
+If $N$ is an $R$-module, then I can extend linearly to get an $R$-module homomorphism $S_n(X;R)\to N$.
+\begin{notation}
+Write 
+\[
+S^n(X;N)=\Map(\Sin_n(X),N)=\Hom_R(S_n(X;R),N)\,.
+\]
+\end{notation}
+This is going to give us something contravariant, that's for sure. But we 
+haven't quite finished dualizing. The differential 
+$d:S_{n+1}(X;N)\to S_n(X;R)$ 
+induces a ``coboundary map'' 
+\[
+d:S^n(X;N)\to S^{n+1}(X;N)
+\]
+defined by
+\[
+(df)(\sigma)=(-1)^{n+1}f(d\sigma)\,.
+\]
+The sign is a little strange, and we'll see an explanation in a minute.
+Anyway, we get a ``cochain complex,'' with a differential that {\em increases}
+degree by 1. We still have $d^2=0$, since
+\[
+(d^2f)(\sigma)=\pm d(f(d\sigma))=\pm f(d^2\sigma)=\pm f(0)=0\,,
+\]
+so we can still take homology of this cochain complex. 
+\begin{definition}
+The $n$th {\em singular cohomology group} of $X$ with coefficients in an abelian group $N$ is 
+\[
+H^n(X;N)=
+\frac{\ker(S^n(X;N)\to S^{n+1}(X;N))}{\img(S^{n-1}(X;N)\to S^n(X;N))}\,.
+\]
+\end{definition}
+
+Let's first compute $H^0(X;N)$. A $0$-cochain is a function $\Sin_0(X)\to N$;
+that is, a function (not required to be continuous!) $f:X\to N$. To compute 
+$df$, take a $1$-simplex $\sigma:\Delta^1\to X$ and evaluate $f$ 
+on its boundary:
+\[
+(df)(\sigma)=-f(d\sigma)=-f(\sigma(e_0)-\sigma(e_1))=
+f(\sigma(e_1))-f(\sigma(e_0))\,.
+\]
+So $f$ is a co{\em cycle} if it's constant on path components. That is to say:
+\begin{lemma}
+$H^0(X;N)=\mathrm{Map}(\pi_0(X),N)$.
+\end{lemma}
+\begin{warning}
+$S^n(X;\Z)=\Map(\Sin_n(X);\Z)=\prod_{\Sin_n(X)}\Z$, which is probably an uncountable product. An awkward fact is that this is never free abelian.
+\end{warning}
+
+The first thing a cohomology class does is to give a linear functional
+on homology, by ``evaluation.'' Let's spin this out a bit. 
+
+We want to tensor together cochains and chains. But to do that we should make
+the differential in $S^*(X)$ go down, not up. Just as a notational matter, 
+let's write
+\[
+S^\vee_{-n}(X;N)=S^n(X;N)
+\]
+and define a differential $d:S^\vee_{-n}(X)\to S^\vee_{-n-1}(X)$ to be the
+differential $d:S^n(X)\to S^{n+1}(X)$. Now $S^\vee_\ast(X)$ is a chain
+complex, albeit a negatively graded one. Form the graded tensor product, with
+\[
+\left(S^\vee_\ast(X;N)\otimes S_\ast(X)\right)_n=
+\bigoplus_{p+q=n}S^\vee_p(X;N)\otimes S_q(X)\,.
+\]
+
+Now evaluation is a degree zero chain map
+\[
+\langle-,-\rangle:S^\vee_\ast(X;N)\otimes S_\ast(X)\to N\,,
+\]
+where $N$ is regarded as a chain complex concentrated in degree 0.
+We would like this map to be a chain map. So let $f\in S^n(X;N)$ and 
+$\sigma\in S_n(X)$, and compute
+\[
+0 = d\langle f,\sigma\rangle=
+\langle df,\sigma\rangle+(-1)^n\langle f,d\sigma\rangle\,.
+\]
+This forces 
+\[
+(df)(\sigma)=\langle df,\sigma\rangle=-(-1)^nf(d\sigma)\,.
+\]
+
+Here's the payoff: There's a natural map 
+\[
+H_{-n}(S^\vee_\ast(X;N))\otimes H_n(S_\ast(X))\to 
+H_0\left(S^\vee_\ast(X;N)\otimes S_\ast(X)\right)\to N
+\]
+This gives us the {\em Kronecker pairing}
+\[
+\langle-,-\rangle:H^n(X;N)\otimes H_n(X)\to N\,.
+\]
+
+We can develop the properties of cohomology in analogy with properties
+of homology. For example:
+If $A\subseteq X$, there is a restriction map $S^n(X;N)\to S^n(A;N)$, induced by the injection $\Sin_n(A)\hookrightarrow \Sin_n(X)$. 
+And as long as $A$ is nonempty, we can split this injection, so any function $\Sin_n(A)\to N$ extends to $\Sin_n(X)\to N$. This means that $S^n(X;N)\to S^n(A;N)$ is surjective. (This is the case if $A=\varnothing$, as well!) 
+\begin{definition} The {\em relative} $n$-{\em cochain group} with coefficients in $N$ is
+\[
+\ker\left(S^n(X;N)\to S^n(A;N)\right)\,.
+\]
+This defines a sub cochain complex of $S^\ast(X;N)$, and we define
+\[
+H^n(X,A;N)=H^n(S^\ast(X,A;N))\,.
+\]
+\end{definition}
+
+The short exact sequence of cochain complexes
+\[
+0\to S^\ast(X,A;N)\to S^\ast(X;N)\to S^\ast(A;N)\to0
+\]
+induces the {\em long exact cohomology sequence}
+\begin{equation*}
+\xymatrix{
+	\cdots & & \\
+	 H^1(X,A;N)\ar[r] & H^1(X;N)\ar[r] & H^1(A;N)\ar[ull]_{\delta}\\
+	 H^0(X,A;N)\ar[r] & H^0(X;N)\ar[r] & H^0(A;N)\ar[ull]_{\delta}\,.
+}
+\end{equation*}
+

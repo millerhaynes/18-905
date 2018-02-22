@@ -1,0 +1,199 @@
+\section{Hom and Lim}\label{limits}
+
+We will now deveop more properties of the tensor product: its relationship to
+homomorphisms and to direct limits. 
+
+The tensor product arose in our study of bilinear maps. Even more natural are
+{\em linear maps}. Given a commutative ring $R$ and two $R$-modules $M$ and 
+$N$, we can think about the collection of all $R$-linear maps from $M$ to $N$.
+Not only does this set form an abelian group (under pointwise addition of 
+homomorphisms); it forms an $R$-module, with
+\[
+(rf)(y)=f(ry)=rf(y)\,,\quad r\in R,\, y\in M\,.
+\]
+The check that this is again an $R$-module homomorphism uses commutativity of
+$R$. We will write $\underline{\mathrm{Hom}}_R(M,N)$, or just $\Hom(M,N)$, 
+for this $R$-module. 
+
+Since $\Hom(M,N)$ is an $R$-module, we are entitled to think about what 
+an $R$-module homomorphism into it is. Given 
+\[
+f:L\to\Hom(M,N)
+\]
+we can define a new function 
+\[
+\hat f:L\times M\to N\,,\quad \hat f(x,y)=(f(x))(y)\in N\,.
+\]
+You should check that this new function $\hat f$ is $R$-bilinear! So we get 
+a natural map
+\[
+\Hom(L,\Hom(M,N))\to\Hom(L\otimes M,N)\,.
+\]
+
+Conversely, given a map $\hat f:L\otimes M\to N$ and $x\in L$, we can define
+$f(x):M\to N$ by the same formula. These are inverse operations, so:
+\begin{lemma}
+The natural map $\Hom(L,\Hom(M,N))\to\Hom(L\otimes M,N)$ is an isomorphism.
+\end{lemma}
+
+One says that $\otimes$ and $\Hom$ are {\em adjoint}, a word suggested by 
+Sammy Eilenberg to Dan Kan, who first formulated this relationship between
+functors. 
+
+This relationship makes a number of things obvious. For example, it's clear 
+that 
+\[
+\Hom(\bigoplus_\alpha M_\alpha,N)=\prod_\alpha\Hom(M_\alpha,N)
+\]
+and this implies that the tensor product distributes over arbitrary
+direct sums. We'll see another example in a minute. 
+
+The second thing we will discuss is a generalization of one perspective on
+how the rational numbers are constructed from the integers -- by a limit 
+process: there are compatible maps in the diagram 
+\[
+\xymatrix{
+\Z \ar[r]^2 \ar[d]^1 & \Z \ar[r]^3 \ar[dl]^{1/2} & \Z \ar[r]^4 \ar[dll]^{1/3!}
+& \Z \ar[r]^5 \ar[dlll]^{1/4!} & \cdots \\
+\QQ 
+}\]
+and $\QQ$ is the ``universal,'' or ``initial,'' abelian group you can put
+in that position. 
+
+We will formalize this process, using partially ordered sets as indexing sets.
+Recall that a {\em partially ordered set}, or {\em poset}, is a small category $\cI$ such that $\#\cI(i,j)\leq 1$ and the only isomorphisms are the identity maps. We will be interested in a particular class of posets.
+\begin{definition}
+A poset $(\cI,\leq)$ is \emph{directed} if for every $i,j$, there exists a $k$ such that $i\leq k$ and $j\leq k$.
+\end{definition}
+\begin{example}
+This is a very common condition.
+For example, the natural numbers $\NN$ with inequality. Another example: if $X$ is a space and $I$ is the set of open subsets of $X$. It's directed by saying that $U\leq V$ if $U\subseteq V$. This is because $U,U^\prime$ need not be comparable, but $U,U^\prime\subseteq U\cup U^\prime$. Another example is the positive natural numbers, with $i\leq j$ if $i|j$. This is because $i,j|(ij)$.
+\end{example}
+\begin{definition}
+Let $\cI$ be a directed set. An $\cI$-{\em directed diagram} in  a category $\cc$ is a functor $\cI\to\cc$. This means that for every $i\in \cI$ we are given an object $X_i\in\cc$, and for every $i\leq j$ we are given a map $X_i\xrightarrow{f_{i,j}} X_j$, in such a way that $f_{i,i}=1_{X_i}$ and if $i\leq j\leq k$
+then $f_{i,k}=f_{j,k}\circ f_{i,j}:X_i\to X_k$. 
+\end{definition}
+\begin{example}\label{linear}
+If $\cI=(\NN,\leq)$, then you get a ``linear system'' $X_0\xrightarrow{f_{01}}X_1\xrightarrow{f_{12}}X_2\to\cdots$. 
+\end{example}
+\begin{example}
+Suppose $\cI=(\NN_{>0},|)$, i.e., the third example above. You can consider $\cI\to\mathbf{Ab}$, say assigning to each $i$ the integers $\Z$, and $f_{ij}:\Z\xrightarrow{j/i}\Z$. This seems like a more ``choice-free'' way to get at a construction of $\QQ$ out of $\ZZ$. 
+\end{example}
+These directed systems can be a little complicated. But there's a simple one, namely the constant one. 
+\begin{example}
+Let $\cI$ be any directed system. Any object $A\in\cc$ determines an $\cI$-directed set, namely the constant functor $c_A:\cI\to\cc$.
+\end{example}
+Not every directed system is constant, but we can try to find a best approximating constant system. To compare systems, we need morphisms. 
+Of course, $\cI$-directed systems in $\cc$ are functors $\cI\to\cc$. They have natural transformations, and those are the morphisms in the category of $\cI$-directed systems. That is to say, a morphism is a choice of map $g_i:X_i\to Y_i$, for each $i\in\cI$, such that 
+\begin{equation*}
+\xymatrix{X_i\ar[r]\ar[d]^{g_i} & X_j\ar[d]^{g_j}\\
+Y_i\ar[r] & Y_j}
+\end{equation*}
+commutes for all $i\leq j$.
+
+\begin{definition}
+Let $X:\cI\to\cc$ be a directed system.
+A {\em direct limit} is an object $L$ and a map $X\to c_L$ that is initial among maps to constant systems. This means that given any other map to a constant system, say $X\to c_A$, there is a unique map $f:L\to A$ such that 
+\[
+\xymatrix@R=8pt{
+& c_L \ar[dd]^{c_f} \\
+X \ar[ur] \ar[dr] \\
+& c_A
+}\]
+commutes.
+\end{definition}
+This is a universal property. So two different direct limits are canonically isomorphic; but a directed system may fail to have a direct limit. For example, the linear directed systems we used to creat the rational numbers exist in the category of finitely generated abelian groups; but $\QQ$ is not finitely generated, and there's no finitely generated group that will serve as a direct limit in the category of finitely generated abelian groups. 
+\begin{example}
+Suppose we have an increasing sequence of subspaces, 
+$X_0\subseteq X_1\subseteq\cdots\subseteq X$. This gives us a directed system
+of spaces, directed by the poset $(\NN,\leq)$. It's pretty clear that as a 
+{\em set} the direct limit of this system is the union of the subspaces. 
+Suppose that union is $X$. Then saying that $X$ is the direct limit of this 
+directed system of spaces is saying that the topology on $X$ is determined
+by the topology on the subspaces; it's the ``weak topology,'' characterized
+by the property that a map $f:X\to Y$ is continuous if and only if the 
+restriction of $f$ to each $X_n$ is continuous. This is saying that a subset 
+of $X$ is open if and only if its intersection with each $X_n$ is open in $X$.
+\end{example}
+Direct limits may be constructed from the material of coproducts and quotients. So suppose $X:\cI\to\cc$ is a directed system. To construct the direct limit, begin by forming the coproduct over the elements of $\cI$,
+\[
+\coprod_{i\in\cI}X_i\,.
+\]
+There are maps $\mathrm{in}_i:X_i\to\coprod X_i$, but they are not yet compatible with the order relation in $\cI$. Form a quotient of the coproduct to enforce that compatibility: 
+\[
+\varinjlim_{i\in\cI}X_i=\left(\coprod_{i\in\cI}X_i\right)/\sim
+\]
+where $\sim$ is the equivalence relation generated by requiring that 
+for any $i\in\cI$ and any $x\in X_i$, 
+\[
+\mathrm{in}_ix\sim\mathrm{in}_j f_{ij}(x)\,.
+\]
+The process of forming the coproduct and the quotient will depend upon the 
+category you are working in, and may not be possible. 
+In sets, coproduct is disjoint union and the
+quotient just forms equivalence classes. In abelian groups, the coproduct
+is the direct sum and to form the quotient you divide by the subgroup 
+generated by differences. 
+
+\begin{prop}
+Let $\cI$ be a direct set, and let $M:\cI\to\mathbf{Mod}_R$ be a $\cI$-directed system of $R$-modules. There is a natural isomorphism 
+\[
+(\varinjlim_I M_i)\otimes_R N\cong \varinjlim_I (M_i\otimes_R N)\,.
+\]
+\end{prop}
+\begin{proof}
+Let's verify that both sides satisfy the same universal property. 
+A map from $\varinjlim_I M_i)\otimes_R N$ to an $R$-module $L$ is the same
+thing as a linear map $\varinjlim_IM_i\to\Hom_R(N,L)$. This is the same as
+a compatible family of maps $M_i\to\Hom_R(N,L)$, which in turn is the same
+as a compatible family of maps $M_i\otimes_RN\to L$, which is the same as
+a linear map $\varinjlim_I(M_i\otimes_RN)\to L$. 
+\end{proof}
+
+Here's a lemma that lets us identify when a map to a constant functor is a
+direct limit.
+\begin{lemma}
+Let $X:\cI\to\mathbf{Ab}$ (or $\mathbf{Mod}_R$). A map $f:X\to c_L$ (given
+by $f_i:X_i\to L$ for $i\in\cI$) is the direct limit if and only if:
+\begin{enumerate}
+\item For every $x\in L$, there exists an $i$ and an $x_i\in X_i$ such that $f_i(x_i)=x$.
+\item Let $x_i\in X_i$ be such that $f_i(x_i)=0$ in $L$. Then there exists some $j\geq i$ such that $f_{ij}(x_i)=0$ in $X_j$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Straightforward.
+\end{proof}
+This lemma generalizes the observation that $\QQ$ is the colimit of the diagram we drew above for $\cI=(\NN_{>0},|)$. 
+\begin{prop}
+The direct limit functor $\varinjlim_I:\Fun(\cI,\mathbf{Ab})\to\mathbf{Ab}$ is exact. In other words, if $X\xrightarrow{p}Y\xrightarrow{q}Z$ is an exact sequence of $\cI$-directed systems (meaning that at every degree we get an exact sequence of abelian groups), then $\varinjlim_IX\rightarrow \varinjlim_IY\rightarrow\varinjlim_IZ$ is exact.
+\end{prop}
+\begin{proof}
+First of all, $pi:X\to Z$ is zero, which is to say that it factors through the constant zero object, so $\varinjlim_IX\to \varinjlim_I Z$ is certainly the zero map. Let $y\in \varinjlim_IY$, and suppose $y$ maps to $0$ in $\varinjlim_IZ$. By condition (1), there exists $i$ such that $y=f_i(y_i)$ for some $y_i\in Y_i$. Then $0=q(y)=f_iq(y_i)$ because $q$ is a map of direct systems. This means that there is $j\geq i$ such that $f_{ij}q(y_i)=0$ in $Z_j$. So $qf_{ij}y_i=0$,
+again because $q$ is a map of direct systems. We have an element in $Y_j$ that maps to zero under $q$, so there is some $x_j\in X_j$ such that $p(x_j)=y_j$.
+Then $f_j(x_j)\in \varinjlim_IX$ maps to $y$.
+\end{proof}
+
+The exactness of the direct limit has many useful consequences. For example:
+\begin{corollary}
+Let $i\mapsto C(i)$ be a directed system of chain complexes. 
+Then there is a natural isomorphism 
+\[
+\varinjlim_{i\in\cI} H_*(C(i))\to H_*(\varinjlim_{i\in\cI}C(i))\,.
+\]
+\end{corollary}
+Putting together things we have just said: 
+\begin{corollary}
+$H_*(X;\QQ)=H_*(X)\otimes\QQ$.
+\end{corollary}
+So we can redefine the Betti numbers of a space $X$ as 
+\[
+\beta_n=\dim_\QQ H_n(X;\QQ)
+\]
+and discuss the Euler characteristic entirely in terms of the rational vector
+spaces making up the rational homology of $X$. 
+
+
+
+
+
+

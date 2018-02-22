@@ -1,0 +1,124 @@
+\section{The Eilenberg Steenrod axioms and the locality principle}
+
+
+Before we proceed to prove the excision theorem, let's review the properties of homology theory as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod. 
+\begin{definition}
+A {\em homology theory} (on $\mathbf{Top}$) is:
+\begin{itemize}
+\item a sequence of functors $h_n:\mathbf{Top}_2\to\mathbf{Ab}$ for all $n\in\ZZ$ and
+\item a sequence of natural transformations $\partial:h_n(X,A)\to h_{n-1}(A,\varnothing)$
+\end{itemize}
+such that:
+\begin{itemize}
+\item if $f_0,f_1:(X,A)\to (Y,B)$ are homotopic, then $f_{0,\ast}=f_{1,\ast}:h_n(X,A)\to h_n(Y,B)$.
+\item excisions induce isomorphisms.
+\item for any pair $(X,A)$, the sequence 
+\begin{equation*}
+\cdots\to h_{q+1}(X,A)\xrightarrow{\partial}h_q(A)\to h_q(X)\to h_q(X,A)\xrightarrow{\partial}\cdots
+\end{equation*}
+is exact, where we have written $h_q(X)$ for $h_q(X,\varnothing)$.
+\item (the dimension axiom): $h_n(\ast)$ is nonzero only in dimension zero. 
+\end{itemize}
+\end{definition}
+We add the following ``Milnor axiom'' to our definition. To state it,
+let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct. 
+\[
+\alpha:\bigoplus_i h_n(X_i)\to h_n\left(\coprod_{i\in I} X_i\right)\,.
+\]
+Then:
+\begin{itemize}
+\item The map $\alpha$ is an isomorphism for all $n$.
+\end{itemize}
+
+Ordinary singular homology satisfies these, with $h_0(\ast)=\ZZ$. We will soon add ``coefficents'' to homology, producing a homology theory whose value on a point is any prescribed abelian group. In later developments, it 
+emerges that the dimension axiom is rather like the parallel postulate
+in Euclidean geometry: it's ``obvious,'' but, as it turns out, the remaining
+axioms accomodate extremely interesting alternatives, in which
+$h_n(*)$ is nonzero for infinitely many values of $n$ (both positive and negative). 
+
+\bigskip
+Excision is a statement that homology is ``localizable.'' To make this precise, we need some definitions. 
+
+\begin{definition}
+Let $X$ be a topological space. A family $\mathscr{A}$ of subsets of $X$ is a
+{\em cover} if $X$ is the union of the interiors of elements of $\mathscr{A}$. 
+\end{definition}
+\begin{definition}
+Let ${\mathscr{A}}$ be a cover of $X$. An $n$-simplex $\sigma$ is ${\mathscr{A}}$-small if there is $A\in \mathscr{A}$ such that the image of $\sigma$ is entirely in $A$.
+\end{definition}
+Notice that if $\sigma:\Delta^n\to X$ is ${\mathscr{A}}$-small, then so is $d^i\sigma$; in fact, for any simplicial operator $\phi$, $\phi^*\sigma$ is again $\mathscr{A}$-small. Let's denote by $\Sin^{\mathscr{A}}_*(X)$ the graded set of ${\mathscr{A}}$-small simplices. This us a sub-simplicial set of $\Sin_*(X)$.
+Applying the free abelian group functor, we get the subcomplex 
+\[
+S^{\mathscr{A}}_\ast(X)
+\]
+of $\mathscr{A}$-{\em small simplices}. Write $H^{\mathscr{A}}_*(X)$ for its
+homology.
+\begin{theorem}
+The inclusion $S^\mathscr{A}_\ast(X)\subseteq S_\ast(X)$ is a chain homotopy equivalence, so $H^\mathscr{A}_\ast(X)\to H_\ast(X)$ is an isomorphism.
+\end{theorem}
+This will take a little time to prove. Let's see right now how it implies excision.
+
+Suppose $X\supset A\supset U$ is excisive, so that 
+$\overline U\subseteq\mathrm{Int}A$, or $\mathrm{Int}(X-U)\cup\mathrm{Int}A=X$.
+This if we let $B=X-U$, then $\mathscr{A}=\{A,B\}$ is a cover of $X$. 
+Rewriting in terms of $B$,
+\[
+(X-U,A-U)=(B,A\cap B)\,,
+\]
+so we aim to show that 
+\[
+S_*(B,A\cap B)\rightarrow S_*(X,A)
+\]
+induces an isomorphism in homology. We have the following diagram of chain complexes with exact rows:
+\[
+\xymatrix{
+0 \ar[r] & S_*(A) \ar[d]^= \ar[r] & S^{\mathscr{A}}_*(X) \ar[d]\ar[r] &
+S^{\mathscr{A}}_*(X)/S_*(A) \ar[d]\ar[r] & 0 \\
+0 \ar[r] & S_*(A) \ar[r] & S_*(X) \ar[r] & S_*(X,A) \ar[r] & 0 
+}\]
+The middle vertical induces an isomorphism in homology by the locality principle, so the homology long exact sequences combine with the five-lemma to show that the right hand vertical is also a homology isomorphism. But 
+\[
+S^{\mathscr{A}}_n(X)=S_n(A)+S_n(B)\subseteq S_n(X)\,
+\]
+and a simple result about abelian groups provides an isomorphism
+\[
+\frac{S_n(B)}{S_n(A\cap B)}=
+\frac{S_n(B)}{S_n(A)\cap S_n(B)}\xrightarrow{\cong}
+\frac{S_n(A)+S_n(B)}{S_n(A)}
+=\frac{S_n^{\mathscr{A}}(X)}{S_n(A)}\,,
+\]
+so excision follows.
+
+This case of a cover with two elements leads to another expression of 
+excision, known as the ``Mayer-Vietoris sequence.'' In describing it we will
+use the following notation for the various inclusion.
+\begin{equation*}
+\xymatrix{A\cap B\ar[r]^{j_1}\ar[d]^{j_2} & A\ar[d]^{i_1}\\
+B\ar[r]_{i_2} & X}
+\end{equation*}
+\begin{theorem}[Mayer-Vietoris] 
+Assume that $\mathscr{A}=\{A,B\}$ is a cover of $X$. There are natural
+maps $\partial:H_n(X)\to H_{n-1}(A\cap B)$ such that the sequence
+\[
+\xymatrix{
+& \cdots \ar[r]^\beta & H_{n+1}(X) \ar[dll]_\partial \\
+H_n(A\cap B) \ar[r]^\alpha &
+H_n(A)\oplus H_n(B) \ar[r]^\beta & H_n(X) \ar[dll]_\partial \\
+H_{n-1}(A\cap B) \ar[r]^\alpha & \cdots 
+}\]
+is exact, where 
+\[ 
+\alpha=\left[\begin{array}{c}j_{1*}\\-j_{2*}\end{array}\right]\,,\quad
+\beta=[\,i_{1*}\quad i_{2*}\,]\,.
+\]
+\end{theorem}
+\begin{proof}
+This is the homology long exact sequence associated to the short exact sequence
+of chain complexes
+\[
+0\to S_*(A\cap B)\xrightarrow{\alpha}S_*(A)\oplus S_*(B)\xrightarrow{\beta}
+S^{\mathscr{A}}_*(X)\to0\,,
+\]
+combined with the locality principle.
+\end{proof}
+

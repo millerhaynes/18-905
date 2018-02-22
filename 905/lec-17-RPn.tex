@@ -1,0 +1,102 @@
+\section{Real projective space}
+
+
+Let's try to compute $H_\ast(\mathbf{RP}^n)$. This computation will invoke a 
+second way to think of the cellular chain group $C_n(X)$. Each cell has a 
+characteristic map $D^n\to X_n$, and we have the diagram
+\[
+\xymatrix{
+\coprod(D^n,S^{n-1}) \ar[r] \ar[dr] & (X_n,X_{n-1}) \ar[d] \\
+& (\bigvee S^{n-1},\ast).
+}\]
+We've shown that the vertical map induces an isomorphism in homology, and
+the diagonal does as well. (For example, $\coprod D^n$ has a CW structure 
+in which the $(n-1)$-skeleton is $\coprod S^{n-1}$.) So 
+\[
+H_n(\coprod(D_n,S^{n-1}))\xrightarrow{\cong}C_n(X).
+\]
+ 
+We have a CW structure on $\RP^n$ with $\mathrm{Sk}_k(\RP^n)=\RP^k$;
+there is one $k$-cell -- which we'll denote by $e_k$ -- for each $k$ between $0$ and $n$. So the cellular chain complex looks like this:
+\begin{equation*}
+\xymatrix{0  & C_0(\mathbf{RP}^n)\ar@{=}[d]\ar[l] & C_1(\mathbf{RP}^n)\ar@{=}[d]\ar[l] & \cdots\ar[l] & C_n(\mathbf{RP}^n)\ar@{=}[d]\ar[l] & 0 \ar[l]\\
+0 & \Z\langle e^0\rangle \ar[l] & \Z\langle e^1\rangle\ar[l]_{d=0} & \cdots\ar[l] & \Z\langle e^n\rangle\ar[l] & 0 \ar[l] }
+\end{equation*}
+The first differential is zero because we know what $ H_0(\mathbf{RP}^n)$ is (it's $\Z$!). The differential in the cellular chain complex is given by the top
+row in the following commutative diagram.
+\begin{equation*}
+\xymatrix{C_n= H_n(\mathbf{RP}^n,\mathbf{RP}^{n-1})\ar[r]^\partial & 
+H_{n-1}(\mathbf{RP}^{n-1}) \ar[r] \ar[dr] & 
+H_{n-1}(\mathbf{RP}^{n-1},\mathbf{RP}^{n-2})=C_{n-1} \ar[d]_{\cong} \\
+H_n(D^n,S^{n-1}) \ar[u]_\cong \ar[r]^\partial_\cong & 
+H_{n-1}(S^{n-1}) \ar[u]_{\pi_*} \ar[r] & H_{n-1}(D^{n-1}/S^{n-2},\ast)\,.
+}
+\end{equation*}
+The map $\pi:S^{n-1}\to\RP^{n-1}$ is the attaching map of the top cell of $RP^n$; that is, the double cover. The diagonal composite pinches the subspace 
+$\RP^{n-1}$ to a point. The composite map $S^{n-1}\to D^{n-1}/S^{n-2}$ 
+factors as follows: 
+\begin{equation*}
+\xymatrix{S^{n-1}\ar[r]^{\text{double cover}}\ar[dr] & \mathbf{RP}^{n-1}\ar[r]^{\text{pinch}} & D^{n-1}/S^{n-2}\\
+ & S^{n-1}/S^{n-2}=S^{n-1}\vee S^{n-1}\ar[ur]}
+\end{equation*}
+One of the maps $S^{n-1}\to S^{n-1}$ from the wedge is the identity, and the other map is the antipodal map $\alpha:S^{n-1}\to S^{n-1}$. Write $\sigma$ for a generator of $ H_{n-1}(S^{n-1})$. Then in $H_{n-1}$ we have $\sigma\mapsto (\sigma,\sigma)\mapsto \sigma+\alpha_\ast\sigma$. So we need to know the degree of the antipodal map on $S^{n-1}$. The antipodal map reverses all $n$ coordinates in $\RR^n$. Each reversal is a reflection, and acts on $S^{n-1}$ by a map of degree $-1$. So 
+\[
+\deg\alpha=(-1)^n\,.
+\]
+Therefore the cellular complex of $\RP^n$ is as follows: 
+\begin{equation*}
+\xymatrix{\hbox{dim} & -1 & 0 & 1 & \cdots & n & n+1 & \cdots \\
+& 0 & \Z\ar[l]_0 & \Z\ar[l]_2 & \cdots\ar[l]_0 & \Z\ar[l]_{2\text{ or }0} & 0\ar[l] & \cdots\ar[l]}
+\end{equation*}
+The homology is then easy to read off.
+\begin{prop}
+The homology of real projective space is as follows.
+\begin{equation*}
+ H_k(\RP^n)=\begin{cases}
+\Z & k=0\text{ and }k=n\text{ odd}\\
+\Z/2\Z & k\text{ odd, }0<k<n\\
+0 & \text{otherwise}\,.
+\end{cases}
+\end{equation*}
+\end{prop}
+Here's a table. Missing entries are $0$.
+\[
+\xymatrix@R=8pt{
+\text{dim} & 0 & 1 & 2 & 3 & 4 & 5 & \cdots \\
+\RP^0 & \ZZ \\
+\RP^1 & \ZZ & \ZZ \\
+\RP^2 & \ZZ & \ZZ/2 \\
+\RP^3 & \ZZ & \ZZ/2 & 0 & \ZZ \\
+\RP^4 & \ZZ & \ZZ/2 & 0 & \ZZ/2 \\
+\RP^5 & \ZZ & \ZZ/2 & 0 & \ZZ/2 & 0 & \ZZ 
+}\]
+The moral: In real projective space, 
+odd cells create new generators; even cells (except for the zero-cell) create
+torsion in the previous dimension. 
+
+This example illustrates the significance of cellular homology, and, therefore,
+of singular homology. A CW structure involves attaching maps 
+\[
+\coprod S^{n-1}\to\Sk_n X\,.
+\]
+Knowing these, up to homotopy, determines the full homotopy type of the CW 
+complex. Homology does not record all this information. Instead, it records 
+only information about the composite obtaind by pinching out $\Sk_{n-1}X$.
+\[
+\xymatrix{ 
+\coprod_{a\in A_n} S^{n-1}_a \ar[r] \ar[dr] & \Sk_n X \ar[d] \\
+& \bigvee_{b\in A_{n-1}} S^{n-1}_b\,.
+}\]
+In $H_{n-1}$, this can be identified with a map
+\[
+\partial:\Z[A_n]\to\Z[A_{n-1}]
+\]
+that is none other than the differential in the cellular chain complex.
+
+The moral: homology picks off only the ``first order'' structure of a CW 
+complex. 
+
+On the other hand, we'll see in the next lecture that it does a very good job
+of that. 
+
+

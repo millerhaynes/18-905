@@ -1,0 +1,84 @@
+%\documentclass[10pt,a5paper]{memoir}
+\documentclass[11pt]{memoir}
+
+\usepackage[margin=1in]{geometry}
+%\usepackage[margin=0.75in]{geometry}
+\input{header1.tex}
+%\usepackage[urw-garamond]{mathdesign}
+
+
+
+\begin{document}
+\title{Algebraic Topology}
+\author{Lectures by Haynes Miller\\
+Notes based on live{\TeX}ed record made by Sanath Devalapurkar
+
+}
+%\date{Fall 2016 -- Spring 2017}
+
+\frontmatter
+
+\maketitle
+\input{preface.tex}
+\newpage
+\tableofcontents
+\newpage
+
+\mainmatter
+
+% The current division of labor is: John'll "work on the first part (like, most of 905)",
+% and skd will start off by editing/rewriting the whole of 906.
+%
+%\part{18.905: an introduction to algebraic topology}\label{905}
+
+\chapter{Singular homology}
+\input{905/lec-01-intro.tex}
+\input{905/lec-02-simplices.tex}
+\input{905/lec-03-categories.tex}
+\input{905/lec-04-more-on-categories.tex}
+\input{905/lec-05-homotopy.tex}
+\input{905/lec-06-homotopy-invariance.tex}
+\input{905/lec-07-eilenberg-zilber.tex}
+\input{905/lec-08-relative-homology.tex}
+\input{905/lec-09-long-exact.tex}
+\input{905/lec-10-excision.tex}
+\input{905/lec-11-eilenberg-steenrod.tex}
+\input{905/lec-12-subdivision.tex}
+\input{905/lec-13-locality.tex}
+
+\chapter{Computational methods}
+\input{905/lec-14-cw-complexes.tex}
+\input{905/lec-15-cw-complexes-2.tex}
+\input{905/lec-16-homology-cw-complexes.tex}
+\input{905/lec-17-RPn.tex}
+\input{905/lec-18-euler-char.tex}
+\input{905/lec-19-coefficients.tex}
+\input{905/lec-20-tensor-products.tex}
+\input{905/lec-21-tensor-and-tor.tex}
+\input{905/lec-22-more-on-tor.tex}
+\input{905/lec-23-direct-limits.tex}
+\input{905/lec-24-uct.tex}
+\input{905/lec-25-kunneth-eilenberg-zilber.tex}
+
+\chapter{Cohomology and duality}
+\input{905/lec-26-cohomology.tex}
+\input{905/lec-27-ext-cup-product.tex}
+\input{905/lec-28-uct-products-in-cohomology.tex}
+\input{905/lec-29-cup-products-contd.tex}
+\input{905/lec-30-surfaces-bilinear-forms.tex}
+\input{905/lec-31-orientation.tex}
+\input{905/lec-32-orientation-proof.tex}
+\input{905/lec-31-plethora-of-products.tex}
+\input{905/lec-32-cap-product-cech-cohomology.tex}
+\input{905/lec-33-fully-relative-cap-product.tex}
+\input{905/lec-34-cech-cohomology.tex}
+\input{905/lec-35-topological-manifolds.tex}
+\input{905/lec-36-fundamental-classes.tex}
+\input{905/lec-37-covering-spaces-poincare.tex}
+\input{905/lec-38-the-end-applications.tex}
+
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{main}
+
+\end{document}

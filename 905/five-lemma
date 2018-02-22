@@ -1,0 +1,36 @@
+
+
+This theorem will often be combined with the ``five lemma.''
+Suppose you have two exact sequences of abelian groups.
+\begin{equation*}
+\xymatrix{A_4\ar[r]^d\ar[d]^{f_4} & A_3\ar[r]^d\ar[d]^{f_3} & A_2\ar[r]^d\ar[d]^{f_2} & A_1\ar[r]^d\ar[d]^{f_1} & A_0\ar[d]^{f_0}\\
+B_4\ar[r]^d & B_3\ar[r]^d & B_2\ar[r]^d & B_1\ar[r]^d & B_0}
+\end{equation*}
+When can we guarantee that $f_2$ is an isomorphism? We're going to ``diagram chase.'' Just follow your nose, making assumptions as necessary.
+
+Surjectivity:
+Let $b_2\in B_2$. We want to show that there is something in $A_2$ mapping to $b_2$. We can consider $db_2\in B_1$. Let's assume that $f_1$ is surjective. Then there's $a_1\in A_1$ such that $f_1(a_1)=db_2$. What is $da_1$? Well, $f_0(da_1)=d(f_1(a_1))=d(db)=0$. So we want $f_0$ to be injective. Then $da_1$ is zero, so by exactness of the top sequence, there is some $a_2\in A_2$ such that $da_2=a_1$. What is $f_2(a_2)$? To answer this, begin by asking: What is $d(f_2(a_2))$? By commutativity, $d(f_2(a_2))=f_1(d(a_2))=f_1(a_1)=db_2$. Let's consider $b_2-f_2(a_2)$. This maps to zero under $d$. So by exactness, there is $b_3\in B_3$ such that $d(b_3)=b_2-f_2(a_2)$. If we assume that $f_3$ is surjective, then there is $a_3\in A_3$ such that $f_3(a_3)=b_3$. But now, $d(a_3)\in A_2$, and $f_2(d(a_3))=d(f_3(a_3))=b_2-f_2(a_2)$. This means that $b_2=f(a_2+d(a_3))$, which guarantees surjectivity of $f_2$. 
+
+This proves the first half of the following important fact.
+\begin{prop}[Five lemma]
+In the map of exact sequences above, 
+\begin{itemize}
+\item If $f_0$ is injective and $f_1$ and $f_3$ are surjective, then $f_2$ is surjective.
+\item If $f_4$ is surjective and $f_3$ and $f_1$ are injective, then $f_2$ is injective.
+\end{itemize}
+\end{prop}
+
+Very commonly one knows that $f_0,f_1,f_3$, and $f_4$ are all isomorphisms, 
+and concludes that $f_2$ is also an isomorphism. For example:
+\begin{corollary}
+Let 
+\[
+\xymatrix{
+0 \ar[r] & A'_* \ar[r] \ar[d]^f & B'_* \ar[r] \ar[d]^g & C'_* \ar[r] \ar[d]^h 
+& 0 \\
+0 \ar[r] & A_* \ar[r] & B_* \ar[r] & C_* \ar[r]  & 0 
+}\]
+be a map of short exact sequences of chain complexes. If two of the three maps induced by $f,g$, and $h$ are isomorphisms, then so is the third. 
+\end{corollary}
+
+

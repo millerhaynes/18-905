@@ -1,0 +1,19 @@
+
+\subsection{Homological algebra}
+\begin{enumerate}
+\item Suppose $A,B\subseteq C$ are abelian groups. Then $A+C\subseteq C$. You have a sexseq $0\to A\cap B\to A\oplus B\to A+C\to 0$ where the map $c\mapsto (c,-c)$ is how the map $A\cap B\to A\oplus B$ is defined.
+\item ``Fundamental isomorphism for abelian groups'' says the following. We have two sexseqs.
+	\begin{equation*}
+	\xymatrix{0\ar[r] & A\cap B\ar[r]\ar[d] & B\ar[r]\ar[d] & B/A\cap B\ar[r]\ar@{-->}[d]^\cong & 0\\
+	0\ar[r] & A\ar[r] & A+B\ar[r] & (A+B)/A\ar[r] & 0}
+	\end{equation*}
+	I'm not going to write out the diagram chase that we did.
+\item ``Snake lemma''. Suppose I have\footnote{``It's my Turn'', Jill Clayburgh}:
+	\begin{equation*}
+	\xymatrix{ & \ker f^\prime\ar[r]\ar[d] & \ker f\ar[r]\ar[d] & \ker f^{\prime\prime}\ar[d]\\
+	0\ar[r] & A^\prime\ar[r]\ar[d]^{f^\prime} & A\ar[r]\ar[d]^f & A^{\prime\prime}\ar[r]\ar[d]^{f^{\prime\prime}} & 0\\
+	0\ar[r] & B^\prime\ar[r]\ar[d] & B\ar[r]\ar[d] & B^{\prime\prime}\ar[r]\ar[d] & 0\\
+	 & \coker f^\prime\ar[r] & \coker f\ar[r] & \coker f^{\prime\prime}}
+	\end{equation*}
+	Claim is that there's a map $\ker f^{\prime\prime}\to\coker f$ so that $0\to \ker f^\prime\to \ker f\to \ker f^{\prime\prime}\to\coker f^\prime\to\coker f\to \coker f^{\prime\prime}\to 0$. This is basically the lexseq in homology associated to the sexseqs of the following three chain complexes: $0\to A^\prime\to B^\prime\to 0$, $0\to A\to B\to 0$, and $0\to A^{\prime\prime}\to B^{\prime\prime}\to 0$. Work this out yourself.
+\end{enumerate}

@@ -1,0 +1,74 @@
+\section{Proof of the orientation theorem}
+
+Recall the theorem:
+
+\begin{theorem}
+If $M$ is a compact $n$-manifold, $H_q(M;R)=0$ for $q>n$, and
+the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ is an isomorphism. 
+\end{theorem}
+
+The map $j$ assigns to a homology class $c\in H_n(M)$ the section
+of the orientation local system that takes on the value 
+$j_x(c)\in H_n(M,M-x)$ at $x\in M$ given by restriction. 
+
+The proof will proceed by an induction on subspaces of $M$. To make 
+this induction go, I need to make two refinements. 
+
+First, you can't expect $j$ to be surjective if $M$ isn't compact. 
+Here's why. Any homology class in $M$ is represented by a chain, and
+the union of images of the simplices making up that chain is a compact
+subset $K$ of $M$. If $x$ is outside of $K$, then $K\subseteq M-x$ and
+the restriction map factors as
+\[
+H_n(M)\to H_n(M,K)\to H_n(M,M-x)
+\]
+But since $c$ is in the image of $K$, it maps to zero in $H_n(M,K)$. 
+
+What this shows is that $j$ lands in the module of sections with ``compact
+support.''
+
+\begin{definition} Let $E$ be a local coefficient system over a space $X$. 
+The {\em support} of a section $\sigma$ is 
+\[
+\mathrm{supp}(\sigma)=\overline{\{x\in X:\sigma(x)\neq0\}}\,.
+\]
+The set of sections with compact support is a submodule 
+\[
+\Gamma_c(X;E)\subseteq\Gamma(X;E)\,.
+\]
+\end{definition}
+So $j:H_n(M;R)\to\Gamma_c(M;o_M\otimes R)$.
+
+The second refinement seems a little artificial, but it's part of the 
+inductive process. Let $A\subset M$ be a closed subset. If $x\in A$
+then $M-A\subseteq M-x$, and the inclusion inducing $j_x$ factors as
+\[
+(M,\varnothing)\hookrightarrow(M,M-A)\hookrightarrow(M,M-x)\,.
+\]
+Let $\Gamma(A;o_M)$ denote the module of sections of the restriction
+of $o_M$ to $A$, and $\Gamma_c(A;o_M)$ the submodule of such sections
+with compact support.  Then 
+\[
+j:H_n(M,M-A)\to\Gamma_c(A;o_M)\,.
+\]
+\begin{theorem} Let $M$ be any $n$-manifold and $A$ a closed subset of $M$.
+Then $H_q(M,M-A;R)=0$ for $q>n$, and the map 
+$j:H_n(M,M-A;R)\to\Gamma_c(A;o_M\otimes R)$ is an isomorphism.
+\end{theorem}
+Taking $A=M$, we find that $H_q(M;R)=0$ for $q>n$ and 
+\[
+j:H_n(M;R)\xrightarrow{\cong}\Gamma_c(M;o_M\otimes R)\,.
+\]
+This includes the theorem we stated at the outset. But it says something
+if $M$ is not compact, as well. If $M$ is connected and not compact, then 
+any compactly supported section must be zero somewhere, but then it is
+zero everywhere by unique path lifting. So in that case $H_n(M;R)=0$. 
+
+We will not prove this theorem for general closed subsets. 
+
+
+
+
+
+
+

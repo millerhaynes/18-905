@@ -1,0 +1,158 @@
+\section{Euler characteristic, and homology approximation}
+
+
+\begin{theorem} Let $X$ be a finite CW-complex with $a_n$ $n$-cells. Then 
+\[
+\chi(X)=\sum^\infty_{k=0}(-1)^k a_k
+\]
+depends only on the homotopy type of $X$; it is independent of the choice of
+CW structure. 
+\end{theorem}
+This integer $\chi(X)$ is called the {\em Euler characteristic} of $X$. We will prove this theorem by showing that $\chi(X)$ equals a number computed from the homology groups of $X$, which are themselves homotopy invariants. 
+
+We'll need a little bit of information about the structure of finitely generated abelian groups.
+
+Let $A$ be an abelian group. The set of {\em torsion} elements of $A$,
+\[
+\mathrm{Tors}(A)\{a\in A:na=0\,\,\text{for some}\,\,n\neq0\}\,,
+\]
+is a subgroup of $A$ (since $A$ is commutative). A group is \emph{torsion free}
+if $\mathrm{Tors}(A)=0$. For any $A$ the quotient group 
+$A/\mathrm{Tors}(A)$ is torsion free. 
+
+For a general abelian group, that's about all you can say. But now assume $A$ is finitely generated. Then $\mathrm{Tors}(A)$ is a finite abelian group and
+$A/\mathrm{Tors}(A)$ is a finitely generated free abelian group, isomorphic to $\Z^r$ for some integer $r$ called the \emph{rank} of $A$. Pick elements of
+$A$ that map to a set of generators of $A/\mathrm{Tors}(A)$, and use them
+to define a map $A/\mathrm{Tors}A\to A$ splitting the projection map. This shows that if $A$ is finitely generated then
+\[
+A\cong\mathrm{Tors}(A)\oplus\Z^r\,.
+\]
+
+A finite abelian group $A$ is necessarily of the form 
+\[
+\Z/n_1\oplus\Z/n_2\oplus\cdots\oplus\Z/n_t\,\,\hbox{where}\,\,
+n_1|n_2|\cdots|n_t\,.
+\]
+These are the ``torsion coefficients'' of $A$. They are well defined natural
+numbers.
+
+\begin{lemma} Let $0\to A\to B\to C\to 0$ be a short exact sequence of finitely
+generated abelian groups. Then
+\[
+\mathrm{rank}\,A-\mathrm{rank}\,B+\mathrm{rank}\,C=0\,.
+\]
+\end{lemma}
+
+\begin{theorem} Let $X$ be a finite CW complex. Then
+\[
+\chi(X)=\sum_k(-1)^k\mathrm{rank}\,H_k(X)\,.
+\]
+\end{theorem}
+
+\begin{proof}
+Pick a CW-structure with, say $a_k$ $k$-cells for each $k$. We have the 
+cellular chain complex $C_*$. Write $H_*,Z_*$, and $B_*$ for the homology,
+the cycles, and the boundaries, in this chain complex. From the definitions, 
+we have two families of short exact sequences: 
+\[
+0\to Z_k\to C_k\to B_{k-1}\to 0
+\]
+and
+\[
+0\to B_k\to Z_k\to H_k\to 0\,.
+\]
+Let's use them and facts about rank rewrite the alternating sum is:
+\begin{align*}
+\sum_k (-1)^ka_k & = \sum_k(-1)^k\mathrm{rank}(C_k)\\
+& = \sum_k(-1)^k(\mathrm{rank}\,(Z_k)+\mathrm{rank}\,(B_{k-1}))\\
+& = \sum_k(-1)^k(\mathrm{rank}\,(B_k)+\mathrm{rank}\,(H_k)+
+\mathrm{rank}\,(B_{k-1}))
+\end{align*}
+The terms $\mathrm{rank}\,B_k\,+\,\mathrm{rank}\,B_{k-1}$ cancel because it's an alternating sum. This leaves $\sum_k(-1)^k\mathrm{rank}\,H_k$. But $H_k= H_k^\text{sing}(X)$.
+\end{proof}
+
+In the early part of the 20th century, ``homology groups'' were not discussed. 
+It was Emmy Noether who first described things that way. Instead, 
+people worked mainly with the sequence of ranks, 
+\[
+\beta_k=\mathrm{rank}\,H_k(X)\,,
+\]
+which are known (following Poincar\'e) as the {\em Betti numbers} of $X$.
+
+Given a CW-complex $X$ of finite type, can we give a lower bound on the number of $k$-cells in terms of the homology of $X$? Let's see. $H_k(X)$ is finitely generated because $C_k(X)\hookleftarrow Z_k(X)\twoheadrightarrow H_k(X)$. Thus 
+\[
+H_k(X)=\bigoplus^{t(k)}_{i=1}\Z/n_i(k)\Z\oplus \Z^{r(k)}
+\]
+where the $n_1(k)|\cdots|n_{t(k)}(k)$ are the torsion coefficients of $H_k(X)$ 
+and $r(k)$ is the rank.
+
+The minimal chain complex with $H_k=\Z^r$ and $H_q=0$ for $q\neq k$ is just the chain complex with $0$ everywhere else except for $\Z^r$ in the $k$th degree. The minimal chain complex {\em of free abelian groups} with $ H_k=\Z/n\Z$ and $ H_q=0$ for $q\neq k$ is the chain complex with $0$ everywhere else except in dimensions $k+1$ and $k$, where we have $\Z\xrightarrow{n}\Z$ 
+These small complexes are called ``elementary chain complexes.''
+
+This implies that
+a lower bound on the minimal number of $k$-cells is 
+\[
+r(k)+t(k)+t(k-1)\,.
+\]
+The first two terms give generators for $H_k$, and the last gives relations
+for $H_{k-1}$.
+
+These elementary chain complexes can be realized as the reduced cellular chains of CW complexes (at least if $k>0$). A wedge of $r$ copies of $S^k$ has reduced cellular chains $\Z^r$ in dimension $k$ and 0 in other dimensions.
+To construct a CW complex with reduced chains $\Z\xrightarrow{n}\Z$ in dimensions $k+1$ and $k$, start with $S^k$ as $k$-skeleton and attach a $k+1$-cell
+by a map of degree $n$.
+For example, when $k=1$ and $n=2$, you have $\RP^2$. These CW complexes are
+called ``Moore spaces.''
+
+This maximally efficient construction of a CW complex in a homotopy type
+can in fact be achieved:
+
+\begin{theorem}[Wall]
+Let $X$ be a simply connected CW-complex of finite type. Then there exists a CW complex $Y$ with $r(k)+t(k)+t(k-1)$ $k$-cells, for all $k$, and a homotopy equivalence $Y\to X$.
+\end{theorem}
+
+We will prove this theorem in 18.906.
+
+The construction of Moore spaces can be generalized:
+\begin{prop} For any graded abelian group $A_*$ with $A_k=0$ for $k\leq0$, 
+there exists a CW complex $X$ with $\widetilde H_*(X)=A_*$.
+\end{prop}
+\begin{proof}
+Let $A$ be any abelian group. Pick generators for $A$. 
+They determine a surjection
+from a free abelian group $F_0$. The kernel of that surjection is free,
+being a subgroup of a free abelian group. Write $G_0$ for minimal set of
+generators of $F_0$, and $G_1$ for a minimal set of generators for $F_1$.
+
+Let $k\geq1$. Define $X_k$ to be the wedge of $|G_0|$ copies of $S^k$,
+so $H_k(X_k)=\Z^{|G_0|}$. Now define an attaching map 
+\[
+\alpha:\coprod_{b\in G_1} S^k_b\to X_k
+\]
+by specifying it on each summand $S^k_a$. The generator 
+$a\in G_1\subseteq F_1$ is given by a linear combination of the generators
+of $F_0$, say 
+\[
+b=\sum_{i=1}^s n_ia_i\,.
+\]
+Now map $S^k\to\bigvee^s S^k$ by pinching $(s-1)$ longitudes to points. 
+Map the $i$th sphere in the wedge to $S^k_{a_i}\subseteq X_k$ by a map of
+degree $n_i$. The map on the summand $S^k_a$ is then the composite of these 
+two maps,
+\[
+S^k_a\to\bigvee_i S^k_i\to\bigvee_a S^k_a
+\]
+Altogether, we get a map $\alpha$ that realizes $F_1\to F_0$ in $H_k$.
+So using it as an attaching map produces a CW complex $X$ with 
+$\widetilde H_q(X)=A$ for $q=k$ and 0 otherwise. Write $M(A,k)$ for 
+a CW complex pruduced in this way.
+
+Finally, given a graded abelian group $A_*$, for the wedge over $k$ of the
+spaces $M(A,k)$. 
+\end{proof}
+
+Such a space $M(A,k)$, with $\widetilde H_q(M(A,k))=A$ for $q=k$ and 0 
+otherwise, is called a {\em Moore space of type} $(A,k)$. 
+The notation is a bit deceptive, since $M(A,k)$ cannot be made into a functor
+$\mathbf{Ab}\to\mathrm{Ho}\mathbf{Top}$.
+
+

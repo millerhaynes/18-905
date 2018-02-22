@@ -1,0 +1,286 @@
+\section{Local coefficients and orientations}
+
+The fact that a manifold is locally Euclidean puts surprising constraints on
+its cohomology, captured in the statement of Poincar\'e duality.
+To understand how this comes about, we have to find ways to promote
+{\em local information} -- like the existence of Euclidean neighborhoods --
+to {\em global information} -- like restrictions on the structure of the
+cohomology. Today we'll study the notion of an orientation, which is the first 
+link between local and global.
+
+The local-to-global device relevant to this is the notion of a ``local
+coefficient system,'' which is based on the more primitive notion of a 
+covering space. We summarize that theory, since it is a prerequisite 
+of this course.
+
+\begin{definition}
+A continuous map $p:E\to B$ is a {\em covering space} if \\
+(1) every point pre-image is a discrete subspace of $E$, and \\
+(2) every $b\in B$ has a neighborhood $V$ admitting a map $p^{-1}(V)\to p^{-1}(b)$ such that the induced map
+\[
+\xymatrix{
+p^{-1}(V) \ar[rr]^\cong \ar[dr]^p && V\times p^{-1}(b) \ar[dl]_{\pr_1} \\
+& B
+}\]
+is a homeomorphism.
+\end{definition}
+The space $B$ is the ``base,'' $E$ the ``total space.''
+
+\begin{example} 
+A trivial example is given by the projection map $\pr_1:B\times F\to B$ where
+$F$ is discrete. A covering space of this form is said to be {\em trivial},
+so the covering space condition can be rephrased as ``locally trivial.'' 
+
+The first interesting example is the projection map
+$S^n\to \RP^n$ obtained by identifying antipodal maps on the sphere. 
+\end{example}
+
+This example generalizes in the following way. 
+\begin{definition} An action of a group $\pi$ on a space $X$ is
+{\em principal} or {\em totally discontinuous} (terrible language,
+since we are certainly assuming that every group element acts by
+homeomorphisms) provided every element $x\in X$ has a neighborhood
+$U$ such that the only time $U$ and $gU$ intersect is when $g=1$. 
+\end{definition}
+This is a strong form of ``freeness'' of the action. It is precisely
+what is needed to guarantee:
+\begin{lemma}
+If $\pi$ acts principally on $X$ then the orbit projection map
+$X\to \pi\backslash X$ is a covering space.
+\end{lemma} 
+
+It is not hard to use local triviality to prove the following:
+\begin{theorem}[Unique path lifting]
+Let $p:E\to B$ be a covering space, and $\omega:I\to B$ a path in the base.
+For any $e\in E$ such that $p(e)=\omega(0)$, there is a unique path 
+$\widetilde\omega:I\to E$ in $E$ such that $p\widetilde\omega=\omega$ and
+$\\widetilde\omega(0)=e$. 
+\end{theorem}
+
+This leads to a right action of $\pi_1(B,b)$ on $F=p^{-1}(b)$: Represent an 
+element of $\pi_1(B)$ by a path $\omega$; for an element $e\in p^{-1}(b)$
+let $\widetilde\omega$ be the lift of $\omega$ with $\widetilde\omega(0)=e$;
+and define 
+\[
+e\cdot[\omega]=\widetilde\omega(1)\in E\,.
+\]
+This element lies in $F$ because $\omega$ was a {\em loop}, ending at $b$. 
+One must check that this action by $[\omega]\in\pi_1(B,b)$ does not depend 
+upon the choice of representative $\omega$, and that we do indeed get an 
+{\em action}:
+\[
+e\cdot(ab)=(e\cdot a)\cdot b\,,\quad e\cdot1=e\,.
+\]
+
+Given a principal $\pi$-action on $X$, with orbit space $B$, 
+we can more than just form the orbit space!
+If we also have a right action of $\pi$ on a set $F$, we can form a new
+covering space over $B$ with $F$ as ``generic'' fiber. 
+Write $F\times_\pi X$ for the quotient of the product space $F\times X$ by 
+the equivalence relation
+\[
+(s,gx)\sim(sg,x)\,,\quad g\in\pi\,.
+\]
+The composite projection $F\times X\to X\to B$ factors through a map
+$F\times_\pi X\to B$, which is easily seen to be a covering space. 
+Any element $x\in X$ determines a homeomorphism 
+\[
+F\to p^{-1}p(x)\,\,\hbox{by}\,\, s\mapsto[s,x]\,.
+\]
+Of course $\ast\times_\pi X=B$, and if we let $\pi$ act on itself by
+right translation, $\pi\times_\pi X=X$. 
+
+Covering spaces of a fixed space $B$ form a category $\mathbf{Cov}_B$,
+in which a morphism $E'\to E$ is ``covering transformation,'' that is,
+a map $f:E'\to E$ making
+\[
+\xymatrix{
+E' \ar[rr]^f \ar[dr] && E \ar[dl] \\
+& B
+}\]
+commute. 
+Sending $p:E\to B$ to $p^{-1}(b)$ with its action by $\pi_1(B,b)$ gives
+a functor
+\[
+\mathbf{Cov}_B\to \mathbf{Set}\mathrm{-}\pi_1(B,b)
+\]
+to the category of right actions of $\pi_1(B,b)$ on sets. For connected
+spaces, this is usually an equivalence of categories. The technical
+assumption required is this: A space $B$ is {\em semilocally simply 
+connected} if is path connected and for every point $b$ and every 
+neighborhood $U$ of $b$, there exists a smaller neighborhood $V$ 
+such that $\pi_1(V,b)\to\pi_1(X,b)$ is trivial. This is a very weak
+condition! 
+
+\begin{theorem} Assume that $B$ is semi-locally simply connected.
+Then the functor 
+$\mathbf{Cov}_B\to\mathbf{Set}\mathrm{-}\pi_1(B,b)$ is an equivalence of 
+categories. 
+\end{theorem}
+
+This is another one of those perfect theorems in algebraic topology! 
+
+The covering space corresponding under this equivalence to the translation
+action of $\pi_1(B,b)$ on itself is the {\em universal cover} of $B$,
+denoted by $\widetilde B\to B$. Since the automorphism group of $\pi$ as
+a right $\pi$-set is $\pi$ (acting by left translation), the automorphism
+group of $\widetilde B\to B$ as a covering space of $B$ is $\pi_1(B,b)$. 
+This action is principal, and the covering space corresonding to 
+a $\pi_1(B,b)$-set $S$ is given by the balanced product 
+$S\times_{\pi_1(B,b)}\widetilde B$. 
+
+Covering spaces come up naturally in our study of topological manifolds. 
+For any space $X$, we can probe the structure of $X$ in the neighborhood
+of $x\in X$ by studying $H_*(X,X-x)$. By excision, this group depends only
+on the structure of $X$ ``locally at $x$'': For any neighborhood $U$ of $x$,
+excising the complement of $U$ gives an isomorphism
+\[
+H_*(U,U-x)\xrightarrow{\cong} H_*(X,X-x)\,.
+\]
+The graded $R$-module $H_*(X,X-x;R)$ is the {\em local homology of $X$ at}
+$x$. 
+
+When the space is an $n$-manifold -- let's write $M$ for it -- the local
+homology is very simple. It's nonzero only in dimension $n$. This has a
+nice immediate consequence, by the way: there is a well-defined 
+locally constant function
+$\dim:M\to\NN$, sending $x$ to the dimension in which $H_*(M,M-x)$ is 
+nontrivial. For an $n$-manifold, it's the constant function with value $n$.
+
+In fact the whole family of homology groups $H_n(M,M-x)$ 
+is ``locally constant.'' 
+This is captured in the statement that taken together, as $x$ varies over
+$M$, they constitute a covering space over $M$. So begin by defining
+\[
+o_M=\coprod_{x\in M}H_n(M,M-x)
+\]
+as sets.
+There is an evident projection map $p:o_M\to M$. We aim to put a topology on
+$o_M$ with the property that this map is a covering space. This will use
+an important map $j_{A,x}$, defined for any closed set $A\subseteq M$ 
+and $x\in A$ as the map induced by an inclusion of pairs: 
+\[
+j_x:H_n(M,M-A)\to H_n(M,M-x)
+\]
+Define a basis of opens $V_{U,x,\alpha}$ in $o_M$ 
+indexed by triples $(U,x,\alpha)$ where $U$ is 
+open in $M$, $x\in U$, and $\alpha\in H_n(M,M-\overline U)$:
+\[
+V_{U,x,\alpha}=\{j_x(\alpha):x\in U\}\,.
+\]
+Each $\alpha\in H_n(M,M-\overline U)$ thus defines a ``sheet'' of $o_M$
+over $U$. We leave it to you to check that this is indeed a covering space. 
+
+This covering space has more structure: each fiber is an abelian group,
+an infinite cyclic abelian group. These structures vary continuously 
+as you move from one fiber to another. To illuminate this structure,
+observe that the category $\mathbf{Cov}_B$ has finite products; they are
+given by the fiber product or pullback, $E'\times_BE\to B$. The empty
+product is the terminal object, $B\to B$. This lets us define an ``abelian
+group object'' in $\mathbf{Cov}_B$; it's an object $E\to B$ together with
+maps $E\times_BE\to E$ and $B\to E$ over $B$, satisfying some evident
+conditions that are equivalent to requiring that they render each fiber
+an abelian group. If you have a ring around you can also ask for a map
+$(B\times R)\times_BE\to E$ making each fiber an $R$-module. 
+
+The structure we  have defined is a {\em local coefficient system} (of 
+$R$-modules). We already have an example; if $M$ is an $n$-manifold, 
+we have the {\em orientation local system} $o_M$ over $M$. 
+
+It's useful to allow coefficients in a commutative ring $R$; so define
+$o_M\otimes R$ to be the local system of $R$-modules obtained by tensoring
+each fiber with $R$. 
+
+The classification theorem for covering spaces has as a corollary:
+\begin{theorem} 
+Let $B$ be path connected and semi-locally simply connected.
+Then forming the fiber over a point gives an equivalence of categories from
+the category of local coefficient systems of $R$-modules over $B$
+and the category of modules over the group algebre $R[\pi_1(B,b)]$. 
+\end{theorem}
+
+Our $R$-modules are quite simple: they are free of rank 1. Since any 
+automorphism of such an $R$-module is given by multiplication by a unit
+in $R$, we find that the local coefficient system is defined by 
+giving a homomorphism 
+\[
+\pi_1(B,b)\to R^\times
+\]
+or, what is the same, an element of $H^1(B;R^\times)$. 
+
+When $R=\Z$, this homomorphism
+\[
+w_1:\pi_1(B,b)\to\{\pm1\}
+\]
+is the ``first Stiefel-Whitney class.'' If it is trivial, you can pick
+consistent generators for $H_n(M,M-x)$ as $x$ runs over $M$: the manifold
+is ``orientable,'' and is {\em oriented} by one of the two possible choices. 
+If it is nontrivial, the manifold is {\em nonorientable}. I hope it's clear
+that the M\"obius band is nonorientable, and hence any surface containing
+the M\"obius band is as well. 
+
+The set of generators of the fibers of $o_M$ form a sub covering space, 
+a double cover of $M$. It is the ``orientation double cover.'' If $M$ is
+orientable (and connected) it is trivial; it consists of two copies of $M$. 
+An orientation consists in chosing one or the other of the components. 
+If $M$ is nonorientable (and connected) the orientation double cover is
+again connected. An interesting fact is that its total space is a manifold
+in its own right, and is orientable; in fact it carries a canonical 
+orientation. 
+
+When $R=\FF_2$, every manifold is orientable, and uniquely so, since 
+$\FF_2^\times=\{1\}$. 
+
+Now if $p:E\to B$ is a covering space, one of the things you may want to do 
+is consider a {\em section} of $p$; that is, a continuous function 
+$\sigma:B\to E$ such that $p\circ\sigma=1_B$. Write $\Gamma(B;E)$ for
+the set of sections of $p:E\to B$. Under the corresondence
+between covering spaces and actions of $\pi$, 
+\[
+\Gamma(B;E)=(p^{-1}(b))^{\pi_1(B,b)}\,,
+\]
+the fixed point set for the action of $\pi_1(B,b)$ on $p^{-1}(b)$. 
+If $E$ is a local system of $R$-modules, this is a sub $R$-module. 
+
+In these terms, an orientation is a section of the orientation double cover. 
+
+This relates to the ``globalization'' project we started out talking about. 
+A section over $B$ is in fact called a ``global section.'' In the case of
+the orientation local system, we have a canonical map
+\[
+j:H_n(M;R)\to \Gamma(M;o_M\otimes R)\,,
+\]
+described as follows. The value of $j(a)$ at $x\in M$ is the restriction
+of $a$ to $H_n(M,M-x)$. The first ``local-to-global'' theorem, 
+a special case of Poincar\'e duality, is this:
+\begin{theorem} 
+If $M$ is compact, the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ 
+is an isomorphism. 
+\end{theorem}
+
+We will prove this theorem in the next lecture.
+
+The representation of $\pi_1(B)$ on the fiber of $o_M\otimes R$ over $b$
+is given by the composite $\pi_1(B)\to\{\pm1\}\to R^\times$. If this is the
+trivial homomorphism, the fixed points of this representation on $R$ 
+form all of $R$. If not, the fixed points are the subgroup of $R$
+of elements of order 2, written $R[2]$.
+\begin{corollary}
+If $M$ is a compact and connected $n$-manifold, then 
+\[
+H_n(M;R)\cong\begin{cases}R & \hbox{if $M$ is orientable} \\ 
+R[2] & \hbox{if not}\,.
+\end{cases}
+\]
+\end{corollary}
+In the first case, a generator of $H_n(M;R)$ is a {\em fundamental class} 
+for the manifold. You should think of the manifold itself as a cycle
+representing this homology class. It is characterized as a class restricting
+to a generator of $H_n(M,M-x)$ for all $x$; this is saying that the cycle
+``covers'' the point $x$ once.
+
+The first isomorphism in the theorem 
+depends upon this choice of fundamental class. But in the second case,
+the isomorphism is canonical. Over $\FF_2$, any compact connected manifold 
+has a unique fundamental class, the generator of $H_n(M;\FF_2)=\FF_2$. 
+

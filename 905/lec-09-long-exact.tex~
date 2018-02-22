@@ -1,0 +1,148 @@
+\section{The homology long exact sequence}
+
+A pair of spaces $(X,A)$ gives rise to a short exact sequence of chain 
+complexes:
+\[
+0\to S_*(A)\to S_*(X)\to S_*(X,A)\to0\,.
+\]
+In homology, this will relate $H_*(A)$, $H_*(X)$, and $H_*(X,A)$. 
+
+To investigate what happens, let's suppse we have a general short exact 
+sequence of chain complexes,
+\[
+0\to A_*\to B_*\to C_*\to0\,,
+\]
+and investigate what happens in homology. 
+
+Here is an expanded part of this short exact sequence:
+\begin{equation*}
+\xymatrix{0\ar[r] & A_{n+1}\ar[r]^f\ar[d]^d & B_{n+1}\ar[r]^g\ar[d]^d & C_{n+1}\ar[r]\ar[d]^d & 0\\
+0\ar[r] & A_n\ar[r]^f\ar[d]^d & B_n\ar[r]^g\ar[d]^d & C_n\ar[r]\ar[d]^d & 0\\
+0\ar[r] & A_{n-1}\ar[r]^f & B_{n-1}\ar[r]^g & C_{n-1}\ar[r] & 0}
+\end{equation*}
+Clearly the composite $H(A_*)\to H_*(X)\to H_*(C)$ is trivial. Is this sequence
+exact?  
+Let $[b]\in H_n(B)$ such that $g([b])=0$. It's determined by some $b\in B_n$ such that $d(b)=0$. If $g([b])=0$, then there is some $\overline{c}\in C_{n+1}$ such that $d\overline{c}=gb$. Now, $g$ is surjective, so there is some $\overline{b}\in B_{n+1}$ such that $g(\overline{b})=\overline{c}$. Then we can consider $d\overline{b}\in B_n$, and $g(d(\overline{b}))=d(\overline{c})\in C_n$. What is $b-d\overline{b}$? This maps to zero in $C_n$, so by exactness there is some $a\in A_n$ such that $f(a)=b-d\overline{b}$. Is $a$ a cycle? Well, $f(da)=d(fa)=d(b-d\overline{b})=db-d^2\overline{b}=db$, but we assumed that $db=0$, so $f(da)=0$. This means that $da$ is zero because $f$ is an injection by exactness. Therefore $a$ is a cycle. What is $[a]\in H_n(A)$? Well, $f([a])=[b-d\overline{b}]=[b]$ because $d\overline{b}$ is a cycle. Is the composite $ H_n(A)\to H_n(B)\to H_n(C)$ zero? Yes, because the composite factors through zero. This proves exactness of $ H_n(A)\to H_n(B)\to H_n(C)$.
+
+On the other hand, $H_*(A)\to H_*(B)$ may fail to be injective, and 
+$H_*(B)\to H_*(C)$ may fail to be surjective. Instead:
+
+\begin{theorem}[homology long exact sequence]
+Let $0\to A_\ast\to B_\ast\to C_\ast\to 0$ be a short exact sequence of chain complexes. Then there is a natural homomorphism $\partial: H_n(C)\to H_{n-1}(A)$ such that the sequence 
+\begin{equation*}
+\xymatrix{ & \cdots & H_{n+1}(C) \ar[dll] \\
+ H_n(A)\ar[r] & H_n(B)\ar[r] & H_n(C)\ar[dll]_\partial\\
+ H_{n-1}(A)\ar[r] & \cdots & }
+\end{equation*}
+is exact.
+\end{theorem}
+\begin{proof}
+We'll construct $\partial$, and leave the rest as an exercise. Again:
+\begin{equation*}
+\xymatrix{0\ar[r] & A_{n+1}\ar[r]^f\ar[d]^d & B_{n+1}\ar[r]^g\ar[d]^d & C_{n+1}\ar[r]\ar[d]^d & 0\\
+0\ar[r] & A_n\ar[r]^f\ar[d]^d & B_n\ar[r]^g\ar[d]^d & C_n\ar[r]\ar[d]^d & 0\\
+0\ar[r] & A_{n-1}\ar[r]^f & B_{n-1}\ar[r]^g & C_{n-1}\ar[r] & 0}
+\end{equation*}
+Let $c\in C_n$ such that $dc=0$. The map $g$ is surjective, so pick a $b\in B_n$ such that $g(b)=c$. Then consider $db\in B_{n-1}$. But $g(d(b))=0=d(g(b))=dc$. So by exactness, there is some $a\in A_{n-1}$ such that $f(a)=db$. How many choices are there of picking $a$? One, because $a$ is injective. We need to check that $a$ is a cycle. What is $d(a)$? Well, $d^2b=0$, so $da$ maps to $0$ under $f$. But because $f$ is injective, $da=0$, i.e., $a$ is a cycle. This means we can define $\partial[c]=[a]$.
+
+To make sure that this is well-defined, let's make sure that this choice of homology class $a$ didn't depend on the $b$ that we chose. Pick some other $b^\prime$ such that $g(b^\prime)=c$. Then there is $a^\prime\in A_{n-1}$ such that $f(a^\prime)=db^\prime$. We want $a-a^\prime$ to be a boundary, so that $[a]=[a^\prime]$. We want $\overline{a}\in A_n$ such that $d\overline{a}=a-a^\prime$. Well, $g(b-b^\prime)=0$, so by exactness, there is $\overline{a}\in A_n$ such that $f(\overline{a})=b-b^\prime$. What is $d\overline{a}$? Well, $d\overline{a}=d(b-b^\prime)=db-db^\prime$. But $f(a-a^\prime)=b-b^\prime$, so because $f$ is injective, $d\overline{a}=a-a^\prime$, i.e., $[a]=[a^\prime]$. What else do I have to check? It's an exercise to check that $\partial$ as defined here is a homomorphism. Also, left as an exercise to check that this doesn't depend on $c\in[c]$, and that $\partial$ actually makes the exact sequence above exact.
+\end{proof}
+
+\begin{example} A pair of spaces $(X,A)$ gives rise to a natural long exact 
+sequence in homology:
+\begin{equation*}
+\xymatrix{ 
+& \cdots & H_{n+1}(X,A) \ar[dll]_\partial\\
+ H_n(A)\ar[r] & H_n(X)\ar[r] & H_n(X,A)\ar[dll]_\partial\\
+ H_{n-1}(A)\ar[r] & \cdots & 
+}\,.
+\end{equation*}
+\end{example}
+
+\begin{example} Let's think again about the pair $(D^n,S^{n-1})$. By homotopy invariance we know that $H_q(D^n)=0$ for $q>0$, since $D^n$ is contractible. So 
+\[
+\partial:H_q(D^n,S^{n-1})\to H_{q-1}(S^{n-1})
+\] 
+is an isomorphism for $i>1$. The bottom of the long exact sequence looks like 
+this: 
+\[
+\xymatrix{
+& 0 \ar[r] & H_1(D^n,S^{n-1}) \ar[lld] \\
+H_0(S^{n-1}) \ar[r] & H_0(D^n) \ar[r] & H_0(D^n,S^{n-1}) \ar[r] & 0
+}\]
+When $n>1$, both $S^{n-1}$ and $D^n$ are path-connected, so the map
+$H_0(S^{n-1})\to H_0(D^n)$ is an isomorphism, and 
+\[
+H_1(D^n,S^{n-1})=H_0(D^n,S^{n-1})=0\,.
+\]
+When $n=1$, we discover that
+\[
+H_1(D^1,S^0)=\mathbf{Z} \quad\hbox{and}\quad H_0(D^1,S^0)=0\,.
+\]
+The generator of $H_1(D^1,S^0)$ is represented by any 1-simplex 
+$\iota_1:\Delta^1\to D^1$ such that $d_0\iota=1$ and $d_1\iota=0$ (or vice 
+versa). 
+To go any further in this analysis, we'll need another tool, known as
+``excision.'' 
+\end{example}
+
+We can set this up for reduced homology (as in Lecture 5) as well. 
+Note that any map induces an isomorphism in $\widetilde S_{-1}$, so to
+a pair $(X,A)$ we can associate a short exact sequence
+\[
+0\to\widetilde S_*(A)\to\widetilde S_*(X)\to S_*(X,A)\to0
+\]
+and hence a long exact sequence 
+\begin{equation*}
+\xymatrix{ 
+& \cdots & H_{n+1}(X,A)\ar[dll]_\partial\\
+\widetilde H_n(A)\ar[r] & \widetilde H_n(X)\ar[r] & H_n(X,A)\ar[dll]_\partial\\\widetilde H_{n-1}(A)\ar[r] & \cdots &
+}\,.
+\end{equation*}
+
+The homology long exact sequence is often used in conjunction with 
+an elementary fact about a map between exact sequences known as the 
+{\em five lemma}.
+Suppose you have two exact sequences of abelian groups and a map between them
+-- a ``ladder'':
+\begin{equation*}
+\xymatrix{A_4\ar[r]^d\ar[d]^{f_4} & A_3\ar[r]^d\ar[d]^{f_3} & A_2\ar[r]^d\ar[d]^{f_2} & A_1\ar[r]^d\ar[d]^{f_1} & A_0\ar[d]^{f_0}\\
+B_4\ar[r]^d & B_3\ar[r]^d & B_2\ar[r]^d & B_1\ar[r]^d & B_0}
+\end{equation*}
+When can we guarantee that $f_2$ is an isomorphism? We're going to ``diagram chase.'' Just follow your nose, making assumptions as necessary.
+
+Surjectivity:
+Let $b_2\in B_2$. We want to show that there is something in $A_2$ mapping to $b_2$. We can consider $db_2\in B_1$. Let's assume that $f_1$ is surjective. Then there's $a_1\in A_1$ such that $f_1(a_1)=db_2$. What is $da_1$? Well, $f_0(da_1)=d(f_1(a_1))=d(db)=0$. So we want $f_0$ to be injective. Then $da_1$ is zero, so by exactness of the top sequence, there is some $a_2\in A_2$ such that $da_2=a_1$. What is $f_2(a_2)$? To answer this, begin by asking: What is $d(f_2(a_2))$? By commutativity, $d(f_2(a_2))=f_1(d(a_2))=f_1(a_1)=db_2$. Let's consider $b_2-f_2(a_2)$. This maps to zero under $d$. So by exactness, there is $b_3\in B_3$ such that $d(b_3)=b_2-f_2(a_2)$. If we assume that $f_3$ is surjective, then there is $a_3\in A_3$ such that $f_3(a_3)=b_3$. But now, $d(a_3)\in A_2$, and $f_2(d(a_3))=d(f_3(a_3))=b_2-f_2(a_2)$. This means that $b_2=f(a_2+d(a_3))$, which guarantees surjectivity of $f_2$. 
+
+This proves the first half of the following important fact.
+\begin{prop}[Five lemma]
+In the map of exact sequences above, 
+\begin{itemize}
+\item If $f_0$ is injective and $f_1$ and $f_3$ are surjective, then $f_2$ is surjective.
+\item If $f_4$ is surjective and $f_3$ and $f_1$ are injective, then $f_2$ is injective.
+\end{itemize}
+\end{prop}
+
+Very commonly one knows that $f_0,f_1,f_3$, and $f_4$ are all isomorphisms, 
+and concludes that $f_2$ is also an isomorphism. For example:
+\begin{corollary}
+Let 
+\[
+\xymatrix{
+0 \ar[r] & A'_* \ar[r] \ar[d]^f & B'_* \ar[r] \ar[d]^g & C'_* \ar[r] \ar[d]^h 
+& 0 \\
+0 \ar[r] & A_* \ar[r] & B_* \ar[r] & C_* \ar[r]  & 0 
+}\]
+be a map of short exact sequences of chain complexes. If two of the three maps induced in homology by $f,g$, and $h$ are isomorphisms, then so is the third. 
+\end{corollary}
+
+Here's an application.
+\begin{prop}
+Let $(A,X)\to(B,Y)$ be a map of pairs, and assume that an two of 
+$A\to B$, $X\to Y$, and $(X,A)\to(Y,B)$ induce isomorphims in homology. 
+Then the third one does as well.
+\end{prop}
+\begin{proof}
+Just apply the five lemma to the map between the two homology long exact 
+sequences.
+\end{proof}

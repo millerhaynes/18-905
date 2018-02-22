@@ -1,0 +1,23 @@
+
+Then, given a short exact sequence $0\to N'\to N\to N''\to0$, 
+we can form the following diagram, in which the top consists of the
+kernels of the vertical maps. 
+\[
+\xymatrix{
+& \Tor_1^R(M,N') \ar[d] \ar[r] & \Tor_1^R(M,N) \ar[d] \ar[r] & 
+\Tor_1^R(M,N'') \ar[d] \ar[r] & 0 \\
+0 \ar[r] & F_1\otimes_R N' \ar[d] \ar[r] & F_1\otimes_R N \ar[d] \ar[r] &
+F_1\otimes N'' \ar[d] \ar[r] & 0 \\
+0 \ar[r] & F_0\otimes_R N' \ar[d] \ar[r] & F_0\otimes_R N \ar[d] \ar[r] &
+F_0\otimes N'' \ar[d] \ar[r] & 0 \\
+& M\otimes_R N' \ar[d] \ar[r] & M\otimes_R N \ar[d] \ar[r] &
+M\otimes N'' \ar[d] 
+}\]
+The diagram confirms that $M\otimes N\to M\otimes N''$ is surjective, and the
+snake lemma gives us a 6-term exact sequence
+\[
+\xymatrix{
+0 \ar[r] & \Tor_1^R(M,N') \ar[r] & \Tor_1^R(M,N) \ar[r] & 
+\Tor_1^R(M,N'') \ar[dll] \\
+& M\otimes_R N' \ar[r] & M\otimes_R N \ar[r] & M\otimes N'' \ar[r] & 0 \,.
+}\]
