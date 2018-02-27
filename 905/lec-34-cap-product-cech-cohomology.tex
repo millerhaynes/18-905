@@ -58,16 +58,11 @@ reciprocity.''
 \end{proof}
 
 Here now is a statement of Poincar\'e duality. It deals with the 
-homological structure of compact topological manifolds. 
-The statement will use the notion of orientability, which we will 
-have more to say about. Since $M$ is locally Euclidean, excision guarantees 
-that for any $p\in M$ there is an isomorphism
-\[
-j_a:H_n(M,M-a;R)\leftarrow H_n(\RR^n,\RR^n-0;R)=R \,.
-\]
-An ``orientation'' is a choice of generators
-for these free $R$-modules that varies continuously with $a$. 
-With coefficients in $\FF_2$, any manifold is uniquely oriented. 
+homological structure of compact topological manifolds. We recall the
+notion of an orientation, and Theorem \ref{thm-orientation} asserting
+the existence of a fundamental class $[M]\in H_n(M;R)$ in a compact
+$R$-oriented $n$-manifold.
+
 \begin{theorem}[Poincar\'e duality]
 Let $M$ be a topological $n$-manifold that is compact and oriented with 
 respect to a PID $R$. Then there is a unique class $[M]\in H_n(M;R)$ that
@@ -85,7 +80,7 @@ satisfies this theorem.
 Our proof of Poincar\'e duality will be by induction. In order to make the
 induction go we will prove a substantially more general theorem, one that
 involves relative homology and cohomology. So we begin by understanding
-how the cup product behaves in relative homology.
+how the cap product behaves in relative homology.
 
 Suppose $A\subseteq X$ is a subspace. We have:
 \begin{equation*}
@@ -103,17 +98,16 @@ This chain map yields the {\em relative cap product}
 \[
 \cap: H^p(X)\otimes H_n(X,A)\to H_q(X,A)
 \]
-It renders $ H_\ast(X,A)$ a module for  $ H^\ast(X)$.
+It renders $ H_\ast(X,A)$ a module for the graded algebra $ H^\ast(X)$.
 
 
 I want to come back to an old question, about the significance of 
 relative homology. Suppose that $K\subset X$ is a subspace, and consider the
 relative homology $H_*(X,X-K)$. Since the complement of $X-K$ in $X$ is $K$,
 these groups should be regarded as giving information about $K$. If I enlarge
-$K$, I make $X-K$ smaller, $K\subseteq L\subseteq$ induces
-$H_*(X,X-L)\to H_*(X-K)$: the relative homology is {\em contravariant}
-in the variable $K$ (regarded as an element of the poset of subspaces of $X$,
-at least). 
+$K$, I make $X-K$ smaller: $K\subseteq L$ induces
+$H_*(X,X-L)\to H_*(X-K)$; the relative homology is {\em contravariant}
+in the variable $K$ (regarded as an element of the poset of subspaces of $X$). 
 
 Excision gives insight into how $H_\ast(X,X-K)$ depends on $K$. 
 Suppose $K\subseteq U\subseteq X$ such that $\overline{K}\subseteq\mathrm{Int}(U)$. To simplify things, let's just suppose that $K$ is closed and $U$ is open.
@@ -125,11 +119,11 @@ is an isomorphism.
 
 The cap product puts some structure on $H_*(X,X-K)$: it's a module over 
 $H^*(X)$. But we can do better! We just decided that $H_*(X,X-K)=H_*(U,U-K)$,
-so the $H^*(X)$ action factors through an action by $H^(U)$, for any open 
+so the $H^*(X)$ action factors through an action by $H^*(U)$, for any open 
 set $U$ containing $K$. How does this refined action change when I decrease 
 $U$?
 \begin{lemma}
-Let $U\supseteq V\supseteq K$. Then:
+Let $K\subseteq V\subseteq U\subseteq X$, with $K$ closed and $U,V$ open. Then:
 \begin{equation*}
 \xymatrix{
 	 H^p(U)\ar[dd]^{i^\ast\otimes 1}\otimes H_n(X,X-K)\ar[dr]^\cap & \\
@@ -140,18 +134,17 @@ Let $U\supseteq V\supseteq K$. Then:
 commutes.
 \end{lemma}
 \begin{proof}
-Hint: use projection formula again.
+This is just the projection formula again!
 \end{proof}
-Let $\mathcal{U}_K$ be the set of open neighborhoods of $K$ in $X$. It is partially ordered by reverse inclusion. This poset is directed, since an intersection of two opens is open. By the lemma, $H^p:\mathcal{U}_K\to\mathbf{Ab}$ 
+Let $\mathcal{U}_K$ be the set of open neighborhoods of $K$ in $X$. It is partially ordered by reverse inclusion. This poset is directed, since the intersection of two opens is open. By the lemma, $H^p:\mathcal{U}_K\to\mathbf{Ab}$ 
 is a directed system. 
 \begin{definition}
 The {\em \v{C}ech cohomology} of $K$ is
 \[
-\cHH^p(K):=\varinjlim_{U\in\mathcal{U}_K} H^p(U)\,.
+\cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K} H^p(U)\,.
 \]
 \end{definition}
-I apologize for this bad notation; its apparent dependence on the way $K$ is sitting in $X$ is not recorded. 
-
+I apologize for this bad notation; its apparent dependence on the way $K$ is sitting in $X$ is not recorded. The maps in this directed systen are all maps of graded algebras, so the direct limit is naturally a commutative graded algebra. 
 Since tensor product commutes with direct limits, we now get a cap product
 pairing 
 \[
@@ -160,12 +153,12 @@ pairing
 satifying the expected properties. 
 This is the best you can do. It's the natural structure that this relative homology has: $ H_\ast(X,X-K)$ is a module over $\cHH^\ast(K)$.
 
-There are compatible restricton maps $H_p(U)\to H^p(K)$, so there is a natural
+There are compatible restriction maps $H^p(U)\to H^p(K)$, so there is a natural
 map
 \[
-\cHH^\ast(K)\to H^p(K)\,.
+\cHH^\ast(K)\to H^\ast(K)\,.
 \]
-This map is often an isomorphism. Suppose $K\subseteq X$ satisfies the condition (a ``regular neighborhood'' condition) that for every open $U\supseteq K$, there exists an open $V$ such that $U\supseteq V\supseteq K$ such that $K\hookrightarrow V$ is a homotopy equivalence (or actually just a homology isomorphism).
+This map is often an isomorphism. Suppose $K\subseteq X$ satisfies the following ``regular neighborhood'' condition: For every open $U\supseteq K$, there exists an open $V$ with $U\supseteq V\supseteq K$ such that $K\hookrightarrow V$ is a homotopy equivalence (or actually just a homology isomorphism).
 \begin{lemma} Under these conditions, $\cHH^\ast(K)\to H^\ast(K)$ is an isomorphism.
 \end{lemma}
 \begin{proof}
@@ -180,7 +173,7 @@ Then let $U$ be a neighborhood of $K$ and let $x\in H^p(U)$ restrict to
 is an isomorphism. Then $x$ restricts to 0 in $H^p(V)$.
 \end{proof}
 
-On the other hand, here's an example that distinguishes $\cHH^\ast$ from $H^\ast$. This is a famous example -- the ``topologist's sine curve.'' The topologist's sine curve is the subspace of $\RR^2$ defined as follows. It is union of two
+On the other hand, here's an example that distinguishes $\cHH^\ast$ from $H^\ast$. This is a famous example. The ``topologist's sine curve'' is the subspace of $\RR^2$ defined as follows. It is union of two
 subsets, $A$ and $B$. $A$ is the graph of $\sin(\pi/x)$ where $0<x\leq 1$. 
 $B$ is a continuous curve from $(0,-1)$ to $(1,0)$ and not meeting $A$. This is a counterexample for a lot of things; you've probably seen it in 18.901.
 

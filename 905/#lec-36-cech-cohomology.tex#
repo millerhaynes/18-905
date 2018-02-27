@@ -1,10 +1,4 @@
-\section{$\cHH^\ast$ as a cohomology theory}
-Office hours: today, Hood in 4-390 from 1:30 to 3:30 and Miller in 4-478 from 1-3 on Tuesday. Note that pset 6 is due Wednesday. Also, Wednesday we'll have a lightning review of $\pi_1$ and covering spaces.
-
-We're coming to the end of the course, and there are going to be oral exams. I have some questions that I'd like to ask you. They won't be super advanced, detailed questions -- they'll be basic things. I'll post a list of examples of questions. I won't select questions from that list, that's cruel and isn't the point. The oral will be 40 minutes. It'll be fun -- better than a written exam. It's much better than grading a written exam!
-
-PLEASE DRAW A PICTURE WHEN READING THIS IF YOU DIDN'T COME TO CLASS!
-
+\section{$\cHH^\ast$ as a cohomo}
 
 \subsection{Cofinality}
 Let $\cI$ be a directed set. Let $A:\cI\to \mathbf{Ab}$ be a functor. If I have a functor $f:\cK\to\cI$, then I get $Af:\cK\to\mathbf{Ab}$, i.e., $(Af)_j=A_{f(j)}$.
@@ -78,3 +72,18 @@ If I give you $(U,V)\in \mathcal{U}_{A\cup B,B}$, define $(W,V)\in\mathcal{U}_A\
 
 Maybe I'll leave this to you. I'll put this on the board on Wednesday. Anyway, I'll use normality to show that $\mathcal{U}_A\times\mathcal{U}_B\to\mathcal{U}_{A,A\cap B}$ is cofinal, and thus this verifies excision -- so you actually have excision.
 \end{proof}
+
+
+
+Let's finish off the proof from last time. Suppose $A,B$ are closed in normal $X$. \underline{Excision for $\cHH^p$}:
+\begin{equation*}
+\xymatrix{
+	\varinjlim_{(W,Y)\in\mathcal{U}_A\times\mathcal{U}_B}H^p(W\cup Y,Y)\ar[rrr]^{\cong,\text{ ordinary excision}}\ar[d]^{\cong,\text{ cofinality/surjectivity}} & & & \varinjlim_{\mathcal{U}_A\times\mathcal{U}_B}H^p(W,W\cap Y)\ar[d]^{\cong,\text{ cofinality, see below}}\\
+	\varinjlim_{(U,V)\in\mathcal{U}_{A\cup B,B}}H^p(U,V)\ar[rrr]\ar@{=}[d] & & & \varinjlim_{(U,V)\in\mathcal{U}_{A,A\cap B}}H^p(U,V)\ar@{=}[d]\\
+	\cHH^p(A\cup B,B)\ar[rrr] & & & \cHH^p(A,A\cap B)
+}
+\end{equation*}
+
+$\mathcal{U}_A\times\mathcal{U}_B\to\mathcal{U}_{A,A\cap B}$ is cofinal since: start with $(U,V)\supseteq(A,A\cap B)$. Using normality, separate $B\cap(X-V)\subseteq T$ and $A\subseteq S$. Take $W=U\cap S$ and $Y=V\cup T$. Then $A\subseteq W\subseteq U$ and $A\cap B\subseteq W\cap Y=S\cap V\subseteq V$.
+
+This means that $\cHH^p$ satisfies excision, hence Mayer-Vietoris. Let's put this in the drawer for now.

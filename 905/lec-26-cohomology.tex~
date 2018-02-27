@@ -41,7 +41,7 @@ After all, the tensor product is defined by a universal property for maps
 Still, it's often useful, and we pause to fill in some of its properties.
 
 \begin{definition}
-Let $R$ be a ring. A (graded, bounded below) coalgebra over $R$ is a (graded, bouded below) $R$-module $M$ equipped with a comultiplication $\Delta:M\to M\otimes_R M$ and a counit map $\varepsilon:M\to R$ such that the following diagrams commute.
+Let $R$ be a ring. A (graded) coalgebra over $R$ is a (graded) $R$-module $M$ equipped with a comultiplication $\Delta:M\to M\otimes_R M$ and a counit map $\varepsilon:M\to R$ such that the following diagrams commute.
 \begin{equation*}
 \xymatrix{ & M\ar[d]^\Delta\ar[dr]^=\ar[dl]_= & \\
 R\otimes_R M & M\otimes_R M\ar[l]_{\varepsilon\otimes 1}\ar[r]^{1\otimes\varepsilon} & M\otimes_R R}

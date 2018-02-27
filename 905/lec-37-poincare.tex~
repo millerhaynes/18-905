@@ -1,0 +1,105 @@
+\section{Poincar\'{e} duality}
+
+Let  $M$ be an $R$-oriented $n$-manifold and $K$ a compact subset. 
+Then by Theorem \ref{thm-fundamental-class}
+$H_n(M,M-K)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)$. 
+An {\em orientation along $K$} is a section of $o_M\otimes R$ over $K$ that 
+restricts to a generator 
+of $H_n(M,M-x;R)$ for every $x\in K$. The corresponding class in 
+$H_n(M,M-K;R)$ is a
+{\em fundamental class along $K$}, $[M]_K$. 
+We recall also the fully relative cap product pairing (in which $p+q=n$)
+\[
+\cap:\cHH^p(K,L;R)\otimes_R H_n(M,M-K;R)\to H_q(M-L,M-K;R)\,.
+\]
+We now combine all of this in the following climactic result.
+\begin{theorem}[Fully relative Poincar\'e duality]
+Let $M$ be an $R$-oriented $n$-manifold and $K\supseteq L$ a pair of 
+compact subsets. With $p+q=n$, the map
+\[
+\cap[M]_K:\cHH^p(K,L;R)\to H_q(M-L,M-K;R)\,.
+\]
+is an isomorphism.
+\end{theorem}
+We have seen that these isomorphisms are compatible; they form the 
+rungs of the following two commuting ladders.
+\[
+\xymatrix{
+\cdots \ar[r] & 
+\cHH^{p-1}(L) \ar[r] \ar[d]^{\cap[M]_L} &
+\cHH^p(K,L) \ar[r] \ar[d]^{\cap[M]_K} &
+\cHH^p(K) \ar[r] \ar[d]^{\cap[M]_K} &
+\cHH^p(L) \ar[r] \ar[d]^{\cap[M]_L} & \cdots \\
+\cdots \ar[r] & H_{q+1}(M,M-L) \ar[r] & 
+H_q(M-L,M-K) \ar[r] & H_q(M,M-K) \ar[r] &
+H_q(M,M-L) \ar[r] & \cdots 
+}\]
+and if $M$ is compact oriented with fundamental class $[M]$,
+\[
+\xymatrix{
+\cdots \ar[r] & \cHH^p(M,L) \ar[r] \ar[d]^{\cap[M]} &
+\cHH^p(K,L) \ar[r] \ar[d]^{\cap[M]_K} &
+\cHH^p(M,K) \ar[r] \ar[d]^{\cap[M]} & 
+\cHH^{p+1}(M,L) \ar[r] \ar[d]^{\cap[M]} & \cdots \\
+\cdots \ar[r] & H_q(M-L) \ar[r] & 
+H_q(M-L,M-K) \ar[r] & H_{q-1}(M-K) \ar[r] & 
+H_{q-1}(M-L) \ar[r] & \cdots
+}\]
+\begin{proof}
+By the top ladder and the five-lemma, we may assume $L=\varnothing$; so we 
+want to prove that 
+\[
+\cap[M]_K:\cHH^p(K;R)\to H_q(M,M-K;R)
+\]
+is an isomorphism. 
+
+We will follow the same five-step process we used to prove the orientation
+theorem Theorem \ref{thm-fundamental-class}.
+
+(1) $M=\RR^n$, $K$ a convex set. 
+
+
+
+
+In the local case, if $M=\RR^n$ and $K=D^n$, then this is saying that $\cHH^p(D^n;R)\cong H^p(D^n;R)\xrightarrow{\cap[\RR^n]_{D^n}}H_q(\RR^n,\RR^n-D^n;R)$ where the first isomorphism comes from analysis we did earlier about \v{C}ech and ordinary cohomology coinciding. If $p\neq 0$, then both sides are zero. When $p=0$, we are asking that $H^0(D^n;R)\xrightarrow{\cap[\RR^n]_{D^n}}H_n(\RR^n,\RR^n-D^n;R)$. They're both equal to $R$, and we are just capping along $[\RR^n]_{D^n}$, because we found that $1\cap[\RR^n]_{D^n}=[\RR^n]_{D^n}$, as desired.
+
+We carefully set up the Mayer-Vietoris sequence ladder (Theorem 33.5) that allows us to put this all together. ``We're not going to go through the details because there's point set topology that I don't like there.'' Note that normality is not needed for $K,L$ compact because compact sets in Hausdorff spaces can always be separated, normal or not. I just reversed the order in which things are usually taught in books.
+\end{proof}
+Let's point out some special cases. With $K=M$, we get: 
+\begin{corollary}
+Suppose that $M$ is a compact $R$-oriented $n$-manifold, and let $L$ be a 
+closed subset. Then (with $p+q=n$) we have the commuting ladder whose rungs
+are isomorphisms:
+\[
+\xymatrix{
+\cdots \ar[r] & \cHH^{p-1}(L) \ar[d]^{\cap[M]_L} \ar[r] & 
+\cHH^p(M,L) \ar[d]^{\cap[M]} \ar[r] & 
+H^p(M) \ar[d]^{\cap[M]} \ar[r]^{\cap[M]} & 
+\cHH^p(L) \ar[d]^{\cap[M]_L} \ar[r] & \cdots \\
+\cdots \ar[r] & H_{q+1}(M,M-L) \ar[r] & H_q(M-L) \ar[r] & 
+H_q(M) \ar[r] & H_q(M,M-L) \ar[r] & \cdots 
+}\]
+\end{corollary}
+With $L=\varnothing$, we get:
+\begin{corollary} 
+Suppose that $M$ is a compact $R$-oriented $n$-manifold, and let $K$ be a 
+closed subset. Then (with $p+q=n$) we have the commuting ladder whose rungs
+are isomorphisms:
+\[
+\xymatrix{
+\cdots \ar[r] & H^p(M) \ar[d]^{\cap[M]} \ar[r] & 
+\cHH^p(K) \ar[d]^{\cap[M]_K} \ar[r] & \cHH^{p+1}(M,K) \ar[d]^{\cap[M]} \ar[r] &
+H^{p+1}(M) \ar[d]^{\cap[M]} \ar[r] & \cdots \\
+\cdots \ar[r] & H_q(M) \ar[r] & H_q(M,M-K) \ar[r] & H_{q-1}(M-K) \ar[r] & 
+H_{q-1}(M) \ar[r] & \cdots
+}\]
+\end{corollary}
+The intersection of these two special cases is:
+\begin{corollary}[Poincar\'e duality] 
+Let $M$ be a compact $R$-oriented $n$-manifold. Then 
+\[
+\cap[M]:H^p(M;R)\to H_{n-p}(M;R)
+\]
+is an isomorphism.
+\end{corollary}
+

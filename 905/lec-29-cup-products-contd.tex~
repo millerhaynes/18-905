@@ -75,9 +75,9 @@ I have diagonal maps $\Delta_X:X\to X\times X$ and $\Delta_Y:Y\to Y\times Y$.
 The diagonal on $X\times Y$ factors as
 \[
 \xymatrix{
-X\times Y \ar[rr]^{\Delta_{X\times Y}} \ar[dr]^{\Delta_X\times\Delta_Y}} &&
-(X\times Y)\times(X\times Y) \\
-& (X\times X)\times(Y\times Y) \ar[ur]^{1\times T\times1}\,.
+X\times Y \ar[rr]^{\Delta_{X\times Y}} \ar[dr]^{\Delta_X\times\Delta_Y} &&
+X\times Y\times X\times Y \\
+& X\times X\times Y\times Y \ar[ur]^{1\times T\times1}\,.
 }\]
 Let $\alpha_1,\alpha_2\in H^\ast(X)$ and $\beta_1,\beta_2\in H^\ast(Y)$. Then $\alpha_1\times \beta_1,\alpha_2\times\beta_2\in H^\ast(X\times Y)$, and I want to calculate $(\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2)$. Let's see:
 \begin{align*}
@@ -131,3 +131,4 @@ $0, p, q$, and $p+q$. But they are not homotopy equivalent. We can see this
 now because there {\em is} a map $S^p\vee S^q\vee S^{p+q}\to S^{p+q}$
 inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the map that pinches
 the other two factors to the basepoint. 
+\end{example}

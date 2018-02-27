@@ -187,8 +187,11 @@ The structure we  have defined is a {\em local coefficient system} (of
 $R$-modules). We already have an example; if $M$ is an $n$-manifold, 
 we have the {\em orientation local system} $o_M$ over $M$. 
 
-It's useful to allow coefficients in a commutative ring $R$; so define
-$o_M\otimes R$ to be the local system of $R$-modules obtained by tensoring
+It's useful to allow coefficients in a commutative ring $R$; so denote by
+\[
+o_M\otimes R
+\]
+the local system of $R$-modules obtained by tensoring
 each fiber with $R$. 
 
 The classification theorem for covering spaces has as a corollary:
@@ -219,8 +222,9 @@ If it is nontrivial, the manifold is {\em nonorientable}. I hope it's clear
 that the M\"obius band is nonorientable, and hence any surface containing
 the M\"obius band is as well. 
 
-The set of generators of the fibers of $o_M$ form a sub covering space, 
-a double cover of $M$. It is the ``orientation double cover.'' If $M$ is
+The set of abelian group generators of the fibers of $o_M$ 
+form a sub covering space, a double cover of $M$, denoted by $o_M^\times$.
+It is the ``orientation double cover.'' If $M$ is
 orientable (and connected) it is trivial; it consists of two copies of $M$. 
 An orientation consists in chosing one or the other of the components. 
 If $M$ is nonorientable (and connected) the orientation double cover is
@@ -228,8 +232,8 @@ again connected. An interesting fact is that its total space is a manifold
 in its own right, and is orientable; in fact it carries a canonical 
 orientation. 
 
-When $R=\FF_2$, every manifold is orientable, and uniquely so, since 
-$\FF_2^\times=\{1\}$. 
+Similarly we can form the sub covering space of $R$-module generators of
+the fibers of $o_M\otimes R$; write $(o_M\otimes R)^\times$ for it. 
 
 Now if $p:E\to B$ is a covering space, one of the things you may want to do 
 is consider a {\em section} of $p$; that is, a continuous function 
@@ -242,7 +246,19 @@ between covering spaces and actions of $\pi$,
 the fixed point set for the action of $\pi_1(B,b)$ on $p^{-1}(b)$. 
 If $E$ is a local system of $R$-modules, this is a sub $R$-module. 
 
-In these terms, an orientation is a section of the orientation double cover. 
+A ``local $R$-orientation at $x$'' is a choice of $R$-module generator of 
+$H_n(M,M-x;R)$, and we make the following definition. 
+
+\begin{definition} An $R$-{\em orientation} of an $n$-manifold $M$ is a 
+section of $(o_M\otimes R)^\times$.
+\end{definition}
+
+For example, when $R=\FF_2$, every manifold is orientable, 
+and uniquely so, since $\FF_2^\times=\{1\}$. A $\ZZ$-orientation (or simply
+``orientation'') is a section of the orientation double cover. 
+A manifold is ``$R$-orientable'' if it admits an $R$-orientation.  
+A connected $n$-manifold is either non-orientable, or admits two 
+orientations. Euclidean space is orientable. 
 
 This relates to the ``globalization'' project we started out talking about. 
 A section over $B$ is in fact called a ``global section.'' In the case of
@@ -256,6 +272,7 @@ a special case of Poincar\'e duality, is this:
 \begin{theorem} 
 If $M$ is compact, the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ 
 is an isomorphism. 
+\label{thm-orientation}
 \end{theorem}
 
 We will prove this theorem in the next lecture.
@@ -266,7 +283,7 @@ trivial homomorphism, the fixed points of this representation on $R$
 form all of $R$. If not, the fixed points are the subgroup of $R$
 of elements of order 2, written $R[2]$.
 \begin{corollary}
-If $M$ is a compact and connected $n$-manifold, then 
+If $M$ is a compact connected $n$-manifold, then 
 \[
 H_n(M;R)\cong\begin{cases}R & \hbox{if $M$ is orientable} \\ 
 R[2] & \hbox{if not}\,.

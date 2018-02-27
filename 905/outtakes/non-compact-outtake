@@ -1,0 +1,26 @@
+I want to mention that there is an extension of this theorem to the case
+of noncompact manifolds.  
+First, you can't expect $j$ to be surjective if $M$ isn't compact. 
+Here's why. Any homology class in $M$ is represented by a chain, and
+the union of images of the simplices making up that chain is a compact
+subset $K$ of $M$. If $x$ is outside of $K$, then $K\subseteq M-x$ and
+the restriction map factors as
+\[
+H_n(M)\to H_n(M,K)\to H_n(M,M-x)
+\]
+But since $c$ is in the image of $K$, it maps to zero in $H_n(M,K)$. 
+
+What this shows is that $j$ lands in the module of sections with ``compact
+support.''
+
+\begin{definition} Let $E$ be a local coefficient system over a space $X$. 
+The {\em support} of a section $\sigma$ is 
+\[
+\mathrm{supp}(\sigma)=\overline{\{x\in X:\sigma(x)\neq0\}}\,.
+\]
+The set of sections with compact support is a submodule 
+\[
+\Gamma_c(X;E)\subseteq\Gamma(X;E)\,.
+\]
+\end{definition}
+So $j:H_n(M;R)\to\Gamma_c(M;o_M\otimes R)$.

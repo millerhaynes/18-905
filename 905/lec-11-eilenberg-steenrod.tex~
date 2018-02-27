@@ -1,4 +1,4 @@
-\section{The Eilenberg Mac Lane axioms and the locality principle}
+\section{The Eilenberg Steenrod axioms and the locality principle}
 
 
 Before we proceed to prove the excision theorem, let's review the properties of homology theory as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod. 
@@ -121,4 +121,44 @@ S^{\mathscr{A}}_*(X)\to0\,,
 \]
 combined with the locality principle.
 \end{proof}
+
+The Mayer-Vietoris theorem follows from excision as well, via
+the following simple observation.
+Suppose we have a map of long exact sequences
+\begin{equation*}
+\xymatrix{
+\cdots\ar[r] & C'_{n+1} \ar[r]\ar[d] & A'_n\ar[r]\ar[d] & 
+B'_n\ar[r]\ar[d]^\cong & 
+C'_n\ar[r]^k\ar[d]^h & A_{n-1}\ar[r]\ar[d]^f & \cdots\\
+\cdots\ar[r] & C_{n+1} \ar[r] & A_n \ar[r] & B_n \ar[r] & C_n \ar[r]^k & 
+A_{n-1}\ar[r] & \cdots
+}
+\end{equation*}
+in which every third arrow is an isomorphism as indicated.
+Define a map
+\[
+\partial:A_n\to B_n\xleftarrow{\cong} B'_n\to C'_n\,.
+\]
+An easy diagram chase shows:
+\begin{lemma} 
+\label{lem-ladder}
+The sequence 
+\begin{equation*}
+\cdots\longrightarrow 
+C'_{n+1}\xrightarrow{\left[\begin{array}{c}h\\k\end{array}\right]}
+C_{n+1}\oplus A_n\xrightarrow{\left[\begin{array}{cc}k&-f\end{array}\right]}
+A_n\xrightarrow{\partial} C'_n\longrightarrow\cdots
+\end{equation*}
+is exact.
+\end{lemma}
+To get the Mayer-Vietoris sequence, let $\{A,B\}$ be a cover of $X$ 
+and apply the lemma to 
+\[
+\xymatrix{
+\cdots \ar[r] & H_n(A\cap B) \ar[d] \ar[r] & H_n(B)  \ar[d] \ar[r] &
+H_n(B,A\cap B) \ar[d] \ar[r] & H_{n-1_(A\cap B) \ar[d] \ar[r] &
+H_{n-1}(B) \ar[d] \ar[r] & \cdots \\
+\cdots \ar[r] & H_n(A) \ar[r] & H_n(X) \ar[r] & H_n(X,A) \ar[r] & 
+H_{n-1}(A) \ar[r] & H_{n-1}(X) \ar[r] & \cdots\,.
+}\]
 

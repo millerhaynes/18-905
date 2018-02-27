@@ -11,6 +11,20 @@ dimensional) Euclidean space.
 If all these Euclidean space can be chosen to be $\RR^n$, we have an 
 $n$-manifold. 
 
+We will always make two additional assumptions about our manifolds.
+
+\noindent
+{\bf Second countable:} There is a countable neighborhood basis.
+ 
+This is to avoid manifolds like an uncountable discrete set. 
+
+\noindent
+{\bf Good cover:} There is a cover by Euclidean opens such that all 
+finite intersections are either empty or again Euclidean. 
+
+This can be acheived in a smooth manifold by picking a metric and
+using convex neighborhoods. 
+
 In this lecture we will state a case of the Poincar\'e duality theorem
 and study some consequences of it, especially for compact 2-manifolds. 
 This whole lecture will be happening with coefficients in $\FF_2$. 

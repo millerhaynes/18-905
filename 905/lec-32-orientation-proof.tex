@@ -1,70 +1,180 @@
 \section{Proof of the orientation theorem}
 
-Recall the theorem:
+We are studying the way in which local homological information gives rise
+to global information, especially on an $n$-manifold $M$. The tool was the map
+\[
+j:H_n(M;R)\to\Gamma(M;o_M\otimes R)
+\]
+sending a class $c$ to the section of the orientation local coefficient
+system given at $x\in M$ by the restriction $j_x(c)\in H_n(M,M-x)$. 
+We asserted that if $M$ is compact then $j$ is an isomorphism and that
+$H_q(M)=0$ for $q>n$. 
 
-\begin{theorem}
-If $M$ is a compact $n$-manifold, $H_q(M;R)=0$ for $q>n$, and
-the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ is an isomorphism. 
+To make our induction go, we will need a refinement of this construction.
+Let $A\subset M$ be a closed subset. A class in
+$H_n(M,M-A)$ is represented by a cycle whose boundary lies outside of $A$. 
+It may cover $A$ evenly. We can give meaning to this question as follows.
+Let $x\in A$. Then $M-A\subseteq M-x$, so we have a map
+\[
+j_x:H_n(M,M-A)\to H_n(M,M-x)
+\]
+that tests whether the chain covers $x$. As $x$ ranges over $A$, 
+these maps together give us a map to the group of compactly supported 
+sections of $o_M$ over $A$,
+\[
+j:H_n(M,M-A)\to\Gamma(A;o_M)\,.
+\]
+Because $H_n(M,M-A)$ deals with homology classes that ``stretch over $A$,''
+we will write
+\[
+H_n(M,M-A)=H_n(M|A)\,.
+\]
+\begin{theorem} Let $M$ be an $n$-manifold and let $A$ be a compact subset 
+of $M$. Then $H_q(M|A;R)=0$ for $q>n$, and the map 
+$j:H_n(M|A;R)\to\Gamma(A;o_M\otimes R)$ is an isomorphism.
+\label{thm-fundamental-class}
 \end{theorem}
-
-The map $j$ assigns to a homology class $c\in H_n(M)$ the section
-of the orientation local system that takes on the value 
-$j_x(c)\in H_n(M,M-x)$ at $x\in M$ given by restriction. 
-
-The proof will proceed by an induction on subspaces of $M$. To make 
-this induction go, I need to make two refinements. 
-
-First, you can't expect $j$ to be surjective if $M$ isn't compact. 
-Here's why. Any homology class in $M$ is represented by a chain, and
-the union of images of the simplices making up that chain is a compact
-subset $K$ of $M$. If $x$ is outside of $K$, then $K\subseteq M-x$ and
-the restriction map factors as
+Taking $A=M$ (assuming $M$ compact) we find that $H_q(M;R)=0$ for $q>n$ and 
 \[
-H_n(M)\to H_n(M,K)\to H_n(M,M-x)
+j:H_n(M;R)\xrightarrow{\cong}\Gamma(M;o_M\otimes R)\,.
 \]
-But since $c$ is in the image of $K$, it maps to zero in $H_n(M,K)$. 
+We follow \cite{bredon} in proving this, 
+and refer you to this reference for the modifications appropriate for
+the more general statement when $A$ is assumed merely closed rather than
+compact.
 
-What this shows is that $j$ lands in the module of sections with ``compact
-support.''
+First we establish two general results.
+\begin{lemma} 
+Let $A$ and $B$ be closed subspaces of $M$, and suppose the result
+holds for $A$, $B$, and $A\cap B$. Then it holds for $A\cup B$.
+\label{lem-mv}
+\end{lemma}
+\begin{proof}
+The relative Mayer-Vietoris theorem and the inductive hypothesis that 
+$H_{n+1}(M|A\cap B)=0$ gives us exactness of the top row in the ladder
+\[
+\xymatrix{
+0 \ar[r] & H_n(M|A\cup B) \ar[d]^j \ar[r] & 
+H_n(M|A)\oplus H_n(M|B) \ar[d]^j \ar[r] &
+H_n(M|A\cap B) \ar[d]^j \\
+0 \ar[r] & \Gamma(A\cup B;o_M) \ar[r] & 
+\Gamma(A;o_M)\oplus\Gamma(B;o_M) \ar[r] &
+\Gamma(A\cap B;o_M)\,.
+}\]
+Exactness of the bottom row is clear: A section over $A\cup B$ is precisely
+a section over $A$ and a section over $B$ that agree on the intersection.
+So the five-lemma shows that $j_{A\cup B}$ is an isomorphism. 
+Looking further back in the Mayer-Vietoris sequence gives the vanishing of
+$H_q(M|A)$ for $q>n$.  
+\end{proof}
+\begin{lemma} Let $A_1\supset A_2\supset\cdots$ be a decreasing sequence
+of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
+Then it holds for the intersection $A=\cup A_i$. 
+\label{lem-lim}
+\end{lemma}
+\begin{proof}
+We claim first that 
+\[
+\varinjlim_iH_q(M|A_i)\xrightarrow{\cong}H_q(M|A)\,.
+\]
+Let $\sigma:\Delta^1\to M$ be any simplex in $M-A$. The subsets $M-A_i$
+form an open cover of $\img(\sigma)$, so by compactness it lies in some
+single $M-A_i$. This shows that 
+\[
+\varinjlim_iS_q(M-A_i)\xrightarrow{\cong}S_q(M-A)\,.
+\]
+Thus
+\[
+\varinjlim_iS_q(M|A_i)\xrightarrow{\cong}S_q(M|A_i)
+\]
+by exactness of direct limit, and the claim then follows for the same reason. 
 
-\begin{definition} Let $E$ be a local coefficient system over a space $X$. 
-The {\em support} of a section $\sigma$ is 
+This verifies that $H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate
+the commutative diagram 
 \[
-\mathrm{supp}(\sigma)=\overline{\{x\in X:\sigma(x)\neq0\}}\,.
-\]
-The set of sections with compact support is a submodule 
-\[
-\Gamma_c(X;E)\subseteq\Gamma(X;E)\,.
-\]
-\end{definition}
-So $j:H_n(M;R)\to\Gamma_c(M;o_M\otimes R)$.
+\xymatrix{
+\varinjlim_iH_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & H_n(M|A) \ar[d] \\
+\varinjlim_i\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
+}\]
+\end{proof}
 
-The second refinement seems a little artificial, but it's part of the 
-inductive process. Let $A\subset M$ be a closed subset. If $x\in A$
-then $M-A\subseteq M-x$, and the inclusion inducing $j_x$ factors as
-\[
-(M,\varnothing)\hookrightarrow(M,M-A)\hookrightarrow(M,M-x)\,.
-\]
-Let $\Gamma(A;o_M)$ denote the module of sections of the restriction
-of $o_M$ to $A$, and $\Gamma_c(A;o_M)$ the submodule of such sections
-with compact support.  Then 
-\[
-j:H_n(M,M-A)\to\Gamma_c(A;o_M)\,.
-\]
-\begin{theorem} Let $M$ be any $n$-manifold and $A$ a closed subset of $M$.
-Then $H_q(M,M-A;R)=0$ for $q>n$, and the map 
-$j:H_n(M,M-A;R)\to\Gamma_c(A;o_M\otimes R)$ is an isomorphism.
-\end{theorem}
-Taking $A=M$, we find that $H_q(M;R)=0$ for $q>n$ and 
-\[
-j:H_n(M;R)\xrightarrow{\cong}\Gamma_c(M;o_M\otimes R)\,.
-\]
-This includes the theorem we stated at the outset. But it says something
-if $M$ is not compact, as well. If $M$ is connected and not compact, then 
-any compactly supported section must be zero somewhere, but then it is
-zero everywhere by unique path lifting. So in that case $H_n(M;R)=0$. 
+\begin{proof}[Proof of Theorem \ref{thm-fundamental-class}] 
+There are five steps. In describing them, we will call a subset of $M$
+``Euclidean'' if it lies inside some open set homeomorphic to $\RR^n$.
 
-We will not prove this theorem for general closed subsets. 
+\noindent
+(1) $M=\RR^n$, $A$ a compact convex subset.
+
+\noindent
+(2) $M=\RR^n$, $A$ a finite union of compact convex subsets.
+
+\noindent
+(3) $M=\RR^n$, $A$ any compact subset.
+
+\noindent
+(4) $M$ arbitrary, $A$ a finite union of compact subsets of Euclidean opens.
+
+\noindent
+(5) $M$ arbitrary, $A$ an arbitrary compact subset. 
+
+Notes on the proofs: (1) To be clear, ``convex'' implies nonempty. 
+By translating $A$, we may assume that $0\in A$. The compact subset $A$
+lies in some disk, and by a homothety we may assume that the disk is the
+unit disk $D^n$. Then we claim that the inclusion $i:S^{n-1}\to\RR^n-A$
+is a deformation retract. A retraction is given by $r(x)=x/||x||$, 
+and a homotopy from $ir$ to the identity is given by 
+\[
+h(x,t)=\left(t+\frac{1-t}{||x||}\right)x\,.
+\]
+
+It follows that $H_q(\RR^n,\RR^n-A)\cong H_q(\RR^n,\RR^n-D^n)$ for all
+$q$. This group is zero for $q>n$. In dimension $n$, note that restricting
+to the origin gives an isomorphism 
+$H_n(\RR^n,\RR^n-D^n)\to H_n(\RR^n,\RR^n-0)$ since 
+$\RR^n-D$ is a deformation retract of $\RR^n-0$. The local system $o_{\RR^n}$ 
+is trivial, since $\RR^n$ is simply connected, so restricting to the origin
+gives an isomorphism $\Gamma(D^n,o_{\RR^n})\to H_n(\RR^n,\RR^n-0)$. 
+This implies that $j:H_n(\RR^n,\RR^n-D^n)\to\Gamma(D^n,o_{\RR^n})$
+is an isomorphism. The restriction 
+$\Gamma(D^n,o_{\RR^n})\to\Gamma(A,o_{\RR^n})$ is also an isomorphism, since
+$A\to D^n$ is a deformation retract. So by the commutative diagram
+\[
+\xymatrix{
+H_n(\RR^n,\RR^n-D^n) \ar[r]^\cong \ar[d]^j & H_n(\RR^n,\RR^n-A) \ar[d]^j \\
+\Gamma(D^n,o_{\RR^n}) \ar[r] & \Gamma(A,o_{\RR^n}) 
+}\]
+we find that $j:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.
+
+(2) by Lemma \ref{lem-mv}. 
+
+(3) For each $j\geq1$, let $C_j$ be a finite subset of $A$ such that 
+\[
+A\subseteq \cup_{x\in C_j}B_{1/j}(x)\,.
+\]
+Since any intersection of convex sets is either empty or convex, 
+\[
+A_k=\cap_{j=1}^k\cup_{x\in C_j}B_{1/j}(x)
+\]
+is a union of finitely many convex sets, and since $A$ is closed
+it is the intersection of this decreasing family. So the result
+follows from (1), (2), and Lemma \ref{lem-lim}.
+
+(4) by (3) and (2). 
+
+(5) Cover $A$ by finitely many open subsets that embed in Euclidean
+opens as open unit disks. Their closures then form a finite cover by closed
+Euclidean disks $D_i$ in Euclidean opens $U_i$. For each $i$, 
+excise the closed subset $M-U_i$ to see that
+\[
+H_q(M,M-A\cap D_i)\cong H_q(U_i,U_i-A\cap D_i)\cong 
+H_q(\RR^n,\RR^n-A\cap D_i)\,.
+\]
+By (4), the theorem holds for each of these. Each intersection 
+$(A\cap D_i)\cap(A\cap D_j)$ is again a compact Euclidean subset, 
+so the result holds for them by excision as well. The result then
+follows by (1).
+\end{proof}
+ 
 
 
 

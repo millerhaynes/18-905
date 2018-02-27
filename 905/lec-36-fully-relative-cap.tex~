@@ -1,0 +1,141 @@
+\section{The fully relative cap product}
+
+\v{C}ech cohomology appeared as the natural algebra acting on $H^*(X,X-K)$,
+where $K$ is a closed subspace of $X$: 
+\[
+\cap:\cHH^p(K)\otimes H_n(X,X-K)\to H_q(X,X-K)\,,\quad p+q=n\,.
+\]
+If we fix $x_K\in H_n(X,X-K)$, then capping with $x_K$ gives a map 
+\[
+\cap x_K:\cHH^p(K)\to H_q(X,X-K)\,,\quad p+q=n\,. 
+\]
+We will be very interested in showing that this map is an isomorphism 
+under certain conditions. This is a kind of duality result, comparing
+cohomology and relative homology and reversing the dimensions. 
+We'll try to show that such a map is an isomorphism by embedding it 
+in a map of long exact sequences and using the five-lemma. 
+
+For a start, let's think about how these maps vary as I change $K$.
+So let $L$ be a closed subset of $K$, so $X-K\subseteq X-L$ and I get 
+a ``restriction map''
+\[
+i_\ast:H_n(X,X-K)\to H_n(X,X-L)\,.
+\]
+Define $x_L$ as the image of $x_K$. The diagram
+\begin{equation*}
+\xymatrix{
+\cHH^p(K)\ar[r]\ar[d]_{-\cap x_K} & \cHH^p(L) \ar[d]_{-\cap x_L} \\
+H_q(X,X-K)\ar[r] & H_q(X,X-L)
+}
+\end{equation*}
+commutes by the projection formula. This embeds in a bigger diagram:
+\begin{theorem}
+There is a ``fully relative'' cap product
+\[
+\cap:\cHH^p(K,L)\otimes H_n(X,X-K)\to H_q(X-L,X-K)\,,\quad p+q=n\,,
+\]
+such that for any $x_K\in H_n(X,X-K)$ the ladder
+\begin{equation*}
+\xymatrix{
+\cdots \ar[r] & \cHH^p(K,L)\ar[r]\ar[d]^{\cap x_{K}} & \cHH^p(K)\ar[r]\ar[d]^{\cap x_K} & \cHH^p(L)\ar[r]^\delta\ar[d]^{\cap x_L} & \cHH^{p+1}(K,L)\ar[r]\ar[d]^{\cap x_{K}} & \cdots\\
+	\cdots\ar[r] & H_q(X-L,X-K)\ar[r]& H_q(X,X-K)\ar[r] & H_q(X,X-L)\ar[r]^\partial & H_{q-1}(X-L,X-K)\ar[r] & \cdots
+}
+\end{equation*}
+commutes, where $x_L$ is the restriction of $x_K$ to $H_n(X,X-L)$, 
+and for any $x\in H_n(X)$
+\[
+\xymatrix{
+\cdots \ar[r] & \cHH^p(X,K) \ar[d]^{\cap x} \ar[r] & 
+\cHH^p(X,L) \ar[d]^{\cap x} \ar[r] & 
+\cHH^p(K,L) \ar[d]^{\cap x_K} \ar[r]^\delta &
+\cHH^{p+1}(X,K) \ar[d]^{\cap x} \ar[r] & \cdots\\
+\cdots \ar[r] & H_q(X-K) \ar[r] & H_q(X-L) \ar[r] & 
+H_q(X-L,X-K) \ar[r]^\partial & H_{q-1}(X-K) \ar[r] & \cdots
+}\]
+commutes, where $x_K$ is the restriction of $x$ to $H_n(X,X-K)$. 
+\end{theorem}
+\begin{proof}
+What I have to do is define a cap product along the bottom row of the
+diagram (with $p+q=n$)
+\begin{equation*}
+\xymatrix{
+\cHH^p(K)\otimes H_n(X,X-K)\ar[r]^{\cap} & H_q(X,X-K)\\
+\cHH^p(K,L)\otimes H_n(X,X-K)\ar[u]\ar@{.>}[r]^{\cap} & H_q(X-L,X-K) \ar[u]
+}
+\end{equation*}
+
+This requires going back to the origin of the cap product. 
+Our map $\cHH^p(K)\otimes H_n(X,X-K)\to H_q(X,X-K)$ came (via excision)
+ from a chain map $S^p(U)\otimes S_n(U,U-K)\to S_q(U,U-K)$ where $U\supseteq K$, defined by $\beta\otimes\sigma\mapsto\beta(\sigma\circ\alpha_p)\cdot(\sigma\circ\omega_q)$. Now given inclusions
+\[
+\begin{array}{ccc} L & \subseteq & K \\
+\downsubseteq & & \downsubseteq \\
+V & \subseteq & U
+\end{array}
+\]
+we can certainly fill in the bottom row of the diagram
+\begin{equation*}
+\xymatrix{
+S^p(U)\otimes S_n(U)/S_n(U-K)\ar[r] & S_q(U)/S_q(U-K)\\
+S^p(U,V)\otimes S_n(U)/S_n(U-K)\ar[r]\ar[u] & S_q(U-L)/S_q(U-K)\ar[u]
+}
+\end{equation*}
+Since cochains in $S^p(U,V)$ kill chains in $V$, we can extend the bottom
+row to 
+\begin{equation*}
+\xymatrix{
+	S^p(U)\otimes S_n(U,U-K)\ar[r] & S_q(U,U-K)\\
+	S^p(U,V)\otimes (S_n(U-L)+S_n(V))/S_n(U-K)\ar[r]\ar[d]^{\simeq}\ar[u] & S_q(U-L)/S_q(U-K)\ar[u]\\
+	S^p(U,V)\otimes S_n(U)/S_n(U-K) & 
+}
+\end{equation*}
+But $L\subseteq V$, so $(U-L)\cup V=U$, and the locality principle then
+guarantees that $S_n(U-L)+S_n(V)\to S_n(U)$ is a quasi-isomorphism. 
+By excision, $H_n(U,U-K)\to H_n(X,X-K)$ is an isomorphism. Now use
+our standard map $\mu:H_*(C)\otimes H_*(D)\to H_*(C\otimes D)$. 
+
+This gives the construction of the fully relative cap product. 
+We leave the checks of commutativity to the listener.
+\end{proof}
+
+The diagram:
+\begin{equation*}
+\xymatrix{
+	\cHH^p(L)\ar[r]^\delta\ar[d]^{-\cap x_L} & \cHH^{p+1}(K,L)\ar[d]^{-\cap x_K}\\
+	H_q(X,X-L)\ar[r]^{\partial} & H_{q-1}(X-L,X-K)
+}
+\end{equation*}
+says that:
+\begin{equation*}
+(\delta b)\cap x_K=\partial(b\cap x_L)
+\end{equation*}
+
+The proof of Mayer-Vietoris for \v{C}ech cohomology carried out in the 
+previous lecture also gives us a Mayer-Vietoris sequence for relative 
+homology, in the form 
+\begin{equation*}
+\cdots\to H_q(X,X-A\cup B)\to H_q(X,X-A)\oplus H_q(X,X-B)\to H_q(X,X-A\cap B)\to H_{q-1}(X,X-A\cup B)\to\cdots
+\end{equation*}
+\begin{theorem}
+The \v{C}ech cohomology and singular homology Mayer-Vietoris sequences are 
+compatible: for any $x\in H_n(X,X-A\cup B)$, there is a commutative ladder
+\begin{equation*}
+\xymatrix{
+\cdots \ar[r] & \cHH^p(A\cup B)\ar[r]\ar[d]^{\cap x_{A\cup B}} & 
+\cHH^p(A)\oplus \cHH^p(B)\ar[r]\ar[d]^{(\cap x_A)\oplus(\cap x_B)} & 
+\cHH^p(A\cap B)\ar[r]\ar[d]^{\cap x_{A\cap B}} & 
+\cHH^{p+q}(A\cup B)\ar[r]\ar[d]^{\cap x_{A\cup B}} & \cdots\\
+\cdots \ar[r] & H_q(X|A\cup B)\ar[r]& H_q(X|A)\oplus H_q(X|B)\ar[r]& H_q(X|A\cap B)\ar[r]& H_{q-1}(X|A\cup B)\ar[r]&\cdots
+}
+\end{equation*}
+in which the  homology classes $x_A,x_B,x_{A\cap B}$  
+are restrictions of the class $x_{A\cup B}$ in the diagram
+\begin{equation*}
+\xymatrix{
+	 & H_n(X,X-A)\ar[dr] & \\
+	H_n(X,X-A\cup B)\ar[ur]\ar[dr] & & H_n(X,X-A\cap B)\\
+	 & H_n(X,X-B)\ar[ur]
+}
+\end{equation*}
+\end{theorem}
+

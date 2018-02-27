@@ -201,18 +201,21 @@ I can't use the UCT to address this because the UCT only tells you that things a
 \textbf{Excision:} If $U\subseteq A\subseteq X$ such that $\overline{U}\subseteq\mathrm{Int}(A)$, then $ H^\ast(X,A;N)\to H^\ast(X-U,A-U;N)$ is an isomorphism. This follows from excision in homology and by the mixed variance UCT.
 
 \noindent
-\textbf{Mayer-Vietoris sequence:} If $A,B\subseteq X$ are such that their interiors cover $X$, then there is a long exact sequence
-\begin{equation*}
-\xymatrix{ & & \cdots\ar[dll]\\
- H^n(X;N)\ar[r] & H^n(A;N)\oplus H^n(B;N)\ar[r] & H^n(A\cap B;N)\ar[dll]\\
- H^{n+1}(X;N)\ar[r] & \cdots & }
-\end{equation*}
-
-\noindent
 \textbf{Milnor axiom:} The inclusions induce an isomorphism
 \[
 H^*(\coprod_\alpha X_\alpha;N)\to \prod_\alpha H^*(X_\alpha;N)\,.
 \]
+
+As a result, it enjoys the fruit of these axioms, such as:
+\noindent
+\textbf{Mayer-Vietoris sequence:} If $A,B\subseteq X$ are such that their interiors cover $X$, then there is a long exact sequence
+\begin{equation*}
+\xymatrix{ & \cdots \ar[r] & H^n(A\cup B;N) \ar[dll]\\
+ H^n(X;N)\ar[r] & H^n(A;N)\oplus H^n(B;N)\ar[r] & H^n(A\cap B;N)\ar[dll]\\
+ H^{n+1}(X;N)\ar[r] & \cdots & }
+\end{equation*}
+
+
 
 
 

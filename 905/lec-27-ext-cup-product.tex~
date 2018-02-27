@@ -44,7 +44,7 @@ is again exact. Check this statement!
 
 Now homological algebra comes to the rescue to repair the failure of exactness! Pick a free resolution of $M$,
 \[
-\cdots\to F_2\to F_1\to M\to F_0\to 0\,.
+\cdots\to F_2\to F_1\to F_0\to M\to 0\,.
 \]
 Apply $\Hom$ to get a chain complex 
 \[
@@ -54,7 +54,7 @@ Apply $\Hom$ to get a chain complex
 $\Ext_R^n(M,N)= H^n(\Hom_R(F_\ast,N))$.
 \end{definition}
 \begin{remark}
-$\Ext$ is well-defined and functorial, by the fundamental lemma of homological algebra. If $M$ is free (or projective) then $\Ext^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M$ and $F_n=0$ for $n>1$, so $\Ext^n=0$ if $n>1$. If $R$ is a field, then $\Ext^n=0$ for $n>0$. 
+$\Ext$ is well-defined and functorial, by the fundamental lemma of homological algebra. If $M$ is free (or projective) then $\Ext^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext^n=0$ if $n>1$. If $R$ is a field, then $\Ext^n=0$ for $n>0$. 
 \end{remark}
 
 \begin{example}
@@ -100,9 +100,10 @@ Start with the diagram
 0 \ar[r] & \Hom(B_{n-1},N) \ar[r] & \Hom(C_n/B_n,N) \ar[r] & 
 \Hom(H_n,N) \ar[r] & 0
 }\]
-The bottom row arises from \eqref{twoprime} and is exact because 
-\eqref{twoprime} splits.
-The middle arrow starts with $f:C_n\to N$ such that $C_{n+1}\ra{d}C_n\ra{f}N$ 
+The bottom row arises from \eqref{two} and is exact because 
+\eqref{two} splits.
+The middle arrow starts with $f:C_n\to N$ such that 
+$C_{n+1}\xrightarrow{d}C_n\xrightarrow{f}N$ 
 is zero. This condition is equivalent to requiring that $f$ kill boundaries,
 and so it factors through a unique map $C_n/B_n\to N$. 
 
@@ -202,7 +203,7 @@ I can't use the UCT to address this because the UCT only tells you that things a
 \noindent
 \textbf{Mayer-Vietoris sequence:} If $A,B\subseteq X$ are such that their interiors cover $X$, then there is a long exact sequence
 \begin{equation*}
-\xymatrix{ & & \cdots\ar[dll]\\
+\xymatrix{ & \cdots \ar[r] & H^n(A\cup B;N) \ar[dll]\\
  H^n(X;N)\ar[r] & H^n(A;N)\oplus H^n(B;N)\ar[r] & H^n(A\cap B;N)\ar[dll]\\
  H^{n+1}(X;N)\ar[r] & \cdots & }
 \end{equation*}

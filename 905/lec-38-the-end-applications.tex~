@@ -1,8 +1,8 @@
 \section{Applications}
 Today we harvest consequences of Poincar\'e duality. We'll use the form
 \begin{theorem}
-Let $M$ be an $n$-manifold and $K$ a closed subset.
-An $R$-orientation along $K$ determines a fundamental class
+Let $M$ be a compact $R$-oriented $n$-manifold. Let $K\subseteq M$ be compact. 
+The orientation determines a fundamental class
 $[M]_K\in H_n(M,M-K)$, and capping gives an isomorphism:
 \[
 \cap[M]_K:\cHH^p(K;R)\xrightarrow{\cong}H_{n-p}(M,M-K;R)\,.
