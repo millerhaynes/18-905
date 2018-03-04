@@ -1,6 +1,6 @@
 \section{Poincar\'{e} duality}
 
-Let  $M$ be an $R$-oriented $n$-manifold and $K$ a compact subset. 
+Let  $M$ be a $n$-manifold and $K$ a compact subset. 
 Then by Theorem \ref{thm-fundamental-class}
 $H_n(M,M-K)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)$. 
 An {\em orientation along $K$} is a section of $o_M\otimes R$ over $K$ that 
@@ -8,21 +8,24 @@ restricts to a generator
 of $H_n(M,M-x;R)$ for every $x\in K$. The corresponding class in 
 $H_n(M,M-K;R)$ is a
 {\em fundamental class along $K$}, $[M]_K$. 
-We recall also the fully relative cap product pairing (in which $p+q=n$)
+We recall also the fully relative cap product pairing (in which $p+q=n$
+and $L$ is a closed subset of $K$)
 \[
 \cap:\cHH^p(K,L;R)\otimes_R H_n(M,M-K;R)\to H_q(M-L,M-K;R)\,.
 \]
 We now combine all of this in the following climactic result.
 \begin{theorem}[Fully relative Poincar\'e duality]
-Let $M$ be an $R$-oriented $n$-manifold and $K\supseteq L$ a pair of 
-compact subsets. With $p+q=n$, the map
+\label{thm-big-poincare}
+Let $M$ be an $n$-manifold and $K\supseteq L$ a pair of 
+compact subsets. Assume given an $R$-orientation along $K$, 
+with corresponding fundamental class $[M]_K$. With $p+q=n$, the map
 \[
 \cap[M]_K:\cHH^p(K,L;R)\to H_q(M-L,M-K;R)\,.
 \]
 is an isomorphism.
 \end{theorem}
 We have seen that these isomorphisms are compatible; they form the 
-rungs of the following two commuting ladders.
+rungs of the commuting ladder
 \[
 \xymatrix{
 \cdots \ar[r] & 
@@ -34,18 +37,38 @@ rungs of the following two commuting ladders.
 H_q(M-L,M-K) \ar[r] & H_q(M,M-K) \ar[r] &
 H_q(M,M-L) \ar[r] & \cdots 
 }\]
-and if $M$ is compact oriented with fundamental class $[M]$,
+Also, if $M$ is compact and $R$-oriented with fundamental class $[M]$ 
+restricting along $K$ to $[M]_K$, we have the ladder of isomorphisms
 \[
 \xymatrix{
 \cdots \ar[r] & \cHH^p(M,L) \ar[r] \ar[d]^{\cap[M]} &
 \cHH^p(K,L) \ar[r] \ar[d]^{\cap[M]_K} &
-\cHH^p(M,K) \ar[r] \ar[d]^{\cap[M]} & 
+\cHH^{p+1}(M,K) \ar[r] \ar[d]^{\cap[M]} & 
 \cHH^{p+1}(M,L) \ar[r] \ar[d]^{\cap[M]} & \cdots \\
 \cdots \ar[r] & H_q(M-L) \ar[r] & 
 H_q(M-L,M-K) \ar[r] & H_{q-1}(M-K) \ar[r] & 
 H_{q-1}(M-L) \ar[r] & \cdots
 }\]
+We will follow the same five-step process we used to prove the Orientation
+Theorem \ref{thm-fundamental-class}. We have already prepared the
+Mayer-Vietoris ladder for this purpose. We will also need:
+
+\begin{lemma}
+\label{lem-cech-limit}
+Let $A_1\supseteq A_2\supseteq \cdots$ be a decreasing sequence of 
+compact subspaces of $M$. Then 
+\[
+\cHH^p(A_k)\to\cHH^p(A)
+\]
+is an isomorphism. 
+\end{lemma}
 \begin{proof}
+This follows from the observation that 
+a direct limit of direct limits is a direct limit.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{thm-big-poincare}]
 By the top ladder and the five-lemma, we may assume $L=\varnothing$; so we 
 want to prove that 
 \[
@@ -53,17 +76,51 @@ want to prove that
 \]
 is an isomorphism. 
 
-We will follow the same five-step process we used to prove the orientation
-theorem Theorem \ref{thm-fundamental-class}.
+(1) $M=\RR^n$, $K$ a compact convex set. We claim that 
+\[
+\cHH^*(K)\xrightarrow{\cong} H^*(K)\,.
+\]
+For any $\epsilon>0$, let $U_\epsilon$
+denote the $\epsilon$-neighborhood of $K$, 
+\[
+U_\epsilon=\bigcup_{x\in K}B_\epsilon(x)\,.
+\]
+For any $y\in U_\epsilon$ there is a closest point in $K$, since the
+distance function to $y$ is continuous and bounded below on the compact set 
+$K$ and so achieves its infimum. If $x',x''\in K$ are the same distance 
+from $y$, then the midpoint of the segment joining $x'$ and $x''$ is closer,
+but lies in $K$ since $K$ is convex. So there is a unique closest point,
+$f(y)$. We let the listener check that $f:U_\epsilon\to K$ is continuous. 
+It is also clear that if $i:K\to U_\epsilon$ is the inclusion then 
+$i\circ f$ is homotopic to the identity on $Y$, by an affine homotopy. 
 
-(1) $M=\RR^n$, $K$ a convex set. 
+Now let $D^n$ be a disk centered at the origin and containing the compact
+set $K$, and consider the commutative diagram
+\[
+\xymatrix{
+H^p(K) \ar[r]^{\cap[\RR^n]_K} & H_q(\RR^n,\RR^n-K) \\
+H^p(D^n) \ar[u]_\cong \ar[r] \ar[d]^\cong & 
+H_q(\RR^n,\RR^n-D^n) \ar[u]_\cong \ar[d]^\cong \\
+H^p(\ast) \ar[r] & H_q(\RR^n,\RR^n-\ast) \,.
+}\]
+The groups are zero unless $p=0,q=n$. 
+By naturality of the cap product, the bottom map is given by 
+$1\mapsto1\cap[\RR^n]_\ast$, and this is $[\RR^n]_\ast$ since capping with 
+1 is the identity, and this fundamental class is a generator of
+$H_n(\RR^n,\RR^n-\ast)$. 
 
+(2) $K$ a finite union of compact convex subsets of $\RR^n$. 
+This follows by induction and the five lemma applied to the Mayer-Vietoris
+ladder \cite{thm-mayer-vietoris-ladder}.
 
+(3) $K$ is any compact subset of $\RR^n$. This follows as before by a limit
+argument, using Lemmas \ref{lem-lim-cpt} and \ref{lem-cech-limit}.
 
+(4) $M$ arbitrary, $K$ is a finite union of compact Euclidean subsets of $M$.
+This follows from (3) and Theorem \cite{thm-mayer-vietoris-ladder}.
 
-In the local case, if $M=\RR^n$ and $K=D^n$, then this is saying that $\cHH^p(D^n;R)\cong H^p(D^n;R)\xrightarrow{\cap[\RR^n]_{D^n}}H_q(\RR^n,\RR^n-D^n;R)$ where the first isomorphism comes from analysis we did earlier about \v{C}ech and ordinary cohomology coinciding. If $p\neq 0$, then both sides are zero. When $p=0$, we are asking that $H^0(D^n;R)\xrightarrow{\cap[\RR^n]_{D^n}}H_n(\RR^n,\RR^n-D^n;R)$. They're both equal to $R$, and we are just capping along $[\RR^n]_{D^n}$, because we found that $1\cap[\RR^n]_{D^n}=[\RR^n]_{D^n}$, as desired.
-
-We carefully set up the Mayer-Vietoris sequence ladder (Theorem 33.5) that allows us to put this all together. ``We're not going to go through the details because there's point set topology that I don't like there.'' Note that normality is not needed for $K,L$ compact because compact sets in Hausdorff spaces can always be separated, normal or not. I just reversed the order in which things are usually taught in books.
+(5) $M$ arbitrary, $K$ an arbitrary compact subset. This follows just as in
+the proof of Theorem \ref{thm-fundamental-class}. 
 \end{proof}
 Let's point out some special cases. With $K=M$, we get: 
 \begin{corollary}
@@ -74,7 +131,7 @@ are isomorphisms:
 \xymatrix{
 \cdots \ar[r] & \cHH^{p-1}(L) \ar[d]^{\cap[M]_L} \ar[r] & 
 \cHH^p(M,L) \ar[d]^{\cap[M]} \ar[r] & 
-H^p(M) \ar[d]^{\cap[M]} \ar[r]^{\cap[M]} & 
+H^p(M) \ar[d]^{\cap[M]} \ar[r] & 
 \cHH^p(L) \ar[d]^{\cap[M]_L} \ar[r] & \cdots \\
 \cdots \ar[r] & H_{q+1}(M,M-L) \ar[r] & H_q(M-L) \ar[r] & 
 H_q(M) \ar[r] & H_q(M,M-L) \ar[r] & \cdots 
@@ -82,17 +139,11 @@ H_q(M) \ar[r] & H_q(M,M-L) \ar[r] & \cdots
 \end{corollary}
 With $L=\varnothing$, we get:
 \begin{corollary} 
-Suppose that $M$ is a compact $R$-oriented $n$-manifold, and let $K$ be a 
-closed subset. Then (with $p+q=n$) we have the commuting ladder whose rungs
-are isomorphisms:
+Suppose that $M$ is an $n$-manifold, and let $K$ be a compact subset. 
+An $R$-orientation along $K$ determines (with $p+q=n$) an isomorphism
 \[
-\xymatrix{
-\cdots \ar[r] & H^p(M) \ar[d]^{\cap[M]} \ar[r] & 
-\cHH^p(K) \ar[d]^{\cap[M]_K} \ar[r] & \cHH^{p+1}(M,K) \ar[d]^{\cap[M]} \ar[r] &
-H^{p+1}(M) \ar[d]^{\cap[M]} \ar[r] & \cdots \\
-\cdots \ar[r] & H_q(M) \ar[r] & H_q(M,M-K) \ar[r] & H_{q-1}(M-K) \ar[r] & 
-H_{q-1}(M) \ar[r] & \cdots
-}\]
+\cap[M]_K:\cHH^p(K;R)\to H_q(M,M-K;R)\,.
+\]
 \end{corollary}
 The intersection of these two special cases is:
 \begin{corollary}[Poincar\'e duality] 

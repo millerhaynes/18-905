@@ -111,9 +111,14 @@ The first condition is intended topologically, so that a subset of $X$ is open i
 We just constructed the torus as a CW complex with $\Sk_0T^2=\ast$,$\Sk_1T^2=S^1\vee S^1$, and $\Sk_2T^2=T^2$.
 \end{example}
 \begin{definition}
-A CW-complex is \emph{finite-dimensional} if $\Sk_nX=X$ for some $n$; of \emph{finite type} if each $A_n$ is finite, i.e., finitely many cell in each dimension; and \emph{finite} if it's finite-dimensional and of finite type.
+A CW-complex is \emph{finite-dimensional} if $\Sk_nX=X$ for some $n$;
+of \emph{finite type} if each $A_n$ is finite, i.e., finitely many cell in each dimension; and \emph{finite} if it's finite-dimensional and of finite type.
 \end{definition}
-In ``CW,'' the ``C'' is for cell, and the ``W'' is for weak, because of the topology on a CW-complex. This definition is due to J. H. C. Whitehead. Here are a couple of iportant facts about them. 
+The {\em dimension} of a CW complex is the largest $n$ for which there are 
+$n$ cells. This is not obviously a topological invariant, but, have no fear,
+it turns out that it is.
+
+In ``CW,'' the ``C'' is for cell, and the ``W'' is for weak, because of the topology on a CW-complex. This definition is due to J. H. C. Whitehead. Here are a couple of important facts about them. 
 \begin{theorem}
 Any CW-complex is Hausdorff, and it's compact if and only if it's finite. \\
 Any compact smooth manifold admits a CW structure.

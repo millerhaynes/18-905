@@ -272,6 +272,7 @@ a special case of Poincar\'e duality, is this:
 \begin{theorem} 
 If $M$ is compact, the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ 
 is an isomorphism. 
+\label{thm-orientation}
 \end{theorem}
 
 We will prove this theorem in the next lecture.

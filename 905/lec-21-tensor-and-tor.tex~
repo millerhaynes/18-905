@@ -111,6 +111,23 @@ All this is laid out in front of us by the free resolution. Generators of $F_0$
 map to generators for $N$, and generators for $F_1$ map to relations among
 those generators. 
 
+Now we can try to define higher Tor functors by tensoring $F_*$ with $N$
+and taking homology. If $R$ is a PID and the resolution is just $F_1\to F_0$,
+forming homology is precisely taking cokernel and kernel, as we did above. 
+In general, we define
+\[
+\Tor^R_n(M,N)=H_n(M\otimes_R F_\ast)\,.
+\]
 
-
+In the next lecture we will check that this is well-defined -- independent 
+of free resolution, and functorial in the arguments. For the moment, notice 
+that \[
+\Tor^R_n(M,F)=0\,\,\hbox{for}\, n>0 \quad\hbox{if $F$ is free}\,,
+\]
+since I can take $F\xleftarrow{\cong}F\leftarrow0\leftarrow\cdots$ as a
+free resolution; and that 
+\[
+\Tor^R_0(M,N)=M\otimes_RN
+\]
+since we know that $M\otimes_R-$ is right-exact.
 

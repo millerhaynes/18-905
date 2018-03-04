@@ -3,19 +3,6 @@
 We have a few more things to say about the cap product, and will then use it
 to give a statement of Poincar\'e duality. 
 
-Let $R$ be a commutative ring of coefficients. The cap product 
-\[
-\cap: H^p(X)\otimes H_n(X)\to H_{q}(X)\,,\quad p+q=n\,,
-\]
-comes from a chain level composite 
-\[
-S^p(X)\otimes S_n(X)\xrightarrow{1\otimes\alpha} S^p(X)\otimes S_p(X)\otimes S_q(X)\xrightarrow{\langle-,-\rangle\otimes 1}R\otimes S_q(X)\cong S_q(X)\,.
-\]
-Using the Alexander-Whitney map this can be written as follows.
-\begin{equation*}
-\cap:\beta\otimes\sigma\mapsto\beta\otimes(\sigma\circ\alpha_p)\otimes(\sigma\circ\omega_q)\mapsto\left(\beta(\sigma\circ\alpha_p)\right) (\sigma\circ\omega_q)
-\end{equation*}
-
 \begin{prop}
 The cap product enjoys the following properties.\\
 (1) $(a\cup b)\cap x=a\cap(b\cap x)$ and $1\cap x=x$: $H_*(X)$ is a module for
@@ -102,15 +89,15 @@ It renders $ H_\ast(X,A)$ a module for the graded algebra $ H^\ast(X)$.
 
 
 I want to come back to an old question, about the significance of 
-relative homology. Suppose that $K\subset X$ is a subspace, and consider the
+relative homology. Suppose that $K\subseteq X$ is a subspace, and consider the
 relative homology $H_*(X,X-K)$. Since the complement of $X-K$ in $X$ is $K$,
 these groups should be regarded as giving information about $K$. If I enlarge
 $K$, I make $X-K$ smaller: $K\subseteq L$ induces
 $H_*(X,X-L)\to H_*(X-K)$; the relative homology is {\em contravariant}
-in the variable $K$ (regarded as an element of the poset of subspaces of $X$). 
+in the variable $K$ (regarded as an object of the poset of subspaces of $X$). 
 
 Excision gives insight into how $H_\ast(X,X-K)$ depends on $K$. 
-Suppose $K\subseteq U\subseteq X$ such that $\overline{K}\subseteq\mathrm{Int}(U)$. To simplify things, let's just suppose that $K$ is closed and $U$ is open.
+Suppose $K\subseteq U\subseteq X$ with $\overline{K}\subseteq\mathrm{Int}(U)$. To simplify things, let's just suppose that $K$ is closed and $U$ is open.
 Then $X-U$ is closed, $X-K$ is open, and $X-U\subseteq X-K$, so excision asserts that the inclusion map 
 \[
 H_*(U,U-K)\to H_*(X,X-K)
@@ -174,8 +161,10 @@ is an isomorphism. Then $x$ restricts to 0 in $H^p(V)$.
 \end{proof}
 
 On the other hand, here's an example that distinguishes $\cHH^\ast$ from $H^\ast$. This is a famous example. The ``topologist's sine curve'' is the subspace of $\RR^2$ defined as follows. It is union of two
-subsets, $A$ and $B$. $A$ is the graph of $\sin(\pi/x)$ where $0<x\leq 1$. 
+subsets, $A$ and $B$. $A$ is the graph of $\sin(\pi/x)$ where $0<x<1$. 
 $B$ is a continuous curve from $(0,-1)$ to $(1,0)$ and not meeting $A$. This is a counterexample for a lot of things; you've probably seen it in 18.901.
+
+\fbox{picture}
 
 What is the singular homology of the topologist sine curve? Use Mayer-Vietoris! I can choose $V$ to be some connected portion of the continuous curve from $(0,-1)$ to $(1,0)$, and $U$ to contain the rest of the space in a way that intersects $V$ in two open intervals. Then $V$ is contractible, and $U$ is made up of two contractible connected components. (This space is not locally connected, and one of these path components is not closed.)
 
@@ -186,9 +175,11 @@ The Mayer-Vietoris sequence looks like
 The two path components of $U\cap V$ do not become connected in $U$, so $\partial=0$ and we find that $\varepsilon:H_*(X)\xrightarrow{\cong}H_*(\ast)$
 and hence $H^*(X)\cong H^*(*)$. 
 
-How about $\cHH^\ast$? Let $X\subset U$ be an open neighborhood. The interval is contained in some $\epsilon$-neighborhood that's contained in $U$. This implies that there exists a neighborhood $X\subseteq V\subseteq U$ such that $V\sim S^1$. This implies that 
+How about $\cHH^\ast$? Let $X\subset U$ be an open neighborhood. The interval
+$0\times[-1,1]$
+has an $\epsilon$-neighborhood, for some small $\epsilon$, that's contained in $U$. This implies that there exists a neighborhood $X\subseteq V\subseteq U$ such that $V\sim S^1$. This implies that 
 \[
 \varinjlim_{U\in\mathcal{U}_X}H^\ast(U)\cong H^\ast(S^1)
 \]
-by an argument we will detail later. So $\cHH^\ast(X)\neq H^\ast(X)$.
+by a cofinality argument that we will detail later. So $\cHH^\ast(X)\neq H^\ast(X)$.
 

@@ -6,7 +6,7 @@ We'll leave it to you to spell out the definition, but notice that there is a un
 
 Then a contravariant functor from $\cc$ to $\cd$ is the same thing as a (``covariant'') functor from $\cc^{op}$ to $\cd$. 
 
-Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\set$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor {\em represented by} $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(X,-)$ is a covariant functor.
+Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\set$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor that is represented by $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(Y,-)$ is a covariant functor.
 
 \begin{example}
 Recall that the simplex category $\Deltab$ has objects the totally ordered sets
@@ -21,16 +21,16 @@ functor $\Deltab^{op}\to\mathbf{Top}$. This functor carries in it all the face a
 \begin{definition} Let $\cc$ be any category. A {\em simplicial object} in $\cc$ is a functor $K:\Deltab^{op}\to\cc$. Simplicial objects in $\cc$ form a category with natural transformations as morphisms. Similarly, {\em semi-simplicial object} in $\cc$ is a functor $\Deltab_{inj}^{op}\to\cc$,
 \end{definition}
 
-So the singular functor $\Sin_\ast$ gives a functor from spaces to simplicial sets (and so, by restriction, to semi-simplicial sets). 
+So the singular functor $Sin_\ast$ gives a functor from spaces to simplicial sets (and so, by restriction, to semi-simplicial sets). 
 
-I want to interject one more bit of categorical language that will often be useful to us. 
+In want to interject one more bit of categorical language that will often be useful to us. 
 
 \begin{definition}
-A morphism $f:X\to Y$ in a category $\cc$ is a \textit{split epimorphism} (``split epi'' for short) if there exists $g:Y\to X$ (called a section or a splitting) such that the composite $Y\xrightarrow{g}X\xrightarrow{f}Y$ is the identity.
+A morphism $f:X\to Y$ in a category $\cc$ is a \textit{split epimorphism} (``split epi'' for short) if there exists $g:Y\to X$ (called a section or a splitting) such that $Y\xrightarrow{g}X\xrightarrow{f}Y$ is the identity.
 \end{definition}
 \begin{example}
 In the category of sets, a map $f:X\to Y$ is a split epimorphism exactly when, 
-for every element of $Y$ there exists some element of $X$ whose image in $Y$ is the original element. So $f$ is surjective. Is every surjective map a split epimorphism? This is equivalent to the axiom of choice! because a section of $f$ is precisely a choice of $x\in f^{-1}(y)$ for every $y\in Y$.
+for every element of $Y$ there exists some element of $X$ whose image in $Y$ is the original element. So $f$ is surjective. Is every surjective map a split epimorphism? This reduces to the axiom of choice! because proving that if $y\in Y$, the map $g:Y\to X$ can be constructed by choosing some $x\in f^{-1}(y)$.
 \end{example}
 Every categorical definition is accompanied by a dual definition. 
 \begin{definition}
@@ -38,7 +38,7 @@ A map $g:Y\to X$ is a {\em split monomorphism} (``split mono'' for short) if the
 \end{definition}
 \begin{example}
 Again let $\cc=\set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $f(g(y))=y=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
-is a split monomorphism only if $Y=\varnothing$. So there's an asymetry 
+is a split monomorphism only if $Y=\varnothing$. So there's an assymetry 
 in the category of sets.
 \end{example}
 \begin{lemma}
@@ -46,12 +46,12 @@ A map is an isomorphism if and only if it is both a split epimorphism and a
 split monomorphism.
 \end{lemma}
 \begin{proof}
-Easy!
+Standard!
 \end{proof}
 The importance of these definitions is this: Functors will not in general
 respect ``monomorphisms'' or ``epimorphisms,'' but:
 \begin{lemma}
-Any functor sends split epis to split epis and split monos to split monos.
+If $f:X\to Y$ is a split epi or mono in $\cc$, and you have a functor $F:\cc\to \cd$, then so is $F(f)$ in $\cd$.
 \end{lemma}
 \begin{proof}
 Apply $F$ to the diagram establishing $f$ as a split epi or mono.

@@ -193,6 +193,6 @@ space over $R$.
 
 \begin{question}
 A reasonable question is this: Suppose we know $H_*(X)$. Can we compute 
-$H_*(X;M)$ for an abelian group $M$. More generally, suppose we know $H_*(X;R)$ and $M$ is an $R$-module. Can we compute $H_*(X;M)$?
+$H_*(X;M)$ for an abelian group $M$? More generally, suppose we know $H_*(X;R)$ and $M$ is an $R$-module. Can we compute $H_*(X;M)$?
 \end{question}
 

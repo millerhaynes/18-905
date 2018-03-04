@@ -97,7 +97,7 @@ isomorphisms
 \[
 \widetilde H_{q-1}(S^{n-1}) \xleftarrow{\cong}H_q(D^n,S^{n-1})
 \xrightarrow{\cong}H_q(D^n/S^{n-1},\ast)
-}\]
+\]
 since $D^n/S^{n-1}\cong S^n$. The right hand arrow is an isomorphism 
 since $S^{n-1}$ is a deformation retract of a neighborhood in $D^n$.
 \end{proof}

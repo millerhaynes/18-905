@@ -1,7 +1,7 @@
 \section{Universal coefficient theorem}
 
 Suppose that we are given $ H_\ast(X;\Z)$. Can we compute $ H_\ast(X;\Z/2\Z)$? 
-This is non-obvious. Consider the map $\RP^2\to S^2$ that pinches $\RP^1$ to a point. In $H_2(\RP^2;\Z)=0$, so in $H_2$ this map is zero. But in $\Z/2\Z$-coefficients, in dimension $2$, this map gives an isomorphism. This shows that there's not a {\em functorial} relationship between $ H_\ast(X;\Z)$ and $ H_\ast(X;\Z/2\Z)$; the effect of a map in integral homology does not determine its effect in mod 2 homology. So how \emph{do} we go between different coefficients? That's the mystery.
+This is non-obvious. Consider the map $\RP^2\to S^2$ that pinches $\RP^1$ to a point. Now $H_2(\RP^2;\Z)=0$, so in $H_2$ this map is zero. But in $\Z/2\Z$-coefficients, in dimension $2$, this map gives an isomorphism. This shows that there's no {\em functorial} determination of $ H_\ast(X;\Z/2)$ in terms of $ H_\ast(X;\Z)$; the effect of a map in integral homology does not determine its effect in mod 2 homology. So how \emph{do} we go between different coefficients?
 
 Let $R$ be a commutative ring and $M$ an $R$-module, and suppose we have a chain complex $C_\ast$ of $R$-modules. It could be the singular complex of a space, but it doesn't have to be. Let's compare $ H_n(C_\ast)\otimes M$ with $ H_n(C_\ast\otimes M)$. (Here and below we'll just write $\otimes$ for $\otimes_R$.) The latter thing gives homology with coefficients in $M$. How can we compare these two? Let's investigate, and build up conditions on $R$ and $C_\ast$ as we go along. 
 
@@ -9,7 +9,9 @@ First, there's a natural map
 \[
 \alpha: H_n(C_\ast)\otimes M\to H_n(C_\ast\otimes M)\,,
 \]
-sending $[z]\otimes m$ to $[z\otimes m]$. We propose to show that it is 
+sending $[z]\otimes m$ to $[z\otimes m]$. (This is a special case
+of our comparison map $\mu$; regard $M$ as a very short chain complex.) 
+We propose to find conditions under which it is 
 injective. The map $\alpha$ fits into a commutative 
 diagram with exact columns like this:
 \[
@@ -17,10 +19,10 @@ diagram with exact columns like this:
 0 & 0 \\
 H_n(C_*)\otimes M \ar[r]^\alpha \ar[u] & H_n(C_*\otimes M) \ar[u] \\
 Z_n(C_*)\otimes M \ar[r] \ar[u] & Z_n(C_*\otimes M) \ar[u] \\
-C_{n+1}\otimes M \ar[r]^= \ar[u] & C_{n+1}\otimes M\,.
+C_{n+1}\otimes M \ar[r]^= \ar[u] & C_{n+1}\otimes M \ar[u] \,.
 }\]
 Now, $Z_n(C_*\otimes M)$ is a submodule of $C_n\otimes M$, but the map
-$Z_n(C)\otimes M\to C_n\otimes M$ need not be \ldots unless we impose more
+$Z_n(C)\otimes M\to C_n\otimes M$ need not be injective \ldots unless we impose more
 restrictions. If we can guarantee that it is, then a diagram chase shows
 that $\alpha$ is a monomorphism. 
 
@@ -59,7 +61,7 @@ left-hand column in the following diagram.
 \begin{equation*}
 \xymatrix{
 0 \ar[d] & 0\ar[d] \\
-\coker(H_n(C_\ast\otimes F_1)\to H_n(C_\ast\otimes F_0) \ar[d] \ar[r]^\cong 
+\coker(H_n(C_\ast\otimes F_1)\to H_n(C_\ast\otimes F_0)) \ar[d] \ar[r]^\cong 
 & \coker(H_n(C_\ast)\otimes F_1\to H_n(C_\ast)\otimes F_0)) \ar[d] \\
 H_n(C_\ast\otimes M) \ar[d]^\partial \ar[r]^= & 
 H_n(C_\ast\otimes M) \ar[d]\\
@@ -78,7 +80,7 @@ and
 \ker(H_{n-1}(C_\ast)\otimes F_1\to H_{n-1}(C_\ast)\otimes F_0)=
 \Tor^R_1(H_{n-1}(C_\ast),M)\,.
 \]
-
+We have proved the following theorem.
 \begin{theorem}[Universal Coefficient Theorem]
 Let $R$ be a PID and $C_\ast$ a chain complex of $R$-modules such that $C_n$ 
 is free for all $n$. Then there is a natural short 

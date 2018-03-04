@@ -10,28 +10,43 @@ For each pair of natural numbers $p,q$, we will define a natural homomorphism
 \alpha: S_{p+q}(X\times Y)\to S_p(X)\otimes S_q(Y)\,.
 \]
 It suffices to define this on simplices, so let 
-$\sigma:\Delta^{p+q}\to X\times Y$ be a singular $(p+q)$-simplex in the product. I can write $\sigma=\begin{pmatrix}\sigma_1 \\ \sigma_2\end{pmatrix}$ where $\sigma_1:\Delta^{p+q}\to X$ and $\sigma_2:\Delta^{p+q}\to Y$. I have to produce
-a $p$-simplex in $X$ and a $q$-simplex in $Y$. 
-First define two maps in the simplex category:
- the ``front face''  $\alpha_p:[p]\to[p+q]$, sending $i$ to $i$ for $0\leq i\leq p$, and the ``back face'' $\omega_q:[q]\to[p+q]$, sending $j$ to $j+p$ for $0\leq j\leq q$. Use the same symbols for the affine 
+$\sigma:\Delta^{p+q}\to X\times Y$ be a singular $(p+q)$-simplex in the product. Let 
+\[
+\sigma_1=\pr_1\circ\sigma:\Delta^{p+q}\to X\quad\hbox{and}\quad 
+\sigma_2=\pr_2\circ\sigma:\Delta^{p+q}\to Y
+\] 
+be the two coordinates of $\sigma$. I have to produce
+a $p$-simplex in $X$ and a $q$-simplex in $Y$.
+ 
+First define two maps in the simplex category: 
+
+\smallskip
+the ``front face''  $\alpha_p:[p]\to[p+q]$, sending $i$ to $i$ for $0\leq i\leq p$, 
+
+\smallskip
+and the ``back face'' $\omega_q:[q]\to[p+q]$, sending $j$ to $j+p$ for $0\leq j\leq q$. 
+
+\smallskip\noindent
+Use the same symbols for the affine 
 extensions to maps $\Delta^p\to \Delta^{p+q}$ and $\Delta^q\to\Delta^{p+q}$. 
 Now let 
 \[
-\alpha(\sigma)=\sigma_1\circ\alpha_p\otimes\sigma_2\circ\omega_q\,.
+\alpha(\sigma)=(\sigma_1\circ\alpha_p)\otimes(\sigma_2\circ\omega_q)\,.
 \]
 \end{construction}
 This seems like a very random construction; but it works! It's named after two
-great early algebraic topologists, Alexander and Whitney.
+great early algebraic topologists, James W. Alexander and Hassler Whitney.
 For homework, you will show that these maps assemble into a chain map
 \[
 \alpha:S_\ast(X\times Y)\to S_\ast(X)\otimes S_\ast(Y)\,.
 \]
 
-This works over any ring $R$. To get a map in cohomology, we should form 
+This works over any ring $R$. To get a map in cohomology, we should form
+a composite 
 \[
 S^p(X;R)\otimes_RS^q(Y;R)\to
 \Hom_R(S_p(X;R)\otimes_RS_q(Y;R),R)\xrightarrow{\alpha^*}
-\Hom_R(S_{p+q}(X\times Y;R),R)=S^{p+q}(X\times Y)\,.
+\Hom_R(S_{p+q}(X\times Y;R),R)=S^{p+q}(X\times Y;R)\,.
 \]
 The first map goes like this: Given chain complexes $C_\ast$ and $D_\ast$, 
 we can consider the dual cochain complexes $\Hom_R(C_\ast,R)$ and
@@ -119,12 +134,3 @@ cup product is associative:
 (\alpha\cup\beta)\cup\gamma=\alpha\cup(\beta\cup\gamma)\,.
 \]
 
-But this product is obviously not commutative on the level of cochains. 
-It treats the two maps completely differently. But we have ways of 
-dealing with this. You will show for homework that the 
-method of acyclic models shows that 
-\[
-\alpha\cup\beta=(-1)^{|\alpha|\cdot|\beta|}\beta\cup\alpha\,.
-\]
-
-So $ H^\ast(X;R)$ forms a \emph{commutative graded $R$-algebra}.

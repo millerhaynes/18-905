@@ -125,7 +125,7 @@ So
 H_n(C_*(X))=H_n(X_n)/\img\partial_n=H_n(X_{n+1})
 \]
 by exactness of the left column; but as we know this is exactly $H_n(X)$!
-\begin{theorem} 
+\begin{theorem} \label{thm-cw-homology}
 For a CW complex $X$, there is an isomorpphism
 \[
 H_\ast(C_\ast(X))\cong H_\ast(X)
@@ -157,3 +157,5 @@ H_k(\CP^n)=\begin{cases}\Z & \hbox{for}\,\,0\leq k\leq 2n,\, k\,\,\hbox{even}\\
 \]
 \end{example}
 
+Finally, notice that in our proof of Theorem \ref{thm-cw-homology} we used only properties contained in the Eilenberg-Steenrod axioms. As a result,
+any construction of a homology theory satisfying the Eilenberg-Steenrod axioms gives you the same values on CW complexes as singular homology. 

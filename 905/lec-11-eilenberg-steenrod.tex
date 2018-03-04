@@ -1,7 +1,7 @@
 \section{The Eilenberg Steenrod axioms and the locality principle}
 
 
-Before we proceed to prove the excision theorem, let's review the properties of homology theory as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod. 
+Before we proceed to prove the excision theorem, let's review the properties of homology theory as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod \cite{eilenberg-steenrod}. 
 \begin{definition}
 A {\em homology theory} (on $\mathbf{Top}$) is:
 \begin{itemize}
@@ -10,18 +10,19 @@ A {\em homology theory} (on $\mathbf{Top}$) is:
 \end{itemize}
 such that:
 \begin{itemize}
-\item if $f_0,f_1:(X,A)\to (Y,B)$ are homotopic, then $f_{0,\ast}=f_{1,\ast}:h_n(X,A)\to h_n(Y,B)$.
-\item excisions induce isomorphisms.
-\item for any pair $(X,A)$, the sequence 
+\item If $f_0,f_1:(X,A)\to (Y,B)$ are homotopic, then $f_{0,\ast}=f_{1,\ast}:h_n(X,A)\to h_n(Y,B)$.
+\item Excisions induce isomorphisms.
+\item For any pair $(X,A)$, the sequence 
 \begin{equation*}
 \cdots\to h_{q+1}(X,A)\xrightarrow{\partial}h_q(A)\to h_q(X)\to h_q(X,A)\xrightarrow{\partial}\cdots
 \end{equation*}
 is exact, where we have written $h_q(X)$ for $h_q(X,\varnothing)$.
-\item (the dimension axiom): $h_n(\ast)$ is nonzero only in dimension zero. 
+\item (The dimension axiom): The group $h_n(\ast)$ is nonzero only for $n=0$. 
 \end{itemize}
 \end{definition}
-We add the following ``Milnor axiom'' to our definition. To state it,
-let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct. 
+We add the following ``Milnor axiom'' \cite{milnor}
+to our definition. To state it,
+let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct:
 \[
 \alpha:\bigoplus_i h_n(X_i)\to h_n\left(\coprod_{i\in I} X_i\right)\,.
 \]

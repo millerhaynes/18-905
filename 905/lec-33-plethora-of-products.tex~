@@ -1,6 +1,8 @@
 \section{A plethora of products}
 
-We are now heading towards a statement of the Poincar\'e duality theorem. 
+We are now heading towards a statement of the 
+Poincar\'e duality theorem generalized in a way useful in both the
+proof and in applications. 
 
 Recall that we have the Kronecker pairing 
 \[
@@ -43,7 +45,7 @@ We also have the two cross products:
 and
 \[\times: H^p(X)\otimes H^q(Y)\to H^{p+q}(X\times Y)\,.
 \]
-You should think of this as fishy because both maps are in the same direction.
+You might think this is fishy because both maps are in the same direction.
 This is OK because we used different things to make these constructions:
 the chain-level cross product (or Eilenberg-Zilber map) 
 for homology and the Alexander-Whitney map for
@@ -73,7 +75,7 @@ S_p(X)\otimes S_q(Y)\xrightarrow{\times}S_{p+q}(X\times Y)
 \]
 Then:
 \[
-(f\times g)(\xi\times\eta)=(fg)\alpha(\xi\times\eta)\sim(fg)(\xi\otimes\eta) 
+(f\times g)(\xi\times\eta)=(fg)\alpha(\xi\times\eta)\simeq(fg)(\xi\otimes\eta) 
 =(-q)^{pq}f(\xi)g(\eta)\,.
 \]
 \end{proof}
@@ -81,6 +83,7 @@ Then:
 We can use this to prove a restricted form of the K\"unneth theorem in 
 cohomology.
 \begin{theorem}
+\label{thm-coh-kunneth}
 Let $R$ be a PID. Assume that $H_p(X)$ is a finitely generated free $R$-module
 for all $p$. Then 
 \[
@@ -132,11 +135,11 @@ Then I get
 where $\Delta:(X,A)\to (X\times X,X\times A)$ is the ``relative diagonal.'' 
 This ``relative cup product'' makes $ H^\ast(X,A)$ into a module over the graded algebra $ H^\ast(X)$. The relative cohomology is \emph{not} a ring -- it doesn't have a unit, for example -- but it is a module. And the long exact sequence of the pair is a sequence of $ H^\ast(X)$-modules. 
 
-I want to introduce you to one more product, which will enter into our
+I want to introduce you to one more product, one that will enter into our
 expression of Poincar\'{e} duality. This is the {\em cap product}.
 What can I do with $S^p(X)\otimes S_n(X)$? Well, I can form the composite:
 \begin{equation*}
-S^p(X)\otimes S_n(X)\xrightarrow{1\times (\alpha_{X,X}\circ \Delta_\ast)} S^p(X)\otimes S_p(X)\otimes S_{n-p}(X)\xrightarrow{\langle -,-\rangle\otimes 1}S_{n-p}(X)
+\cap:S^p(X)\otimes S_n(X)\xrightarrow{1\times (\alpha\circ \Delta_\ast)} S^p(X)\otimes S_p(X)\otimes S_{n-p}(X)\xrightarrow{\langle -,-\rangle\otimes 1}S_{n-p}(X)
 \end{equation*}
 Using our explicit formula for $\alpha$, we can write:
 \begin{equation*}
@@ -156,6 +159,6 @@ $(\alpha\cup\beta)\cap x=\alpha\cap(\beta\cap x)$ and $1\cap x=x$.
 \begin{proof}
 Easy to check from the definition.
 \end{proof}
-This makes $ H_\ast(X)$ into a module over $ H^\ast(X)$. These are not hard things to check. There's a lot of structure, and the fact that $ H^\ast(X)$ forms an algebra is a good thing. Notice how the dimensions work. Long ago a bad choice was made: we should index cohomology with negative numbers, so that the grading in $\cap: H^p(X)\otimes H_n(X)\to H_{n-p}(X)$ makes sense. A cochain complex with positive grading is the same as a chain complex with negative grading.
+This makes $ H_\ast(X)$ into a module over $ H^\ast(X)$. Notice how the dimensions work. Long ago a bad choice was made: we should index cohomology with negative numbers, so that the grading in $\cap: H^p(X)\otimes H_n(X)\to H_{n-p}(X)$ makes sense. A cochain complex with positive grading is the same as a chain complex with negative grading.
 
-There are also two slant products. Maybe we won't talk about them. We will check a few things about cap products, and then we'll get into the machinery of Poincar\'{e} duality.
+There are also two slant products. Maybe I won't talk about them. In the next lecture, I'll check a few things about cap products, and then get into the machinery of Poincar\'{e} duality.

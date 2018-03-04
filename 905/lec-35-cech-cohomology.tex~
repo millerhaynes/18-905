@@ -107,7 +107,7 @@ $a\mapsto0\in A_{\varphi(j')}$ as well
 \end{enumerate}
 \end{proof}
 
-\begin{proof}{Proof of Theorem \ref{cech-les}, the long exact sequence}
+\begin{proof}[Proof of Theorem \ref{cech-les}, the long exact sequence]
 Let $(K,L)$ be a closed pair in the space $X$. We have
 $\cHH^p(K,L)=\varinjlim_{(U,V)\in\mathcal{U}_{K,L}}H^p(U,V)$ and $\cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K}H^p(U)$. We can rewrite the entire sequence as
 the direct limit of a directed system of exact sequences indexed by 
@@ -151,7 +151,7 @@ $B\cap(X-V)\subseteq T$. Then take $W=U\cap S\in\mathcal{U}_A$ and
 $Y=V\cup T\in\mathcal{U}_B$, and observe that $(W,W\cap Y)\subseteq(U,V)$.
 \end{proof}
 
-\begin{proof}{Proof of Theorem \ref{cech-excision}}
+\begin{proof}[Proof of Theorem \ref{cech-excision}]
 Combine Lemma \ref{lem-cofinal} with excision for singular cohomology:
 \begin{equation*}
 \xymatrix{
@@ -162,35 +162,10 @@ Combine Lemma \ref{lem-cofinal} with excision for singular cohomology:
 	\cHH^p(A\cup B,B)\ar[rrr] & & & \cHH^p(A,A\cap B)
 }\end{equation*}
 \end{proof}
-
 The Mayer-Vietoris long exact sequence is a consequence of these two
-results, by virtue of this simple observation.
-Suppose we have a map of long exact sequences
-\begin{equation*}
-\xymatrix{
-\cdots\ar[r] & C'_{n+1} \ar[r]\ar[d] & A'_n\ar[r]\ar[d] & 
-B'_n\ar[r]\ar[d]^\cong & 
-C'_n\ar[r]^k\ar[d]^h & A_{n-1}\ar[r]\ar[d]^f & \cdots\\
-\cdots\ar[r] & C_{n+1} \ar[r] & A_n \ar[r] & B_n \ar[r] & C_n \ar[r]^k & 
-A_{n-1}\ar[r] & \cdots
-}
-\end{equation*}
-in which every third arrow is an isomorphism as indicated.
-Define a map
-\[
-\partial:A_n\to B_n\xleftarrow{\cong} B'_n\to C'_n\,.
-\]
-An easy diagram chase shows:
-\begin{lemma} The sequence 
-\begin{equation*}
-\cdots\longrightarrow 
-C'_{n+1}\xrightarrow{\left[\begin{array}{c}h\\k\end{array}\right]}
-C_{n+1}\oplus A_n\xrightarrow{\left[\begin{array}{cc}k&-f\end{array}\right]}
-A_n\xrightarrow{\partial} C'_n\longrightarrow\cdots
-\end{equation*}
-is exact.
-\end{lemma}
+results, by virtue of Lemma \ref{lem-ladder}.
 \begin{corollary}[Mayer-Vietoris] 
+\label{thm-mayer-vietoris-ladder}
 Suppose $A$ and $B$ are closed subspaces of a 
 normal space. There is a natural long exact sequence: 
 \[

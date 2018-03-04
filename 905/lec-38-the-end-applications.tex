@@ -12,37 +12,19 @@ $[M]_K\in H_n(M,M-K)$, and capping gives an isomorphism:
 $\cHH^q(K;R)=0$ for $q>n$.
 \end{corollary}
 We can contrast this with singular (co)homology. Here's an example:
-\begin{example}[Barratt-Milnor]
+\begin{example}[Barratt-Milnor, \cite{barratt-milnor}]
 A two-dimensional version $K$ of the Hawaiian earring, i.e., nested spheres all tangent to a point whose radii are going to zero. What they proved is that $H_q(K;\ZZ)$ is uncountable for every $q>1$. But \v{C}ech cohomology is much more
 well-behaved.
 \end{example}
 \begin{theorem}[Alexander duality]
-Let $K\subseteq \RR^n$ be any compact subset. 
-Then there is an appropriately natural isomorphism
+For any compact subset $K$ of $\RR^n$, the composite
 \[
-\cHH^{n-q}(K;R)\xrightarrow{\cong}\widetilde{H}_{q-1}(\RR^n-K;R)\,.
+\cHH^{n-q}(K;R)\xrightarrow{\cap[\RR^n]_K}H_q(\RR^n,\RR^n-K;R)
+\xrightarrow{\partial}\widetilde{H}_{q-1}(\RR^n-K;R)
 \]
+is an isomorphism.
 \end{theorem}
-\begin{proof} The case $n=0$ is trivial (remembering the definition of 
-$\widetilde H$), so suppose $n>0$
-The first job is to compare $\RR^n$ to a compact manifold.
-Let $S^n$ denote the one-point compactification of $\RR^n$.
-Let $D^n$ be a disk in $\RR^n$ containing $K$. Define the map along the
-top of the diagram below by requiring commutativity. 
-\[
-\xymatrix{
-H_q(S^n,S^n-K) \ar[r] & H_{q-1}(\RR^n,K) \\
-H_q(D^n,D^n-K) \ar[u]_\cong \ar[r]^\partial & 
-\widetilde H_{q-1}(D^n-K) \ar[u]_\cong 
-}\]
-The vertical maps are isomorphisms by excision, and the boundary map
-is an isomorphism by the long exact sequence. 
-
-On the other hand, relative Poincar\'e duality gives us an isomorphism
-\[
-\cHH^{n-q}(K)\xrightarrow{\cong}H_q(S^n,S^n-K)\,.
-\]
-\end{proof}
+\begin{proof} $\widetilde H^*(\RR^n;R)=0$. \end{proof}
 This is extremely useful! For example
 \begin{corollary}
 If $K$ is a compact subset of $\RR^n$ then $\cHH^n(K;R)=0$. 
@@ -58,7 +40,7 @@ This shows, for example, that $\RP^2$ can't be embedded in $\RR^3$ -- at least
 not with a regular neighborhood. 
 
 If we take $n=2$ and suppose that $\cHH^*(K)=H^*(S^1)$, we find that the 
-complement of $K$ has {\em two} components. This is the 
+complement of $K$ has {\em two} path components. This is the 
 {\em Jordan Curve Theorem}.
 \end{example}
 There is a useful purely cohomological consequence of Poincar\'e duality,

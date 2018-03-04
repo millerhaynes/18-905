@@ -180,7 +180,7 @@
 \newcommand{\Sk}{\mathrm{Sk}}
 
 
-\newcommand{\downsubeseteq}{\mathbin{\rotatebox[origin=c]{-90}{$\subseteq$}}}
+\newcommand{\downsubseteq}{\mathbin{\rotatebox[origin=c]{-90}{$\subseteq$}}}
 
 % for pullback and pushout squares
 \usepackage{pigpen}

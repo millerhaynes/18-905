@@ -14,10 +14,10 @@ where $\epsilon:S_*(X)\to\ZZ$ is the augmentation and $\eta:\ZZ\to S_*(X)$
 sends 1 to the constant 0-chain $c_b^0$. 
 
 Let's see how the cone construction can be used to ``subdivide'' an ``affine 
-simplex.'' An {\em affine simplex} is the convex hull of a finite set of points in Euclidean space. To make this non-degenerate, assume that the points $v_0,v_1,\ldots,v_n$, have the property that $\{v_1-v_0,\ldots,v_n-b_0\}$ is linearly independent. 
+simplex.'' An {\em affine simplex} is the convex hull of a finite set of points in Euclidean space. To make this non-degenerate, assume that the points $a_0,a_1,\ldots,a_n$, have the property that $\{a_1-a_0,\ldots,a_n-a_0\}$ is linearly independent. 
 The {\em barycenter} of this simplex is the center of mass of the vertices, 
 \[
-b=\frac{1}{n+1}\sum{v_i}\,.
+b=\frac{1}{n+1}\sum{a_i}\,.
 \]
 
 Start with $n=1$. To subdivide a 1-simplex, just cut it in half. 

@@ -30,7 +30,7 @@ $H_*(B)\to H_*(C)$ may fail to be surjective. Instead:
 \begin{theorem}[homology long exact sequence]
 Let $0\to A_\ast\to B_\ast\to C_\ast\to 0$ be a short exact sequence of chain complexes. Then there is a natural homomorphism $\partial: H_n(C)\to H_{n-1}(A)$ such that the sequence 
 \begin{equation*}
-\xymatrix{ & \cdots & H_{n+1}(C) \ar[dll] \\
+\xymatrix{ & \cdots \ar[r] & H_{n+1}(C) \ar[dll] \\
  H_n(A)\ar[r] & H_n(B)\ar[r] & H_n(C)\ar[dll]_\partial\\
  H_{n-1}(A)\ar[r] & \cdots & }
 \end{equation*}
@@ -52,7 +52,7 @@ To make sure that this is well-defined, let's make sure that this choice of homo
 sequence in homology:
 \begin{equation*}
 \xymatrix{ 
-& \cdots & H_{n+1}(X,A) \ar[dll]_\partial\\
+& \cdots \ar[r] & H_{n+1}(X,A) \ar[dll]_\partial\\
  H_n(A)\ar[r] & H_n(X)\ar[r] & H_n(X,A)\ar[dll]_\partial\\
  H_{n-1}(A)\ar[r] & \cdots & 
 }\,.
@@ -95,7 +95,7 @@ a pair $(X,A)$ we can associate a short exact sequence
 and hence a long exact sequence 
 \begin{equation*}
 \xymatrix{ 
-& \cdots & H_{n+1}(X,A)\ar[dll]_\partial\\
+& \cdots \ar[r] & H_{n+1}(X,A)\ar[dll]_\partial\\
 \widetilde H_n(A)\ar[r] & \widetilde H_n(X)\ar[r] & H_n(X,A)\ar[dll]_\partial\\\widetilde H_{n-1}(A)\ar[r] & \cdots &
 }\,.
 \end{equation*}

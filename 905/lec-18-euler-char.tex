@@ -14,7 +14,7 @@ We'll need a little bit of information about the structure of finitely generated
 
 Let $A$ be an abelian group. The set of {\em torsion} elements of $A$,
 \[
-\mathrm{Tors}(A)\{a\in A:na=0\,\,\text{for some}\,\,n\neq0\}\,,
+\mathrm{Tors}(A)=\{a\in A:na=0\,\,\text{for some}\,\,n\neq0\}\,,
 \]
 is a subgroup of $A$ (since $A$ is commutative). A group is \emph{torsion free}
 if $\mathrm{Tors}(A)=0$. For any $A$ the quotient group 
@@ -33,8 +33,8 @@ A finite abelian group $A$ is necessarily of the form
 \Z/n_1\oplus\Z/n_2\oplus\cdots\oplus\Z/n_t\,\,\hbox{where}\,\,
 n_1|n_2|\cdots|n_t\,.
 \]
-These are the ``torsion coefficients'' of $A$. They are well defined natural
-numbers.
+The $n_i$ are the ``torsion coefficients'' of $A$. 
+They are well defined natural numbers.
 
 \begin{lemma} Let $0\to A\to B\to C\to 0$ be a short exact sequence of finitely
 generated abelian groups. Then
@@ -61,7 +61,7 @@ and
 \[
 0\to B_k\to Z_k\to H_k\to 0\,.
 \]
-Let's use them and facts about rank rewrite the alternating sum is:
+Let's use them and facts about rank rewrite the alternating sum:
 \begin{align*}
 \sum_k (-1)^ka_k & = \sum_k(-1)^k\mathrm{rank}(C_k)\\
 & = \sum_k(-1)^k(\mathrm{rank}\,(Z_k)+\mathrm{rank}\,(B_{k-1}))\\
@@ -87,7 +87,7 @@ where the $n_1(k)|\cdots|n_{t(k)}(k)$ are the torsion coefficients of $H_k(X)$
 and $r(k)$ is the rank.
 
 The minimal chain complex with $H_k=\Z^r$ and $H_q=0$ for $q\neq k$ is just the chain complex with $0$ everywhere else except for $\Z^r$ in the $k$th degree. The minimal chain complex {\em of free abelian groups} with $ H_k=\Z/n\Z$ and $ H_q=0$ for $q\neq k$ is the chain complex with $0$ everywhere else except in dimensions $k+1$ and $k$, where we have $\Z\xrightarrow{n}\Z$ 
-These small complexes are called ``elementary chain complexes.''
+These small complexes are called {\em elementary chain complexes}.
 
 This implies that
 a lower bound on the minimal number of $k$-cells is 
@@ -124,22 +124,26 @@ being a subgroup of a free abelian group. Write $G_0$ for minimal set of
 generators of $F_0$, and $G_1$ for a minimal set of generators for $F_1$.
 
 Let $k\geq1$. Define $X_k$ to be the wedge of $|G_0|$ copies of $S^k$,
-so $H_k(X_k)=\Z^{|G_0|}$. Now define an attaching map 
+so $H_k(X_k)=\Z\langle G_0\rangle$. Now define an attaching map 
 \[
 \alpha:\coprod_{b\in G_1} S^k_b\to X_k
 \]
-by specifying it on each summand $S^k_a$. The generator 
-$a\in G_1\subseteq F_1$ is given by a linear combination of the generators
+by specifying it on each summand $S^k_b$. The generator 
+$b\in G_1$ is given by a linear combination of the generators
 of $F_0$, say 
 \[
 b=\sum_{i=1}^s n_ia_i\,.
 \]
-Now map $S^k\to\bigvee^s S^k$ by pinching $(s-1)$ longitudes to points. 
+We want to mimic this in topology. To do this, first
+map $S^k\to\bigvee^s S^k$ by pinching $(s-1)$ tangent circles to points. 
+In homology, this map takes a generator of $H_k(S^k)$ to the sum of the
+generators of the $k$-dimensional homology of the various spheres in the
+bouquet.
 Map the $i$th sphere in the wedge to $S^k_{a_i}\subseteq X_k$ by a map of
-degree $n_i$. The map on the summand $S^k_a$ is then the composite of these 
+degree $n_i$. The map on the summand $S^k_b$ is then the composite of these 
 two maps,
 \[
-S^k_a\to\bigvee_i S^k_i\to\bigvee_a S^k_a
+S^k_b\to\bigvee_{i=1}^s S^k\to\bigvee_a S^k_a\,.
 \]
 Altogether, we get a map $\alpha$ that realizes $F_1\to F_0$ in $H_k$.
 So using it as an attaching map produces a CW complex $X$ with 
@@ -147,7 +151,7 @@ $\widetilde H_q(X)=A$ for $q=k$ and 0 otherwise. Write $M(A,k)$ for
 a CW complex pruduced in this way.
 
 Finally, given a graded abelian group $A_*$, for the wedge over $k$ of the
-spaces $M(A,k)$. 
+spaces $M(A_k,k)$. 
 \end{proof}
 
 Such a space $M(A,k)$, with $\widetilde H_q(M(A,k))=A$ for $q=k$ and 0 

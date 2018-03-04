@@ -33,7 +33,7 @@ For the other cases, well, we use induction:
 \[
 |w_i-w_j| \leq \mathrm{diam}(\text{simplex in }\$d\sigma)
 \leq \frac{n-1}{n}\mathrm{diam}(d\sigma)
-< \frac{n}{n+1}\mathrm{diam}(\sigma)\,.
+\leq \frac{n}{n+1}\mathrm{diam}(\sigma)\,.
 \]
 \end{proof}
 

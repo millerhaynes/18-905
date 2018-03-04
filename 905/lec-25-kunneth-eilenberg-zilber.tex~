@@ -1,11 +1,12 @@
 \section{K\"{u}nneth and Eilenberg-Zilber}
 We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used was really an example of the fundamental theorem of homological algebra. It works with any coefficient ring, not just the integers. 
 \begin{definition}
-Let $C_\ast,D_\ast$ be chain complexes that are {\em bounded below} (i.e., $C_n=0$ and $D_n=0$ for $n\ll 0$; we'll be looking at the case where they're zero if $n<0$). Define the tensor product chain complex as follows.
+Let $C_\ast,D_\ast$ be two chain complexes. Their {\em tensor product} is 
+the chain complex with
 \[
 (C_\ast\otimes D_\ast)_n=\bigoplus_{p+q=n}C_p\otimes D_q\,.
 \]
-The boundedness says that this is a finite sum. The differential $(C_\ast\otimes D_\ast)_n\to (C_\ast\otimes D_\ast)_{n-1}$ sends $C_p\otimes D_q$ into the submodule $C_{p-1}\otimes D_q\bigoplus C_p\otimes D_{q-1}$ by 
+The differential $(C_\ast\otimes D_\ast)_n\to (C_\ast\otimes D_\ast)_{n-1}$ sends $C_p\otimes D_q$ into the submodule $C_{p-1}\otimes D_q\bigoplus C_p\otimes D_{q-1}$ by 
 \[
 x\otimes y\mapsto dx\otimes y+(-1)^p x\otimes dy\,.
 \]
@@ -23,21 +24,24 @@ $H_0(X)\otimes H_0(Y)\xrightarrow{\cong}H_0(X\times Y)$.
 Let's dispose of the purely algebraic question (2) first. 
 
 \begin{theorem}
-Let $R$ be a PID and $C_\ast,D_\ast$ be bounded below chain complexes of $R$-modules. Assume that $C_n$ is a free $R$-module for all $n$. There is a short
+Let $R$ be a PID and $C_\ast,D_\ast$ be chain complexes of $R$-modules. 
+Assume that $C_n$ is a free $R$-module for all $n$. There is a short
 exact sequence
 \begin{equation*}
 0\to\bigoplus_{p+q=n} H_p(C)\otimes H_q(D)\to H_n(C_\ast\otimes D_\ast)
 \to \bigoplus_{p+q=n-1}\Tor^R_1( H_p(C), H_q(D))\to 0
 \end{equation*}
-natural in these data.
+natural in these data, that splits (but not naturally).
 \end{theorem}
 \begin{proof}
 This is exactly the same as the proof for the UCT. It's a good idea to work through this on your own.
 \end{proof}
 
 \begin{corollary}\label{acyclic-tensor}
-Under these conditions, if $C_\ast\to R$ and $D_\ast\to R$ are homology
-isomorphisms then so is $C_\ast\otimes D_\ast\to R$. 
+Let $R$ be a PID and assume $C'_n$ and $C_n$ are $R$ free for all $n$.
+If $C'_\ast\to C_\ast$ and $D'_\ast\to D_\ast$ 
+are homology
+isomorphisms then so is $C'_\ast\otimes D'_\ast\to C_\ast\tensor D_\ast$. 
 \end{corollary}
 
 Our attack on question (1) is via the method of ``acyclic models.'' This is
@@ -112,9 +116,9 @@ We get:
 \end{equation*}
 Consider $1_M\in\Z\Hom_\cc(M,M)$. Its image  $f_M(1_M)\in G(M)$ is hit by
 some element in $c_M\in G'(M)$, since $G'\to G$ is an $\MM$-epimorphism. Define
-$\overline f_M(1_M)-c_M$.
+$\overline f_M(1_M)=c_M$.
 
-Now we exploit naturality! Any $\varphi:M\to X$ should produce a commutative 
+Now we exploit naturality! Any $\varphi:M\to X$ produces a commutative 
 diagram
 \begin{equation*}
 \xymatrix{\cc(M,M)\ar[r]^{\overline{f}_M} \ar[d]^{\varphi_*}
@@ -139,7 +143,7 @@ a natural transformation of functors fron $\cc$ to $\Ab$. Let
 $F_*$ and $G_*$ be functors from $\cc$ to chain complexes, with augmentations
 $F_0\to F$ and $G_0\to G$. Assume that $F_n$ is $\MM$-free for all $n$, and
 that $G_*\to G\to0$ is an $\MM$-exact sequence. Then there is a unique natural
-chain homotopy of chain maps $F_*\to G_*$ covering $\theta$. 
+chain homotopy class of chain maps $F_*\to G_*$ covering $\theta$. 
 \end{theorem}
 \begin{corollary}
 Suppose furthermore that $\theta$ is a natural isomorphism. If
@@ -162,7 +166,8 @@ H_0(X)\otimes H_0(Y)\cong H_0(X\times Y)\,,
 and they are natural chain homotopy inverses. 
 \end{theorem}
 \begin{corollary}
-There is an isomorphism $H(S_\ast(X)\otimes S_\ast(Y))\cong H_\ast(X\times Y)$.
+There is a canonical natural 
+isomorphism $H(S_\ast(X)\otimes S_\ast(Y))\cong H_\ast(X\times Y)$.
 \end{corollary}
 
 Combining this theorem with the algebraic K\"unneth theorem, we get:
@@ -175,7 +180,7 @@ Take coefficients in a PID $R$. There is a short exact sequence
 natural in $X$, $Y$. It splits as $R$-modules, but not naturally.
 \end{theorem}
 \begin{example}
-If $R=k$ is a field, every module is already free, so the $\Tor$ term vanishes, and you get a K\"{u}nneth isomorphism:
+If $R=k$ is a field, every module is free, so the $\Tor$ term vanishes, and you get a K\"{u}nneth isomorphism:
 \begin{equation*}
 \times: H_\ast(X;k)\otimes_k H_\ast(Y;k)\xrightarrow{\cong}H_\ast(X\times Y;k)
 \end{equation*}
@@ -184,7 +189,7 @@ This is rather spectacular. For example, what is $ H_\ast(\RP^3\times\RP^3;k)$,
 where $k$ is a field? Well, if $k$ has characteristic different from 2, 
 $\RP^3$ has the same homology as $S^3$, so the product has the same 
 homology as $S^3\times S^3$: the dimensions are $1,0,0,2,0,0,1$. 
-If $\mathrm{ch}k=2$, on the other hand, the cohomology modules are either
+If $\mathrm{char}\,k=2$, on the other hand, the cohomology modules are either
 0 or $k$, and we need to form the graded tensor product:
 \[
 \begin{array}{cccc} k & k & k & k \\ k & k & k & k \\ 

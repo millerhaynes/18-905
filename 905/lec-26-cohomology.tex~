@@ -32,7 +32,7 @@ $R$), we get a ``diagonal'' or ``coproduct''
 \[
 \Delta:H_\ast(X;R)\to H_\ast(X;R)\otimes_R H_\ast(X;R)\,.
 \]
-This map is universally defined, and natural in $X$, if $R$ is a field. 
+If $R$ is a field, this map is universally defined, and natural in $X$.
 
 This kind of structure is unfamiliar, and at first seems a bit strange.
 After all, the tensor product is defined by a universal property for maps
@@ -61,7 +61,7 @@ commutes, where $\tau(x\otimes y)=(-1)^{|x|\cdot|y|}y\otimes x$ is the twist map
 \end{definition}
 
 Using acyclic models, we saw that the 
-the K\"{u}nneth map is coassociative and cocommutative: The diagrams
+the K\"{u}nneth map is associative and commutative: The diagrams
 \[
 \xymatrix{S_\ast(X)\otimes S_\ast(Y)\otimes S_\ast(Z) \ar[r]^{\times\otimes1}
 \ar[d]^{1\otimes\times} & S_\ast(X\times Y)\otimes S_\ast(Z) \ar[d]^{\times} \\

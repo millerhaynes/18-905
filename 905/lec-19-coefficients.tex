@@ -1,6 +1,6 @@
 \section{Coefficients}
 
-As we have seen, abelian groups can be quite complicated, even finitely generated ones. Vector spaces over a field are so much simpler! A vector space is determined up to isomorphism by a single cardinality, its dimension. Wouldn't it be great to have a version of homology that took values in the category of vector spaces over a field? 
+Abelian groups can be quite complicated, even finitely generated ones. Vector spaces over a field are so much simpler! A vector space is determined up to isomorphism by a single cardinality, its dimension. Wouldn't it be great to have a version of homology that took values in the category of vector spaces over a field? 
 
 We can do this, and more. Let $R$ be any commutative ring at all.
 Instead of forming the free abelian group on $\Sin_*(X)$, we could just as 
@@ -22,24 +22,25 @@ This is the {\em singular homology of $X$ with coefficients in the commutative
 ring $R$}. It satisfies all the Eilenberg-Steenrod axioms, but 
 \[
 H_n(\ast;R)=
-\begin{cases}R\,\,&\hbox{for} n=0\\0\,\,&\hbox{otherwise}\,.\end{cases}
+\begin{cases}R\,\,&\hbox{for}\quad n=0\\0\,\,&\hbox{otherwise}\,.\end{cases}
 \]
 We could actually have replaced the ring $R$ by any abelian group here, 
 but this will become much clearer after we have the tensor product as a tool.
 
-The rings that are most important in algebraic topology are simple ones:
-the integers and the prime fields $\FF_p$ and $\QQ$; typically, a PID.
+The coefficient rings that are most important in algebraic topology are 
+simple ones: the integers and the prime fields $\FF_p$ and $\QQ$; 
+typically, a PID.
 
 As an experiment, let's compute $ H_\ast(\RP^n;R)$ for various rings $R$.
 Let's start with $R=\FF_2$, the field with 2 elements. This is a favorite
 among algebraic topologists, because using it for coefficients eliminates 
-all sign issues. The cellular chain complex has $S_k=\FF_2$ for 
+all sign issues. The cellular chain complex has $S_k(\RP^n;\FF_2)=\FF_2$ for 
 $0\leq k\leq n$, and the differential alternates between multiplication by 
 2 and by 0. But in $\FF_2$, $2=0$: so $d=0$, and the cellular chains
 coincide with the homology:
 \[
 H_k(\RP^n;\FF_2)=
-\begin{cases}\FF_2\,&\hbox{for}\, 0\leq k\leq n\\0\,\,&\hbox{otherwise}\,.
+\begin{cases}\FF_2\,&\hbox{for}\quad 0\leq k\leq n\\0\,\,&\hbox{otherwise}\,.
 \end{cases}
 \]
 
@@ -52,7 +53,7 @@ looks like
 R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
 \xleftarrow{\cong}\cdots\xleftarrow{\cong}R
 \]
-
+for $n$ even, and
 \[
 R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
 \xleftarrow{\cong}\cdots\xleftarrow{0}R
@@ -60,17 +61,17 @@ R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
 for $n$ odd. Therefore
 \[
 H_k(\RP^n;R)=
-\begin{cases}R\,&\hbox{for}\,k=0\\0\,&\,\hbox{otherwise}\end{cases}
+\begin{cases}R\,&\hbox{for}\quad k=0\\0\,&\,\hbox{otherwise}\end{cases}
 \]
 for $n$ even, and 
 \[
 H_k(\RP^n;R)=
-\begin{cases}R\,&\hbox{for}\,k=0\\
-R\,&\,\hbox{for}\,k=n\\
+\begin{cases}R\,&\hbox{for}\quad k=0\\
+R\,&\,\hbox{for}\quad k=n\\
 0\,&\,\hbox{otherwise}\,.
 \end{cases}
 \]
-You get a much simpler result! Away from 2, even projective spaces look like a point, and odd projective spaces look like a sphere!
+You get a much simpler result: Away from 2, even projective spaces look like a point, and odd projective spaces look like a sphere!
 
 I'd like to generalize this process a little bit, and allow coefficients 
 not just in

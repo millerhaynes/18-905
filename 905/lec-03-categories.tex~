@@ -41,14 +41,13 @@ Many common mathematical structures can be arranged in categories.
 \item Sets and functions between them form a category $\Set$.
 \item Abelian groups and homomorphisms form a category $\mathbf{Ab}$.
 \item Topological spaces and continuous maps form a category $\mathbf{Top}$.
-\item Chain complexes and chain maps form a category $\mathrm{ch}\mathbf{Ab}$.
+\item Simplicial sets and their maps form a category $s\set$.
 \item A monoid is the same as a category with one object, where the elements of the monoid are the morphisms in the category. It's a small category.
 \item The sets $[n]=\{0,\ldots,n\}$ for $n\geq 0$ together with weakly order-preserving maps between them form the {\em simplex category} $\Deltab$, 
 another small category. It contains as a subcategory the {\em semi-simplex
-category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps. This is a small category. 
-\item A partially ordered set or ``poset'' forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category with this property comes from a poset provided 
-that the only isomorphisms are identities. This is to be distinguished from
-the category of posets and order-preserving maps between them, which is ``large.''
+category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps. 
+\item A poset forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category with this property comes from a poset provided 
+that the only isomorphisms are identities. 
 \end{itemize}
 \end{example}
 
@@ -59,7 +58,7 @@ Let $\cc,\cd$ be categories. A \emph{functor} $F\colon\cc\to\cd$ consists
 of the data of 
 \begin{itemize}
 \item an assignment  $F:\mathrm{ob}(\cc)\to\mathrm{ob}(\cd)$, and
-\item for all $x,y\in\mathrm{ob}(\cc)$, a function $F:\cc(x,y)\to\cc(F(x),F(y))$ \,.
+\item for all $x,y\in\mathrm{ob}(\cc)$, map $F:\cc(x,y)\to\cc(F(x),F(y))$ \,.
 \end{itemize}
 These data are required to satisfy the following two properties:
 \begin{itemize}
@@ -94,13 +93,13 @@ occurance is indicated by a variety of terms: a {\em natural} or
 \begin{example}
 Suppose that $\cc$ and $\cd$ are two categories, and assume that $\cc$ is
 small. We may then form the {\em category of functors} $\mathrm{Fun}(\cc,\cd)$.
-Its objects are the functors from $\cc$ to $\cd$, and given two functors
+Its objects are the functors fron $\cc$ to $\cd$, and given two functors
 $F,G$, $\Fun(\cc,\cd)(F,G)$ is the set of natural transformations from $F$
 to $G$. We let the reader define the rest of the structure of this category,
 and check the axioms. We needed to assume that $\cc$ is small in order to
 guarantee that there is no more than a set of natural transformations between
 functors.
 
-For example, let $G$ be a group (or a monoid) viewed as a one-object category. An object $F\in\mathrm{Fun}(G,\mathbf{Ab})$ is simply a group action of $G$ on $F(\ast)=A$, i.e., a representation of $G$ in abelian groups. Given another $F^\prime\in\mathrm{Fun}(G,\mathbf{Ab})$ with $F^\prime(\ast)=A^\prime$, then a natural transformation from $F\to F^\prime$ is precisely a $G$-equivariant homomorphism $A\to A^\prime$.
+For example, let $G$ be a group (or a monoid) viewed as a one-object category. Any element $F\in\mathrm{Fun}(G,\mathbf{Ab})$ is simply a group action of $G$ on $F(\ast)=A$, i.e., a representation of $G$ in abelian groups. Given another $F^\prime\in\mathrm{Fun}(G,\mathbf{Ab})$ with $F^\prime(\ast)=A^\prime$, then a natural transformation from $F\to F^\prime$ is precisely a $G$-equivariant homomorphism $A\to A^\prime$.
 \end{example}
 

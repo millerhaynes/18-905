@@ -43,9 +43,10 @@ H_k(\RP^n;\FF_2)=
 \end{cases}
 \]
 
-At the other extreme, suppose we look at coefficient in the universal
-commutative ring in which $2$ is a unit: $R=\Z[1/2]$. Now multiplication by 2
-is an isomorphism, so the cellular chain complex (in dimensions 0 through $n$)
+On the other hand, suppose that $R$ is a ring in which $2$ is invertible.
+The universal case is $\Z[1/2]$, but any subring of the rationals containing
+$1/2$ would do just as well, as would $\FF_p$ for $p$ odd. 
+Now the cellular chain complex (in dimensions 0 through $n$)
 looks like
 \[
 R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
@@ -58,14 +59,14 @@ R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
 \]
 for $n$ odd. Therefore
 \[
-H_k(\RP^n;\ZZ[1/2])=
-\begin{cases}\Z\,&\hbox{for}\,k=0\\0\,&\,\hbox{otherwise}\end{cases}
+H_k(\RP^n;R)=
+\begin{cases}R\,&\hbox{for}\,k=0\\0\,&\,\hbox{otherwise}\end{cases}
 \]
 for $n$ even, and 
 \[
-H_k(\RP^n;\ZZ[1/2])=
-\begin{cases}\Z\,&\hbox{for}\,k=0
-\Z\,&\,\hbox{for}\,k=n\\
+H_k(\RP^n;R)=
+\begin{cases}R\,&\hbox{for}\,k=0\\
+R\,&\,\hbox{for}\,k=n\\
 0\,&\,\hbox{otherwise}\,.
 \end{cases}
 \]
@@ -73,7 +74,7 @@ You get a much simpler result! Away from 2, even projective spaces look like a p
 
 I'd like to generalize this process a little bit, and allow coefficients 
 not just in
-a commutative ring, but more generally a module $M$ over a commutative ring;
+a commutative ring, but more generally in a module $M$ over a commutative ring;
 in particular, any abelian group. This is most cleanly done using the
 mechinism of the tensor product. That mechanism will also let us address
 the following natural question: 

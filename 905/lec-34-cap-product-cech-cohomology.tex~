@@ -59,7 +59,9 @@ reciprocity.''
 
 Here now is a statement of Poincar\'e duality. It deals with the 
 homological structure of compact topological manifolds. We recall the
-notion of an orientation, and the theorem 
+notion of an orientation, and Theorem \ref{thm-orientation} asserting
+the existence of a fundamental class $[M]\in H_n(M;R)$ in a compact
+$R$-oriented $n$-manifold.
 
 \begin{theorem}[Poincar\'e duality]
 Let $M$ be a topological $n$-manifold that is compact and oriented with 
@@ -96,7 +98,7 @@ This chain map yields the {\em relative cap product}
 \[
 \cap: H^p(X)\otimes H_n(X,A)\to H_q(X,A)
 \]
-It renders $ H_\ast(X,A)$ a module for  $ H^\ast(X)$.
+It renders $ H_\ast(X,A)$ a module for the graded algebra $ H^\ast(X)$.
 
 
 I want to come back to an old question, about the significance of 

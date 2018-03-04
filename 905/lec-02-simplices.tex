@@ -23,9 +23,9 @@ To the semi-simplicial set $\{\Sin_n(X),d_i\}$ we then applied the free abelian 
 }\end{equation*}
 %Given a chain complex $\partial\colon A_n\to A_{n-1}$, one can define its homology $H_n(A,\partial)=\ker\partial_n/\img\partial_n$.
 
-\begin{example} Suppose we have $\sigma\colon \Delta^1\to X$. Define $\phi\colon\Delta^1\to\Delta^1$ which sends $(t,1-t)\mapsto (1-t,t)$. Precomposing $\sigma$ with $\phi$ gives another singular simplex $\overline{\sigma}$ which reverses the orientation of $\sigma$. It is \textit{not} true that $\overline{\sigma}=-\sigma$ in $S_1(X)$.
+\begin{example} Suppose we have $\sigma\colon \Delta^1\to X$. Define $\phi\colon\Delta^1\to\Delta^1$ by sending $(t,1-t)$ to $(1-t,t)$. Precomposing $\sigma$ with $\phi$ gives another singular simplex $\overline{\sigma}$ which reverses the orientation of $\sigma$. It is \textit{not} true that $\overline{\sigma}=-\sigma$ in $S_1(X)$.
 
-However, we claim that $\overline{\sigma}\equiv -\sigma\bmod B_1(X)$, meaning there is a $2$-chain in $X$ whose boundary is $\overline{\sigma}+\sigma$. If $d_0\sigma=d_1\sigma$ so that $\sigma\in Z_1(X)$, then $\overline{\sigma}$ and $-\sigma$ are homologous: $[\overline{\sigma}]=-[\sigma]$ in $ H_1(X)$.
+However, we claim that $\overline{\sigma}\equiv -\sigma\bmod B_1(X)$. This means that there is a $2$-chain in $X$ whose boundary is $\overline{\sigma}+\sigma$. If $d_0\sigma=d_1\sigma$, so that $\sigma\in Z_1(X)$, then $\overline{\sigma}$ and $-\sigma$ are homologous: $[\overline{\sigma}]=-[\sigma]$ in $ H_1(X)$.
 
 To construct an appropriate boundary, consider the projection map 
 $\pi:\Delta^2\to\Delta^1$ that is the affine extension of the map sending
@@ -67,17 +67,17 @@ the boundary maps $d\colon S_n(\ast)\to S_{n-1}(\ast)$ in the chain complex depe
 \]
 This means that our chain complex is:
 \[
-0\leftarrow0\leftarrow\ZZ\leftarrow{1}\ZZ\leftarrow{1}\ZZ\leftarrow{1}\cdots\,.\]
+0\leftarrow0\leftarrow\ZZ\xleftarrow{1}\ZZ\xleftarrow{0}\ZZ\xleftarrow{1}\cdots\,.\]
 The boundaries coincide with the cycles except in dimension zero, where $B_0(\ast)=0$ while $Z_0(\ast)=\mathbf{Z}$. Therefore $ H_0(\ast)=\mathbf{Z}$ and $ H_i(\ast)=0$ for $i\neq0$.
 
-We've defined homology groups for each space, but haven't considered what happens to maps between spaces. A continuous map $f\colon X\to Y$ induces a map $f_\ast\colon \Sin_n(X)\to\Sin_n(Y)$ by composition: 
+We've defined homology groups for each space, but haven't yet considered what happens to maps between spaces. A continuous map $f\colon X\to Y$ induces a map $f_\ast\colon \Sin_n(X)\to\Sin_n(Y)$ by composition: 
 \[
 f_\ast:\sigma\mapsto f\circ \sigma\,.
 \] 
-For $f_\ast$ to be a map of semi-simplicial sets, it needs to commute with face maps. Explicitly, we need $f_\ast \circ d_i = d_i \circ f_\ast$. A diagram is said to be \emph{commutative} if all composites with the same source and target are equal, so this is equivalent to commutativity of the below.
+For $f_\ast$ to be a map of semi-simplicial sets, it needs to commute with face maps. Explicitly, we need $f_\ast \circ d_i = d_i \circ f_\ast$. A diagram is said to be \emph{commutative} if all composites with the same source and target are equal, so this equation is equivalent to commutativity of the diagram
 \begin{eqnarray*}
 \xymatrix{\Sin_n(X)\ar[r]^{f_\ast}\ar[d]^{d_i} & \Sin_n(Y)\ar[d]^{d_i}\\
-\Sin_{n-1}(X)\ar[r]^{f_\ast} & \Sin_{n-1}(Y)}
+\Sin_{n-1}(X)\ar[r]^{f_\ast} & \Sin_{n-1}(Y)\,.}
 \end{eqnarray*}
 We see that $d_if_\ast\sigma=(f_\ast\sigma)\circ d^i=f\circ\sigma\circ d^i$, and $f_\ast(d_i\sigma)=f_\ast(\sigma\circ d^i)=f\circ\sigma\circ d^i$ as desired. The diagram remains commutative when we pass to the free abelian groups of chains.
 
@@ -94,4 +94,4 @@ A chain map induces a map in homology $f_\ast: H_n(C)\to H_n(D)$. The method of 
 
 Similarly, we also get a map $B_n(C)\to B_n(D)$. Let $c\in B_n(C)$, so that there exists $c^\prime \in C_{n+1}$ such that $d_C c^\prime = c$. Then $f_n(c) = f_nd_C c^\prime = d_D f_{n+1}(c^\prime)$. Thus $f_n(c)$ is the boundary of $f_{n+1}(c^\prime)$, and $f$ gives a map $B_n(C)\to B_n(D)$.
 
-The two maps $Z_n(C)\to Z_n(D)$ and $B_n(C)\to B_n(D)$ give a map on homology $f_\ast: H_n(X)\to H_n(Y)$, as desired.
+The two maps $Z_n(C)\to Z_n(D)$ and $B_n(C)\to B_n(D)$ quotient to give a map on homology $f_\ast: H_n(X)\to H_n(Y)$, as desired.

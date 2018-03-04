@@ -3,17 +3,17 @@ We have constructed an explicit map $S^p(X)\otimes S^q(Y)\xrightarrow{\times} S^
 \begin{equation*}
 (f\times g)(\sigma)=(-1)^{pq}f(\sigma_1\circ\alpha_p)g(\sigma_2\circ\omega_q)
 \end{equation*}
-where $\alpha_p:\Delta^p\to\Delta^{p+q}$ takes $k\mapsto k$ for 
-$0\leq k\leq p$ and $\omega_q:\Delta^q\to\Delta^{p+q}$ sends $h\mapsto j+p$ 
-for  $0\leq j\leq q$. This is a chain map, and it induces a ``cross product''
-$ H(S^p(X)\otimes S^q(Y))\to H_{p+q}(X\times Y)$ and, by composing with the
-map induced by the diagonal embedding, a ``cup product''
+where $\alpha_p:\Delta^p\to\Delta^{p+q}$ sends $i$ to $i$ for 
+$0\leq i\leq p$ and $\omega_q:\Delta^q\to\Delta^{p+q}$ sends $j$ to $j+p$ 
+for  $0\leq j\leq q$. This is a chain map; it induces a ``cross product''
+$ H^p(X)\otimes H^q(Y)\to H_{p+q}(X\times Y)$, and, by composing with the
+map induced by the diagonal embedding, the ``cup product''
 \[
 \cup:H^p(X)\otimes H^q(X)\to H^{p+q}(X)\,.
 \]
 We formalize the structure that this product imposes on cohomology.
 \begin{definition}
-Let $R$ be a commutative ring. A \emph{graded $R$-algebra} is a graded $R$-module $\cdots,A_{-1},A_0, A_1,A_2,\cdots$ equipped with maps $A_p\otimes_R A_q\to A_{p+q}$ and a map $\eta:R\to A_0$ that make the following diagram commute.
+Let $R$ be a commutative ring. A \emph{graded $R$-algebra} is a graded $R$-module $\ldots,A_{-1},A_0, A_1,A_2,\ldots$ equipped with maps $A_p\otimes_R A_q\to A_{p+q}$ and a map $\eta:R\to A_0$ that make the following diagram commute.
 \[
 \xymatrix{
 A_p\otimes_R R \ar[r]^{1\otimes\eta} \ar[dr]^= &A_p\otimes_R A_0 \ar[d] &
@@ -111,7 +111,7 @@ Write $\alpha$ for a generator of $S^p$ and $\beta$ for a generator of
 $S^q$; and use the same notations for the pullbacks of these elements to
 $S^p\times S^q$ under the projections. Then 
 \[
-H^*(S^p\times S^q)=\Z\langle1,\alpha,\beta,\alpha\beta\rangle\,,
+H^*(S^p\times S^q)=\Z\langle1,\alpha,\beta,\alpha\cup\beta\rangle\,,
 \]
 and
 \[

@@ -30,7 +30,9 @@ However, we claim that $\overline{\sigma}\equiv -\sigma\bmod B_1(X)$, meaning th
 To construct an appropriate boundary, consider the projection map 
 $\pi:\Delta^2\to\Delta^1$ that is the affine extension of the map sending
 $e_0$ and $e_2$ to $e_0$ and $e_1$ to $e_1$.  
-\todo{MUST UPLOAD PICTURE HERE}. 
+
+\fbox{picture needed}
+ 
 We'll compute $d(\sigma\circ\pi)$. Some of the terms will be constant
 singular simplicies. Let's write $c_x^n:\Delta^n\to X$ for the constant map 
 with value $x\in X$. Then

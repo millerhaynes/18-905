@@ -1,6 +1,6 @@
 \section{Hom and Lim}\label{limits}
 
-We will now deveop more properties of the tensor product: its relationship to
+We will now develope more properties of the tensor product: its relationship to
 homomorphisms and to direct limits. 
 
 The tensor product arose in our study of bilinear maps. Even more natural are
@@ -53,9 +53,9 @@ how the rational numbers are constructed from the integers -- by a limit
 process: there are compatible maps in the diagram 
 \[
 \xymatrix{
-\Z \ar[r]^2 \ar[d]^1 & \Z \ar[r]^3 \ar[dl]^{1/2} & \Z \ar[r]^4 \ar[dll]^{1/3!}
-& \Z \ar[r]^5 \ar[dlll]^{1/4!} & \cdots \\
-\QQ 
+\Z \ar[r]^2 \ar[d]^1 & \Z \ar[r]^3 \ar[d]^{1/2} & \Z \ar[r]^4 \ar[d]^{1/3!}
+& \Z \ar[r]^5 \ar[d]^{1/4!} & \cdots \\
+&& \QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \cdots
 }\]
 and $\QQ$ is the ``universal,'' or ``initial,'' abelian group you can put
 in that position. 
@@ -67,24 +67,25 @@ A poset $(\cI,\leq)$ is \emph{directed} if for every $i,j$, there exists a $k$ s
 \end{definition}
 \begin{example}
 This is a very common condition.
-For example, the natural numbers $\NN$ with inequality. Another example: if $X$ is a space and $I$ is the set of open subsets of $X$. It's directed by saying that $U\leq V$ if $U\subseteq V$. This is because $U,U^\prime$ need not be comparable, but $U,U^\prime\subseteq U\cup U^\prime$. Another example is the positive natural numbers, with $i\leq j$ if $i|j$. This is because $i,j|(ij)$.
+A first example is the natural numbers $\NN$ with $\leq$ as the order. Another example is the positive natural numbers, with $i\leq j$ if $i|j$. This is because $i,j|(ij)$. A topological example: if $X$ is a space, $A$ a subspace, and 
+$I$ is the set of open subsets of $X$ containing $A$, directed by saying that $U\leq V$ if $U\supseteq V$. This is because an intersection of opens is open.
 \end{example}
 \begin{definition}
-Let $\cI$ be a directed set. An $\cI$-{\em directed diagram} in  a category $\cc$ is a functor $\cI\to\cc$. This means that for every $i\in \cI$ we are given an object $X_i\in\cc$, and for every $i\leq j$ we are given a map $X_i\xrightarrow{f_{i,j}} X_j$, in such a way that $f_{i,i}=1_{X_i}$ and if $i\leq j\leq k$
+Let $\cI$ be a directed set. An $\cI$-{\em directed system} in  a category $\cc$ is a functor $\cI\to\cc$. This means that for every $i\in \cI$ we are given an object $X_i\in\cc$, and for every $i\leq j$ we are given a map $f_{i,j}:X_i\to X_j$, in such a way that $f_{i,i}=1_{X_i}$ and if $i\leq j\leq k$
 then $f_{i,k}=f_{j,k}\circ f_{i,j}:X_i\to X_k$. 
 \end{definition}
 \begin{example}\label{linear}
 If $\cI=(\NN,\leq)$, then you get a ``linear system'' $X_0\xrightarrow{f_{01}}X_1\xrightarrow{f_{12}}X_2\to\cdots$. 
 \end{example}
 \begin{example}
-Suppose $\cI=(\NN_{>0},|)$, i.e., the third example above. You can consider $\cI\to\mathbf{Ab}$, say assigning to each $i$ the integers $\Z$, and $f_{ij}:\Z\xrightarrow{j/i}\Z$. This seems like a more ``choice-free'' way to get at a construction of $\QQ$ out of $\ZZ$. 
+Suppose $\cI=(\NN_{>0},|)$, i.e., the second example above. You can consider $\cI\to\mathbf{Ab}$, say assigning to each $i$ the integers $\Z$, and $f_{ij}:\Z\xrightarrow{j/i}\Z$. This seems like a more ``choice-free'' way to get at a construction of $\QQ$ out of $\ZZ$. 
 \end{example}
 These directed systems can be a little complicated. But there's a simple one, namely the constant one. 
 \begin{example}
 Let $\cI$ be any directed system. Any object $A\in\cc$ determines an $\cI$-directed set, namely the constant functor $c_A:\cI\to\cc$.
 \end{example}
 Not every directed system is constant, but we can try to find a best approximating constant system. To compare systems, we need morphisms. 
-Of course, $\cI$-directed systems in $\cc$ are functors $\cI\to\cc$. They have natural transformations, and those are the morphisms in the category of $\cI$-directed systems. That is to say, a morphism is a choice of map $g_i:X_i\to Y_i$, for each $i\in\cI$, such that 
+Of course, $\cI$-directed systems in $\cc$ are functors $\cI\to\cc$. They are related by natural transformations, and those are the morphisms in the category of $\cI$-directed systems. That is to say, a morphism is a choice of map $g_i:X_i\to Y_i$, for each $i\in\cI$, such that 
 \begin{equation*}
 \xymatrix{X_i\ar[r]\ar[d]^{g_i} & X_j\ar[d]^{g_j}\\
 Y_i\ar[r] & Y_j}
@@ -108,8 +109,9 @@ Suppose we have an increasing sequence of subspaces,
 $X_0\subseteq X_1\subseteq\cdots\subseteq X$. This gives us a directed system
 of spaces, directed by the poset $(\NN,\leq)$. It's pretty clear that as a 
 {\em set} the direct limit of this system is the union of the subspaces. 
-Suppose that union is $X$. Then saying that $X$ is the direct limit of this 
-directed system of spaces is saying that the topology on $X$ is determined
+Saying that $X$ is the direct limit of this directed system of spaces is 
+saying first that $X$ is the union of the $X_i$'s, and second 
+that the topology on $X$ is determined
 by the topology on the subspaces; it's the ``weak topology,'' characterized
 by the property that a map $f:X\to Y$ is continuous if and only if the 
 restriction of $f$ to each $X_n$ is continuous. This is saying that a subset 
@@ -143,7 +145,7 @@ Let $\cI$ be a direct set, and let $M:\cI\to\mathbf{Mod}_R$ be a $\cI$-directed 
 \end{prop}
 \begin{proof}
 Let's verify that both sides satisfy the same universal property. 
-A map from $\varinjlim_I M_i)\otimes_R N$ to an $R$-module $L$ is the same
+A map from $(\varinjlim_I M_i)\otimes_R N$ to an $R$-module $L$ is the same
 thing as a linear map $\varinjlim_IM_i\to\Hom_R(N,L)$. This is the same as
 a compatible family of maps $M_i\to\Hom_R(N,L)$, which in turn is the same
 as a compatible family of maps $M_i\otimes_RN\to L$, which is the same as
@@ -168,7 +170,7 @@ This lemma generalizes the observation that $\QQ$ is the colimit of the diagram 
 The direct limit functor $\varinjlim_I:\Fun(\cI,\mathbf{Ab})\to\mathbf{Ab}$ is exact. In other words, if $X\xrightarrow{p}Y\xrightarrow{q}Z$ is an exact sequence of $\cI$-directed systems (meaning that at every degree we get an exact sequence of abelian groups), then $\varinjlim_IX\rightarrow \varinjlim_IY\rightarrow\varinjlim_IZ$ is exact.
 \end{prop}
 \begin{proof}
-First of all, $pi:X\to Z$ is zero, which is to say that it factors through the constant zero object, so $\varinjlim_IX\to \varinjlim_I Z$ is certainly the zero map. Let $y\in \varinjlim_IY$, and suppose $y$ maps to $0$ in $\varinjlim_IZ$. By condition (1), there exists $i$ such that $y=f_i(y_i)$ for some $y_i\in Y_i$. Then $0=q(y)=f_iq(y_i)$ because $q$ is a map of direct systems. This means that there is $j\geq i$ such that $f_{ij}q(y_i)=0$ in $Z_j$. So $qf_{ij}y_i=0$,
+First of all, $qp:X\to Z$ is zero, which is to say that it factors through the constant zero object, so $\varinjlim_IX\to \varinjlim_I Z$ is certainly the zero map. Let $y\in \varinjlim_IY$, and suppose $y$ maps to $0$ in $\varinjlim_IZ$. By condition (1), there exists $i$ such that $y=f_i(y_i)$ for some $y_i\in Y_i$. Then $0=q(y)=f_iq(y_i)$ because $q$ is a map of direct systems. This means that there is $j\geq i$ such that $f_{ij}q(y_i)=0$ in $Z_j$. So $qf_{ij}y_i=0$,
 again because $q$ is a map of direct systems. We have an element in $Y_j$ that maps to zero under $q$, so there is some $x_j\in X_j$ such that $p(x_j)=y_j$.
 Then $f_j(x_j)\in \varinjlim_IX$ maps to $y$.
 \end{proof}

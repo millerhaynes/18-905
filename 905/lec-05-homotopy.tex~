@@ -93,7 +93,7 @@ $h(x,0)=x$ and $h(x,1)\in A$ for all $x\in X$ and $h(a,t)=a$ for all
 $a\in A$ and $t\in I$. 
 \end{definition}
 
-For example, $S^{n-1}$ is a deformation retract of $\mathbf{R}^n-\{0}$.
+For example, $S^{n-1}$ is a deformation retract of $\RR^n-\{0\}$.
 
 \bigskip
 We now set about constructing a proof of homotopy invariance of homology. 

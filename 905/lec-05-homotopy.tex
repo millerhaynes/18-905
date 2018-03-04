@@ -22,13 +22,15 @@ Actually, it's useful to extend the definition to the empty space by the
 following device. Extend the singular chain complex for any space to include 
 $\ZZ$ in dimension $-1$, with $d:S_0(X)\to S_{-1}(X)$ given by the 
 augmentation $\epsilon$. Let's write $\widetilde S_*(X)$ for this chain 
-complex. When $X\neq\varnothing$, $\epsilon$ is surjective
+complex, and $\widetilde H_*(X)$ for its homology. 
+When $X\neq\varnothing$, $\epsilon$ is surjective
 and you get the same answer as above. But 
 \[
 \widetilde H_q(\varnothing)=
 \begin{cases}\mathbf{Z} & \hbox{for}\,q=-1\\0 & \hbox{for}\,q\neq-1\,.
 \end{cases}
 \]
+This convention is not universally accepted, but I find it useful.
 
 What other spaces have trivial homology? A slightly non-obvious way to reframe
 the question is this:
@@ -43,15 +45,16 @@ The key idea is that homology is a discrete invariant, so it should be
 unchanged by deformation. Here's the definition that makes ``deformation''
 precise.
 \begin{definition}
-Let $f_0,f_1:X\to Y$ be two maps. A {\em homotopy} from $f_0$ to $f_1$ is a map $h:X\times I\to Y$ (continuous, of course) such that $h(x,0)=f_0(x)$ and $f(x,1)=f_1(x)$. We say that $f_0$ and $f_1$ are {\em homotopic}, and that $h$ is a {\em homotopy} between them. This relation is denoted by $f_0\sim f_1$. It is an equivalence relation on maps from $X$ to $Y$.
+Let $f_0,f_1:X\to Y$ be two maps. A {\em homotopy} from $f_0$ to $f_1$ is a map $h:X\times I\to Y$ (continuous, of course) such that $h(x,0)=f_0(x)$ and $f(x,1)=f_1(x)$. We say that $f_0$ and $f_1$ are {\em homotopic}, and that $h$ is a {\em homotopy} between them. This relation is denoted by $f_0\simeq f_1$. 
 \end{definition}
+Homotopy is an equivalence relation on maps from $X$ to $Y$.
 Transitivity follows from the gluing lemma of point set topology.
 We denote by $[X,Y]$ the set of {\em homotopy classes} of maps from $X$ to $Y$.
 In the next lecture we'll prove the following result.
 \begin{theorem}[Homotopy invariance of homology]
-If $f_0\sim f_1$, then $ H_\ast(f_0)= H_\ast(f_1)$: homology cannot distinguish between homotopic maps.
+If $f_0\simeq f_1$, then $ H_\ast(f_0)= H_\ast(f_1)$: homology cannot distinguish between homotopic maps.
 \end{theorem}
-Suppose I have two maps $f_0,f_1:X\to Y$ with a homotopy $h:f_0\sim f_1$, and a map $g:Y\to Z$. Composing $h$ with $g$ gives a homotopy between $g\circ f_0$ and $g\circ f_1$. Precomposing also works: If $g:W\to X$ is a map and $f_0,f_1:X\to Y$ are homotopic, then $f_0g\sim f_1g$. This lets us compose homotopy classes: we can complete the diagram:
+Suppose I have two maps $f_0,f_1:X\to Y$ with a homotopy $h:f_0\simeq f_1$, and a map $g:Y\to Z$. Composing $h$ with $g$ gives a homotopy between $g\circ f_0$ and $g\circ f_1$. Precomposing also works: If $g:W\to X$ is a map and $f_0,f_1:X\to Y$ are homotopic, then $f_0g\simeq f_1g$. This lets us compose homotopy classes: we can complete the diagram:
 \begin{equation*}
 \xymatrix{\mathbf{Top}(Y,Z)\times\mathbf{Top}(X,Y)\ar[d]\ar[r] & \mathbf{Top}(X,Z)\ar[d]\\
 [Y,Z]\times[X,Y]\ar@{-->}[r] & [X,Z]}
@@ -59,7 +62,7 @@ Suppose I have two maps $f_0,f_1:X\to Y$ with a homotopy $h:f_0\sim f_1$, and a 
 \begin{definition}
 The {\em homotopy category} (of topological spaces) 
 $\mathrm{Ho}(\mathbf{Top})$ has the same objects as $\mathbf{Top}$, but
-$\mathrm{Ho}(\mathbf{Top})(X,Y)=[X,Y]=\mathbf{Top}(X,Y)/\sim$.
+$\mathrm{Ho}(\mathbf{Top})(X,Y)=[X,Y]=\mathbf{Top}(X,Y)/\simeq$.
 \end{definition}
 The first key property of homology is this:
 \begin{theorem}[Homotopy invariance of homology]
@@ -68,14 +71,18 @@ The homology functor $ H_\ast:\mathbf{Top}\to\mathbf{Ab}$ factors as $\mathbf{To
 We will prove this in the next lecture, but let's stop now and think about some
 consequences. 
 \begin{definition}
-A map $f:X\to Y$ is a {\em homotopy equivalence} if $[f]\in[X,Y]$ is an isomorphism in $\htop$. In other words, there is a map $g:Y\to X$ such that $fg\sim 1_Y$ and $gf\sim 1_X$.
+A map $f:X\to Y$ is a {\em homotopy equivalence} if $[f]\in[X,Y]$ is an isomorphism in $\htop$. In other words, there is a map $g:Y\to X$ such that $fg\simeq 1_Y$ and $gf\simeq1_X$.
 \end{definition}
-Homotopy equivalences don't preserve most topological properties. For example, compactness is not a homotopy-invariant property: Consider the inclusion $S^{n-1}\subseteq \mathbf{R}^n-\{0\}$. A homotopy inverse $p:\mathbf{R}^n-\{0\}\to S^{n-1}$ can be obtained by dividing a (always nonzero!) vector by its length. Clearly $p\circ i=1_{S^{n-1}}$. We have to find a homotopy $i\circ p\sim 1_{\mathbf{R}^n-\{0\}}$. This is t a map $(\mathbf{R}^n-\{0\})\times I\to \mathbf{R}^n-\{0\}$, and we can use $(v,t)\mapsto tv+(1-t)\frac{v}{||v||}$.
+Most topological properties are not preserved by homotopy equivalences.
+For example, compactness is not a homotopy-invariant property: Consider the inclusion $S^{n-1}\subseteq \mathbf{R}^n-\{0\}$. A homotopy inverse $p:\mathbf{R}^n-\{0\}\to S^{n-1}$ can be obtained by dividing a (always nonzero!) vector by its length. Clearly $p\circ i=1_{S^{n-1}}$. We have to find a homotopy $i\circ p\simeq1_{\mathbf{R}^n-\{0\}}$. This is t a map $(\mathbf{R}^n-\{0\})\times I\to \mathbf{R}^n-\{0\}$, and we can use $(v,t)\mapsto tv+(1-t)\frac{v}{||v||}$.
 
 On the other hand:
 \begin{corollary}
 Homotopy equivalences induce isomorphisms in homology.
 \end{corollary}
+\begin{proof} 
+If $f$ has homotopy inverse $g$, then $f_*$ has inverse $g_*$.
+\end{proof}
 \begin{definition}
 A space $X$ is {\em contractible} if the map $X\to\ast$ is a homotopy equivalence.
 \end{definition}
@@ -100,9 +107,10 @@ We now set about constructing a proof of homotopy invariance of homology.
 The first step is to understand the analogue of homotopy on the level of
 chain complexes. 
 	\begin{definition}
-	Let $C_\bullet,D_\bullet$ be chain complexes, and $f_0,f_1:C_\bullet\to D_\bullet$ be chain maps. A chain homotopy $h:f_0\sim f_1$ is a collection of homomorphisms $h:C_n\to D_{n+1}$ such that $dh+hd=f_1-f_0$.
+	Let $C_\ast,D_\ast$ be chain complexes, and $f_0,f_1:C_\ast\to D_\ast$ be chain maps. A {\em chain homotopy} $h:f_0\simeq f_1$ is a collection of homomorphisms $h:C_n\to D_{n+1}$ such that $dh+hd=f_1-f_0$.
 	\end{definition}
-It's a really weird relation. Here's a picture. 
+This relation takes some getting used to. It is an equivalence relation.
+Here's a picture. 
 			\begin{equation*}
 			\xymatrix{C_{n+2}\ar[r]^{f_1-f_0}\ar[d]^d & D_{n+2}\ar[d]^d\\
 			C_{n+1}\ar@{-->}[ur]^h\ar[r]^{f_1-f_0}\ar[d]^d & D_{n+2}\ar[d]^d\\
@@ -110,19 +118,19 @@ It's a really weird relation. Here's a picture.
 			\end{equation*}
 
 	\begin{lemma}
-	If $f_0,f_1:C_\bullet\to D_\bullet$ are chain homotopic, then $f_{0,\ast}=f_{1,\ast}: H(C)\to H(D)$.
+	If $f_0,f_1:C_\ast\to D_\ast$ are chain homotopic, then $f_{0,\ast}=f_{1,\ast}: H_\ast(C)\to H_\ast(D)$.
 	\end{lemma}
 		\begin{proof}
-We want to show that for every $c\in Z_n(C_\bullet)$, the difference 
+We want to show that for every $c\in Z_n(C_\ast)$, the difference 
 $f_1c-f_0c$ is a boundary. Well, 
 \[
 f_1c-f_0c=(d h+hd)c=d hc+hd c=dhc\,.
 \]
 		\end{proof}
 
-So homology invariance will follow from
+So homotopy invariance of homology will follow from
 \begin{prop}
-Let $f_0,f_1:X\to Y$ be homotopic. Then $f_{0*},f_{1*}:S_\bullet(X)\to S_\bullet(Y)$ are chain homotopic.
+Let $f_0,f_1:X\to Y$ be homotopic. Then $f_{0*},f_{1*}:S_\ast(X)\to S_\ast(Y)$ are chain homotopic.
 \end{prop}
 
 To prove this we will begin with a special case. 
@@ -134,6 +142,8 @@ for every $x\in X$ the interval
 \]
 lies in $X$. 
 \end{definition}
+
+\fbox{Picture}
 
 Any nonempty convex region is star shaped.
 Any star-shaped region $X$ is contractible: A homotopy 
@@ -149,7 +159,7 @@ $S_*(X)\to\mathbf{Z}$ is a chain homotopy equivalence.
 \end{prop}
 
 		\begin{proof}
-		We have maps $S_\ast(X)\xrightarrow{\epsilon}\mathbf{Z}\xrightarrow{\eta}S_\ast(X)$ where $\eta(1)=c_0^0$. Clearly $\epsilon\eta=1$, and the claim is that $\eta\epsilon\sim 1:S_\ast(X)\to S_\ast(X)$. The chain map 
+		We have maps $S_\ast(X)\xrightarrow{\epsilon}\mathbf{Z}\xrightarrow{\eta}S_\ast(X)$ where $\eta(1)=c_0^0$. Clearly $\epsilon\eta=1$, and the claim is that $\eta\epsilon\simeq1:S_\ast(X)\to S_\ast(X)$. The chain map 
 $\eta\epsilon$ concentrates everything at the origin: 
 $\eta\epsilon\sigma=c_0^n$ for all $\sigma\in\Sin_n(X)$. 
 Our chain homotopy $h:S_q(X)\to S_{q+1}(X)$ will actually send simplices to simplices. For $\sigma\in\Sin_q(X)$, define the chain homotopy evaluated on $\sigma$ by means of the following ``cone construction'':

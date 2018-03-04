@@ -1,0 +1,21 @@
+
+The case $n=0$ is trivial (remembering the definition of 
+$\widetilde H$), so suppose $n>0$
+The first job is to compare $\RR^n$ to a compact manifold.
+Let $S^n$ denote the one-point compactification of $\RR^n$.
+Let $D^n$ be a disk in $\RR^n$ containing $K$. Define the map along the
+top of the diagram below by requiring commutativity. 
+\[
+\xymatrix{
+H_q(S^n,S^n-K) \ar[r] & H_{q-1}(\RR^n,K) \\
+H_q(D^n,D^n-K) \ar[u]_\cong \ar[r]^\partial & 
+\widetilde H_{q-1}(D^n-K) \ar[u]_\cong 
+}\]
+The vertical maps are isomorphisms by excision, and the boundary map
+is an isomorphism by the long exact sequence. 
+
+On the other hand, relative Poincar\'e duality gives us an isomorphism
+\[
+\cHH^{n-q}(K)\xrightarrow{\cong}H_q(S^n,S^n-K)\,.
+\]
+\end{proof}

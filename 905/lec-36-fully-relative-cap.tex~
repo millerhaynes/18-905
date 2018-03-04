@@ -98,25 +98,20 @@ This gives the construction of the fully relative cap product.
 We leave the checks of commutativity to the listener.
 \end{proof}
 
-The diagram:
+The diagram
 \begin{equation*}
 \xymatrix{
 	\cHH^p(L)\ar[r]^\delta\ar[d]^{-\cap x_L} & \cHH^{p+1}(K,L)\ar[d]^{-\cap x_K}\\
 	H_q(X,X-L)\ar[r]^{\partial} & H_{q-1}(X-L,X-K)
 }
 \end{equation*}
-says that:
+says that
 \begin{equation*}
 (\delta b)\cap x_K=\partial(b\cap x_L)
 \end{equation*}
-
-The proof of Mayer-Vietoris for \v{C}ech cohomology carried out in the 
-previous lecture also gives us a Mayer-Vietoris sequence for relative 
-homology, in the form 
-\begin{equation*}
-\cdots\to H_q(X,X-A\cup B)\to H_q(X,X-A)\oplus H_q(X,X-B)\to H_q(X,X-A\cap B)\to H_{q-1}(X,X-A\cup B)\to\cdots
-\end{equation*}
+The construction of the Mayer-Vietoris sequences then gives:
 \begin{theorem}
+\label{thm-mayer-vietoris-ladder}
 The \v{C}ech cohomology and singular homology Mayer-Vietoris sequences are 
 compatible: for any $x\in H_n(X,X-A\cup B)$, there is a commutative ladder
 \begin{equation*}

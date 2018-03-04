@@ -13,7 +13,7 @@ We've shown that the vertical map induces an isomorphism in homology, and
 the diagonal does as well. (For example, $\coprod D^n$ has a CW structure 
 in which the $(n-1)$-skeleton is $\coprod S^{n-1}$.) So 
 \[
-H_n(\coprod(D_n,S^{n-1}))\xrightarrow{\cong}C_n(X).
+H_n(\textstyle{\coprod}(D_n,S^{n-1}))\xrightarrow{\cong}C_n(X).
 \]
  
 We have a CW structure on $\RP^n$ with $\mathrm{Sk}_k(\RP^n)=\RP^k$;
@@ -61,7 +61,7 @@ The homology of real projective space is as follows.
 \end{prop}
 Here's a table. Missing entries are $0$.
 \[
-\xymatrix@R=10pt{
+\xymatrix@R=8pt{
 \text{dim} & 0 & 1 & 2 & 3 & 4 & 5 & \cdots \\
 \RP^0 & \ZZ \\
 \RP^1 & \ZZ & \ZZ \\

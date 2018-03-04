@@ -29,18 +29,19 @@ we will write
 \[
 H_n(M,M-A)=H_n(M|A)\,.
 \]
-\begin{theorem} Let $M$ be a compact $n$-manifold and $A$ a closed subset of 
-$M$. Then $H_q(M|A;R)=0$ for $q>n$, and the map 
+\begin{theorem} Let $M$ be an $n$-manifold and let $A$ be a compact subset 
+of $M$. Then $H_q(M|A;R)=0$ for $q>n$, and the map 
 $j:H_n(M|A;R)\to\Gamma(A;o_M\otimes R)$ is an isomorphism.
 \label{thm-fundamental-class}
 \end{theorem}
-Taking $A=M$, we find that $H_q(M;R)=0$ for $q>n$ and 
+Taking $A=M$ (assuming $M$ compact) we find that $H_q(M;R)=0$ for $q>n$ and 
 \[
 j:H_n(M;R)\xrightarrow{\cong}\Gamma(M;o_M\otimes R)\,.
 \]
 We follow \cite{bredon} in proving this, 
 and refer you to this reference for the modifications appropriate for
-a noncompact manifold.
+the more general statement when $A$ is assumed merely closed rather than
+compact.
 
 First we establish two general results.
 \begin{lemma} 
@@ -66,16 +67,15 @@ So the five-lemma shows that $j_{A\cup B}$ is an isomorphism.
 Looking further back in the Mayer-Vietoris sequence gives the vanishing of
 $H_q(M|A)$ for $q>n$.  
 \end{proof}
-\begin{lemma} Let $A_1\supset A_2\supset\cdots$ be a decreasing sequence
-of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
-Then it holds for the intersection $A=\cup A_i$. 
-\label{lem-lim}
+\begin{lemma}
+\label{lem-lim-cpt}
+Let $A_1\supseteq A_2\supset\cdots$ be a decreasing sequence of compact
+subsets of a space $X$. then 
+\[
+\varinjlim_iH_q(X,X-A_i)\xrightarrow{\cong}H_q(X,X-A)\,.
+\]
 \end{lemma}
 \begin{proof}
-We claim first that 
-\[
-\varinjlim_iH_q(M|A_i)\xrightarrow{\cong}H_q(M|A)\,.
-\]
 Let $\sigma:\Delta^1\to M$ be any simplex in $M-A$. The subsets $M-A_i$
 form an open cover of $\img(\sigma)$, so by compactness it lies in some
 single $M-A_i$. This shows that 
@@ -87,8 +87,15 @@ Thus
 \varinjlim_iS_q(M|A_i)\xrightarrow{\cong}S_q(M|A_i)
 \]
 by exactness of direct limit, and the claim then follows for the same reason. 
-
-This verifies that $H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate
+\end{proof}
+\begin{lemma} Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence
+of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
+Then it holds for the intersection $A=\bigcap A_i$. 
+\label{lem-lim}
+\end{lemma}
+\begin{proof}
+By Lemma \ref{lem-lim-cpt},
+$H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate
 the commutative diagram 
 \[
 \xymatrix{
@@ -96,16 +103,15 @@ the commutative diagram
 \varinjlim_i\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
 }\]
 \end{proof}
-
-\begin{proof}[Proof of Theorem \ref{thm-fundamental-class} for $A$ compact] 
+\begin{proof}[Proof of Theorem \ref{thm-fundamental-class}] 
 There are five steps. In describing them, we will call a subset of $M$
 ``Euclidean'' if it lies inside some open set homeomorphic to $\RR^n$.
 
 \noindent
-(1) $M=\RR^n$, $A$ a convex subset.
+(1) $M=\RR^n$, $A$ a compact convex subset.
 
 \noindent
-(2) $M=\RR^n$, $A$ a finite union of convex subsets.
+(2) $M=\RR^n$, $A$ a finite union of compact convex subsets.
 
 \noindent
 (3) $M=\RR^n$, $A$ any compact subset.
@@ -148,11 +154,11 @@ we find that $j:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.
 
 (3) For each $j\geq1$, let $C_j$ be a finite subset of $A$ such that 
 \[
-A\subseteq \cup_{x\in C_j}B_{1/j}(x)\,.
+A\subseteq \bigcup_{x\in C_j}B_{1/j}(x)\,.
 \]
 Since any intersection of convex sets is either empty or convex, 
 \[
-A_k=\cap_{j=1}^k\cup_{x\in C_j}B_{1/j}(x)
+A_k=\bigcap_{j=1}^k\bigcup_{x\in C_j}B_{1/j}(x)
 \]
 is a union of finitely many convex sets, and since $A$ is closed
 it is the intersection of this decreasing family. So the result
@@ -161,7 +167,8 @@ follows from (1), (2), and Lemma \ref{lem-lim}.
 (4) by (3) and (2). 
 
 (5) Cover $A$ by finitely many open subsets that embed in Euclidean
-opens as open unit disks. Their closures then form a finite cover by closed
+opens as open disks with compact closures. 
+Their closures then form a finite cover by closed
 Euclidean disks $D_i$ in Euclidean opens $U_i$. For each $i$, 
 excise the closed subset $M-U_i$ to see that
 \[

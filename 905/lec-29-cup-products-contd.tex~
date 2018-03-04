@@ -100,6 +100,9 @@ This diagram commutes because the cross product is natural. We learn:
 \end{align*}
 That's exactly what we wanted.
 \end{proof}
+We will see later, in Theorem \ref{thm-coh-kunneth}, that the cross product
+map is often an isomorphism. 
+
 \begin{example}
 How about $H^\ast(S^p\times S^q)$? I'll assume that $p$ and $q$ are both
 positive, and leave the other cases to you. The K\"unneth theorem guarantees

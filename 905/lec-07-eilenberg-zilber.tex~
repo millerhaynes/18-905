@@ -13,11 +13,10 @@ What else does this map give us?
 
 Let's abstract a little bit. Suppose we have three chain complexes $A_*$, $B_*$, and $C_*$, and suppose we have maps $\times: A_p\times B_q\to C_{p+q}$ that satisfy bilinearity and the Leibniz formula. What does this induce in homology?
 \begin{lemma}
-These data determine a bilinear map $\times:H_p(A)\times H_q(B)\to H_{p+q}(C)$.
+This determines a bilinear map $ H_p(A)\times H_q(B)\xrightarrow{\times} H_{p+q}(C)$.
 \end{lemma}
 \begin{proof}
-Let $a\in Z_p(A)$ and $b\in Z_q(A)$. We want to define $[a]\times [b]\in H_{p+q}(C)$. We hope that $[a]\times [b]=[a\times b]$. We need to check that $a\times b$ is a cycle. By Leibniz, $d(a\times b)=da\times b+(-1)^pa\times db$. Because $a,b$ are boundaries, this is zero. Now we need to check that homology class depens only on the homology classes we started with.
-So pick other cycles $a^\prime$ and $b^\prime$ in the same homology classes. We want $[a\times b]=[a^\prime\times b^\prime]$. In other words, we need to show that $a\times b$ differs from $a^\prime\times b^\prime$ by a boundary. We can write $a^\prime=a+d\overline{a}$ and $b^\prime=b+d\overline{b}$, and compute, using bilinearity:
+Let $a\in Z_p(A)$ and $b\in Z_q(A)$. We want to define $[a]\times [b]\in H_{p+q}(C)$. We hope that $[a]\times [b]=[a\times b]$. We need to check that $a\times b$ is a cycle. By Leibniz, $d(a\times b)=da\times b+(-1)^pa\times db$. Because $a,b$ are boundaries, this is zero. Now we need to check that this thing is well-defined. Let's pick other cycles $a^\prime$ and $b^\prime$ in the same homology classes. We want $[a\times b]=[a^\prime\times b^\prime]$. In other words, we need to show that $a\times b$ differs from $a^\prime\times b^\prime$ by a boundary. We can write $a^\prime=a+d\overline{a}$ and $b^\prime=b+d\overline{b}$, and compute, using bilinearity:
 	\begin{equation*}
 	a^\prime\times b^\prime=(a+d\overline{a})+(b+d\overline{b})
 	= a\times b+a\times d\overline{b} + (d\overline{a})\times b+(d\overline{a})\times(d\overline{b})
@@ -35,13 +34,13 @@ And since $d^2\overline b=0$,
 d(a\times\overline{b})=
 (d\overline a)\times(d\overline{b})\,.
 \]
-This means that $a'\times b'$ and $a\times b$ differ by 
+This means that $a^d\times b^d$ and $a\times b$ differ by 
 \[
-d\left((-1)^p(a\times \overline{b}) + \overline{a}\times b + \overline{a}\times d\overline{b}\right)\,,
+d((-1)^p(a\times \overline{b}) + \overline{a}\times b + \overline{a}\times d\overline{b})\,,
 \]
 and so are homologous. 
 
-The last step is to check bilinearity, which is left to the listener.
+The last step is to check bilinearity, which is left to the reader.
 \end{proof}
 This gives the following result.
 \begin{theorem}
@@ -52,7 +51,7 @@ There is a map
 that is natural, bilinear, and normalized. 
 \end{theorem}
 
-We will see that this map is also \emph{uniquely defined} by these conditions, unlike the chain-level cross product.
+This map is also \emph{uniquely defined} by these conditions, unlike the chain-level cross product.
 
 I just want to mention an explicit choice of $\iota_p\times\iota_q$. This is called the Eilenberg-Zilber chain. You're highly encouraged to think about this yourself. It comes from a triangulation of the prism. 
 
@@ -68,9 +67,7 @@ Let $A(\omega)$ denote the area under that staircase. Then the Eilenberg-Zilber 
 \iota_p\times\iota_q=\sum(-1)^{A(\omega)}\overline{\omega}
 \]
 
-\fbox{Picture}
-
-This description is in a paper \cite{eilenberg-moore} by Eilenberg and Moore. 
+This description is in a paper by Eilenberg and Moore. 
 It's very pretty, but it's combinatorially annoying to check that this satisfies the conditions of the theorem. It provides an explicit chain map
 \[
 \beta_{X,Y}:S_*(X)\times S_*(Y)\to S_*(X\times Y)

@@ -12,7 +12,7 @@ be a sequence in which each $E_n$ is free, and
 0\leftarrow N\leftarrow F_0\leftarrow F_1\leftarrow\cdots
 \]
 be an exact sequence; and let $f:M\to N$ be a homomorphism.
-Then we can lift $f$ to a chain map $F_*:E_*\to F_*$, uniquely up to chain
+Then we can lift $f$ to a chain map $f_*:E_*\to F_*$, uniquely up to chain
 homotopy.
 \end{theorem}
 \begin{proof} Let's try to construct $f_0$. Consider:
@@ -70,18 +70,18 @@ any surjection:
 P\ar@{-->}[ur]\ar[r] & N}
 \end{equation*}
 \end{definition}
-Every free module is projective; this is what we have been using. 
+Every free module is projective; this is what we have been using;
+our proof of the fundamental lemma of homogolical algebra uses only that 
+$E_n$ is projective. 
 Anything that's a direct summand in a projective is also projective. Any projective module is a direct summand of a free module. Over a PID, every projective is free, because any submodule of a free is free. But there are examples of
 nonfree projectives: 
 \begin{example}
-Let $k$ be a field. Then $k\times k$ acts on $k$ via $(a,b)c=ac$. This is an example of a projective that isn't free.
+Let $k$ be a field and let $R$ be the product ring $k\times k$. It acts on $k$
+in two ways, via $(a,b)c=ac$ and via $(a,b)c=bc$. This are both projective $R$-modules that are not free.
 \end{example}
-\begin{remark}
-This proof of the fundamental theorem of homogical algebra uses only that 
-$E_n$ is projective. 
-\end{remark}
 
-Now we will apply this theorem to verify that our proposed construction of 
+Now we will apply the Fundamental Lemma 
+to verify that our proposed construction of 
 $\Tor$ is independent of free (or projective!) resolution, and is functorial. 
 
 Suppose I have $f:N'\to N$. Pick arbitrary free resolutions 

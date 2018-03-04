@@ -72,8 +72,13 @@ and
 \xymatrix{S_\ast(X)\otimes S_\ast(Y)\ar[r]^{\tau}\ar[d]^{\times} & S_\ast(Y)\otimes S_\ast(X)\ar[d]^{\times}\\
 S_\ast(X\times Y)\ar[r]^{T_\ast} & S_\ast(Y\times X)
 }\end{equation*}
-commute up to natural chain homotopy, where $\tau$ is as defined above on the tensor product and $TX\times Y\to Y\times X$ is the swap map.
-
+commute up to natural chain homotopy, where $\tau$ is as defined above on the tensor product and $T:X\times Y\to Y\times X$ is the swap map. Similar diagrams
+apply to the standard comparison map for the homology of tensor products
+of chain complexes,
+\[
+\mu:H_\ast(C)\otimes H_\ast(D)\to H_\ast(C\otimes D)\,,
+\]
+and the result is this:
 \begin{corollary}
 Suppose $R$ is a PID and $H_*(X;R)$ is free over $R$. 
 Then $ H_\ast(X;R)$ has the natural structure of a commutative graded coalgebra over $R$.
@@ -167,12 +172,13 @@ $\sigma\in S_n(X)$, and compute
 \]
 This forces 
 \[
-(df)(\sigma)=\langle df,\sigma\rangle=-(-1)^nf(d\sigma)\,.
+(df)(\sigma)=\langle df,\sigma\rangle=-(-1)^nf(d\sigma)\,,
 \]
+explaining the odd sign in our definition above. 
 
 Here's the payoff: There's a natural map 
 \[
-H_{-n}(S^\vee_\ast(X;N))\otimes H_n(S_\ast(X))\to 
+H_{-n}(S^\vee_\ast(X;N))\otimes H_n(S_\ast(X))\xrightarrow{\mu} 
 H_0\left(S^\vee_\ast(X;N)\otimes S_\ast(X)\right)\to N
 \]
 This gives us the {\em Kronecker pairing}
@@ -186,7 +192,7 @@ If $A\subseteq X$, there is a restriction map $S^n(X;N)\to S^n(A;N)$, induced by
 And as long as $A$ is nonempty, we can split this injection, so any function $\Sin_n(A)\to N$ extends to $\Sin_n(X)\to N$. This means that $S^n(X;N)\to S^n(A;N)$ is surjective. (This is the case if $A=\varnothing$, as well!) 
 \begin{definition} The {\em relative} $n$-{\em cochain group} with coefficients in $N$ is
 \[
-\ker\left(S^n(X;N)\to S^n(A;N)\right)\,.
+S^n(X,A;N)=\ker\left(S^n(X;N)\to S^n(A;N)\right)\,.
 \]
 This defines a sub cochain complex of $S^\ast(X;N)$, and we define
 \[
