@@ -1,4 +1,4 @@
-\section{$\cHH^\ast$ as a cohomology theory}
+\section{Cech cohomology as a cohomology theory}
 
 
 Let $X$ be any space, and let $K\subseteq X$ be a closed subspace.
@@ -66,7 +66,8 @@ that is natural in the pair.
 \end{theorem}
 \begin{theorem}[Excision]
 \label{cech-excision}
-Suppose $A$ and $B$ are closed subsets of a normal space.  
+Suppose $A$ and $B$ are closed subsets of a normal space, 
+or compact subsets of a Hausdorff space.  
 Then the map
 \[
 \cHH^p(A\cup B,A)\xrightarrow{\cong}\cHH^p(B,A\cap B)
@@ -133,7 +134,8 @@ sequences of the neighborhood pairs $(U,V)$ and so is exact.
 The proof of the excision theorem depends upon another pair of 
 cofinalities.
 
-\begin{lemma} Let $X$ be a normal space and $A,B$ closed subsets. 
+\begin{lemma} Let $X$ be a normal space and $A,B$ closed subsets;
+or $X$ is a Hausdorff space and $A, B$ compact subsets.  
 Then the order-preserving maps
 \[
 \mathcal{U}_{(A\cup B,B)} \leftarrow \mathcal{U}_A\times\mathcal{U}_B 
@@ -156,7 +158,8 @@ $(U,V)\in\mathcal{U}_{A,A\cap B}$.
 \fbox{picture}
 
 \noindent
-Note that $A$ is disjoint from $B\cap(X-V)$, so by normality there exist
+Note that $A$ is disjoint from $B\cap(X-V)$, so by normality,
+or compactness in a Hausdorff space, there exist
 non-intersecting open sets $S$ and $T$ with $A\subseteq S$ and 
 $B\cap(X-V)\subseteq T$. Then take $W=U\cap S\in\mathcal{U}_A$ and 
 $Y=V\cup T\in\mathcal{U}_B$, and observe that $W\cap Y=V\cap S$ and so 
@@ -177,9 +180,10 @@ Combine Lemma \ref{lem-cofinal} with excision for singular cohomology:
 The Mayer-Vietoris long exact sequence is a consequence of these two
 results.
 \begin{corollary}[Mayer-Vietoris] 
-\label{thm-mayer-vietoris-ladder}
-Suppose $A$ and $B$ are closed subspaces of a 
-normal space. There is a natural long exact sequence: 
+\label{thm-cech-mayer-vietoris}
+Suppose $A$ and $B$ are closed subsets of a normal space,
+or compact subsets of a Hausdorff space. 
+There is a natural long exact sequence: 
 \[
 \cdots\to\cHH^{p-1}(A\cup B)\to\cHH^{p-1}(A)\oplus\cHH^p(B)\to
 \cHH^{p-1}(A\cap B)\to H^p(A\cup B)\to\cdots\,.

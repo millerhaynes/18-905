@@ -35,8 +35,8 @@
 \contentsline {section}{\numberline {31}Local coefficients and orientations}{77}{section.3.31}
 \contentsline {section}{\numberline {32}Proof of the orientation theorem}{82}{section.3.32}
 \contentsline {section}{\numberline {33}A plethora of products}{84}{section.3.33}
-\contentsline {section}{\numberline {34}Cap product and ``\v {C}ech'' cohomology}{87}{section.3.34}
-\contentsline {section}{\numberline {35}$\mathaccentV {check}014{H}^\ast $ as a cohomology theory}{90}{section.3.35}
+\contentsline {section}{\numberline {34}Cap product and ``Cech'' cohomology}{87}{section.3.34}
+\contentsline {section}{\numberline {35}Cech cohomology as a cohomology theory}{90}{section.3.35}
 \contentsline {section}{\numberline {36}The fully relative cap product}{93}{section.3.36}
 \contentsline {section}{\numberline {37}Poincar\'{e} duality}{95}{section.3.37}
 \contentsline {section}{\numberline {38}Applications}{97}{section.3.38}

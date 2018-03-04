@@ -1,8 +1,10 @@
 \section{Poincar\'{e} duality}
 
 Let  $M$ be a $n$-manifold and $K$ a compact subset. 
-Then by Theorem \ref{thm-fundamental-class}
-$H_n(M,M-K)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)$. 
+By Theorem \ref{thm-fundamental-class}
+\[
+H_n(M,M-K)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)\,.
+\]
 An {\em orientation along $K$} is a section of $o_M\otimes R$ over $K$ that 
 restricts to a generator 
 of $H_n(M,M-x;R)$ for every $x\in K$. The corresponding class in 
@@ -49,7 +51,9 @@ restricting along $K$ to $[M]_K$, we have the ladder of isomorphisms
 H_q(M-L,M-K) \ar[r] & H_{q-1}(M-K) \ar[r] & 
 H_{q-1}(M-L) \ar[r] & \cdots
 }\]
-We will follow the same five-step process we used to prove the Orientation
+
+To prove this theorem, 
+we will follow the same five-step process we used to prove the Orientation
 Theorem \ref{thm-fundamental-class}. We have already prepared the
 Mayer-Vietoris ladder for this purpose. We will also need:
 
@@ -117,7 +121,7 @@ ladder \cite{thm-mayer-vietoris-ladder}.
 argument, using Lemmas \ref{lem-lim-cpt} and \ref{lem-cech-limit}.
 
 (4) $M$ arbitrary, $K$ is a finite union of compact Euclidean subsets of $M$.
-This follows from (3) and Theorem \cite{thm-mayer-vietoris-ladder}.
+This follows from (3) and Theorem \ref{thm-mayer-vietoris-ladder}.
 
 (5) $M$ arbitrary, $K$ an arbitrary compact subset. This follows just as in
 the proof of Theorem \ref{thm-fundamental-class}. 

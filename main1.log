@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAR 2018 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 MAR 2018 10:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1089,9 +1089,6 @@ Package amsthm Warning: Unknown theoremstyle `theorem' on input line 57.
 Package: pigpen 2008/12/07 v0.1 PigPen
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pigpen/pigpen.tex))) (./main1.aux
-
-LaTeX Warning: Label `thm-mayer-vietoris-ladder' multiply defined.
-
 )
 \openout1 = `main1.aux'.
 
@@ -1343,44 +1340,21 @@ T1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 :
 [77] [78] <xymatrix 3x2 131> [79] [80]) (./905/lec-32-orientation-proof.tex
 [81] <xymatrix 4x2 361> [82] <xymatrix 2x2 175> <xymatrix 2x2 175> [83])
 (./905/lec-33-plethora-of-products.tex <xymatrix 2x2 182> [84] <xymatrix 3x2
-231> [85] [86]) (./905/lec-34-cap-product-cech-cohomology.tex
-
-Package hyperref Warning: Composite letter `\textasciicaron+C'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 1.
-
-[87] <xymatrix 3x5 505> <xymatrix 2x3 145> [88] [89])
-(./905/lec-35-cech-cohomology.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ast' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-[90] [91] <xymatrix 4x3 309> <xymatrix 7x2 643>
-Overfull \hbox (46.53795pt too wide) detected at line 199
+231> [85] [86]) (./905/lec-34-cap-product-cech-cohomology.tex [87] <xymatrix
+3x5 505> <xymatrix 2x3 145> [88] [89]) (./905/lec-35-cech-cohomology.tex
+[90] [91] <xymatrix 4x3 309> [92] <xymatrix 7x2 643>
+Overfull \hbox (46.53795pt too wide) detected at line 203
 []
  []
 
-[92]) (./905/lec-36-fully-relative-cap.tex <xymatrix 2x2 168> <xymatrix 6x2
-568>
+) (./905/lec-36-fully-relative-cap.tex <xymatrix 2x2 168> <xymatrix 6x2 568>
 Overfull \hbox (42.06299pt too wide) detected at line 43
 []
  []
 
 <xymatrix 6x2 568> [93] <xymatrix 2x2 168> <xymatrix 2x2 154> <xymatrix 2x3
 203> <xymatrix 2x2 182> [94] <xymatrix 6x2 554>
-Overfull \hbox (16.67725pt too wide) detected at line 126
+Overfull \hbox (16.67725pt too wide) detected at line 127
 []
  []
 
@@ -1389,13 +1363,9 @@ Overfull \hbox (33.07492pt too wide) detected at line 41
 []
  []
 
-<xymatrix 6x2 554> [95] <xymatrix 2x3 299>
-
-LaTeX Warning: Citation `thm-mayer-vietoris-ladder' on page 96 undefined on inp
-ut line 118.
-
-[96] <xymatrix 6x2 554>) (./905/lec-38-the-end-applications.tex [97] <xymatrix
-2x2 130> [98] [99]) [100]
+<xymatrix 6x2 554> [95] <xymatrix 2x3 299> [96] <xymatrix 6x2 554>)
+(./905/lec-38-the-end-applications.tex [97] <xymatrix 2x2 130> [98] [99])
+[100]
 bibitemlist
 
 Class memoir Warning: The material used in the headers is too large
@@ -1415,22 +1385,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
 Package rerunfilecheck Info: File `main1.out' has not changed.
-(rerunfilecheck)             Checksum: 93115D4D057CC28E189D400195F2F162;3061.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: A6B38C438CE77E5700BD214AC784A982;3076.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
  ) 
 Here is how much of TeX's memory you used:
- 25590 strings out of 492995
- 449244 string characters out of 6132704
- 606213 words of memory out of 5000000
- 28162 multiletter control sequences out of 15000+600000
- 29375 words of font info for 87 fonts, out of 8000000 for 9000
+ 25570 strings out of 492995
+ 448985 string characters out of 6132704
+ 606250 words of memory out of 5000000
+ 28144 multiletter control sequences out of 15000+600000
+ 25251 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,26n,82p,3253b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1439,36 +1402,34 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/xypic/xyatip10.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/xypic/xybsql10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/xypic/xybtip10.pfb>
-Output written on main1.pdf (107 pages, 836730 bytes).
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/xypic/xybsql10.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/xypic/xybtip10.pfb>
+Output written on main1.pdf (107 pages, 821851 bytes).
 PDF statistics:
- 1181 PDF objects out of 1200 (max. 8388607)
- 1030 compressed objects within 11 object streams
+ 1174 PDF objects out of 1200 (max. 8388607)
+ 1025 compressed objects within 11 object streams
  409 named destinations out of 1000 (max. 500000)
  357 words of extra memory for PDF output out of 10000 (max. 10000000)
 
