@@ -8,21 +8,20 @@ j:H_n(M;R)\to\Gamma(M;o_M\otimes R)
 sending a class $c$ to the section of the orientation local coefficient
 system given at $x\in M$ by the restriction $j_x(c)\in H_n(M,M-x)$. 
 We asserted that if $M$ is compact then $j$ is an isomorphism and that
-$H_q(M)=0$ for $q>n$. 
+$H_q(M)=0$ for $q>n$. The proof will be by induction.
 
-To make our induction go, we will need a refinement of this construction.
-Let $A\subset M$ be a closed subset. A class in
+To make the induction go, we will need a refinement of this construction.
+Let $A\subseteq M$ be a compact subset. A class in
 $H_n(M,M-A)$ is represented by a cycle whose boundary lies outside of $A$. 
 It may cover $A$ evenly. We can give meaning to this question as follows.
 Let $x\in A$. Then $M-A\subseteq M-x$, so we have a map
 \[
-j_x:H_n(M,M-A)\to H_n(M,M-x)
+j_{A,x}:H_n(M,M-A)\to H_n(M,M-x)
 \]
 that tests whether the chain covers $x$. As $x$ ranges over $A$, 
-these maps together give us a map to the group of compactly supported 
-sections of $o_M$ over $A$,
+these maps together give us a map to the group of sections of $o_M$ over $A$,
 \[
-j:H_n(M,M-A)\to\Gamma(A;o_M)\,.
+j_A:H_n(M,M-A)\to\Gamma(A;o_M)\,.
 \]
 Because $H_n(M,M-A)$ deals with homology classes that ``stretch over $A$,''
 we will write
@@ -31,32 +30,35 @@ H_n(M,M-A)=H_n(M|A)\,.
 \]
 \begin{theorem} Let $M$ be an $n$-manifold and let $A$ be a compact subset 
 of $M$. Then $H_q(M|A;R)=0$ for $q>n$, and the map 
-$j:H_n(M|A;R)\to\Gamma(A;o_M\otimes R)$ is an isomorphism.
+$j_A:H_n(M|A;R)\to\Gamma(A;o_M\otimes R)$ is an isomorphism.
 \label{thm-fundamental-class}
 \end{theorem}
 Taking $A=M$ (assuming $M$ compact) we find that $H_q(M;R)=0$ for $q>n$ and 
 \[
-j:H_n(M;R)\xrightarrow{\cong}\Gamma(M;o_M\otimes R)\,.
+j_M:H_n(M;R)\xrightarrow{\cong}\Gamma(M;o_M\otimes R)\,.
 \]
+But the theorem covers much more exotic situations as well; perhaps $A$ is 
+a Cantor set in some Euclidean space, for example.
+
 We follow \cite{bredon} in proving this, 
-and refer you to this reference for the modifications appropriate for
+and refer you to that reference for the modifications appropriate for
 the more general statement when $A$ is assumed merely closed rather than
 compact.
 
 First we establish two general results.
-\begin{lemma} 
+\begin{prop} 
 Let $A$ and $B$ be closed subspaces of $M$, and suppose the result
 holds for $A$, $B$, and $A\cap B$. Then it holds for $A\cup B$.
-\label{lem-mv}
-\end{lemma}
+\label{prop-mv}
+\end{prop}
 \begin{proof}
 The relative Mayer-Vietoris theorem and the inductive hypothesis that 
 $H_{n+1}(M|A\cap B)=0$ gives us exactness of the top row in the ladder
 \[
 \xymatrix{
-0 \ar[r] & H_n(M|A\cup B) \ar[d]^j \ar[r] & 
-H_n(M|A)\oplus H_n(M|B) \ar[d]^j \ar[r] &
-H_n(M|A\cap B) \ar[d]^j \\
+0 \ar[r] & H_n(M|A\cup B) \ar[d]^{j_{A\cap B}} \ar[r] & 
+H_n(M|A)\oplus H_n(M|B) \ar[d]^{j_A\oplus j_B} \ar[r] &
+H_n(M|A\cap B) \ar[d]^{j_{A\cap B}} \\
 0 \ar[r] & \Gamma(A\cup B;o_M) \ar[r] & 
 \Gamma(A;o_M)\oplus\Gamma(B;o_M) \ar[r] &
 \Gamma(A\cap B;o_M)\,.
@@ -67,16 +69,22 @@ So the five-lemma shows that $j_{A\cup B}$ is an isomorphism.
 Looking further back in the Mayer-Vietoris sequence gives the vanishing of
 $H_q(M|A)$ for $q>n$.  
 \end{proof}
+\begin{prop}\label{prop-lim}
+Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence
+of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
+Then it holds for the intersection $A=\bigcap A_i$. 
+\end{prop}
+The proof of this lemma entails two lemmas, which we'll prove first.
 \begin{lemma}
 \label{lem-lim-cpt}
-Let $A_1\supseteq A_2\supset\cdots$ be a decreasing sequence of compact
-subsets of a space $X$. then 
+Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence of compact
+subsets of a space $X$, with intersection $A$. Then 
 \[
 \varinjlim_iH_q(X,X-A_i)\xrightarrow{\cong}H_q(X,X-A)\,.
 \]
 \end{lemma}
 \begin{proof}
-Let $\sigma:\Delta^1\to M$ be any simplex in $M-A$. The subsets $M-A_i$
+Let $\sigma:\Delta^q\to M$ be any $q$-simplex in $M-A$. The subsets $M-A_i$
 form an open cover of $\img(\sigma)$, so by compactness it lies in some
 single $M-A_i$. This shows that 
 \[
@@ -88,25 +96,54 @@ Thus
 \]
 by exactness of direct limit, and the claim then follows for the same reason. 
 \end{proof}
-\begin{lemma} Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence
-of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
-Then it holds for the intersection $A=\bigcap A_i$. 
-\label{lem-lim}
-\end{lemma}
+\begin{lemma}\label{lem-fip} 
+Let $A_1\supseteq A_2\supset\cdots$ be a decreasing sequence of 
+compact subsets in a Hausdorff space $X$ with intersection $A$. 
+For any open neighborhood $U$ of $A$ there exists $i$ such that 
+$A_i\subseteq U$.
 \begin{proof}
+$A$ is compact, being a closed subset of the compact Hausdorff space $A_1$.
+$A_1$ is covered by the increasing sequence of open sets $(X-A_i)\cup U$, 
+and hence by one of them; that is, $A_1\subseteq(X-A_i)\cup U$ for some $i$. 
+
+Since $A$ is the intersection of the $A_i$, and $A\subseteq U$, 
+the intersection of the decreasing sequence of compact sets $A_i-U$ is empty. 
+Thus by the finite intersection property one of them must be empty;
+but that says that $A_i\subseteq U$. 
+\end{proof}
+\begin{proof}[Proof of Proposition \ref{prop-lim}]
 By Lemma \ref{lem-lim-cpt},
-$H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate
+$H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate 
 the commutative diagram 
 \[
 \xymatrix{
-\varinjlim_iH_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & H_n(M|A) \ar[d] \\
-\varinjlim_i\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
+\displaystule{\varinjlim_i}H_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & 
+H_n(M|A) \ar[d] \\
+\displaystyle{\varinjlim_i}\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
 }\]
+The top map an isomorphism by Lemma \ref{lem-lim-cpt}.
+
+To see that the bottom map is an isomorphism, we'll verify the two 
+conditions for a map to be a direct limit from Lecture 23.
+First let $x$ be a section
+of $o_M$ over $A$. By compactness, we may cover $A$ by a finite set of 
+opens over each of which $o_M$ is trivial. 
+The section extends over their union $U$, by unique path 
+lifting. By Lemma \ref{lem-fip} this open set contains some $A_i$, 
+and we conclude that any section over $A$ extends to some $A_i$. 
+
+On the other hand, suppose that a section $x\in\Gamma(A_i;o_M)$ 
+vanishes on $A$. Then it vanishes on some open set containing $A$,
+again by unique path lifting and local triviality. Some $A_j$ lies
+in that open set, again by Lemma \ref{lem-fip}. We may assume that 
+$j\geq i$, and conclude that $x$ already vanishes on $A_j$.
 \end{proof}
+
 \begin{proof}[Proof of Theorem \ref{thm-fundamental-class}] 
 There are five steps. In describing them, we will call a subset of $M$
 ``Euclidean'' if it lies inside some open set homeomorphic to $\RR^n$.
 
+\smallskip
 \noindent
 (1) $M=\RR^n$, $A$ a compact convex subset.
 
@@ -122,6 +159,7 @@ There are five steps. In describing them, we will call a subset of $M$
 \noindent
 (5) $M$ arbitrary, $A$ an arbitrary compact subset. 
 
+\smallskip
 Notes on the proofs: (1) To be clear, ``convex'' implies nonempty. 
 By translating $A$, we may assume that $0\in A$. The compact subset $A$
 lies in some disk, and by a homothety we may assume that the disk is the
@@ -150,7 +188,7 @@ H_n(\RR^n,\RR^n-D^n) \ar[r]^\cong \ar[d]^j & H_n(\RR^n,\RR^n-A) \ar[d]^j \\
 }\]
 we find that $j:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.
 
-(2) by Lemma \ref{lem-mv}. 
+(2) by Proposition \ref{prop-mv}. 
 
 (3) For each $j\geq1$, let $C_j$ be a finite subset of $A$ such that 
 \[
@@ -162,7 +200,7 @@ A_k=\bigcap_{j=1}^k\bigcup_{x\in C_j}B_{1/j}(x)
 \]
 is a union of finitely many convex sets, and since $A$ is closed
 it is the intersection of this decreasing family. So the result
-follows from (1), (2), and Lemma \ref{lem-lim}.
+follows from (1), (2), and Proposition \ref{prop-lim}.
 
 (4) by (3) and (2). 
 

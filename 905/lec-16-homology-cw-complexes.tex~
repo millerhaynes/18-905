@@ -24,7 +24,7 @@ We know $ H_q(X_k/X_{k-1},\ast)$ very well:
 \[
 \widetilde{ H}_q(\bigvee_{\alpha\in A_k}S^k_\alpha)\cong\begin{cases}\Z[A_k] & q=k \\ 0 & q\neq k\end{cases}\,.
 \]
-Lesson: The relative homology $ H_q(X_k,X_{k-1})$ keeps track of the $k$-cells of $X$.
+Lesson: The relative homology $ H_k(X_k,X_{k-1})$ keeps track of the $k$-cells of $X$.
 \begin{definition}
 The group of {\em cellular $n$-chains} in a CW complex $X$ is
 \[
@@ -34,7 +34,7 @@ C_k(X):= H_k(X_k,X_{k-1})=\Z[A_k]\,.
 If we put the fact that $H_q(X_k,X_{k-1})=0$ for $q\neq k,k+1$
 into the homology long exact sequence of the pair, we find first that
 \[
-H_q(X_{k-1})\xrightarrow{\cong}H_q(X_k)\,\hbox{for}\,1\neq k,k-1\,,
+H_q(X_{k-1})\xrightarrow{\cong}H_q(X_k)\quad\hbox{for}\quad q\neq k,k-1\,,
 \]
 and then that there is a short exact sequence
 \[
@@ -44,7 +44,7 @@ and then that there is a short exact sequence
 So if we fix a dimension $q$, and watch how $H_q$ varies as we move through the
 skelata of $X$, we find the following picture. Say $q>0$. Since $X_0$ is
 discrete, $H_q(X_0)=0$. Then $H_q(X_k)$ continues to be 0 till you get up to
-$X_q$. $H_q(X_q$ is a subgroup of the free abelian group $C_k(X)$ and hence is
+$X_q$. $H_q(X_q)$ is a subgroup of the free abelian group $C_k(X)$ and hence is
 free abelian. Relations may get introduced into it when we pass to $X_{q+1}$; 
 but thereafter all the maps 
 \[
@@ -74,11 +74,6 @@ H_q(X_k)\xrightarrow{\cong}H_q(X)\,\,\hbox{\em for}\,\,q>k\,.
 \]
 In particular, $H_q(X)=0$ if $q$ exceeds the dimension of $X$. 
 \end{lemma}
-
-
-
-
-
 
 We have defined the cellular $n$-chains of a CW complex $X$,
 \[
@@ -131,12 +126,13 @@ For a CW complex $X$, there is an isomorpphism
 H_\ast(C_\ast(X))\cong H_\ast(X)
 \]
 natural with respect to filtration-preserving maps between CW complexes.
+We have proven:
 \end{theorem}
 This has an immediate and surprisingly useful corollary.
 \begin{corollary}
 Suppose that the CW complex $X$ has only even cells -- that is, 
-$X_{2k}\hookrightarrow X_{2k+1}$ is an isomorphism. Then $d=0$ in the
-cellular chain complex of $X$, and 
+$X_{2k}\hookrightarrow X_{2k+1}$ is an isomorphism for all $k$.
+Then $d=0$ in the cellular chain complex of $X$, and 
 \[
 H_*(X)\cong C_*(X)\,.
 \]

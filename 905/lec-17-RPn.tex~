@@ -33,7 +33,7 @@ H_{n-1}(S^{n-1}) \ar[u]_{\pi_*} \ar[r] & H_{n-1}(D^{n-1}/S^{n-2},\ast)\,.
 }
 \end{equation*}
 The map $\pi:S^{n-1}\to\RP^{n-1}$ is the attaching map of the top cell of $RP^n$; that is, the double cover. The diagonal composite pinches the subspace 
-$\RP^{n-1}$ to a point. The composite map $S^{n-1}\to D^{n-1}/S^{n-2}$ 
+$\RP^{n-2}$ to a point. The composite map $S^{n-1}\to D^{n-1}/S^{n-2}$ 
 factors as follows: 
 \begin{equation*}
 \xymatrix{S^{n-1}\ar[r]^{\text{double cover}}\ar[dr] & \mathbf{RP}^{n-1}\ar[r]^{\text{pinch}} & D^{n-1}/S^{n-2}\\
@@ -53,7 +53,8 @@ The homology is then easy to read off.
 The homology of real projective space is as follows.
 \begin{equation*}
  H_k(\RP^n)=\begin{cases}
-\Z & k=0\text{ and }k=n\text{ odd}\\
+\Z & k=0\\
+\Z & k=n\text{ odd}\\
 \Z/2\Z & k\text{ odd, }0<k<n\\
 0 & \text{otherwise}\,.
 \end{cases}
@@ -77,14 +78,14 @@ torsion in the previous dimension.
 This example illustrates the significance of cellular homology, and, therefore,
 of singular homology. A CW structure involves attaching maps 
 \[
-\coprod S^{n-1}\to\Sk_n X\,.
+\textstyle{\coprod}S^{n-1}\to\Sk_{n-1} X\,.
 \]
 Knowing these, up to homotopy, determines the full homotopy type of the CW 
 complex. Homology does not record all this information. Instead, it records 
 only information about the composite obtaind by pinching out $\Sk_{n-1}X$.
 \[
 \xymatrix{ 
-\coprod_{a\in A_n} S^{n-1}_a \ar[r] \ar[dr] & \Sk_n X \ar[d] \\
+\coprod_{a\in A_n} S^{n-1}_a \ar[r] \ar[dr] & \Sk_{n-1} X \ar[d] \\
 & \bigvee_{b\in A_{n-1}} S^{n-1}_b\,.
 }\]
 In $H_{n-1}$, this can be identified with a map

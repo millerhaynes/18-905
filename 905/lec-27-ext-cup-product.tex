@@ -54,7 +54,7 @@ Apply $\Hom(-,N)$ to get a cochain complex
 $\Ext_R^n(M,N)= H^n(\Hom_R(F_\ast,N))$.
 \end{definition}
 \begin{remark}
-$\Ext$ is well-defined and functorial, by the fundamental lemma of homological algebra. If $M$ is free (or projective) then $\Ext_R^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext_R^n=0$ if $n>1$. If $R$ is a field, then $\Ext_R^n=0$ for $n>0$. 
+$\Ext$ is well-defined and functorial, by the Fundamental Theorem of Homological Algebra, Theorem \ref{thm-ftha}. If $M$ is free (or projective) then $\Ext_R^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext_R^n=0$ if $n>1$. If $R$ is a field, then $\Ext_R^n=0$ for $n>0$. 
 \end{remark}
 
 \begin{example}
@@ -76,7 +76,7 @@ First of all, we can't just copy the proof (in Lecture 24) of the
 homology universal coefficient theorem, since $\Ext^1_R(-,R)$ is not
 generally trivial. 
 
-Instead, we start by thinking about what a cocycle in $\Hom_R(C_*,N)$ is:
+Instead, we start by thinking about what an $n$-cocycle in $\Hom_R(C_*,N)$ is:
 it's a homomorphism $C_n\to N$ such that the composite $C_{n+1}\to C_n\to N$ 
 is trivial. Write $B_n\subseteq C_n$ for the submodule of boundaries.
 We have a homomorphism that kills $B_n$; that is,
@@ -106,15 +106,16 @@ now shows that it is surjective and that
 \ker\beta\cong\coker(B^n\Hom_R(C_*,N)\to\Hom_R(B_{n-1},N))\,.
 \]
 
-Now a map in $B^n\Hom_R(C_*,N)$ is a map $C_n\to N$ that factors as
+An element of $B^n\Hom_R(C_*,N)$ is a map $C_n\to N$ that factors as
 $C_n\xrightarrow{d}C_{n-1}\to N$. The observation is now that this is
-the same as maps factoring as $C_n\xrightarrow{d}Z_{n-1}\to N$. 
-This is because $Z_n\subseteq C_n$ as a direct summand, because
-the short exact sequence 
+the same as factoring as $C_n\xrightarrow{d}Z_{n-1}\to N$;
+once this factorization has been achieved, the map $Z_{n-1}\to N$ 
+automatically extends to all of $C_{n-1}$. This is because  
+$Z_{n-}\subseteq C_{n-1}$ as a direct summand: the short exact sequence 
 \[
-0\to Z_n\to C_n\to B_{n-1}\to0
+0\to Z_{n-1}\to C_{n-1}\to B_{n-2}\to0
 \]
-splits since $B_{n-1}$ is free. Consequently we can rewrite our forumula for
+splits since $B_{n-2}$ is free. Consequently we can rewrite our forumula for
 $\ker\beta$ as 
 \[
 \ker\beta\cong\coker(\Hom_R(Z_{n-1},N)\to\Hom_R(B_{n-1},N))\,.
@@ -181,7 +182,7 @@ As a result, it enjoys the fruit of these axioms, such as:
 \xymatrix{ 
  H^{n+1}(X;N)\ar[r] & \cdots \\
  H^n(X;N)\ar[r] & H^n(A;N)\oplus H^n(B;N)\ar[r] & H^n(A\cap B;N)\ar[ull]\\
-& \cdots \ar[r] & H^n(A\cup B;N) \ar[ull]
+& \cdots \ar[r] & H^{n-1}(A\cap B;N) \ar[ull]
 }
 \end{equation*}
 

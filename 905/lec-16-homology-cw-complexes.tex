@@ -22,7 +22,7 @@ you get from $X_k$ by deleting the center of each $k$-cell.
 
 We know $ H_q(X_k/X_{k-1},\ast)$ very well:
 \[
-\widetilde{ H}_q(\bigvee_{\alpha\in A_k}S^k_\alpha)\cong\begin{cases}\Z[A_k] & q=k \\ 0 & q\neq k\end{cases}\,.
+H_q(\bigvee_{\alpha\in A_k}S^k_\alpha,*)\cong\begin{cases}\Z[A_k] & q=k \\ 0 & q\neq k\end{cases}\,.
 \]
 Lesson: The relative homology $ H_k(X_k,X_{k-1})$ keeps track of the $k$-cells of $X$.
 \begin{definition}
@@ -44,7 +44,7 @@ and then that there is a short exact sequence
 So if we fix a dimension $q$, and watch how $H_q$ varies as we move through the
 skelata of $X$, we find the following picture. Say $q>0$. Since $X_0$ is
 discrete, $H_q(X_0)=0$. Then $H_q(X_k)$ continues to be 0 till you get up to
-$X_q$. $H_q(X_q)$ is a subgroup of the free abelian group $C_k(X)$ and hence is
+$X_q$. $H_q(X_q)$ is a subgroup of the free abelian group $C_q(X)$ and hence is
 free abelian. Relations may get introduced into it when we pass to $X_{q+1}$; 
 but thereafter all the maps 
 \[
@@ -63,7 +63,7 @@ $k>q$, we find that $H_q(X_q)\to H_q(X)$ is surjective. Similarly,
 if $c\in S_q(X_k)$ is a boundary in $X$, then it's a boundary in $X_\ell$ 
 for some $\ell\geq k$. This shows that the map $H_q(X_{q+1})\to H_q(X)$ is
 injective. We summarize:
-\begin{lemma} 
+\begin{prop} 
 Let $q\geq 0$. Then 
 \[
 H_q(X_k)=0\,\,\hbox{\em for}\,\,q<k
@@ -73,7 +73,7 @@ and
 H_q(X_k)\xrightarrow{\cong}H_q(X)\,\,\hbox{\em for}\,\,q>k\,.
 \]
 In particular, $H_q(X)=0$ if $q$ exceeds the dimension of $X$. 
-\end{lemma}
+\end{prop}
 
 We have defined the cellular $n$-chains of a CW complex $X$,
 \[
@@ -106,7 +106,11 @@ the two columns and the central row are exact.
 \end{equation*}
 Now, $\partial_{n-1}\circ j_n=0$. So the composite of the diagonals is zero, i.e., $d^2=0$, and we have a chain complex! This is the ``cellular chain complex'' of $X$. 
 
-We should compute the homology of this chain complex, $ H_n(C_\ast(X))=\ker d/\img d$. Now, $\ker d=\ker (j_{n-1}\circ\partial_{n-1})$. But $j_{n-1}$ is injective, so 
+We should compute the homology of this chain complex, $ H_n(C_\ast(X))=\ker d/\img d$. Now
+\[
+\ker d=\ker (j_{n-1}\circ\partial_{n-1})\,.
+\]
+But $j_{n-1}$ is injective, so 
 \[
 \ker d=\ker\partial_{n-1}=\img j_n=H_n(X_n)\,.
 \]
@@ -120,6 +124,7 @@ So
 H_n(C_*(X))=H_n(X_n)/\img\partial_n=H_n(X_{n+1})
 \]
 by exactness of the left column; but as we know this is exactly $H_n(X)$!
+We have proven the following result.
 \begin{theorem} \label{thm-cw-homology}
 For a CW complex $X$, there is an isomorpphism
 \[
@@ -132,7 +137,7 @@ This has an immediate and surprisingly useful corollary.
 \begin{corollary}
 Suppose that the CW complex $X$ has only even cells -- that is, 
 $X_{2k}\hookrightarrow X_{2k+1}$ is an isomorphism for all $k$.
-Then $d=0$ in the cellular chain complex of $X$, and 
+Then 
 \[
 H_*(X)\cong C_*(X)\,.
 \]

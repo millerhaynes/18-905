@@ -22,7 +22,7 @@ is exact, where we have written $h_q(X)$ for $h_q(X,\varnothing)$.
 \end{definition}
 We add the following ``Milnor axiom'' \cite{milnor}
 to our definition. To state it,
-let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct:
+let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct in $\Ab$:
 \[
 \alpha:\bigoplus_i h_n(X_i)\to h_n\left(\coprod_{i\in I} X_i\right)\,.
 \]
@@ -45,7 +45,7 @@ Let $X$ be a topological space. A family $\mathscr{A}$ of subsets of $X$ is a
 {\em cover} if $X$ is the union of the interiors of elements of $\mathscr{A}$. 
 \end{definition}
 \begin{definition}
-Let ${\mathscr{A}}$ be a cover of $X$. An $n$-simplex $\sigma$ is ${\mathscr{A}}$-small if there is $A\in \mathscr{A}$ such that the image of $\sigma$ is entirely in $A$.
+Let ${\mathscr{A}}$ be a cover of $X$. An $n$-simplex $\sigma$ is ${\mathscr{A}}$-{\em small} if there is $A\in \mathscr{A}$ such that the image of $\sigma$ is entirely in $A$.
 \end{definition}
 Notice that if $\sigma:\Delta^n\to X$ is ${\mathscr{A}}$-small, then so is $d^i\sigma$; in fact, for any simplicial operator $\phi$, $\phi^*\sigma$ is again $\mathscr{A}$-small. Let's denote by $\Sin^{\mathscr{A}}_*(X)$ the graded set of ${\mathscr{A}}$-small simplices. This us a sub-simplicial set of $\Sin_*(X)$.
 Applying the free abelian group functor, we get the subcomplex 
@@ -128,11 +128,9 @@ the following simple observation.
 Suppose we have a map of long exact sequences
 \begin{equation*}
 \xymatrix{
-\cdots\ar[r] & C'_{n+1} \ar[r]\ar[d] & A'_n\ar[r]\ar[d] & 
-B'_n\ar[r]\ar[d]^\cong & 
-C'_n\ar[r]^k\ar[d]^h & A_{n-1}\ar[r]\ar[d]^f & \cdots\\
-\cdots\ar[r] & C_{n+1} \ar[r] & A_n \ar[r] & B_n \ar[r] & C_n \ar[r]^k & 
-A_{n-1}\ar[r] & \cdots
+\cdots\ar[r] & C'_{n+1} \ar[r]^k\ar[d]^h & A'_n\ar[r]\ar[d]^f & 
+B'_n\ar[r]\ar[d]^\cong & C'_n\ar[r]\ar[d]^h &  \cdots\\
+\cdots\ar[r] & C_{n+1} \ar[r]^k & A_n \ar[r] & B_n \ar[r] & C_n \ar[r] & \cdots
 }
 \end{equation*}
 in which every third arrow is an isomorphism as indicated.
@@ -147,7 +145,7 @@ The sequence
 \begin{equation*}
 \cdots\longrightarrow 
 C'_{n+1}\xrightarrow{\left[\begin{array}{c}h\\-k\end{array}\right]}
-C_{n+1}\oplus A_n\xrightarrow{\left[\begin{array}{cc}k&f\end{array}\right]}
+C_{n+1}\oplus A'_n\xrightarrow{\left[\begin{array}{cc}k&f\end{array}\right]}
 A_n\xrightarrow{\,\,\partial\,\,} C'_n\longrightarrow\cdots
 \end{equation*}
 is exact.

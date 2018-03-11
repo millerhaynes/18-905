@@ -13,8 +13,8 @@ We'll discuss the following topics.
     \item Basics of category theory
     \item Homological algebra
     \item The K\"{u}nneth theorem
-    \item UCT, cohomology
-    \item Cup and cap products, and
+    \item Universal coefficient theorems, cohomology
+    \item Cup and cap products
     \item Poincar\'{e} duality.
 \end{enumerate}
 The objects of study are of course topological spaces, and the machinery
@@ -44,7 +44,9 @@ The $t_i$ are called {\em barycentric coordinates}.
 The standard simplices are related by face inclusions $d^i\colon \Delta^{n-1} \to \Delta^{n}$ for $0\leq i \leq n$, where $d^i$ is the affine map that sends
 verticies to vertices, in order, and omits the vertex $e_i$.
 
-\fbox{picture of 2-simplex with 3 face inclusions}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/01-2-simplex.pdf}
+\end{center}
 
 \begin{definition}
 Let $X$ be any topological space. A \emph{singular $n$-simplex} in $X$ is a continuous map $\sigma:\Delta^n\to X$. Denote by $\mathrm{Sin}_n(X)$ the set of all $n$-simplices in $X$.
@@ -62,7 +64,7 @@ $$S_n(X) = \mathbf{Z}\Sin_n(X).$$
 \end{definition}
 So an $n$-chain is a finite linear combination of simplices,
 \[
-\sum_{i=0}^ka_i\sigma_i\,,\quad a_i\in\mathbf{Z}\,,\quad\sigma_i\in\Sin_n(X)\,.
+\sum_{i=1}^ka_i\sigma_i\,,\quad a_i\in\mathbf{Z}\,,\quad\sigma_i\in\Sin_n(X)\,.
 \]
 If $n<0$, $\Sin_n(X)$ is declared to be empty, so $S_n(X)=0$. 
 
@@ -114,7 +116,9 @@ homology groups. The homology forms a graded abelian group.
 
 Both $Z_n(X)$ and $B_n(X)$ are free abelian groups because they are subgroups of the free abelian group $S_n(X)$, but the quotient $H_n(X)$ isn't necessarily free. While $Z_n(X)$ and $B_n(X)$ are uncountably generated, $H_n(X)$ turns out to be finitely generated for the spaces we are interested in. If $T$ is the torus, for example, then we will see that $H_1(T) \cong \mathbf{Z} \oplus \mathbf{Z}$, with generators given by the 1-cycles illustrated below. 
 
-\fbox{picure of torus with generating cycles}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/01-torus-generating-cycles}
+\end{center}
 
 We will learn to compute the homology groups of a wide variety of spaces. 
 The $n$-sphere for example has the following homology groups:
@@ -122,7 +126,7 @@ The $n$-sphere for example has the following homology groups:
 H_q(S^n)=\begin{cases}\ZZ & \hbox{if}\quad q=n>0\\
                 \ZZ & \hbox{if}\quad q=0,n>0\\
                 \ZZ\oplus\ZZ & \hbox{if}\quad q=n=0\\
-                0 & \hbox{otherwise}
+                0 & \hbox{otherwise}\,.
 \end{cases}
 \]
 

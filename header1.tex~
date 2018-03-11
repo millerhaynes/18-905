@@ -129,7 +129,7 @@
 
 \newcommand{\CP}{\mathbf{CP}}
 \newcommand{\RP}{\mathbf{RP}}
-\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Gra}{\mathrm{Gr}}
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\gl}{\mathit{gl}}
@@ -155,7 +155,8 @@
 \newcommand{\calO}{{\mathcal O}}
 \newcommand{\calC}{{\mathcal C}}
 \newcommand{\set}{{\mathrm{Set}}}
-\newcommand{\Deltab}{{\Delta}} %change this to bold Delta. This is like this
+\newcommand{\Deltab}{{\mathbold{\Delta}}} 
+%change this to bold Delta. This is like this
 %here because garamond messes up bold things.
 \newcommand{\spec}{\mathrm{Spec}}
 \newcommand{\Z}{\mathbf Z}

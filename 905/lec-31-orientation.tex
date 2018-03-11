@@ -27,7 +27,7 @@ is a homeomorphism.
 The space $B$ is the ``base,'' $E$ the ``total space.''
 
 \begin{example} 
-A trivial example is given by the projection map $\pr_1:B\times F\to B$ where
+A first example is given by the projection map $\pr_1:B\times F\to B$ where
 $F$ is discrete. A covering space of this form is said to be {\em trivial},
 so the covering space condition can be rephrased as ``local triviality.'' 
 
@@ -57,7 +57,7 @@ $\widetilde\omega(0)=e$.
 \end{theorem}
 
 This leads to a right action of $\pi_1(B,b)$ on $F=p^{-1}(b)$: Represent an 
-element of $\pi_1(B)$ by a path $\omega$; for an element $e\in p^{-1}(b)$
+element of $\pi_1(B)$ by a loop $\omega$; for an element $e\in p^{-1}(b)$
 let $\widetilde\omega$ be the lift of $\omega$ with $\widetilde\omega(0)=e$;
 and define 
 \[
@@ -65,8 +65,8 @@ e\cdot[\omega]=\widetilde\omega(1)\in E\,.
 \]
 This element lies in $F$ because $\omega$ was a {\em loop}, ending at $b$. 
 One must check that this action by $[\omega]\in\pi_1(B,b)$ does not depend 
-upon the choice of representative $\omega$, and that we do indeed get an 
-{\em action}:
+upon the choice of representative $\omega$, and that we do indeed get a 
+{\em right action}:
 \[
 e\cdot(ab)=(e\cdot a)\cdot b\,,\quad e\cdot1=e\,.
 \]
@@ -128,16 +128,16 @@ This action is principal, and the covering space corresonding to
 a $\pi_1(B,b)$-set $S$ is given by the balanced product 
 $S\times_{\pi_1(B,b)}\widetilde B$. 
 
+\medskip
 Covering spaces come up naturally in our study of topological manifolds. 
 For any space $X$, we can probe the structure of $X$ in the neighborhood
-of $x\in X$ by studying $H_*(X,X-x)$. By excision, this group depends only
+of $x\in X$ by studying the graded $R$-module $H_*(X,X-x;R)$, the
+{\em local homology of $X$ at} $x$. By excision, this group depends only
 on the structure of $X$ ``locally at $x$'': For any neighborhood $U$ of $x$,
 excising the complement of $U$ gives an isomorphism
 \[
 H_*(U,U-x)\xrightarrow{\cong} H_*(X,X-x)\,.
 \]
-The graded $R$-module $H_*(X,X-x;R)$ is the {\em local homology of $X$ at}
-$x$. 
 
 When the space is an $n$-manifold -- let's write $M$ for it -- the local
 homology is very simple. It's nonzero only in dimension $n$. This has a
@@ -165,7 +165,7 @@ Define a basis of opens $V_{U,x,\alpha}$ in $o_M$
 indexed by triples $(U,x,\alpha)$ where $U$ is 
 open in $M$, $x\in U$, and $\alpha\in H_n(M,M-\overline U)$:
 \[
-V_{U,x,\alpha}=\{j_{A,x}(\alpha):x\in U\}\,.
+V_{U,x,\alpha}=\{j_{\overline{U},x}(\alpha):x\in U\}\,.
 \]
 Each $\alpha\in H_n(M,M-\overline U)$ thus defines a ``sheet'' of $o_M$
 over $U$. We leave it to you to check that this is indeed a covering space. 
@@ -201,18 +201,19 @@ the category of local coefficient systems of $R$-modules over $B$
 and the category of modules over the group algebra $R[\pi_1(B,b)]$. 
 \end{theorem}
 
-Our $R$-modules are quite simple: they are free of rank 1. Since any 
+The fibers of our local coefficient system $o_M$ 
+are quite simple: they are free of rank 1. Since any 
 automorphism of such an $R$-module is given by multiplication by a unit
 in $R$, we find that the local coefficient system is defined by 
 giving a homomorphism 
 \[
-\pi_1(B,b)\to R^\times
+\pi_1(M,b)\to R^\times
 \]
-or, what is the same, an element of $H^1(B;R^\times)$. 
+or, what is the same, an element of $H^1(M;R^\times)$. 
 
 When $R=\Z$, this homomorphism
 \[
-w_1:\pi_1(B,b)\to\{\pm1\}
+w_1:\pi_1(M,b)\to\{\pm1\}
 \]
 is the ``first Stiefel-Whitney class.'' If it is trivial, you can pick
 consistent generators for $H_n(M,M-x)$ as $x$ runs over $M$: the manifold
@@ -226,14 +227,15 @@ form a sub covering space, a double cover of $M$, denoted by $o_M^\times$.
 It is the ``orientation double cover.'' If $M$ is
 orientable (and connected) it is trivial; it consists of two copies of $M$. 
 An orientation consists in chosing one or the other of the components. 
-If $M$ is nonorientable (and connected) the orientation double cover is
-again connected. An interesting fact is that its total space is a manifold
+If $M$ is nonorientable (and connected) the orientation double cover is again 
+connected. An interesting and simple fact is that its total space is a manifold
 in its own right, and is orientable; in fact it carries a canonical 
 orientation. 
 
 Similarly we can form the sub covering space of $R$-module generators of
 the fibers of $o_M\otimes R$; write $(o_M\otimes R)^\times$ for it. 
 
+\medskip
 Now if $p:E\to B$ is a covering space, one of the things you may want to do 
 is consider a {\em section} of $p$; that is, a continuous function 
 $\sigma:B\to E$ such that $p\circ\sigma=1_B$. Write $\Gamma(B;E)$ for
@@ -273,7 +275,6 @@ If $M$ is compact, the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$
 is an isomorphism. 
 \label{thm-orientation}
 \end{theorem}
-
 We will prove this theorem in the next lecture.
 
 The representation of $\pi_1(B)$ on the fiber of $o_M\otimes R$ over $b$

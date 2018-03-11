@@ -1,8 +1,9 @@
-\section{The fundamental lemma of homological algebra}
+\section{The fundamental theorem of homological algebra}
 
 We will now show that the $R$-modules $\Tor^R_n(M,N)$ are well-defined 
 and functorial. This will be an application of a very general principle.
-\begin{theorem}[Fundamental theorem of homological algebra]
+\begin{theorem}[Fundamental theorem of Homological Algebra]
+\label{thm-ftha}
 Let $M$ and $N$ be $R$-modules; let
 \[
 0\leftarrow M\leftarrow E_0\leftarrow E_1\leftarrow\cdots
@@ -32,8 +33,8 @@ $F_1\to F_0\to N$ is exact. We find ourselves in exactly the same situation:
 \end{equation*}
 So by we construct $f_*$ by induction.
 
-Now we need to prove the chain homotopy claim. So suppose I have $f_\ast,f'_\ast:E_\ast\to F_\bullet$, both lifting $f:M\to N$. Then $f^\prime_n-f_n$ (which we'll rename $\ell_n$) is a chain map lifting $0:M\to N$. 
-We want to consruct a chain null-homotopy of $\ell_\ast$; that is, we want $h:E_n\to F_{n+1}$ such that $dh+hd=\ell$. At the bottom, $E_{-1}=0$ so we want
+Now we need to prove the chain homotopy claim. So suppose I have $f_\ast,f'_\ast:E_\ast\to F_\ast$, both lifting $f:M\to N$. Then $f^\prime_n-f_n$ (which we'll rename $\ell_n$) is a chain map lifting $0:M\to N$. 
+We want to consruct a chain null-homotopy of $\ell_\ast$; that is, we want $h:E_n\to F_{n+1}$ such that $dh+hd=\ell_n$. At the bottom, $E_{-1}=0$ so we want
 $h:E_0\to F_1$ such that $dh=\ell_0$. This factorization happens in two steps. 
 \begin{equation*}
 \xymatrix{ & & E_0\ar[d]_{\ell_0}\ar[dl]\ar@{-->}[dll]_h \ar[r] & M\ar[d]^0 \\
@@ -71,7 +72,7 @@ P\ar@{-->}[ur]\ar[r] & N}
 \end{equation*}
 \end{definition}
 Every free module is projective; this is what we have been using;
-our proof of the fundamental lemma of homogolical algebra uses only that 
+our proof of the Fundamental Theorem of Homological Algebra uses only that 
 $E_n$ is projective. 
 Anything that's a direct summand in a projective is also projective. Any projective module is a direct summand of a free module. Over a PID, every projective is free, because any submodule of a free is free. But there are examples of
 nonfree projectives: 
@@ -80,19 +81,19 @@ Let $k$ be a field and let $R$ be the product ring $k\times k$. It acts on $k$
 in two ways, via $(a,b)c=ac$ and via $(a,b)c=bc$. This are both projective $R$-modules that are not free.
 \end{example}
 
-Now we will apply the Fundamental Lemma 
+Now we will apply Theorem \ref{thm-ftha}
 to verify that our proposed construction of 
 $\Tor$ is independent of free (or projective!) resolution, and is functorial. 
 
 Suppose I have $f:N'\to N$. Pick arbitrary free resolutions 
-$N'\leftarrow N'_*$ and $N\leftarrow N_*$, and pick any chain map 
-$f_*F'_*\to F_*$ lifting $f$. We claim that the map
+$N'\leftarrow F'_*$ and $N\leftarrow F_*$, and pick any chain map 
+$f_*:F'_*\to F_*$ lifting $f$. We claim that the map
 induced in homology by $1\otimes f_*:M\otimes_RF'_*\to M\otimes_RF_*$
 is independent of the choice of lift. Suppose $f'_*$ is another lift,
-and pick a chain homotopy $h:f\sim f'$. Since $M\otimes_R-$ is additive, 
+and pick a chain homotopy $h:f\simeq f'$. Since $M\otimes_R-$ is additive, 
 the relation 
 \[
-1\otimes h:1\otimes f\sim 1\otimes f'
+1\otimes h:1\otimes f\simeq 1\otimes f'
 \] 
 still holds. So $1\otimes f$ and $1\otimes f'$ induce the same map in homology.
 
@@ -110,7 +111,8 @@ induce canonically isomorphic modules $\Tor_n^R(M,N)$, and that a homomorphism
 $f:N'\to N$ induces a well defined map $\Tor_n^R(M,N')\to\Tor_n^R(M,N)$
 that renders $\Tor^R_n(M,-)$ a functor. 
 
-Last comment about $\Tor$ is that there's a symmetry there. Of course, $M\otimes_R N\cong N\otimes_R M$. This uses the fact that $R$ is commutative. This leads right on to saying that $\Tor^R_n(M,N)\cong \Tor^R_n(N,M)$. We've been computing $\Tor$ by taking a resolution of the second variable. But I could equally have taken a resolution of the first variable. This follows from the fundamental theorem of homological algebra.
+Last comment about $\Tor$ is that there's a symmetry there. Of course, $M\otimes_R N\cong N\otimes_R M$. This uses the fact that $R$ is commutative. This leads right on to saying that $\Tor^R_n(M,N)\cong \Tor^R_n(N,M)$. We've been computing $\Tor$ by taking a resolution of the second variable. But I could equally have taken a resolution of the first variable. This follows from Theorem
+\ref{thm-ftha}.
 
 
 \begin{example}
@@ -146,7 +148,7 @@ H(M;d)\,&\,\hbox{for}\,n>0\,.
 \]
 So for example 
 \[
-\Tor^R_n(k,k)=k\,\,\,\hbox{for}\,\,n\geq0\,.
+\Tor^R_n(k,k)=k\quad\hbox{for}\,\,n\geq0\,.
 \]
 \end{example}
 

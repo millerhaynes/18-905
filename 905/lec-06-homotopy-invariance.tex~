@@ -1,11 +1,11 @@
 \section{Homotopy invariance of homology}
 We now know that the homology of a star-shaped region is trivial: in such a space, every cycle with augmentation 0 is a boundary. We will use that fact, which is a special case of homotopy invariance of homology, to prove the general result, which we state in somewhat stronger form:
 	\begin{theorem}
-A homotopy $h:f_0\sim f_1:X\to Y$ determines a natural chain homotopy
-$f_{0,\ast}\sim f_{1,\ast}:S_\ast(X)\to S_\ast(Y)$.
+A homotopy $h:f_0\simeq f_1:X\to Y$ determines a natural chain homotopy
+$f_{0,\ast}\simeq f_{1,\ast}:S_\ast(X)\to S_\ast(Y)$.
 	\end{theorem}
 
-The proof uses naturality (a lot). For a start, notice that if $k:g_0\sim g_1:C_*\to D_*$ is a chain homotopy, and $j:D_*\to E_*$ is another chain map, then the composites $j\circ k_n:C_n\to E_{n+1}$ give a chain homootpy $j\circ g_0\sim j\circ g_1$. So if we can produce a chain homotopy homotopy between the chain maps induced by the two inclusions $i_0,i_1:X\to X\times I$, we can get a chain homotopy $k$ between $f_{0*}=h_*\circ i_{0*}$ and 
+The proof uses naturality (a lot). For a start, notice that if $k:g_0\simeq g_1:C_*\to D_*$ is a chain homotopy, and $j:D_*\to E_*$ is another chain map, then the composites $j\circ k_n:C_n\to E_{n+1}$ give a chain homootpy $j\circ g_0\simeq j\circ g_1$. So if we can produce a chain homotopy between the chain maps induced by the two inclusions $i_0,i_1:X\to X\times I$, we can get a chain homotopy $k$ between $f_{0*}=h_*\circ i_{0*}$ and 
 $f_{1*}=h_*\circ i_{1*}$ in the form $h_*\circ k$. 
 
 So now we want to produce a natural chain homotopy, with components 
@@ -21,12 +21,14 @@ with lots of good properties. It will ultimately be used to compute the homology
 
 Here's the general result. 
 \begin{theorem}
-There exists a map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$ that is:
+There exists a map $\times:S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, 
+the {\em cross product}, that is:
 	\begin{itemize}
 	\item Natural, in the sense that if $f:X\to X^\prime$ and $g:Y\to Y^\prime$, and $a\in S_p(X)$ and $b\in S_p(Y)$ so that $a\times b\in S_{p+q}(X\times Y)$, then $f_\ast(a)\times g_\ast(b)=(f\times g)_\ast(a\times b)$.
 	\item Bilinear, in the sense that $(a+a^\prime)\times b=(a\times b)+(a^\prime\times b)$, and $a\times (b+b^\prime)=a\times b+a\times b^\prime$.
 	\item The Leibniz rule is satisfied, i.e., $d(a\times b)=(da)\times b + (-1)^pa\times db$.
-	\item Normalized, in the following sense. Let $x\in X$ and $y\in Y$. Write $j_x:Y\to X\times Y$ sending $y\mapsto (x,y)$, and write $i_y:X\to X\times Y$ sending $x\mapsto (x,y)$. If $b\in S_q(Y)$, then $c^0_x\times b=(j_x)_\ast b\in S_q(X\times Y)$, and if $a\in S_p(X)$, then $a\times c^0_y=(i_y)_\ast a\in S_p(X\times Y)$.
+	\item Normalized, in the following sense. Let $x\in X$ and $y\in Y$. Write $j_x:Y\to X\times Y$ for $y\mapsto (x,y)$, and write $i_y:X\to X\times Y$ 
+for $x\mapsto (x,y)$. If $b\in S_q(Y)$, then $c^0_x\times b=(j_x)_\ast b\in S_q(X\times Y)$, and if $a\in S_p(X)$, then $a\times c^0_y=(i_y)_\ast a\in S_p(X\times Y)$.
 	\end{itemize}
 \end{theorem}
 The Leibniz rule contains the first occurence of the ``topologists sign rule'';
@@ -36,7 +38,7 @@ we'll see these signs appearing often. Watch for when it appears in our proof.
 gives us the cases $p+q=0,1$. Let's assume that we've constructed the cross-product in total dimension $p+q-1$. We want to define $\sigma\times\tau$ for 
 $\sigma\in S_p(X)$ and $\tau\in S_q(Y)$. 
 
-Note that there's a universal example of a $p$-simplex, namely the identity map $\iota_p:\Delta^p\to \Delta^p$. It's universal in the sense that given any $p$-simplex $\sigma:\Delta^p\to X$, you get $\sigma=\sigma_\ast(\iota_p)$ where $\sigma_\ast:\Sin_p(\Delta^p)\to \Sin_p(X)$ is the map induced by $\sigma$. To define $\sigma\times\tau$ in general, then, it suffices to define $\iota_p\times\iota_q\in S_{p+q}(\Delta^p\times\Delta^q)$; we can (and must) then take
+Note that there's a universal example of a $p$-simplex, namely the identity map $\iota_p:\Delta^p\to \Delta^p$. It's universal in the sense any $p$-simplex $\sigma:\Delta^p\to X$ can be written as $\sigma_\ast(\iota_p)$ where $\sigma_\ast:\Sin_p(\Delta^p)\to \Sin_p(X)$ is the map induced by $\sigma$. To define $\sigma\times\tau$ in general, then, it suffices to define $\iota_p\times\iota_q\in S_{p+q}(\Delta^p\times\Delta^q)$; we can (and must) then take
 $\sigma\times\tau=(\sigma\times\tau)_*(\iota_p\times\iota_q)$. 
 
 Our long list of axioms is useful in the induction. For one thing, if $p=0$ or
@@ -52,10 +54,10 @@ $p+q-1$ where we have it by the inductive assumption:
 		\end{equation*}
 because $d^2=0$. Note that this calculation would not have worked without the sign! 
 
-The subspace $\Delta^p\times\Delta^q\subseteq\mathbf{R}^{p+1}\times\mathbf{R}^{q+1}$ is convex, so by translation, it's homeomorphic to a star-shaped region. Therefore we know that $ H_{p+q-1}(\Delta^p\times\Delta^q)=0$ (remember, $p+q>1$), which means that every cycle is a boundary. In other words, our necessary condition is also sufficient! So, choose any element 
+The subspace $\Delta^p\times\Delta^q\subseteq\mathbf{R}^{p+1}\times\mathbf{R}^{q+1}$ is convex and nonempty, and hence star-shaped. Therefore we know that $ H_{p+q-1}(\Delta^p\times\Delta^q)=0$ (remember, $p+q>1$), which means that every cycle is a boundary. In other words, our necessary condition is also sufficient! So, choose any element 
 with the right boundary and declare it to be $\iota_p\times\iota_q$.
 
-The induction is now complete provided we can check that this choice satisfies naturality, bilinearity, and the Leibniz rule. We leave this as a relaxing exercise for the reader. 
+The induction is now complete provided we can check that this choice satisfies naturality, bilinearity, and the Leibniz rule. I leave this as a relaxing exercise for the listener. 
 \end{proof}
 
 The essential point here is that the space supporting the universal pair of

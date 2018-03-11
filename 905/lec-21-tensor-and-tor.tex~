@@ -13,29 +13,38 @@ Let's tensor it with $\Z/2\Z$. We get
 0\to \Z/2\Z\to\Z/2\Z\to\Z/2\Z\to 0\,.
 \]
 This cannot be a short exact sequence! 
-This is a major tragedy: tensoring doesn't preserve exact sequences; one says that $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $A$ by simply tensoring homology with $A$. 
+This is a major tragedy: tensoring doesn't preserve exact sequences; one says that $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $M$ by simply tensoring homology with $M$. 
 
 Tensoring does respect certain exact sequences:
 \begin{prop}
 The functor $N\mapsto M\otimes_R N$ preserves cokernels; it is \emph{right exact}. 
 \end{prop}
 \begin{proof}
-Suppose that $N\to N''$ is a surjection of $R$-modules, and $M$ is any $R$-module. Then 
+Suppose that $N'\to N\to N''\to0$ is exact and let $f:M\otimes N\to Q$.  
+We wish to show that there is a unique factorization as shown in the diagram
+\[
+\xymatrix{ 
+M\otimes N' \ar[r] \ar[dr]^0 & M\otimes N \ar[d]^f \ar[r] &
+M\otimes N'' \ar[r] \ar@{.>}[dl] & 0 \\
+& Q\,.
+}\]
+This is equivalent to asking whether there is a unique factorization
+of the corresponding diagram of bilinear maps,
 \[
 \xymatrix{
-M\otimes_RN \ar[r] & M\otimes_RN'' \\
-M\times N \ar[u] \ar@{->>}[r] & M\times N'' \ar[u]\,.
+M\times N' \ar[r] \ar[dr]^0 & M\times N \ar[d]^\beta \ar[r] &
+M\times N'' \ar[r] \ar@{.>}[dl] & 0 \\
+& Q 
 }\]
-At least we know that $M\times-$ preserves surjections. But the image of 
-$M\times N''$ generates $M\otimes_RN''$ as an $R$-module, so the image of
-$M\times N$ generates it as well. This implies that 
-$M\otimes_RN\to M\otimes_RN''$ is surjective.
+-- uniqueness of the linear factorization is guaranteed by the fact that
+$M\times N''$ generates $M\otimes N''$. This unique factorization reflects
+the fact that $M\times-$ preserves cokernels. 
 \end{proof}
 
-How about this failure of exactness? What can we do about that? Failure of exactness is bad, so let's try to repair it. A key observation is that if 
+Failure of exactness is bad, so let's try to repair it. A key observation is that if 
 $M$ is {\em free}, then $M\otimes_R-$ is exact. If $M=R\langle S\rangle$, the
 free $R$-module on a set $S$, then $M\otimes_RN=\oplus_SN$, since tensoring
-distributes over direct sums. Then we remember:
+distributes over direct sums. Then we remember the following ``obvious'' fact:
 \begin{lemma}
 If $M'_i\to M_i\to M''_i$ is exact for all $i\in I$, then so is 
 \[
@@ -48,8 +57,9 @@ That means that each $x_i$ maps to zero in $M''_i$ and hence is in the
 image of some $x'_i\in M'_i$. Just make sure to take $x'_i=0$ if $x_i=0$. 
 \end{proof}
 
-To exploit this observation, let's ``resolve'' $M$ by free modules. This means:
-find a surjection from a free $R$-module, $F_0\to M$. This amounts to specifying $R$-module generators. The kernel of $F_0\to M$ won't generally be free. 
+To exploit this observation, we'll ``resolve'' $M$ by free modules. This means:
+find a surjection from a free $R$-module, $F_0\to M$. This amounts to specifying $R$-module generators. For a general ring $R$, the kernel of $F_0\to M$ may
+not be free. 
 Let's make sure that it is by assuming that $R$ is a PID, and write $F_1$ for
 the kernel. The failure of $M\otimes-$ to be exact is measured, at least
 partially, by the leftmost term (defined as a kernel) in the exact sequence
@@ -95,7 +105,8 @@ least find a set of module generators for it, and construct a surjection
 from a free $R$-module, $F_1\to K_0$. Continuing in this way, we get a 
 diagram like this -- 
 \begin{equation*}
-\xymatrix{\cdots\ar[rr] & & F_2\ar[dr]\ar[rr]^d & & F_1\ar[dr]\ar[rr]^d & & F_0\ar[dr]\\
+\xymatrix{\cdots\ar[rr]\ar[dr] && F_2\ar[dr]\ar[rr]^d & & 
+F_1\ar[dr]\ar[rr]^d & & F_0\ar[dr]\\
 & K_2\ar[ur]\ar[dr] & & K_1\ar[ur]\ar[dr] & & K_0\ar[ur]\ar[dr] & & N\ar[dr]\\
 0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0\ar[ur] & & 0}
 \end{equation*}
@@ -122,7 +133,7 @@ In general, we define
 In the next lecture we will check that this is well-defined -- independent 
 of free resolution, and functorial in the arguments. For the moment, notice 
 that \[
-\Tor^R_n(M,F)=0\,\,\hbox{for}\, n>0 \quad\hbox{if $F$ is free}\,,
+\Tor^R_n(M,F)=0\quad\hbox{for}\, n>0 \quad\hbox{if $F$ is free}\,,
 \]
 since I can take $F\xleftarrow{\cong}F\leftarrow0\leftarrow\cdots$ as a
 free resolution; and that 

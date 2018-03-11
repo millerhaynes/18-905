@@ -11,7 +11,7 @@ An excision induces an isomorphism in homology,
 H_\ast(X-U,A-U)\xrightarrow{\cong}H_\ast(X,A)\,.
 \]
 \end{theorem}
-So you can cut out the bits of the interior of $A$ without changing the relative homology. The proof will take us a couple of days. Before we give applications, let me pose a different way to interpret the motto ``$H_*(X,A)$ depends only on $X-A$.'' Collapsing the subspace $A$ to a point gives us a map of pairs
+So you can cut out closed bits of the interior of $A$ without changing the relative homology. The proof will take us a couple of days. Before we give applications, let me pose a different way to interpret the motto ``$H_*(X,A)$ depends only on $X-A$.'' Collapsing the subspace $A$ to a point gives us a map of pairs
 \[
 (X,A)\to(X/A,\ast)\,.
 \]
@@ -122,10 +122,13 @@ If $f:D^n\to D^n$ is continuous,
 then there is some point $x\in D^n$ such that $f(x)=x$.
 \end{theorem}
 \begin{proof}
-Suppose not. Then you can draw a ray from $x$ through $f(x)$. It meets the boundary of $D^n$ at a point $g(x)\in S^{n-1}$. Check that $g$ is continuous. If $x$ is on the boundary, then $x=g(x)$, so $g$ is a null-homotopy of the identity map on $S^{n-1}$. This is inconsistent with our computation because the identity map induces the identity map on $\widetilde H_{n-1}(S^{n-1})\cong\ZZ$.
+Suppose not. Then you can draw a ray from $f(x)$ through $x$. It meets the boundary of $D^n$ at a point $g(x)\in S^{n-1}$. Check that $g$ is continuous. If $x$ is on the boundary, then $x=g(x)$, so $g$ is a null-homotopy of the identity map on $S^{n-1}$. This is inconsistent with our computation because the identity map induces the identity map on $\widetilde H_{n-1}(S^{n-1})\cong\ZZ$.
 \end{proof}
 
-\fbox{picture needed}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/10-Brouwer-FPT.pdf}
+\end{center}
+
 
 Our computation of the homology of a sphere also implies that there are many non-homotopic self-maps of $S^n$, for any $n\geq1$. We will distinguish them by means of the ``degree'': A map $f:S^n\to S^n$ induces an endomorphism of the infinite cyclic group $H_n(S^n)$. Any endomorphism of an infinite cyclic group is given by multiplication by an integer. This integer is well defined (independent of a choice of basis), and any integer occurs. Thus $\mathrm{End}(\ZZ)=\ZZ_\times$, the monoid of integers under multiplication. The homotopy classes of self-maps of $S^n$ also form a monoid, under composition, and: 
 \begin{theorem}

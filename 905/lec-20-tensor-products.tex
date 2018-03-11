@@ -50,7 +50,7 @@ The map $[-]$, including a basis, isn't bilinear. So we should quotient $R\langl
 \item $[(x,ry)]-r[(x,y)]$
 \end{enumerate}
 for $x,x^\prime\in M$, $y,y^\prime\in N$, and $r\in R$. Now the composite
-$M\times N\to R\langle M\times N\rangle/S$ {\em is} $R$-bilinear - we've quotiented out by all things that prevented it from being so! Now the map $R\langle M\times N\rangle\to Q$ factors as $R\langle M\times N\rangle\to R\langle M\times N\rangle/S\xrightarrow{f} Q$, where $f$ is $R$-linear, and uniquely because the map to the quotient is surjective. This completes the construction.
+$M\times N\to R\langle M\times N\rangle/S$ {\em is} $R$-bilinear - we've quotiented out by all things that prevented it from being so! And the map $R\langle M\times N\rangle\to Q$ factors as $R\langle M\times N\rangle\to R\langle M\times N\rangle/S\xrightarrow{f} Q$, where $f$ is $R$-linear, and uniquely because the map to the quotient is surjective. This completes the construction.
 \end{construction}
 
 If you find yourself using this construction, stop and think about what you're doing. You're never going to use this construction to compute anything. 
@@ -89,8 +89,8 @@ You are invited to show that this construction is functorial.
 \end{property}
 
 \begin{property}[Unitality, associativity, commutativity] 
-I said that this was going to be a ``categorical ring,'' so we should check various properties of the tensor product. For example, $R\otimes_R M$ should be isomorphic to $M$. Let's think about this for a minute. I have an $R$-bilinear map $R\otimes M\to M$, given by multiplication. 
-I just need to check the universal property. Suppose I have an $R$-bilinear map $\beta:R\times M\to P$. I have to construct a map $f:M\to P$ such that 
+I said that this was going to be a ``categorical ring,'' so we should check various properties of the tensor product. For example, $R\otimes_R M$ should be isomorphic to $M$. Let's think about this for a minute. We have an $R$-bilinear map $R\times M\to M$, given by multiplication. 
+I just need to check the universal property. Suppose we have an $R$-bilinear map $\beta:R\times M\to P$. We have to construct a map $f:M\to P$ such that 
 $\beta(r,x)=f(rx)$ and show it's unique. Our only choice is $f(x)=\beta(1,x)$,
 and that works.
 
@@ -109,12 +109,12 @@ What about a map the other way? We'll define a map out of the tensor product
 using the universal property. So we need to define a bilinear map out of
 \[
 M\times\left(\bigoplus_{\alpha\in A}N_\alpha\right)
-=\bigoplus_{\alpha\in A}(M\times N_\alpha\,
+=\bigoplus_{\alpha\in A}(M\times N_\alpha)\,
 \]
 Send
 $(x,y)$ (where $y\in N_\beta$, say) to  $x\otimes\mathrm{in}_\beta y$, where
 $\mathrm{in}_\beta:N_\beta\to \oplus N_\alpha$ is the incusion of a summand. 
-It's up to you to check that these are inverses.
+This suffices to determine a bilinear map. It's up to you to check that these are inverses.
 \end{property}
 
 \begin{property}[Distributivity] 
@@ -153,7 +153,8 @@ to it produces another split short exact sequence. So
 \[
 S_n(X,A)\otimes M=S_n(A;M)/S_n(X;M)\,,
 \]
-and it makes sense to use the notation $S_n(X,A;M)$ for this and to  define
+and it makes sense to use the notation $S_n(X,A;M)$ for this. This is
+again a chain complex (by functoriality of the tensor product), and we define
 \[
 H_n(X,A;M)=H_n(S_n(X,A;M))\,.
 \]

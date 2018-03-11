@@ -10,7 +10,7 @@ in character. A more flexible model, one more closely reflecting topological
 information, is given by the theory of CW-complexes. 
 
 In building up a space as a CW-complex, we will successively ``glue'' cells
-onto what has been already built. It's a general construction. 
+onto what has been already built. This is a general construction. 
 
 Suppose we have a pair $(B,A)$, and a map $f:A\to X$. Define a space
 $X\cup_f B$ (or $X\cup_A B$) in the diagram
@@ -69,7 +69,7 @@ you are just adding a discrete set to $X$:
 \[
 X\cup_f\coprod_{\alpha\in A}D^0=X\sqcup A
 \]
-More interesting: 
+More interesting: Let's attach two 1-cells to a point:
 \begin{equation*}
 \xymatrix{S^0\sqcup S^0\ar[r]^f\ar@{^(->}[d] & \ast\ar[d]\\
 D^1\sqcup D^1\ar[r] & \ast\cup_f (D^1\sqcup D^1)}
@@ -105,10 +105,10 @@ such that
 The subspace $\Sk_nX$ is the $n$-{\em skeleton} of $X$. 
 Sometimes it's convenent to use the alternate notation $X_n$ 
 for the $n$-skeleton.
-The first condition is intended topologically, so that a subset of $X$ is open if and only if its intersection with each $\Sk_nX$ is open; or, equivalently, a map $f:X\to Y$ is continuous if and only if its restriction to each $\Sk_nX$ is continuous. The maps $f_n$ are the {\em attaching maps} and the maps $g_n$ are{\em characteristic maps}. 
+The first condition is intended topologically, so that a subset of $X$ is open if and only if its intersection with each $\Sk_nX$ is open; or, equivalently, a map $f:X\to Y$ is continuous if and only if its restriction to each $\Sk_nX$ is continuous. The maps $f_n$ are the {\em attaching maps} and the maps $g_n$ are {\em characteristic maps}. 
 
 \begin{example}
-We just constructed the torus as a CW complex with $\Sk_0T^2=\ast$,$\Sk_1T^2=S^1\vee S^1$, and $\Sk_2T^2=T^2$.
+We just constructed the torus as a CW complex with $\Sk_0T^2=\ast$, $\Sk_1T^2=S^1\vee S^1$, and $\Sk_2T^2=T^2$.
 \end{example}
 \begin{definition}
 A CW-complex is \emph{finite-dimensional} if $\Sk_nX=X$ for some $n$;
@@ -123,4 +123,4 @@ In ``CW,'' the ``C'' is for cell, and the ``W'' is for weak, because of the topo
 Any CW-complex is Hausdorff, and it's compact if and only if it's finite. \\
 Any compact smooth manifold admits a CW structure.
 \end{theorem}
-
+\begin{proof} See \cite{bredon} Prop. IV.8.1, \cite{hatcher} Prop. A.3.

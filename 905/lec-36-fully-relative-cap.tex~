@@ -112,15 +112,17 @@ says that
 The construction of the Mayer-Vietoris sequences then gives:
 \begin{theorem}
 \label{thm-mayer-vietoris-ladder}
+Let $A, B$ be closed in a normal space or compact in a Hausdorff space. 
 The \v{C}ech cohomology and singular homology Mayer-Vietoris sequences are 
-compatible: for any $x{A\cup B}\in H_n(X,X-A\cup B)$, 
-there is a commutative ladder
+compatible: for any $x_{A\cup B}\in H_n(X,X-A\cup B)$, 
+there is a commutative ladder (where again we use the notation
+$H_q(X|A)=H_q(X,X-A)$, and again $p+q=n$)
 \begin{equation*}
 \xymatrix{
 \cdots \ar[r] & \cHH^p(A\cup B)\ar[r]\ar[d]^{\cap x_{A\cup B}} & 
 \cHH^p(A)\oplus \cHH^p(B)\ar[r]\ar[d]^{(\cap x_A)\oplus(\cap x_B)} & 
 \cHH^p(A\cap B)\ar[r]\ar[d]^{\cap x_{A\cap B}} & 
-\cHH^{p+q}(A\cup B)\ar[r]\ar[d]^{\cap x_{A\cup B}} & \cdots\\
+\cHH^{p+1}(A\cup B)\ar[r]\ar[d]^{\cap x_{A\cup B}} & \cdots\\
 \cdots \ar[r] & H_q(X|A\cup B)\ar[r]& H_q(X|A)\oplus H_q(X|B)\ar[r]& H_q(X|A\cap B)\ar[r]& H_{q-1}(X|A\cup B)\ar[r]&\cdots
 }
 \end{equation*}

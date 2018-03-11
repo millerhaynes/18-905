@@ -1,5 +1,5 @@
 \section{K\"{u}nneth and Eilenberg-Zilber}
-We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used was really an example of the fundamental theorem of homological algebra. It works with any coefficient ring, not just the integers. 
+We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used works with any coefficient ring, not just the integers. 
 \begin{definition}
 Let $C_\ast,D_\ast$ be two chain complexes. Their {\em tensor product} is 
 the chain complex with
@@ -45,7 +45,8 @@ isomorphisms then so is $C'_\ast\otimes D'_\ast\to C_\ast\otimes D_\ast$.
 \end{corollary}
 
 Our attack on question (1) is via the method of ``acyclic models.'' This is
-really a special case of the fundamental lemma of homological algebra!
+really a special case of the Fundamental Theorem of Homological Algebra,
+Theorem \ref{thm-ftha}!
 
 \begin{definition}
 Let $\cc$ be a category, and fix a set $\MM$ of object in $\cc$, 
@@ -61,7 +62,7 @@ $\cc=\mathbf{Top}^2$, and for $\MM$ the set of pairs of
 simplicies, $\MM=\{(\Delta^p,\Delta^q):p,q\geq0\}$. Then 
 \[
 S_n(X\times Y)=\Z[\Hom_\mathbf{Top}(\Delta^n\times X)\times
-\Hom_{\mathbf{Top}}(\Delta^n,Y)=
+\Hom_{\mathbf{Top}}(\Delta^n,Y)]=
 \Z\Hom_{\mathbf{Top}^2}((\Delta^n,\Delta^n),(X,Y))\,.
 \]
 is $\MM$-free.
@@ -135,14 +136,14 @@ Now extend linearly. You should check that this does define a natural
 transformation. 
 \end{proof}
 
-This is precisely the condition required to prove the Fundamental Lemma
+This is precisely the condition required to prove the Fundamental Theorem
 of Homological Algebra. So we have the 
 \begin{theorem}[Acyclic Models]
 Let $\MM$ be a set of models in a category $\cc$. Let $\theta:F\to G$ be 
 a natural transformation of functors fron $\cc$ to $\Ab$. Let 
 $F_*$ and $G_*$ be functors from $\cc$ to chain complexes, with augmentations
 $F_0\to F$ and $G_0\to G$. Assume that $F_n$ is $\MM$-free for all $n$, and
-that $G_*\to G\to0$ is an $\MM$-exact sequence. Then there is a unique natural
+that $G_*\to G\to0$ is an $\MM$-exact sequence. Then there is a unique
 chain homotopy class of chain maps $F_*\to G_*$ covering $\theta$. 
 \end{theorem}
 \begin{corollary}

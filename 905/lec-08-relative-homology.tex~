@@ -8,10 +8,10 @@ Homology is in a certain sense the best ``additive'' approximation to this probl
 	\item The homology $ H_\ast(A\cup B)$ is like $ H_\ast(A)+ H_\ast(B)- H_\ast(A\cap B)$. 
 	\end{enumerate}
 The first hope is captured by the long exact sequence of a pair, the second
-by the Meyer-Vietoris Theorem. 
+by the Mayer-Vietoris Theorem. 
 Both facts show that homology behaves like a measure. 
 The precise statement of both facts uses the machinery of exact sequences.
-We'll use the following language.
+I'll use the following language.
 
 \begin{definition}
 A {\em sequence} of abelian groups is a diagram of abelian groups of the form 
@@ -19,7 +19,7 @@ A {\em sequence} of abelian groups is a diagram of abelian groups of the form
 \cdots\rightarrow C_{n+1}\xrightarrow{f_n}C_n\xrightarrow{f_{n-1}}C_{n-1}
 \rightarrow\cdots\,,
 \]
-finite or infinite in either or direction or both directions, in which all composites are zero; that is, $\img f_n\subseteq f_{n-1}$ for all $n$. It is 
+finite or infinite in either or both directions, in which all composites are zero; that is, $\img f_n\subseteq\ker f_{n-1}$ for all $n$. It is 
 {\em exact} at $C_n$ provided that this inequality is an equality. 
 \end{definition}
 \begin{example}
@@ -29,27 +29,30 @@ $C_n$ if and only if $H_n(C_\ast)=0$. So homology measures the failure of exactn
 \begin{example}
 $0\to A\xrightarrow{i}B$ is exact iff $i$ is injective, and $B\xrightarrow{p}C\to 0$ is exact iff $p$ is surjective.
 \end{example}
-Exactness is a key property in the development of algebraic topology, and ``exact'' is a great word for the concept. A foundational treatment of algebraic topology was published by Sammy Eilenberg and Norman Steenrod published in 1952.
-The story is that in the galleys for the book they left a blank space whenever the word representing this concept was used, and filled it in at the last minute. 
+Exactness was a key concept in the development of algebraic topology, and ``exact'' is a great word for the concept. A foundational treatment
+\cite{eilenberg-steenrod} of algebraic topology was published by 
+Sammy Eilenberg and Norman Steenrod in 1952.
+The story goes that in the galleys for the book they left a blank space whenever the word representing this concept was used, and filled it in at the last minute. 
 \begin{definition}
 An exact sequence that's infinite in both directions
 is a {\em long exact sequence}.
 A {\em short exact sequence} is an exact sequence of the form 
 \[
-0\to A\xrightarrow{i}B\xRightarrow{p} C\to 0\,.
+0\to A\xrightarrow{i}B\xrightarrow{p} C\to 0\,.
 \]
 \end{definition}
 
-Any sequence of the form $0\to A\to B\to C\to0$ expands to a diagram
+Any sequence of the form $A\to B\to C$ expands to a diagram
 	\begin{equation*}
 	\xymatrix{\ker(p) \ar[dr] & & \\
 	A\ar[u]\ar[r]^i & B\ar[r]^p\ar[dr] & C\\
 	 & & \coker(i)\ar[u]}
 	\end{equation*}
-It is short exact if and only if $A\rightarrow^{\cong}\ker p$ and 
-$B\rightarrow^{\cong}\coker(i)$. 
+It is short exact if and only if $A\xrightarrow{\cong}\ker p$ or, equivalently,
+$\coker(i)\xrightarrow{\cong}C$. It is short exact if furthermore $i$ is
+injective and $p$ is surjective.
 
-As suggested above, we will study the homology of a space $X$ by comparing it to the homology of a subspace $A$ and a complement or quotient construction. 
+We will study the homology of a space $X$ by comparing it to the homology of a subspace $A$ and a complement or quotient modulo the subspace.
 Note that $S_*(A)$ injects into $S_*(X)$. This suggests considering the quotient group
 \[
 \frac{S_n(X)}{S_n(A)}\,.
@@ -76,7 +79,7 @@ structure of chain complex on the quotient graded abelian group $C_*$ with
 entries $C_n=B_n/A_n$ such that $B_*\to C_*$ is a chain map.
 \end{lemma}
 \begin{proof}
-To define $d:C_n\to C_{n-1}$, represent $c\in C_n$ by $b\in B_n$ and
+To define $d:C_n\to C_{n-1}$, represent $c\in C_n$ by $b\in B_n$, and
 hope that $[db]\in B_{n-1}/A_{n-1}$ is well defined. If we replace
 $b$ by $b+a$ for $a\in A_n$, we find 
 \[
@@ -103,10 +106,14 @@ H_n(X,A)=H_n(S_*(X,A))\,.
 \]
 \end{definition}
 
-One of the nice features of the absolute chain group $S_n(X)$ is that it is free as an abelian group. Is that also the case for its quotent $S_n(X,A)$? The map $\Sin_n(A)\to\Sin_n(X)$ is an injection. As long as $A\neq\varnothing$, this injection admits a splitting. (If $A=\varnothing$, then $S_n(X,A)=S_n(X)$ is indeed free.) So when we apply the free abelian group functor we obtain a split monomorphism. Then the induced map $S_*(X)\to S_*(A)\oplus S_*(X,A)$ is an isomorphism, so $S_*(X,A)$ is again free. 
+One of the nice features of the absolute chain group $S_n(X)$ is that it is free as an abelian group. Is that also the case for its quotent $S_n(X,A)$? The map $\Sin_n(A)\to\Sin_n(X)$ is an injection. As long as $A\neq\varnothing$, this injection admits a splitting. (If $A=\varnothing$, then $S_n(X,A)=S_n(X)$ is indeed free.) So when we apply the free abelian group functor we obtain a split monomorphism. Then the induced map $S_n(X)\to S_n(A)\oplus S_n(X,A)$ is an isomorphism, so $S_n(X,A)$ is again free. 
 
 \begin{example}
-Consider $\Delta^n$, relative to its boundary $\partial\Delta^n:=\bigcup \img d_i\cong S^{n-1}$. We have the identity map $\iota_n:\Delta^n\to \Delta^n$, the universal $n$-simplex, in $\Sin_n(\Delta^n)\subseteq S_n(\Delta^n)$. It is not a cycle; its boundary $d\iota_n\in S_{n-1}(\Delta^n)$ is the alternating sum of the faces of the $n$-simplex. Each of these singular simplices lies in $\partial\Delta^n$, so $d\iota_n\in S_{n-1}(\partial\Delta^n)$, and 
+Consider $\Delta^n$, relative to its boundary 
+\[
+\partial\Delta^n:=\bigcup \img d_i\cong S^{n-1}\,.
+\] 
+We have the identity map $\iota_n:\Delta^n\to \Delta^n$, the universal $n$-simplex, in $\Sin_n(\Delta^n)\subseteq S_n(\Delta^n)$. It is not a cycle; its boundary $d\iota_n\in S_{n-1}(\Delta^n)$ is the alternating sum of the faces of the $n$-simplex. Each of these singular simplices lies in $\partial\Delta^n$, so $d\iota_n\in S_{n-1}(\partial\Delta^n)$, and 
 $[\iota_n]\in S_n(\Delta_n,\partial\Delta_n)$ {\em is} a {\em relative} cycle. 
 We will see that the relative homology $H_n(\Delta^n,\partial\Delta^n)$ is infinite cyclic, with generator $[\iota_n]$. 
 \end{example}

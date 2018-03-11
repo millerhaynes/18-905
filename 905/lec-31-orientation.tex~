@@ -10,7 +10,7 @@ link between local and global.
 
 The local-to-global device relevant to this is the notion of a ``local
 coefficient system,'' which is based on the more primitive notion of a 
-covering space. We summarize that theory, since it is a prerequisite 
+covering space. We merely summarize that theory, since it is a prerequisite 
 of this course.
 
 \begin{definition}
@@ -29,13 +29,12 @@ The space $B$ is the ``base,'' $E$ the ``total space.''
 \begin{example} 
 A trivial example is given by the projection map $\pr_1:B\times F\to B$ where
 $F$ is discrete. A covering space of this form is said to be {\em trivial},
-so the covering space condition can be rephrased as ``locally trivial.'' 
+so the covering space condition can be rephrased as ``local triviality.'' 
 
 The first interesting example is the projection map
 $S^n\to \RP^n$ obtained by identifying antipodal maps on the sphere. 
-\end{example}
-
 This example generalizes in the following way. 
+\end{example}
 \begin{definition} An action of a group $\pi$ on a space $X$ is
 {\em principal} or {\em totally discontinuous} (terrible language,
 since we are certainly assuming that every group element acts by
@@ -54,7 +53,7 @@ It is not hard to use local triviality to prove the following:
 Let $p:E\to B$ be a covering space, and $\omega:I\to B$ a path in the base.
 For any $e\in E$ such that $p(e)=\omega(0)$, there is a unique path 
 $\widetilde\omega:I\to E$ in $E$ such that $p\widetilde\omega=\omega$ and
-$\\widetilde\omega(0)=e$. 
+$\widetilde\omega(0)=e$. 
 \end{theorem}
 
 This leads to a right action of $\pi_1(B,b)$ on $F=p^{-1}(b)$: Represent an 
@@ -110,7 +109,7 @@ assumption required is this: A space $B$ is {\em semilocally simply
 connected} if is path connected and for every point $b$ and every 
 neighborhood $U$ of $b$, there exists a smaller neighborhood $V$ 
 such that $\pi_1(V,b)\to\pi_1(X,b)$ is trivial. This is a very weak
-condition! 
+condition.
 
 \begin{theorem} Assume that $B$ is semi-locally simply connected.
 Then the functor 
@@ -160,13 +159,13 @@ $o_M$ with the property that this map is a covering space. This will use
 an important map $j_{A,x}$, defined for any closed set $A\subseteq M$ 
 and $x\in A$ as the map induced by an inclusion of pairs: 
 \[
-j_x:H_n(M,M-A)\to H_n(M,M-x)
+j_{A,x}:H_n(M,M-A)\to H_n(M,M-x)
 \]
 Define a basis of opens $V_{U,x,\alpha}$ in $o_M$ 
 indexed by triples $(U,x,\alpha)$ where $U$ is 
 open in $M$, $x\in U$, and $\alpha\in H_n(M,M-\overline U)$:
 \[
-V_{U,x,\alpha}=\{j_x(\alpha):x\in U\}\,.
+V_{U,x,\alpha}=\{j_{A,x}(\alpha):x\in U\}\,.
 \]
 Each $\alpha\in H_n(M,M-\overline U)$ thus defines a ``sheet'' of $o_M$
 over $U$. We leave it to you to check that this is indeed a covering space. 
@@ -199,7 +198,7 @@ The classification theorem for covering spaces has as a corollary:
 Let $B$ be path connected and semi-locally simply connected.
 Then forming the fiber over a point gives an equivalence of categories from
 the category of local coefficient systems of $R$-modules over $B$
-and the category of modules over the group algebre $R[\pi_1(B,b)]$. 
+and the category of modules over the group algebra $R[\pi_1(B,b)]$. 
 \end{theorem}
 
 Our $R$-modules are quite simple: they are free of rank 1. Since any 
@@ -269,7 +268,7 @@ j:H_n(M;R)\to \Gamma(M;o_M\otimes R)\,,
 described as follows. The value of $j(a)$ at $x\in M$ is the restriction
 of $a$ to $H_n(M,M-x)$. The first ``local-to-global'' theorem, 
 a special case of Poincar\'e duality, is this:
-\begin{theorem} 
+\begin{theorem}[Orientation Theorem] 
 If $M$ is compact, the map $j:H_n(M;R)\to\Gamma(M;o_M\otimes R)$ 
 is an isomorphism. 
 \label{thm-orientation}

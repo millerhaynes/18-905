@@ -46,9 +46,11 @@ Many common mathematical structures can be arranged in categories.
 \item The sets $[n]=\{0,\ldots,n\}$ for $n\geq 0$ together with weakly order-preserving maps between them form the {\em simplex category} $\Deltab$, 
 another small category. It contains as a subcategory the {\em semi-simplex
 category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps. This is a small category. 
-\item A partially ordered set or ``poset'' forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category with this property comes from a poset provided 
-that the only isomorphisms are identities. This is to be distinguished from
-the category of posets and order-preserving maps between them, which is ``large.''
+\item A partially ordered set or ``poset'' forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category is a poset exactly
+when (1) there is at most one morphism between any two objects, and
+(2) the only isomorphisms are identities. This is to be distinguished from
+the category of posets and order-preserving maps between them, which is 
+``large.''
 \end{itemize}
 \end{example}
 
@@ -59,7 +61,8 @@ Let $\cc,\cd$ be categories. A \emph{functor} $F\colon\cc\to\cd$ consists
 of the data of 
 \begin{itemize}
 \item an assignment  $F:\mathrm{ob}(\cc)\to\mathrm{ob}(\cd)$, and
-\item for all $x,y\in\mathrm{ob}(\cc)$, a function $F:\cc(x,y)\to\cc(F(x),F(y))$ \,.
+\item for all $X,Y\in\mathrm{ob}(\cc)$, a function 
+$F:\cc(X,Y)\to\cc(F(X),F(Y))$ \,.
 \end{itemize}
 These data are required to satisfy the following two properties:
 \begin{itemize}
@@ -77,7 +80,7 @@ for example. We also have defined, for each $X$,
 a morphism $d:S_n(X)\to S_{n-1}(X)$. This is a ``morphism between 
 functors.'' This property is captured by another definition.
 \begin{definition}
-Let $F,G\colon \cc\to\cd$. A \emph{natural transformation} 
+Let $F,G\colon \cc\to\cd$ be two functors.  A \emph{natural transformation} 
 or \emph{natural map} $\theta\colon F\to G$ consists of maps $\theta_X\colon F(X)\to G(X)$ for all $X\in\mathrm{ob}(\cc)$ such that for all $f\colon X\to Y$ the following diagram commutes. 
 \begin{equation*}
 \xymatrix{F(X)\ar[d]^{F(f)}\ar[r]^{\theta_X} & G(X)\ar[d]^{G(f)}\\
@@ -87,9 +90,9 @@ F(Y)\ar[r]^{\theta_Y} & G(Y)}
 So for example 
 the boundary map $d\colon S_n\to S_{n-1}$ is a natural transformation.
 
-Natural transformations are so \ldots well, so {\em natural} that their
-occurance is indicated by a variety of terms: a {\em natural} or 
-{\em canonical} map is precisely a natural transformation. 
+%Natural transformations are so \ldots well, so {\em natural} that their
+%occurance is indicated by a variety of terms: a {\em natural} or 
+%{\em canonical} map is precisely a natural transformation. 
 
 \begin{example}
 Suppose that $\cc$ and $\cd$ are two categories, and assume that $\cc$ is

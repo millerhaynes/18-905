@@ -14,10 +14,10 @@ where $\epsilon:S_*(X)\to\ZZ$ is the augmentation and $\eta:\ZZ\to S_*(X)$
 sends 1 to the constant 0-chain $c_b^0$. 
 
 Let's see how the cone construction can be used to ``subdivide'' an ``affine 
-simplex.'' An {\em affine simplex} is the convex hull of a finite set of points in Euclidean space. To make this non-degenerate, assume that the points $a_0,a_1,\ldots,a_n$, have the property that $\{a_1-a_0,\ldots,a_n-a_0\}$ is linearly independent. 
+simplex.'' An {\em affine simplex} is the convex hull of a finite set of points in Euclidean space. To make this non-degenerate, assume that the points $v_0,v_1,\ldots,v_n$, have the property that $\{v_1-v_0,\ldots,v_n-b_0\}$ is linearly independent. 
 The {\em barycenter} of this simplex is the center of mass of the vertices, 
 \[
-b=\frac{1}{n+1}\sum{a_i}\,.
+b=\frac{1}{n+1}\sum{v_i}\,.
 \]
 
 Start with $n=1$. To subdivide a 1-simplex, just cut it in half. 
@@ -25,7 +25,9 @@ For the $2$-simplex, look at the subdivision of each face, and form the cone
 of them with the barycenter of the 2-simplex. This gives us a decomposition of
 the 2-simplex into six sub-simplices. 
 
-\fbox{picture}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/10-subdivision.pdf}
+\end{center}
 
 We want to formalize this process, and extend it to singular simplices (using
 naturality, of course). Define a natural transformation 
@@ -51,6 +53,7 @@ Let's try to prove that it's a chain map. We'll use induction on $n$. It's enoug
 $$
 d\$\sigma=d\$\sigma_\ast\iota_n=\sigma_\ast d\$\iota_n=\sigma_\ast \$d\iota_n=\$ d\sigma_\ast\iota_n=\$ d\sigma\,.
 $$
+
 Dimension zero is easy:
 since $S_{-1}=0$, $d\$\iota_0$ and $\$d\iota_0$ are both zero and hence equal.
 
@@ -72,7 +75,8 @@ d\$\iota_n & = (1 - b_n\ast d)(\$ d\iota_n) \\
 \end{align*}
 because $d^2=0$. 
 
-To define the chain homotopy $T$, we'll just write down a formula and not justify it. We just need to define $T\iota_n$ by naturality. Here it is:
+To define the chain homotopy $T$, we'll just write down a formula and not try to justify it. Making use of naturality, we just need to define $T\iota_n$. 
+Here it is:
 \[
 T\iota_n = b_n\ast(\$\iota_n - \iota_n - Td\iota_n)\in S_{n+1}(\Delta^n) \,.
 \]

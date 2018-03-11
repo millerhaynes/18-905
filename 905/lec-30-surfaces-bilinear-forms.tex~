@@ -3,8 +3,7 @@
 We are aiming towards a proof of a fundamental cohomological property of
 compact manifolds. 
 
-\begin{definition} A (topological) manifold is a second countable 
-Hausdorff space such that
+\begin{definition} A (topological) manifold is a Hausdorff space such that
 every point has an open neighborhood that is homeomorphic to some (finite
 dimensional) Euclidean space. 
 \end{definition}
@@ -54,7 +53,7 @@ H_p(M)\otimes H_q(M) \ar[r]^\pitchfork \ar[d]^\cong &
 H_{n-p-q}(M) \ar[d]^\cong \\
 H^{n-p}(M)\otimes H^{n-q}(M) \ar[r]^\cup & H^{2n-p-q}(M)\,.
 }\]
-This is the {\em intersection pairing}. Here's how to think of this. 
+This is the {\em intersection pairing}. Here's how to think of it. 
 Take homology classes $\alpha\in H_p(M)$ and $\beta\in H_q(M)$ and
 represent them (if possible!) as the image of the fundamental classes
 of submanifolds of $M$, of dimensions $p$ and $q$. 
@@ -79,6 +78,9 @@ intersect in a single point. This reflects the fact that
 \]
 Similarly, the fact that $\alpha^2=0$ reflects the fact that its Poincar\'e 
 dual cycle can be moved so as not to intersect itself. 
+
+\fbox{Picture would be great}
+
 \end{example}
 
 This example exhibits a particularly interesting fragment of the statement
@@ -88,13 +90,13 @@ $H^k(M)$. As indicated above, this can equally well be considered a bilinear
 form on $H_k(M)$, and it is then to be thought of as describing the number of
 points (mod 2) two $k$-cycles intersect in, when put in general position 
 relative to one another. It's called the {\em intersection form}. We'll 
-denote it 
+denote it by
 \[
 \alpha\cdot\beta=\langle\alpha\cup\beta,[M]\rangle\,.
 \]
 
 \begin{example} In terms of the basis $\alpha,\beta$, the intersection form
-has matrix 
+for $T^2$ has matrix 
 \[
 \left[\begin{array}{cc}0&1\\1&0\end{array}\right].
 \]
@@ -125,11 +127,12 @@ V=\langle v\rangle\oplus\langle v\rangle^\perp\,.
 \]
 Continuing to split off one-dimensional subspaces brings us to the situation
 of a nondegenerate symmetric bilinear form such that $v\cdot v=0$ for every
-vector. Unless $V=0$ we can pick a nonzero vector. Since the form is
+vector. Unless $V=0$ we can pick a nonzero vector $v$. Since the form is
 nondegenerate, we may find another vector $w$ such that $v\cdot w=1$. The
 two together generate a 2-dimensional hyperbolic subspace. Split it off 
 and continue. We conclude:
-\begin{prop} Any finite dimensional nondegenerate symmetric bilinear form 
+\begin{prop} Any finite dimensional nondegenerate symmetric bilinear form
+over $\FF_2$ 
 splits as an orthogonal direct sum of forms with matrices $[1]$ and 
 $\left[\begin{array}{cc}0&1\\1&0\end{array}\right]$.
 \end{prop}
@@ -156,11 +159,9 @@ $N=AMA^T$ for some nonsingular $A$.
 \end{equation*}
 \end{claim}
 \begin{proof}
-This is the same thing as saying that $\begin{pmatrix}
- & 1 & \\
-1 & & \\
- & & 1
-\end{pmatrix}=AA^T$ for some nonsingular $A$. Let 
+This is the same thing as saying that 
+$\left[\begin{array}{ccc} & 1 & \\ 1 & & \\ & & 1\end{array}\right]=AA^T$ 
+for some nonsingular $A$. Let 
 $
 A=\left[\begin{array}{ccc}1&1&1 \\ 1&0&1 \\ 0&1&1 \end{array}\right]$.
 \end{proof}
@@ -168,7 +169,7 @@ It's easy to see that there are no further relations;
 $\mathbf{Bil}$ is the commutative monoid with two generators $I$ and $H$, 
 subject to the relation $I+H=3I$. 
 
-Let's go back to topology. Let $n=2$, $k=1$ (so that $2k=n$). Then you get an intersection pairing on $ H_1(M)$. Consider $\RP^2$. We know that $ H_1(\RP^2)=\FF_2$. This must be the form we labelled $I$. This says that anytime you have a nontrivial cycle on a projective plane, there's nothing I can do to remove its self interesections. You can see this. The projective plane is a M\"obius band with a 
+Let's go back to topology. Let $n=2$. Then you get an intersection pairing on $ H_1(M)$. Consider $\RP^2$. We know that $ H_1(\RP^2)=\FF_2$. This must be the form we labelled $I$. This says that anytime you have a nontrivial cycle on a projective plane, there's nothing you can do to remove its self interesections. You can see this. The projective plane is a M\"obius band with a 
 disk sown on along the boundary. The waist of the M\"obius band serves as a
 generating cycle. The observation is that if this cycle is moved to intersect 
 itself tranversely, it must intersect itself an odd number of times. 
@@ -194,11 +195,12 @@ punctured surface retracts onto its 1-skeleton. The relevant fragment is
 H^1(S^1)\xrightarrow{\delta} H^2(\Sigma_1\#\Sigma_2)\to0\,.
 \]
 The boundary map must be an isomorphism, because the connected sum is a
-compact connected surface so has nontrivial $H^2$.
+compact connected surface so has nontrivial $H^2$. We leave the verification
+that the direct sum is orthogonal to you.
 \end{proof} 
-The classification of surfaces may now be summarized as folows:
+Write $\mathbf{Surf}$ for the set of homeomorphism classes of compact connected surfaces. Connected sum provides it with the structure of a commutative monoid. The classification of surfaces may now be summarized as folows:
 \begin{theorem}
-Formation of the intersection bilinear form gives isomorphism of 
+Formation of the intersection bilinear form gives an isomorphism of 
 commutative monoids $\mathbf{Surf}\to\mathbf{Bil}$.
 \end{theorem}
 This is a kind of model result of algebraic topology! -- a complete

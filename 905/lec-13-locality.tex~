@@ -15,7 +15,7 @@ Then $\mathrm{diam}(\tau)\leq \frac{n}{n+1}\mathrm{diam}(\sigma)$.
 \end{lemma}
 \begin{proof}
 Suppose that the vertices of $\sigma$ are $v_0,v_1,\ldots,v_n$. Let $b$ be the 
-barycenter of $\sigma$, and write the vertices of $\tau$ as $w_0=b,w_1,\ldots,w_n$. We compute
+barycenter of $\sigma$, and write the vertices of $\tau$ as $w_0=b,w_1,\ldots,w_n$. We want to estimate $|w_i-w_j|$. First, compute
 \[
 |b-v_i|  =\left|\frac{v_0+\cdots+v_n-(n+1)v_i}{n+1}\right|
 =\left|\frac{(v_0-v_i)+(v_1-v_i)+\cdots+(v_n-v_i)}{n+1}\right|\,.
@@ -29,7 +29,7 @@ Since $w_i\in\sigma$,
 \[
 |b-w_i| \leq\max_i|b-v_i| \leq \frac{n}{n+1}\mathrm{diam}(\sigma)\,.
 \]
-For the other cases, well, we use induction:
+For the other cases, we use induction:
 \[
 |w_i-w_j| \leq \mathrm{diam}(\text{simplex in }\$d\sigma)
 \leq \frac{n-1}{n}\mathrm{diam}(d\sigma)
@@ -42,16 +42,16 @@ equipped with a cover $\mathscr{A}$.
 \begin{lemma}
 For any singular chain $c$, some iterate of the subdivision operator sends $c$ to an $\mathscr{A}$-small chain.
 \end{lemma}
-\begin{proof} We may assume that $c$ is a single simplex $\sigma:\Delta^n\to X$, because in generaly you just take the largest iterate of $\$$ needed to send each simplex in $c$ to an $\mathscr{A}$-small chain.
+\begin{proof} We may assume that $c$ is a single simplex $\sigma:\Delta^n\to X$, because in general you just take the largest of the iterates of $\$$ needed to send the simplices in $c$ to a $\mathscr{A}$-small chains.
 We now encounter another of the great virtues of singular homology:
 we pull $\mathscr{A}$ back to a cover of the standard simplex. 
-Define an open cover $\sigma^{-1}\mathscr{A}$ of $\Delta^n$ defined by 
+Define an open cover of $\Delta^n$ by 
 \[
 \mathscr{U}:=\{\sigma^{-1}(\mathrm{Int}(A)):A\in\sca\}\,.
 \]
 The space $\Delta^n$ is a compact Hausdorff space, and so is subject to the
 Lebsegue covering lemma, which we apply to the open cover 
-$\{\mathrm{Int}B:B\in\sigma^{-1}\mathscr{A}\}$. 
+$\{\mathrm{Int}B:B\in\mathscr{U}\}$. 
 \begin{lemma}[Lebsegue covering lemma]
 Let $M$ be a compact metric space, and let $\mathscr{U}$ be an open cover. Then there is $\epsilon> 0$ such that for all $x\in M$, 
 $B_\epsilon(x)\subseteq U$ for some $U\in \mathscr{U}$.
@@ -61,10 +61,10 @@ $B_\epsilon(x)\subseteq U$ for some $U\in \mathscr{U}$.
 To apply this, we will have to understand iterates of the subdivision operator.
 
 \begin{lemma} For any $k\geq1$,
-$\$^k\sim 1:S_\ast(X)\to S_\ast(X)$.
+$\$^k\simeq 1:S_\ast(X)\to S_\ast(X)$.
 \end{lemma}
 \begin{proof}
-We construct $T_k$ such that $dT_k+T_kd=\$^k-1$. To begin, we take $T_1=T$, since $dT+Td=\$-1$. Let's apply $\$$ to this equation. We get $\$dT+\$Td=\$^2-\$$.Sum up these two equations to get 
+We construct $T_k$ such that $dT_k+T_kd=\$^k-1$. To begin, we take $T_1=T$, since $dT+Td=\$-1$. Let's apply $\$$ to this equation. We get $\$dT+\$Td=\$^2-\$$. Sum up these two equations to get 
 \[
 dT+Td+\$dT+\$Td = \$^2-1\,,
 \] 

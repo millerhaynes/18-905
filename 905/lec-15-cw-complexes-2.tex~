@@ -28,7 +28,7 @@ Let $X$ be a CW-complex with a cell structure $\{g_\alpha:D^n_\alpha\to X_n|\alp
 \begin{example}
 $\Sk_nX\subseteq X$ is a subcomplex.
 \end{example}
-\begin{prop}[Bredon, p. 196]
+\begin{prop}[\cite{bredon}, p. 196]
 Let $X$ be a CW-complex with a chosen cell structure. Any compact subspace
 of $X$ lies in some finite subcomplex. 
 \end{prop}
@@ -88,7 +88,7 @@ joining $x$ to $Tx$ doesn't pass through the origin. Therefore
 \[
 x\mapsto\frac{tx+(1-t)Tx}{|tx+(1-t)Tx|} 
 \]
-provides a homotopy $1\sim T$. On the other hand, $T$ is homotopic to the 
+provides a homotopy $1\simeq T$. On the other hand, $T$ is homotopic to the 
 constant map with value $(1,0,0,\ldots)$, again by an affine homotopy. 
 \end{proof}
 

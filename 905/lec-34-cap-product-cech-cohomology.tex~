@@ -1,4 +1,4 @@
-\section{Cap product and ``\v{C}ech'' cohomology}
+\section{Cap product and ``Cech'' cohomology}
 
 We have a few more things to say about the cap product, and will then use it
 to give a statement of Poincar\'e duality. 
@@ -17,7 +17,7 @@ f_*(f^*(b)\cap x)=b\cap f_*(x)\,.
 \]
 (4) Cap and cup are adjoint:
 \[
-\langle a\cap b,x\rangle=\langle a,b\cap x\rangle\,
+\langle a\cap b,x\rangle=\langle a,b\cap x\rangle\,.
 \]
 \end{prop}
 \begin{proof}
@@ -183,3 +183,16 @@ has an $\epsilon$-neighborhood, for some small $\epsilon$, that's contained in $
 \]
 by a cofinality argument that we will detail later. So $\cHH^\ast(X)\neq H^\ast(X)$.
 
+Nevertheless, under quite general conditions the \v{C}ech cohomology of a compact Hausdorff space is a topological invariant. The \v{C}ech construction forms
+a limit over open covers of the cohomology of the nerve of the cover. It is
+a topological invariant by construction. 
+
+\begin{theorem} Let $X$ be a compact subset of some Euclidean space. If there
+is an open neighborhood of which it is a retract, then $\cH(X;R)$ is 
+canonically isomorphic to the cohomology defined using the \v{C}ech 
+construction, and is therefore independent of the embedding into Euclidean
+space. 
+\end{theorem}
+
+See Dold's beautiful book \cite{dold} for this and other topics discussed
+in this chapter. 

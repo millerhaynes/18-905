@@ -106,16 +106,18 @@ Check that $\{A_{f(j)}\to\varinjlim_{\cI}A\}$ satisfies the necessary and suffic
 \item Suppose $a\in A_{\varphi(j)}$ maps to $0\in\lim_{\cI}A$. Then there is
 some $i\in\cI$ such that $\varphi(j)\leq i$ and $a\mapsto0$ in $A_i$. 
 But then there is $j'\in\cJ$ such that $i\leq\varphi(j')$, and 
-$a\mapsto0\in A_{\varphi(j')}$ as well
+$a\mapsto0\in A_{\varphi(j')}$ as well.
 \end{enumerate}
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{cech-les}, the long exact sequence]
 Let $(K,L)$ be a closed pair in the space $X$. We have
 \[
-\cHH^p(K,L)=\varinjlim_{(U,V)\in\mathcal{U}_{K,L}}H^p(U,V)
+\cHH^p(K,L)=\varinjlim_{(U,V)\in\mathcal{U}_{K,L}}H^p(U,V)\,,
+\quad
+\cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K}H^p(U)\,,
 \quad\hbox{and}\quad 
-\cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K}H^p(U)\,.
+\cHH^p(L)=\varinjlim_{V\in\mathcal{V}_L}H^p(V)\,.
 \]
 We can rewrite the entire sequence as
 the direct limit of a directed system of exact sequences indexed by 
@@ -134,8 +136,8 @@ sequences of the neighborhood pairs $(U,V)$ and so is exact.
 The proof of the excision theorem depends upon another pair of 
 cofinalities.
 
-\begin{lemma} Let $X$ be a normal space and $A,B$ closed subsets;
-or $X$ is a Hausdorff space and $A, B$ compact subsets.  
+\begin{lemma} Assume that $X$ is a normal space and $A,B$ closed subsets,
+or that $X$ is a Hausdorff space and $A, B$ compact subsets.  
 Then the order-preserving maps
 \[
 \mathcal{U}_{(A\cup B,B)} \leftarrow \mathcal{U}_A\times\mathcal{U}_B 

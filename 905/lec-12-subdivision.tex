@@ -25,7 +25,9 @@ For the $2$-simplex, look at the subdivision of each face, and form the cone
 of them with the barycenter of the 2-simplex. This gives us a decomposition of
 the 2-simplex into six sub-simplices. 
 
-\fbox{picture}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/12-subdivision.pdf}
+\end{center}
 
 We want to formalize this process, and extend it to singular simplices (using
 naturality, of course). Define a natural transformation 
@@ -51,6 +53,7 @@ Let's try to prove that it's a chain map. We'll use induction on $n$. It's enoug
 $$
 d\$\sigma=d\$\sigma_\ast\iota_n=\sigma_\ast d\$\iota_n=\sigma_\ast \$d\iota_n=\$ d\sigma_\ast\iota_n=\$ d\sigma\,.
 $$
+
 Dimension zero is easy:
 since $S_{-1}=0$, $d\$\iota_0$ and $\$d\iota_0$ are both zero and hence equal.
 
@@ -72,7 +75,8 @@ d\$\iota_n & = (1 - b_n\ast d)(\$ d\iota_n) \\
 \end{align*}
 because $d^2=0$. 
 
-To define the chain homotopy $T$, we'll just write down a formula and not justify it. We just need to define $T\iota_n$ by naturality. Here it is:
+To define the chain homotopy $T$, we'll just write down a formula and not try to justify it. Making use of naturality, we just need to define $T\iota_n$. 
+Here it is:
 \[
 T\iota_n = b_n\ast(\$\iota_n - \iota_n - Td\iota_n)\in S_{n+1}(\Delta^n) \,.
 \]

@@ -1,16 +1,16 @@
-\section{More about categories}
+\section{Categorical language}
 
 Let $\mathrm{Vect}_k$ be the category of vector spaces over a field $k$, and linear transformations between them. Given a vector space $V$, you can consider the dual $V^\ast=\Hom(V,k)$. Does this give us a functor? If you have a linear transformation $f:V\to W$, you get a map $f^\ast:W^\ast\to V^\ast$, so this is like a functor, but the induced map goes the wrong way. This operation does preserve composition and identities, in an appropriate sense. This is an example of a {\em contravariant functor}. 
 
-We'll leave it to you to spell out the definition, but notice that there is a univeral example of a contravariant functor out of a category $\cc$: $\cc\to\cc^{op}$, where $\cc^{op}$ has the same objects as $\cc$, but $\cc^{op}(X,Y)$ is declared to be the set $\cc(Y,X)$. The identity morphisms remain the same. To describe the composition in $\cc^{op}$, we'll write $f^{op}$ for $f\in\cc(Y,X)$ regarded as an element of $\cc^{op}(X,Y)$; then $f^{op}\circ g^{op}=(g\circ f)^{op}$. 
+I'll leave it to you to spell out the definition, but notice that there is a univeral example of a contravariant functor out of a category $\cc$: $\cc\to\cc^{op}$, where $\cc^{op}$ has the same objects as $\cc$, but $\cc^{op}(X,Y)$ is declared to be the set $\cc(Y,X)$. The identity morphisms remain the same. To describe the composition in $\cc^{op}$, I'll write $f^{op}$ for $f\in\cc(Y,X)$ regarded as an element of $\cc^{op}(X,Y)$; then $f^{op}\circ g^{op}=(g\circ f)^{op}$. 
 
 Then a contravariant functor from $\cc$ to $\cd$ is the same thing as a (``covariant'') functor from $\cc^{op}$ to $\cd$. 
 
-Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\set$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor {\em represented by} $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(X,-)$ is a covariant functor.
+Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\mathbf{Set}$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor {\em represented by} $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(X,-)$ is a covariant functor.
 
 \begin{example}
 Recall that the simplex category $\Deltab$ has objects the totally ordered sets
-$[n]=\{0,1,\ldots,n\}$, with order preserving maps as morphisms. The ``standard simplex'' gives us a functor $\Delta\colon\Deltab\to\mathbf{Top}$. Now fix a space $X$, and consider 
+$[n]=\{0,1,\ldots,n\}$, with order preserving maps as morphisms. The ``standard simplex'' gives us a functor $\Delta\colon\Deltab^{op}\to\mathbf{Top}$. Now fix a space $X$, and consider 
 \[
 [n]\mapsto\mathbf{Top}(\Delta^n,X)\,.
 \]
@@ -37,8 +37,8 @@ Every categorical definition is accompanied by a dual definition.
 A map $g:Y\to X$ is a {\em split monomorphism} (``split mono'' for short) if there is $f:X\to Y$ such that $f\circ g=1_Y$.
 \end{definition}
 \begin{example}
-Again let $\cc=\set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $f(g(y))=y=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
-is a split monomorphism only if $Y=\varnothing$. So there's an asymetry 
+Again let $\cc=\Set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $f(g(y))=y=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
+is a split monomorphism only if $Y=\varnothing$. So there's an assymetry 
 in the category of sets.
 \end{example}
 \begin{lemma}
@@ -59,8 +59,8 @@ Apply $F$ to the diagram establishing $f$ as a split epi or mono.
 \begin{example}
 Suppose $\cc=\mathbf{Ab}$, and you have a split epi $f:A\to B$. Let $g:B\to A$ be a section. We also have the inclusion $i:\ker f\to A$, and hence a map
 \[
-[\,f\quad i\,]:B\oplus\ker f\to A\,.
+[\,g\quad i\,]:B\oplus\ker f\to A\,.
 \]
-We leave it to you to check that this map is an isomorphism, and to formulate a
+I leave it to you to check that this map is an isomorphism, and to formulate a
 dual statement.
 \end{example}

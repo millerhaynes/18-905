@@ -1,5 +1,5 @@
 \section{K\"{u}nneth and Eilenberg-Zilber}
-We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used was really an example of the fundamental theorem of homological algebra. It works with any coefficient ring, not just the integers. 
+We want to compute the homology of a product. Long ago, in Lecture 7, we constructed a bilinear map $S_p(X)\times S_q(Y)\to S_{p+q}(X\times Y)$, called the cross product. So we get a linear map $S_p(X)\otimes S_q(Y)\to S_{p+q}(X\times Y)$, and it satisfies the Leibniz formula, i.e., $d(x\times y)=dx\times y+(-1)^px\times dy$. The method we used was really an example of the Fundamental Theorem of Homological Algebra. It works with any coefficient ring, not just the integers. 
 \begin{definition}
 Let $C_\ast,D_\ast$ be two chain complexes. Their {\em tensor product} is 
 the chain complex with
@@ -41,11 +41,12 @@ This is exactly the same as the proof for the UCT. It's a good idea to work thro
 Let $R$ be a PID and assume $C'_n$ and $C_n$ are $R$ free for all $n$.
 If $C'_\ast\to C_\ast$ and $D'_\ast\to D_\ast$ 
 are homology
-isomorphisms then so is $C'_\ast\otimes D'_\ast\to C_\ast\tensor D_\ast$. 
+isomorphisms then so is $C'_\ast\otimes D'_\ast\to C_\ast\otimes D_\ast$. 
 \end{corollary}
 
 Our attack on question (1) is via the method of ``acyclic models.'' This is
-really a special case of the fundamental lemma of homological algebra!
+really a special case of the fundamental theorem of homological algebra,
+Theorem \ref{thm-ftha}!
 
 \begin{definition}
 Let $\cc$ be a category, and fix a set $\MM$ of object in $\cc$, 
@@ -135,7 +136,7 @@ Now extend linearly. You should check that this does define a natural
 transformation. 
 \end{proof}
 
-This is precisely the condition required to prove the Fundamental Lemma
+This is precisely the condition required to prove the Fundamental Theorem
 of Homological Algebra. So we have the 
 \begin{theorem}[Acyclic Models]
 Let $\MM$ be a set of models in a category $\cc$. Let $\theta:F\to G$ be 

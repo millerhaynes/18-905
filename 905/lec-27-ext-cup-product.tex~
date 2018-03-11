@@ -54,7 +54,7 @@ Apply $\Hom(-,N)$ to get a cochain complex
 $\Ext_R^n(M,N)= H^n(\Hom_R(F_\ast,N))$.
 \end{definition}
 \begin{remark}
-$\Ext$ is well-defined and functorial, by the fundamental lemma of homological algebra. If $M$ is free (or projective) then $\Ext_R^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext_R^n=0$ if $n>1$. If $R$ is a field, then $\Ext_R^n=0$ for $n>0$. 
+$\Ext$ is well-defined and functorial, by the Fundamental Theorem of Homological Algebra, Theorem \ref{thm-ftha}. If $M$ is free (or projective) then $\Ext_R^n(M,-)=0$ for $n>0$, since we can take $M$ as its own projective resolution. If $R$ is a PID, then we can assume $F_1=\ker(F_0\to M)$ and $F_n=0$ for $n>1$, so $\Ext_R^n=0$ if $n>1$. If $R$ is a field, then $\Ext_R^n=0$ for $n>0$. 
 \end{remark}
 
 \begin{example}
@@ -131,7 +131,8 @@ $\Ext_R^1(H_{n-1}(C_*),N)$.
 \textbf{Question:} Why is $\Ext$ called Ext?
 
 \noindent
-\textbf{Answer:} It classifies extensions. Let $R$ be a commutative ring, and let $M,N$ be two $R$-modules. I can think about ``extensions of $M$ by $N$, that is, short exact sequences of the form
+\textbf{Answer:} It classifies extensions. Let $R$ be a commutative ring, and let $M,N$ be two $R$-modules. I can think about ``extensions of $M$ by $N$,''
+that is, short exact sequences of the form
 \[
 0\to N\to L\to M\to 0\,.
 \]
@@ -142,29 +143,29 @@ For example, I have two extensions of $\Z/2\Z$ by $\Z/2\Z$:
 and
 \[0\to \Z/2\Z\to\Z/4\Z\to\Z/2\Z\to 0\,.
 \]
-We'll say that two extensions are equivalent if there's a map of short exact sequences between them is the identity on $N$ and $M$. The two extensions above aren't equivalent, for example.
+We'll say that two extensions are {\em equivalent} if there's a map of short exact sequences between them that is the identity on $N$ and on $M$. The two extensions above aren't equivalent, for example.
 
-Another definition of $\Ext^1_R(M,N)$ is the set of extensions like this modulo this notion of equivalence. The zero in the group is the split extension.
+Another definition of $\Ext^1_R(M,N)$ is: the set of extensions like this modulo this notion of equivalence. The zero in the group is the split extension.
 \end{remark}
 
 The universal coefficient theorem is useful in transferring properties of 
 homology to cohomology. For example, if $f:X\to Y$ is a map that induces an
 isomorphism in $H_*(-;R)$, then it induces an isomorphism in $H^*(-;N)$ for
-any $R$-module $N$, at least provided that $R$ is a PID. (This is true in 
-general, however.) 
+any $R$-module $N$, at least provided that $R$ is a PID. (This is in fact 
+true in general.) 
 
-Cohomology satisfies the appropriate analogues of the Eilenber Steenrod axioms.
+Cohomology satisfies the appropriate analogues of the Eilenberg-Steenrod axioms.
 
 \noindent
 \textbf{Homotopy invariance:}
-If $f_0\sim f_1:(X,A)\to (Y,B)$, then 
+If $f_0\simeq f_1:(X,A)\to (Y,B)$, then 
 \[
 f_0^*=f_1^*:H^\ast(Y,B;N)\to H^\ast(X,A;N)\,.
 \]
-I can't use the UCT to address this because the UCT only tells you that things are isomorphic. But we did establish a chain homotopy $f_{0,\ast}\sim f_{1,\ast}:S_\ast(X,A)\to S_\ast(Y,B)$, and applying $\Hom$ converts chain homotopies to cochain homotopies. 
+I can't use the UCT to address this. But we established a chain homotopy $f_{0,\ast}\simeq f_{1,\ast}:S_\ast(X,A)\to S_\ast(Y,B)$, and applying $\Hom$ converts chain homotopies to cochain homotopies. 
 
 \noindent
-\textbf{Excision:} If $U\subseteq A\subseteq X$ such that $\overline{U}\subseteq\mathrm{Int}(A)$, then $ H^\ast(X,A;N)\to H^\ast(X-U,A-U;N)$ is an isomorphism. This follows from excision in homology and by the mixed variance UCT.
+\textbf{Excision:} If $U\subseteq A\subseteq X$ such that $\overline{U}\subseteq\mathrm{Int}(A)$, then $ H^\ast(X,A;N)\to H^\ast(X-U,A-U;N)$ is an isomorphism. This follows from excision in homology and the mixed variance UCT.
 
 \noindent
 \textbf{Milnor axiom:} The inclusions induce an isomorphism

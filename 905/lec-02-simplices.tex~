@@ -1,7 +1,7 @@
 %Some d^i and s^i fixed to d_i and s_i.
 %Rhetorical questions are okay in spoken lectures but I think they should be used more sparingly in text.
 
-\section{More about homology}
+\section{Homology}
 In the last lecture we introduced the standard $n$-simplex $\Delta^n\subseteq\mathbf{R}^{n+1}$. Singular simplices in a space $X$ are maps $\sigma\colon\Delta^n\to X$ and constitute the set $\Sin_n(X)$. For example, $\Sin_0(X)$ consists of points of $X$. We also described the face inclusions $d^i:\Delta^{n-1}\to\Delta^n$, and the induced ``face maps'' 
 \[
 d_i:\Sin_n(X)\to\Sin_{n-1}(X)\,,0\leq i\leq n\,,
@@ -23,15 +23,17 @@ To the semi-simplicial set $\{\Sin_n(X),d_i\}$ we then applied the free abelian 
 }\end{equation*}
 %Given a chain complex $\partial\colon A_n\to A_{n-1}$, one can define its homology $H_n(A,\partial)=\ker\partial_n/\img\partial_n$.
 
-\begin{example} Suppose we have $\sigma\colon \Delta^1\to X$. Define $\phi\colon\Delta^1\to\Delta^1$ which sends $(t,1-t)\mapsto (1-t,t)$. Precomposing $\sigma$ with $\phi$ gives another singular simplex $\overline{\sigma}$ which reverses the orientation of $\sigma$. It is \textit{not} true that $\overline{\sigma}=-\sigma$ in $S_1(X)$.
+\begin{example} Suppose we have $\sigma\colon \Delta^1\to X$. Define $\phi\colon\Delta^1\to\Delta^1$ by sending $(t,1-t)$ to $(1-t,t)$. Precomposing $\sigma$ with $\phi$ gives another singular simplex $\overline{\sigma}$ which reverses the orientation of $\sigma$. It is \textit{not} true that $\overline{\sigma}=-\sigma$ in $S_1(X)$.
 
-However, we claim that $\overline{\sigma}\equiv -\sigma\bmod B_1(X)$, meaning there is a $2$-chain in $X$ whose boundary is $\overline{\sigma}+\sigma$. If $d_0\sigma=d_1\sigma$ so that $\sigma\in Z_1(X)$, then $\overline{\sigma}$ and $-\sigma$ are homologous: $[\overline{\sigma}]=-[\sigma]$ in $ H_1(X)$.
+However, we claim that $\overline{\sigma}\equiv -\sigma\bmod B_1(X)$. This means that there is a $2$-chain in $X$ whose boundary is $\overline{\sigma}+\sigma$. If $d_0\sigma=d_1\sigma$, so that $\sigma\in Z_1(X)$, then $\overline{\sigma}$ and $-\sigma$ are homologous: $[\overline{\sigma}]=-[\sigma]$ in $ H_1(X)$.
 
 To construct an appropriate boundary, consider the projection map 
 $\pi:\Delta^2\to\Delta^1$ that is the affine extension of the map sending
 $e_0$ and $e_2$ to $e_0$ and $e_1$ to $e_1$.  
 
-\fbox{picture needed}
+\begin{center}
+\includegraphics[width=3in]{905/Figures/02-projection.pdf}
+\end{center}
  
 We'll compute $d(\sigma\circ\pi)$. Some of the terms will be constant
 singular simplicies. Let's write $c_x^n:\Delta^n\to X$ for the constant map 
@@ -54,7 +56,7 @@ Some more language: two cycles that differ by a boundary $dc$ are said to be {\e
 
 \end{example}
 
-Let's compute the homology of the very simplest spaces, $\varnothing$ and $\ast$. For the first , $\Sin_n(\varnothing)=\varnothing$, so $S_\ast(\varnothing)=0$. Hence $\cdots\to S_2\to S_1\to S_0$ is the zero chain complex. This means that $Z_\ast(\varnothing)=B_\ast(\varnothing)=0$. The homology in all dimensions is therefore $0$.
+Let's compute the homology of the very simplest spaces, $\varnothing$ and $\ast$. For the first, $\Sin_n(\varnothing)=\varnothing$, so $S_\ast(\varnothing)=0$. Hence $\cdots\to S_2\to S_1\to S_0$ is the zero chain complex. This means that $Z_\ast(\varnothing)=B_\ast(\varnothing)=0$. The homology in all dimensions is therefore $0$.
 
 For $\ast$, we have $\Sin_n(\ast)=\{c^n_\ast\}$ for all $n\geq 0$. Consequently $S_n(\ast)=\mathbf{Z}$ for $n\geq0$ and $0$ for $n\leq0$. 
 For each $i$, $d_ic^n_\ast=c^{n-1}_\ast$, so
@@ -67,17 +69,17 @@ the boundary maps $d\colon S_n(\ast)\to S_{n-1}(\ast)$ in the chain complex depe
 \]
 This means that our chain complex is:
 \[
-0\leftarrow0\leftarrow\ZZ\leftarrow{1}\ZZ\leftarrow{1}\ZZ\leftarrow{1}\cdots\,.\]
+0\leftarrow0\leftarrow\ZZ\xleftarrow{1}\ZZ\xleftarrow{0}\ZZ\xleftarrow{1}\cdots\,.\]
 The boundaries coincide with the cycles except in dimension zero, where $B_0(\ast)=0$ while $Z_0(\ast)=\mathbf{Z}$. Therefore $ H_0(\ast)=\mathbf{Z}$ and $ H_i(\ast)=0$ for $i\neq0$.
 
-We've defined homology groups for each space, but haven't considered what happens to maps between spaces. A continuous map $f\colon X\to Y$ induces a map $f_\ast\colon \Sin_n(X)\to\Sin_n(Y)$ by composition: 
+We've defined homology groups for each space, but haven't yet considered what happens to maps between spaces. A continuous map $f\colon X\to Y$ induces a map $f_\ast\colon \Sin_n(X)\to\Sin_n(Y)$ by composition: 
 \[
 f_\ast:\sigma\mapsto f\circ \sigma\,.
 \] 
-For $f_\ast$ to be a map of semi-simplicial sets, it needs to commute with face maps. Explicitly, we need $f_\ast \circ d_i = d_i \circ f_\ast$. A diagram is said to be \emph{commutative} if all composites with the same source and target are equal, so this is equivalent to commutativity of the below.
+For $f_\ast$ to be a map of semi-simplicial sets, it needs to commute with face maps. Explicitly, we need $f_\ast \circ d_i = d_i \circ f_\ast$. A diagram is said to be \emph{commutative} if all composites with the same source and target are equal, so this equation is equivalent to commutativity of the diagram
 \begin{eqnarray*}
 \xymatrix{\Sin_n(X)\ar[r]^{f_\ast}\ar[d]^{d_i} & \Sin_n(Y)\ar[d]^{d_i}\\
-\Sin_{n-1}(X)\ar[r]^{f_\ast} & \Sin_{n-1}(Y)}
+\Sin_{n-1}(X)\ar[r]^{f_\ast} & \Sin_{n-1}(Y)\,.}
 \end{eqnarray*}
 We see that $d_if_\ast\sigma=(f_\ast\sigma)\circ d^i=f\circ\sigma\circ d^i$, and $f_\ast(d_i\sigma)=f_\ast(\sigma\circ d^i)=f\circ\sigma\circ d^i$ as desired. The diagram remains commutative when we pass to the free abelian groups of chains.
 
@@ -94,4 +96,4 @@ A chain map induces a map in homology $f_\ast: H_n(C)\to H_n(D)$. The method of 
 
 Similarly, we also get a map $B_n(C)\to B_n(D)$. Let $c\in B_n(C)$, so that there exists $c^\prime \in C_{n+1}$ such that $d_C c^\prime = c$. Then $f_n(c) = f_nd_C c^\prime = d_D f_{n+1}(c^\prime)$. Thus $f_n(c)$ is the boundary of $f_{n+1}(c^\prime)$, and $f$ gives a map $B_n(C)\to B_n(D)$.
 
-The two maps $Z_n(C)\to Z_n(D)$ and $B_n(C)\to B_n(D)$ give a map on homology $f_\ast: H_n(X)\to H_n(Y)$, as desired.
+The two maps $Z_n(C)\to Z_n(D)$ and $B_n(C)\to B_n(D)$ quotient to give a map on homology $f_\ast: H_n(X)\to H_n(Y)$, as desired.

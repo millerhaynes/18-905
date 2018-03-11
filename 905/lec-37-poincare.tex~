@@ -115,7 +115,7 @@ $H_n(\RR^n,\RR^n-\ast)$.
 
 (2) $K$ a finite union of compact convex subsets of $\RR^n$. 
 This follows by induction and the five lemma applied to the Mayer-Vietoris
-ladder \cite{thm-mayer-vietoris-ladder}.
+ladder \ref{thm-mayer-vietoris-ladder}.
 
 (3) $K$ is any compact subset of $\RR^n$. This follows as before by a limit
 argument, using Lemmas \ref{lem-lim-cpt} and \ref{lem-cech-limit}.
