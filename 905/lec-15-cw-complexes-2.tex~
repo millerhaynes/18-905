@@ -23,15 +23,19 @@ despite the fact that they not generally open in the topology on $X$,
 and (except when $n=0$) they are not homeomorphic to compact disks.
 
 \begin{definition}
-Let $X$ be a CW-complex with a cell structure $\{g_\alpha:D^n_\alpha\to X_n|\alpha\in A_n\}$. A {\em subcomplex} is a subspace $Y\subseteq X$ such that for all $n$, there is a subset $B_n$ of $A_n$ such that $Y_n=Y\cap X_n$ provides $Y$ with a CW-structure with characteristic maps $\{g_\beta|\beta\in B_n\}$.
+Let $X$ be a CW-complex with a cell structure 
+$\{g_\alpha:D^n_\alpha\to X_n:\alpha\in A_n,n\geq0\}$. A {\em subcomplex} is a subspace $Y\subseteq X$ such that for all $n$, there is a subset $B_n$ of $A_n$ such that $Y_n=Y\cap X_n$ provides $Y$ with a CW-structure with characteristic maps $\{g_\beta:\beta\in B_n,n\geq0\}$.
 \end{definition}
 \begin{example}
 $\Sk_nX\subseteq X$ is a subcomplex.
 \end{example}
-\begin{prop}[\cite{bredon}, p. 196]
+\begin{prop}
 Let $X$ be a CW-complex with a chosen cell structure. Any compact subspace
 of $X$ lies in some finite subcomplex. 
 \end{prop}
+\begin{proof}
+See \cite{bredon}, p. 196.
+\end{proof}
 \begin{remark}
 For fixed cell structures, unions and intersections of subcomplexes are subcomplexes.
 \end{remark}
@@ -54,7 +58,10 @@ and define
 \mathrm{Sk}_kS^n=S^n\cap\RR^{k+1}=S^k\,.
 \]
 
-\fbox{picture needed}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/15-sphere-CW-structure.pdf}
+\end{center}
 
 Now there are two $k$-cells for each $k$ with $0\leq k\leq n$, given by the
 two hemispheres of $S^k$. For each $k$ there are two characteristic maps,
@@ -93,11 +100,11 @@ constant map with value $(1,0,0,\ldots)$, again by an affine homotopy.
 \end{proof}
 
 This ``inefficient'' CW structure on $S^n$ has a second advantage: it's
-``equivariant'' with respect to the antipodal involution. This provides us
+{\em equivariant} with respect to the antipodal involution. This provides us
 with a CW structure on the orbit space for this action. 
 
 Recall that $\mathbf{RP}^k=S^k/\sim$ where $x\sim -x$. The quotient map
-$S^k\to\mathbf{RP}^k$ is a double cover, identifying upper and lower 
+$\pi:S^k\to\mathbf{RP}^k$ is a double cover, identifying upper and lower 
 hemispheres. The inclusion of one sphere in the next is compatible with
 this equivalence relation, and gives us ``linear'' embeddings 
 $\mathbf{RP}^{k-1}\subseteq\mathbf{RP}^k$. 
@@ -109,7 +116,7 @@ This suggests that
 might serve as a CW filtration. Indeed, for each $k$,
 \begin{equation*}
 \xymatrix{
-S^{k-1} \ar[r] \ar[d] & D^k \ar[d]^u \\
+S^{k-1} \ar[r] \ar[d]^\pi & D^k \ar[d]^u \\
 \mathbf{RP}^{k-1} \ar[r] & \mathbf{RP}^k 
 }\end{equation*}
 is a pushout: A line in $\RR^{k+1}$ either lies in $\RR^k$ or is determined 

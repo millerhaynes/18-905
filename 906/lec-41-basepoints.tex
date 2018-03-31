@@ -1,0 +1,162 @@
+\section{Weak Hausdorff, Basepoints}\label{basepoints}
+The ancients came up with a good definition of a topology ---
+but $k$-spaces are better!
+Sometimes, though, we can be greedy and ask for even more:
+for instance, we can demand a Hausdorff condition.
+This leads to a further refinement of $k$-spaces. But ``Hausdorff'' isn't
+quite the appropriate condition in the context of $k$-spaces. Rather: 
+
+\begin{definition}
+    A space $X$ is {\em weak Hausdorff} if the image of every continuous 
+map $K\to X$ from a compact Hausdorff space $K$ is closed.
+\end{definition}
+Another way to say this is that the map itself if closed. Clearly Hausdorff implies weak Hausdorff. Every singleton subset of a weak Hausdorff space is 
+closed (since the one-point space is compact Hausdorff).
+\begin{prop}
+    Let $X$ be a $k$-space.
+    \begin{enumerate}
+	\item $X$ is weak Hausdorff if and only if 
+$\Delta:X\to X\times^{k\Top}X$ is closed.
+(In algebraic geometry such a condition is termed {\em separated}.)
+	\item Let $R\subseteq X\times X$ be an equivalence relation. If $R$ is closed, then $X/R$ is weak Hausdorff.
+    \end{enumerate}
+\end{prop}
+\begin{definition}
+    A space is {\em compactly generated} if it is weak Hausdorff and a
+$k$-space. The category of such spaces is written $\CG$.
+\end{definition}
+We have a pair of adjoint pairs:
+\[
+\Top\,\underset{k}{\overset{i}{\lra}}\,k\Top\,
+\underset{j}{\overset{h}{\rla}}\,\CG
+\]
+so 
+\[
+ikX\to X \quad,\qquad hjZ\xrightarrow{\cong}Z \,,
+\]
+\[
+Y\xrightarrow{\cong}kiY \quad,\qquad Y\to jhY\,.
+\]
+The functor $h$ is defined by dividing $Y$ by the intersection of all closed
+equivalence relations on it. $k$-ification is a right adjoint, but 
+weak Hausdorfification, being formation of a quotient, is a left adjoint.
+The dangerous and annoying feature of $h$ is that if $Y$ is not weak Hausdorff 
+then the map $Y\to jhY$ is not a bijection; the underlying point-set changes. 
+
+
+\begin{lemma} If $Y$ is a $k$-space and $Z$ is weak Hausdorff, then $Z^Y$ is
+weak Hausdorff.
+\end{lemma}
+
+\begin{corollary}
+The category $\CG$ is Cartesian closed.
+\end{corollary}
+
+We will essentially always be working with either $k\Top$ or $\CG$; 
+most of the time either one will do. I will just call the objects ``spaces,''
+and (I'm sorry) write $\Top$ for the corresponding category.
+
+Here's an example of how useful the formation of mapping spaces can be. 
+We already know that a {\em homotopy} between maps $f,g:X\to Y$ is a map 
+$h:I\times X\to Y$ such that the following diagram commutes.
+\begin{equation*}
+    \xymatrix{
+X\ar[d]_{\inc_0}\ar[dr]^f & &\\
+I\times X\ar[r]^h & Y\\
+X\ar[u]^{\inc_1}\ar[ur]_g & &
+    }
+\end{equation*}
+We write $f\sim g$ to indicate that $f$ and $g$ are homotopic. This is an
+equivalence relation on $\Top(X,Y)$, and 
+we define 
+\[
+[X,Y]=\Top(X,Y)/\sim\,.
+\]
+
+The maps $f$ and $g$ are points in the space $Y^X$, and the homotopy $h$ 
+is the same thing as a path $\hat f:I\to Y^X$ from $f$ to $g$. So
+\[
+[X,Y]=\pi_0(Y^X)\,.
+\]
+
+To talk about the fundamental group, and higher homotopy groups, using
+this strategy, we have to get basepoints into the picture.
+
+\subsection{Basepoints}
+A {\em pointed space} is a space $X$ together with a specified ``point'' 
+in it, with default notation $*$. The point $\ast$ is called the 
+{\em basepoint}. This leads some people refer to ``based spaces,'' but 
+to my ear this makes it sound as if we are doing chemistry, or worse, 
+and I prefer ``pointed.'' 
+ 
+This gives a category $\Top_\ast$ where the morphisms respect the basepoints. 
+This category is complete and cocomplete. For example
+\[
+(X,\ast)\times (Y,\ast)=(X\times Y,(\ast,\ast))
+\]
+(where of course I mean to be taking the product in $k\Top$ or $\CG$).
+The coproduct is not disjoint union; which basepoint would you pick? So you
+identify the two basepoints, to get the ``wedge'' (or in TeX, $\backslash$vee)
+\[
+X\vee Y=X\sqcup Y/\ast_X\sim \ast_Y\,.
+\]
+
+The one-point space $\ast$ is the terminal object in $\Top_*$, as in $\Top$, 
+but it is also {\em initial} in $\Top_*$: 
+there is exactly one map of pointed spaces from it to 
+any $(X,\ast)$. We have a {\em pointed category}: 
+A category with initial and terminal objects such that the 
+unique map from the first to the second is an isomorphism.
+
+Pointed categories are (almost) never Cartesian closed: for, as we saw,
+in a Cartesian closed category $\cc$, $\cc(X,Y)=\cc(\ast,Y^X)$, and
+in a pointed category this is a singleton.
+
+But we still know what we would like to take as a ``mapping object'' 
+in $\Top_*$:
+Define $Y^X_*$ to be the subspace of $Y^X$ consisting of the pointed maps. 
+As a replacement for Cartesian closure, 
+let's ask: For fixed $X\in\Top_*$, 
+does the functor $Y\mapsto Y^X_\ast$ have a left adjoint? 
+This would be an analogue in $\Top_*$ of the functor $A\otimes-$ in $\Ab$. 
+Compute:
+\[
+\xymatrix{
+\Top(W,Y^X) \ar@{}[rr]|{=} && \{f:X\times W\to Y\} \\
+\Top(W,Y_*^X) \ar@{}[rr]|{=} \ar[u]^\subseteq && 
+\{f(*,w)=* \,\,\,\forall \,w\in W\} \ar[u]^\subseteq \\
+\Top_*(W,Y_*^X) \ar@{}[rr]|{=} \ar[u]^\subseteq && 
+{\left\{\begin{array}{ll}
+f(*,w)=*&\forall\,w\in W\\
+f(x,*)=*&\forall\,x\in X\end{array}\right\}}
+\ar[u]^\subseteq 
+}
+\]
+So the map $X\times W\to Y$ corresponding to $f:W\to Y_*^X$ sends the 
+wedge $X\vee W\subseteq X\times W$ to the basepoint of $Y$, and hence
+factors through the {\em smash product}
+\[
+X\wedge W=X\times W/X\vee W
+\]
+obtained by pinching the ``axes'' in the product to a point. We have an
+adjoint pair 
+\[
+X\wedge-:\Top_*\rightleftarrows\Top_*:(-)^X_*\,.
+\]
+
+You are invited to check the various properties enjoyed by the smash product,
+analogous to properties of the tensor product. So it's functorial in both
+variables; the two-point pointed space serves as a unit; and it is associative
+and commutative. Associativity is a blessing bestowed by assuming compact
+generation; notice that in forming it we are mixing limits (the product)
+with colimits (the quotient by the axes), and indeed the smash product
+turns out {\em not} to be associative in the full category of spaces. 
+
+Based spaces and all spaces are related by another adjoint pair, 
+\[
+(-)_+:\Top\rightleftarrows\Top_*:u
+\]
+where $u$ forgets the basepoint and $(-)_+$ adjoins a disjoint base point. 
+The two-point pointed space is then $*_+$, but everyone writes it as $S^0$. 
+Explain why this is a reasonable symbol for this pointed space. 
+

@@ -2,7 +2,7 @@
 We now know that the homology of a star-shaped region is trivial: in such a space, every cycle with augmentation 0 is a boundary. We will use that fact, which is a special case of homotopy invariance of homology, to prove the general result, which we state in somewhat stronger form:
 	\begin{theorem}
 A homotopy $h:f_0\simeq f_1:X\to Y$ determines a natural chain homotopy
-$f_{0,\ast}\simeq f_{1,\ast}:S_\ast(X)\to S_\ast(Y)$.
+$f_{0\ast}\simeq f_{1\ast}:S_\ast(X)\to S_\ast(Y)$.
 	\end{theorem}
 
 The proof uses naturality (a lot). For a start, notice that if $k:g_0\simeq g_1:C_*\to D_*$ is a chain homotopy, and $j:D_*\to E_*$ is another chain map, then the composites $j\circ k_n:C_n\to E_{n+1}$ give a chain homootpy $j\circ g_0\simeq j\circ g_1$. So if we can produce a chain homotopy between the chain maps induced by the two inclusions $i_0,i_1:X\to X\times I$, we can get a chain homotopy $k$ between $f_{0*}=h_*\circ i_{0*}$ and 
@@ -51,7 +51,7 @@ d(\iota_p\times\iota_q) = (d\iota_p)\times\iota_q + (-1)^p\iota_p\times d\iota_q
 Since $d^2=0$, a necessary condition for $\iota_p\times\iota_q$ to exist is that $d((d\iota_p)\times\iota_q + (-1)^p\iota_p\times d\iota_q) =0$. Let's compute what this is, using the Leibnitz rule in dimension
 $p+q-1$ where we have it by the inductive assumption:
 		\begin{equation*}
-		d((d\iota_p)\times\iota_q + (-1)^p\iota_p\times(d\iota_q)) = (d^2\iota_p)\times\iota_q + (-1)^{p-1}(d\iota_p)\times(d\iota_q) + (-1)^p(d\iota_p)\times d\iota_q + (-1)^q\iota_p\times(d^2\iota_q) = 0
+		d((d\iota_p)\times\iota_q + (-1)^p\iota_p\times(d\iota_q)) = (d^2\iota_p)\times\iota_q + (-1)^{p-1}(d\iota_p)\times(d\iota_q) + (-1)^p(d\iota_p)\times(d\iota_q) + (-1)^q\iota_p\times(d^2\iota_q) = 0
 		\end{equation*}
 because $d^2=0$. Note that this calculation would not have worked without the sign! 
 
@@ -69,7 +69,7 @@ The cross-product that this procedure constructs is not unique; it depends on a 
 
 We return to homotopy invariance. To define our chain homotopy
 $h_X:S_n(X)\to S_{n+1}(X\times I)$, pick any 1-simplex $\iota:\Delta^1\to I$
-such that $d_0\iota=1$ and $d_1\iota=0$, and define
+such that $d_0\iota=c_1^0$ and $d_1\iota=c_0^0$, and define
 \[
 h_X\sigma =(-1)^n\sigma\times\iota\,.
 \]

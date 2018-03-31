@@ -1,6 +1,6 @@
 \section{Hom and Lim}\label{limits}
 
-We will now develope more properties of the tensor product: its relationship to
+We will now develop more properties of the tensor product: its relationship to
 homomorphisms and to direct limits. 
 
 The tensor product arose in our study of bilinear maps. Even more natural are
@@ -12,8 +12,7 @@ homomorphisms); it forms an $R$-module, with
 (rf)(y)=f(ry)=rf(y)\,,\quad r\in R,\, y\in M\,.
 \]
 The check that this is again an $R$-module homomorphism uses commutativity of
-$R$. We will write $\underline{\mathrm{Hom}}_R(M,N)$, or just $\Hom(M,N)$, 
-for this $R$-module. 
+$R$. We will write $\Hom_R(M,N)$, or just $\Hom(M,N)$, for this $R$-module. 
 
 Since $\Hom(M,N)$ is an $R$-module, we are entitled to think about what 
 an $R$-module homomorphism into it is. Given 
@@ -38,15 +37,16 @@ The natural map $\Hom(L,\Hom(M,N))\to\Hom(L\otimes M,N)$ is an isomorphism.
 
 One says that $\otimes$ and $\Hom$ are {\em adjoint}, a word suggested by 
 Sammy Eilenberg to Dan Kan, who first formulated this relationship between
-functors. 
+functors \cite{kan}. 
 
-This relationship makes a number of things obvious. For example, it's clear 
-that 
-\[
-\Hom(\bigoplus_\alpha M_\alpha,N)=\prod_\alpha\Hom(M_\alpha,N)
-\]
-and this implies that the tensor product distributes over arbitrary
-direct sums. We'll see another example in a minute. 
+%This relationship makes a number of things obvious. For example, it's clear 
+%that 
+%\[
+%\Hom(\bigoplus_\alpha N_\alpha,L)=\prod_\alpha\Hom(N_\alpha,L)
+%\]
+%and this implies that the tensor product distributes over arbitrary
+%direct sums
+%We'll see another example in a minute. 
 
 The second thing we will discuss is a generalization of one perspective on
 how the rational numbers are constructed from the integers -- by a limit 
@@ -55,15 +55,16 @@ process: there are compatible maps in the diagram
 \xymatrix{
 \Z \ar[r]^2 \ar[d]^1 & \Z \ar[r]^3 \ar[d]^{1/2} & \Z \ar[r]^4 \ar[d]^{1/3!}
 & \Z \ar[r]^5 \ar[d]^{1/4!} & \cdots \\
-&& \QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \cdots
+\QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \QQ \ar[r]^= & \cdots
 }\]
-and $\QQ$ is the ``universal,'' or ``initial,'' abelian group you can put
-in that position. 
+and $\QQ$ is the ``universal,'' or ``initial,'' abelian group you can map to.
 
 We will formalize this process, using partially ordered sets as indexing sets.
-Recall that a {\em partially ordered set}, or {\em poset}, is a small category $\cI$ such that $\#\cI(i,j)\leq 1$ and the only isomorphisms are the identity maps. We will be interested in a particular class of posets.
+Recall from Lecture 3 
+that a {\em partially ordered set}, or {\em poset}, is a small category $\cI$ such that $\#\cI(i,j)\leq 1$ and the only isomorphisms are the identity maps. We will be interested in a particular class of posets.
 \begin{definition}
-A poset $(\cI,\leq)$ is \emph{directed} if for every $i,j$, there exists a $k$ such that $i\leq k$ and $j\leq k$.
+A poset $(\cI,\leq)$ is \emph{directed} if for every $i,j\in\cI$
+there exists  $k\in\cI$ such that $i\leq k$ and $j\leq k$.
 \end{definition}
 \begin{example}
 This is a very common condition.
@@ -78,14 +79,14 @@ then $f_{i,k}=f_{j,k}\circ f_{i,j}:X_i\to X_k$.
 If $\cI=(\NN,\leq)$, then you get a ``linear system'' $X_0\xrightarrow{f_{01}}X_1\xrightarrow{f_{12}}X_2\to\cdots$. 
 \end{example}
 \begin{example}
-Suppose $\cI=(\NN_{>0},|)$, i.e., the second example above. You can consider $\cI\to\mathbf{Ab}$, say assigning to each $i$ the integers $\Z$, and $f_{ij}:\Z\xrightarrow{j/i}\Z$. This seems like a more ``choice-free'' way to get at a construction of $\QQ$ out of $\ZZ$. 
+Suppose $\cI=(\NN_{>0},|)$, i.e., the second example above. You can consider $\cI\to\mathbf{Ab}$, say assigning to each $i$ the integers $\Z$, and $f_{ij}:\Z\xrightarrow{j/i}\Z$. 
 \end{example}
 These directed systems can be a little complicated. But there's a simple one, namely the constant one. 
 \begin{example}
 Let $\cI$ be any directed system. Any object $A\in\cc$ determines an $\cI$-directed set, namely the constant functor $c_A:\cI\to\cc$.
 \end{example}
 Not every directed system is constant, but we can try to find a best approximating constant system. To compare systems, we need morphisms. 
-Of course, $\cI$-directed systems in $\cc$ are functors $\cI\to\cc$. They are related by natural transformations, and those are the morphisms in the category of $\cI$-directed systems. That is to say, a morphism is a choice of map $g_i:X_i\to Y_i$, for each $i\in\cI$, such that 
+$\cI$-directed systems in $\cc$ are functors $\cI\to\cc$. They are related by natural transformations, and those are the morphisms in the category of $\cI$-directed systems. That is to say, a morphism is a choice of map $g_i:X_i\to Y_i$, for each $i\in\cI$, such that 
 \begin{equation*}
 \xymatrix{X_i\ar[r]\ar[d]^{g_i} & X_j\ar[d]^{g_j}\\
 Y_i\ar[r] & Y_j}
@@ -103,7 +104,7 @@ X \ar[ur] \ar[dr] \\
 }\]
 commutes.
 \end{definition}
-This is a universal property. So two different direct limits are canonically isomorphic; but a directed system may fail to have a direct limit. For example, the linear directed systems we used to creat the rational numbers exist in the category of finitely generated abelian groups; but $\QQ$ is not finitely generated, and there's no finitely generated group that will serve as a direct limit in the category of finitely generated abelian groups. 
+This is a universal property. So two different direct limits are canonically isomorphic; but a directed system may fail to have a direct limit. For example, the linear directed systems we used to create the rational numbers exists in the category of finitely generated abelian groups; but $\QQ$ is not finitely generated, and there's no finitely generated group that will serve as a direct limit of this system in the category of finitely generated abelian groups. 
 \begin{example}
 Suppose we have an increasing sequence of subspaces, 
 $X_0\subseteq X_1\subseteq\cdots\subseteq X$. This gives us a directed system
@@ -137,6 +138,8 @@ quotient just forms equivalence classes. In abelian groups, the coproduct
 is the direct sum and to form the quotient you divide by the subgroup 
 generated by differences. 
 
+The two concepts we have introduced today are related to each other:
+
 \begin{prop}
 Let $\cI$ be a direct set, and let $M:\cI\to\mathbf{Mod}_R$ be a $\cI$-directed system of $R$-modules. There is a natural isomorphism 
 \[
@@ -155,6 +158,7 @@ a linear map $\varinjlim_I(M_i\otimes_RN)\to L$.
 Here's a lemma that lets us identify when a map to a constant functor is a
 direct limit.
 \begin{lemma}
+\label{lem-dir-lim}
 Let $X:\cI\to\mathbf{Ab}$ (or $\mathbf{Mod}_R$). A map $f:X\to c_L$ (given
 by $f_i:X_i\to L$ for $i\in\cI$) is the direct limit if and only if:
 \begin{enumerate}
@@ -165,12 +169,11 @@ by $f_i:X_i\to L$ for $i\in\cI$) is the direct limit if and only if:
 \begin{proof}
 Straightforward.
 \end{proof}
-This lemma generalizes the observation that $\QQ$ is the colimit of the diagram we drew above for $\cI=(\NN_{>0},|)$. 
 \begin{prop}
 The direct limit functor $\varinjlim_I:\Fun(\cI,\mathbf{Ab})\to\mathbf{Ab}$ is exact. In other words, if $X\xrightarrow{p}Y\xrightarrow{q}Z$ is an exact sequence of $\cI$-directed systems (meaning that at every degree we get an exact sequence of abelian groups), then $\varinjlim_IX\rightarrow \varinjlim_IY\rightarrow\varinjlim_IZ$ is exact.
 \end{prop}
 \begin{proof}
-First of all, $qp:X\to Z$ is zero, which is to say that it factors through the constant zero object, so $\varinjlim_IX\to \varinjlim_I Z$ is certainly the zero map. Let $y\in \varinjlim_IY$, and suppose $y$ maps to $0$ in $\varinjlim_IZ$. By condition (1), there exists $i$ such that $y=f_i(y_i)$ for some $y_i\in Y_i$. Then $0=q(y)=f_iq(y_i)$ because $q$ is a map of direct systems. This means that there is $j\geq i$ such that $f_{ij}q(y_i)=0$ in $Z_j$. So $qf_{ij}y_i=0$,
+First of all, $qp:X\to Z$ is zero, which is to say that it factors through the constant zero object, so $\varinjlim_IX\to \varinjlim_I Z$ is certainly the zero map. Let $y\in \varinjlim_IY$, and suppose $y$ maps to $0$ in $\varinjlim_IZ$. By condition (1) of Lemma \ref{lem-dir-lim}, there exists $i$ such that $y=f_i(y_i)$ for some $y_i\in Y_i$. Then $0=q(y)=f_iq(y_i)$ because $q$ is a map of direct systems. By condition (2), this means that there is $j\geq i$ such that $f_{ij}q(y_i)=0$ in $Z_j$. So $qf_{ij}y_i=0$,
 again because $q$ is a map of direct systems. We have an element in $Y_j$ that maps to zero under $q$, so there is some $x_j\in X_j$ such that $p(x_j)=y_j$.
 Then $f_j(x_j)\in \varinjlim_IX$ maps to $y$.
 \end{proof}

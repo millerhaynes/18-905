@@ -13,7 +13,7 @@ Let's tensor it with $\Z/2\Z$. We get
 0\to \Z/2\Z\to\Z/2\Z\to\Z/2\Z\to 0\,.
 \]
 This cannot be a short exact sequence! 
-This is a major tragedy: tensoring doesn't preserve exact sequences; one says that $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $M$ by simply tensoring homology with $M$. 
+This is a major tragedy: tensoring doesn't preserve exact sequences; one says that the functor $\Z/n\Z\otimes-$ is not ``exact.'' This is why we can't form homology with coefficients in $M$ by simply tensoring homology with $M$. 
 
 Tensoring does respect certain exact sequences:
 \begin{prop}
@@ -41,8 +41,9 @@ $M\times N''$ generates $M\otimes N''$. This unique factorization reflects
 the fact that $M\times-$ preserves cokernels. 
 \end{proof}
 
-Failure of exactness is bad, so let's try to repair it. A key observation is that if 
-$M$ is {\em free}, then $M\otimes_R-$ is exact. If $M=R\langle S\rangle$, the
+Failure of exactness is bad, so let's try to repair it. A key observation 
+is that if $M$ is {\em free}, then $M\otimes_R-$ {\em is} exact. 
+If $M=R\langle S\rangle$, the
 free $R$-module on a set $S$, then $M\otimes_RN=\oplus_SN$, since tensoring
 distributes over direct sums. Then we remember the following ``obvious'' fact:
 \begin{lemma}
@@ -59,8 +60,8 @@ image of some $x'_i\in M'_i$. Just make sure to take $x'_i=0$ if $x_i=0$.
 
 To exploit this observation, we'll ``resolve'' $M$ by free modules. This means:
 find a surjection from a free $R$-module, $F_0\to M$. This amounts to specifying $R$-module generators. For a general ring $R$, the kernel of $F_0\to M$ may
-not be free. 
-Let's make sure that it is by assuming that $R$ is a PID, and write $F_1$ for
+not be free. For the moment,
+let's make sure that it is by assuming that $R$ is a PID, and write $F_1$ for
 the kernel. The failure of $M\otimes-$ to be exact is measured, at least
 partially, by the leftmost term (defined as a kernel) in the exact sequence
 \[

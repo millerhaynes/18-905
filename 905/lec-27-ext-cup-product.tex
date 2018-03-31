@@ -81,7 +81,7 @@ it's a homomorphism $C_n\to N$ such that the composite $C_{n+1}\to C_n\to N$
 is trivial. Write $B_n\subseteq C_n$ for the submodule of boundaries.
 We have a homomorphism that kills $B_n$; that is,
 \[
-Z^n(\Hom_R(C_*,N)\xrightarrow{\cong}\Hom_R(C_n/B_n,N)\,.
+Z^n(\Hom_R(C_*,N))\xrightarrow{\cong}\Hom_R(C_n/B_n,N)\,.
 \]
 Now $H_n(C_*)$ (which we'll abbreviate as $H_n$) is the submodule
 $Z_n/B_n$ of $C_n/B_n$; we have an exact sequence
@@ -111,7 +111,7 @@ $C_n\xrightarrow{d}C_{n-1}\to N$. The observation is now that this is
 the same as factoring as $C_n\xrightarrow{d}Z_{n-1}\to N$;
 once this factorization has been achieved, the map $Z_{n-1}\to N$ 
 automatically extends to all of $C_{n-1}$. This is because  
-$Z_{n-}\subseteq C_{n-1}$ as a direct summand: the short exact sequence 
+$Z_{n-1}\subseteq C_{n-1}$ as a direct summand: the short exact sequence 
 \[
 0\to Z_{n-1}\to C_{n-1}\to B_{n-2}\to0
 \]
@@ -128,8 +128,7 @@ is a free resolution, so this cokernel is precisely
 $\Ext_R^1(H_{n-1}(C_*),N)$.
 \end{proof}
 
-\begin{remark}
-\textbf{Question:} Why is $\Ext$ called Ext?
+\begin{question} Why is $\Ext$ called Ext?
 
 \noindent
 \textbf{Answer:} It classifies extensions. Let $R$ be a commutative ring, and let $M,N$ be two $R$-modules. I can think about ``extensions of $M$ by $N$,''
@@ -147,7 +146,7 @@ and
 We'll say that two extensions are {\em equivalent} if there's a map of short exact sequences between them that is the identity on $N$ and on $M$. The two extensions above aren't equivalent, for example.
 
 Another definition of $\Ext^1_R(M,N)$ is: the set of extensions like this modulo this notion of equivalence. The zero in the group is the split extension.
-\end{remark}
+\end{question}
 
 The universal coefficient theorem is useful in transferring properties of 
 homology to cohomology. For example, if $f:X\to Y$ is a map that induces an

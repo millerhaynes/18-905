@@ -83,7 +83,7 @@ To define $d:C_n\to C_{n-1}$, represent $c\in C_n$ by $b\in B_n$, and
 hope that $[db]\in B_{n-1}/A_{n-1}$ is well defined. If we replace
 $b$ by $b+a$ for $a\in A_n$, we find 
 \[
-d(b+a)=db+da\equiv da\mod A_{n-1}\,,
+d(b+a)=db+da\equiv db\mod A_{n-1}\,,
 \]
 so our hope is justified. Then $d^2[b]=[d^2 b]=0$. 
 \end{proof}

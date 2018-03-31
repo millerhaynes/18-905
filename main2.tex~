@@ -1,0 +1,108 @@
+\documentclass[11pt]{memoir}
+
+\usepackage[margin=1.375in]{geometry}
+\input{header2.tex}
+%\usepackage[urw-garamond]{mathdesign}
+
+\begin{document}
+\title{Algebraic Topology}
+\author{Lectures by Haynes Miller\\
+Notes based on live{\TeX}ed record made by Sanath Devalapurkar\\
+Images created by John Ni
+}
+%\date{Fall 2016 -- Spring 2017}
+
+\frontmatter
+
+\maketitle
+\input{preface2.tex}
+\newpage
+\tableofcontents
+\newpage
+
+\mainmatter
+
+%\part{18.906 -- homotopy theory}\label{906}
+
+\chapter{Homotopy groups}
+\input{906/lec-39-limits-colimits-adjunctions.tex}
+\input{906/lec-40-compactly-generated.tex}
+\input{906/lec-41-basepoints.tex}
+\input{906/lec-42-fiber-bundles.tex}
+\input{906/lec-43-fibrations-cofibrations.tex}
+\input{906/lec-44-homotopy-fibers.tex}
+\input{906/lec-45-barratt-puppe.tex}
+\input{906/lec-46-relative-homotopy.tex}
+\input{906/lec-47-pi_1-action-hurewicz.tex}
+\input{906/lec-48-examples-cw-complexes.tex}
+\input{906/lec-49-relative-hurewicz.tex}
+\input{906/lec-50-cellular-approximation.tex}
+\input{906/lec-51-and-all-the-rest.tex}
+
+\chapter{Vector bundles}
+\input{906/lec-52-vector-bundles.tex}
+\input{906/lec-53-principal-bundles.tex}
+\input{906/lec-54-I-invariance.tex}
+\input{906/lec-55-grassmann-model-classifying-spaces.tex}
+\input{906/lec-56-ssets.tex}
+\input{906/lec-57-recall.tex}
+\input{906/lec-58-bundles-classifying-spaces.tex}
+\input{906/lec-59-classifying-spaces.tex}
+
+\chapter{Spectral sequences}
+\input{906/lec-60-why-sseqs.tex}
+\input{906/lec-61-serre-sseq.tex}
+\input{906/lec-62-exact-couples.tex}
+\input{906/lec-63-sseq-applications.tex}
+\input{906/lec-64-edge-homomorphisms.tex}
+\input{906/lec-65-serre-classes.tex}
+\input{906/lec-66-mod-C-hurewicz.tex}
+\input{906/lec-67-dress-sseq.tex}
+\input{906/lec-68-leray-hirsch.tex}
+\input{906/lec-69-integration.tex}
+
+\chapter{Characteristic classes}
+\input{906/lec-70-grothendieck-chern-classes.tex}
+\input{906/lec-71-homology-of-BUn.tex}
+\input{906/lec-72-chern-roots.tex}
+\input{906/lec-73-steifel-whitney-classes.tex}
+\input{906/lec-74-oriented-bundles.tex}
+
+\backmatter
+
+\nocite{*}
+
+\begin{thebibliography}{9}
+
+
+\bibitem{bredon}
+G. Bredon, {\em Topology and Geometry}, Springer-Verlag, 1993.
+
+\bibitem{dold}
+A. Dold,
+{\em Lectures on Algebraic Topology},
+Springer-Verlag, 1980.
+
+\bibitem{hatcher}
+A. Hatcher,
+{\em Algebraic Topology}, Cambridge University Press, 2002.
+
+\bibitem{kan}
+D. Kan,
+Adjoint funtors,
+Trans. Amer. Math. Soc. 87 (1958) 294--329.
+
+\bibitem{milnor}
+J. Milnor,
+On axiomatic homology theory,
+Pacific J. Math 12 (1962) 337--341.
+
+\bibitem{strickland}
+N. Strickland,
+
+
+
+\end{thebibliography}
+
+
+\end{document}

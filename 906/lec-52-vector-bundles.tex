@@ -1,0 +1,235 @@
+\section{Vector bundles}
+
+Each point $x$ in a smooth manifold $M$ admits a ``tangent space.'' This is a
+real vector space, whose elements are equivalence classes of smooth
+paths $\sigma:\RR\to M$ such that $\sigma(0)=x$. The equivalence 
+relation retains only the velocity vector at $t=0$. These vector spaces
+``vary smoothly'' over the manifold. The notion of a vector bundle is a
+topological extrapolation of this idea. 
+
+Let $X$ be a topological space. To begin with, we will define a
+{\em  vector space over} $B$ to be a map $E\to B$ along with
+the following extra data:
+\begin{itemize}
+    \item an ``addition'' $\mu:E\times_B E\to E$, compatible with the maps
+	down to $B$;
+    \item a ``zero section'' $s:B\to E$ such that the composite $B\xar{s}E\to
+	B$ is the identity;
+    \item an inverse $\chi:E\to E$, compatible with the map down to $B$; and
+    \item an action of $\RR$:
+	\begin{equation*}
+	    \xymatrix{
+		\RR\times E\ar[dr]_{p\circ \pr_2}\ar@{=}[r] &
+		(B\times\RR)\times_B E\ar[r]\ar[d] & E\ar[dl]^p\\
+		& B &
+	    }
+	\end{equation*}
+\end{itemize}
+These data are required to render each fiber a real vector space of finite
+dimension. 
+\begin{example}\label{trivialvectorbundle}
+    A ``trivial'' example of a vector space over $B$ is the projection
+    $B\times V\to B$ where $V$ is a real vector space of finite dimension $n$.
+This is the {\em trivial vector space} over $B$ of dimension $n$.
+\end{example}
+Vector spaces over $X$ form a category in which the morphisms are maps 
+covering the identity map of $X$ that are linear on each fiber. 
+
+\begin{example}
+Let $p:S\to\RR$ have $p^{-1}(0)=\RR$ and $p^{-1}(s)=0$ for $s\neq0$. 
+With the evident structure maps, this is a perfectly good (``skyscraper'') 
+vector space over $\RR$. This example is peculiar, however; it is not
+locally constant. Our definition of vector bundles will exlude it and
+similar oddities. Sheaf theory is the proper home for examples like this.
+
+But this example occurs naturally even if you restrict to trivial 
+bundles and maps between them. The trivial bundle 
+$\pr_1:\RR\times\RR\rightarrow\RR$
+has as an endomorphism the map 
+\[
+(s,t)\mapsto(s,st)\,.
+\]
+This map is an isomorphism on almost all fibers, but is zero over $s=0$.
+So if you want to form a kernel or a cokernel, you will get the skyscraper 
+vector space over $\RR$. This puts limitations on the operations we can form 
+on vector bundles, if we want them to result in vector bundles. 
+\end{example}
+
+\begin{definition}
+A \emph{vector bundle} over $B$ is a vector space $E$ over $B$ that is locally
+trivial; that is, every point $b\in B$ has a neighborhood over which $E$ is
+isomorphic to a trivial bundle. 
+\end{definition}
+\begin{remark}
+As in our definition of fiber bundles, we will always assume that a vector
+bundle admits a numerable trivializing cover. And, to repeat, the fiber
+dimensions of our vector bundles will always be finite. On the other hand,
+there is nothing to stop us from replacing $\RR$ with $\CC$ or even with
+the quaternions $\HH$, and talking about complex or quaternionic vector
+bundles. 
+\end{remark}
+If $p:E\to B$ is a vector bundle, then $E$ is called the \emph{total space},
+$p$ is called the \emph{projection map}, and $B$ is called the \emph{base
+space}. There are various notations in use for vector bundles, and we will
+switch among them. So we will use a Greek letter like $\xi$ or $\zeta$ to 
+denote the entire structure, and $E(\xi),B(\xi)$ denotes the total
+space and base space. We may write $\xi\downarrow B$ to indicate a vector
+bundle over $B$, and, indeed, use $\downarrow$ rather than $\to$ for
+projection maps in general. 
+\begin{example}
+The $n$-dimensional trivial bundle $B\times\RR^n\downarrow B$ 
+will be denote by $n\epsilon$. 
+\end{example}
+\begin{example}
+\label{grassmannianvb}
+At the other extreme,
+Grassmannians support highly nontrivial vector bundles.
+We can form Grassmannians over any one of the three (skew)fields $\RR,\CC,\HH$.
+Write $K$ for one of them, and consider the (left) $K$-vector space $K^n$. 
+The {\em Grassmannian} (or {\em Grassmann manifold}) $\Gra_k(K^n)$ is 
+the space of $k$-dimensional $K$-subspaces of $K^n$. As we saw last term,
+this is a topologized as a quotient space of a Stiefel variety of $k$-frames
+in $K^n$. To each point in $\Gra_k(K)$ is associated a $k$-dimensional subspace
+of $K^n$. This provides us with a $k$-dimensional $K$-vector space $\xi_{n,k}$
+over $\Gra_k(K^n)$, with total space
+\begin{equation*}
+	    E(\xi_{n,k}) = \{(V,x)\in\Gra_k(K^n)\times K^n:x\in V\}
+	\end{equation*}
+This is the {\em canonical} or {\em tautologous} vector bundle over 
+$\Gra_k(K^n)$. It occurs as a subbundle of $n\epsilon$.  
+	\begin{exercise}
+	    Prove that $\xi_{n,k}$, as defined above, is locally trivial, so
+	    is a vector bundle over $\Gra_k(K^n)$.
+	\end{exercise}
+	    For instance, when $k=1$, we have $\Gra_1(\RR^n) = \RP^{n-1}$.
+The tautologous bundle $\xi_{n,1}$ is 1-dimensional; it is a {\em line bundle},
+the canonical line bundle over $\RP^{n-1}$. We may write $\gamma$ for
+this line bundle.  
+\end{example}
+\begin{example}
+Let $M$ be a smooth manifold. Define $\tau_M$ to be the tangent
+	bundle $TM\to M$ over $M$. For example, if $M = S^{n-1}$, then
+	$$TS^{n-1} = \{(x,v)\in S^{n-1}\times\RR^n:v\cdot x = 0\}.$$
+\end{example}
+
+\subsection{Constructions with vector bundles}
+One cannot take the kernels or cokernels of a map of vector bundles; 
+but just about
+anything which can be done for vector spaces can also be done for vector
+bundles:
+\begin{enumerate}
+    \item The pullback of a vector bundle is again a vector bundle:
+If $p^\prime:E^\prime\to B^\prime$ is a vector bundle then the
+	 map $p$ in the diagram below is also a vector bundle.
+	\begin{equation*}
+	    \xymatrix{
+		E\ar[r]^{\overline f} \ar[d]^p & E^\prime\ar[d]^{p^\prime}\\
+		B\ar[r]_f & B^\prime
+		}
+	\end{equation*}
+	For instance, if $B=\ast$, the pullback is just the fiber of $E^\prime$
+	over the point $\ast\to B^\prime$. The cover by products of the 
+elements of trivializing covers trivialize the product
+
+ If $\xi$ is the bundle $E^\prime\to
+	B^\prime$, we denote the pullback $E\to B$ by $f^\ast \xi$.
+
+There's a convenient way to think of a pullback: the top map $\overline{f}$
+in the pullback diagram has two key properties: It covers $f$, and it is a
+linear isomorphism on fibers. These conditions suffice to present $p$ as 
+the pullback of $p'$ along $f$. 
+    \item If $p:E\to B$ and $p^\prime:E^\prime\to B^\prime$, then we can take
+	the product $E\times E^\prime\xrightarrow{p\times p^\prime}B\times
+	B^\prime$. 
+    \item If $B=B^\prime$, we can form the pullback:
+	\begin{equation*}
+	    \xymatrix{
+		E\oplus E^\prime\ar[r]\ar[d] & E\times E^\prime\ar[d]\\
+		B\ar[r]^{\Delta} & B\times B
+		}
+	\end{equation*}
+	The bundle $E\oplus E^\prime$ is called the \emph{Whitney sum}. For
+	instance, 
+	$$n\epsilon = \epsilon\oplus\cdots\oplus\epsilon.$$
+    \item If $E,E^\prime\to B$ are two vector bundles over $B$, we can form
+	another vector bundle $E\otimes E^\prime\to B$ by taking the
+	fiberwise tensor product. Likewise, taking the fiberwise Hom 
+produces a
+	vector bundle $\Hom(E,E^\prime)\to B$.
+\end{enumerate}
+
+
+\begin{example}
+    Recall from Example \ref{grassmannianvb}  the tautological bundle
+    $\gamma$ over $\RP^{n-1}$. The tangent
+    bundle $\tau_{\RP^{n-1}}$ also lives over $\RP^{n-1}$. As this is the first
+    explicit pair of vector bundles over the same space, it is natural to
+    wonder what is the relationship between these two bundles.
+    We claim that
+    $$\tau_{\RP^{n-1}} = \Hom(\gamma,\gamma^\perp).$$
+    To see this, make use of the $2$-fold covering map $S^{n-1}\to
+    \RP^{n-1}$. The projection map is smooth, and covered by a fiberwise
+isomorphism of tangent bundles. The fibers $T_xS^{n-1}$ and $T_{-x}S^{n-1}$
+are both identified with the orthogonal complement of $\RR x$ in $\RR^n$,
+and the differential of the antipodal map sends $v$ to $-v$. So the tangent
+vector to $\pm x\in\RP^{n-1}$ represented by $(x,v)$ 
+is the same as the tangent vector represented by $(-x,-v)$. This describes
+the vector bundle $\Hom(\gamma,\gamma^\perp)$.
+\end{example}
+\begin{exercise}
+    Prove that 
+    $\Gra_k(K^n)$, for $K=\RR,\cC,\HH$, then
+    $$\tau_{\Gra_k(K^n)} = \Hom(\xi_{n,k},\xi_{n,k}^\perp).$$
+\end{exercise}
+\subsection{Metrics and splitting exact sequences}
+A map of vector bundles, $\xi\to\eta$, over a fixed base can be identified
+with a section of $\Hom(\xi,eta)$.  
+We have seen that the kernel and cokernel of a homomorphism will be vector
+bundles only of the rank is locally constant. 
+\begin{exercise} Prove the converse. 
+\end{exercise} 
+In particular, we can form kernels of surjections and cokernels of injections;
+and consider short exact sequences of vector bundles. It is a characteristic
+of topology, as opposed to analyic or algebraic geometry, that short exact
+sequences of vector bundles always split. To see this we use a ``metric.''
+\begin{definition}
+A \emph{metric} on a vector bundle is a continuous choice of inner products on
+the fibers.
+\end{definition}
+\begin{lemma}
+    Any (numerable) vector bundle $\xi$ over $X$ admits a metric.
+\end{lemma}
+\begin{proof}
+This will use the fact that if $g,g^\prime$ are both inner
+products on a vector space then $tg+(1-t)g^\prime$ is another; 
+and more generally that the space of metrics forms a real affine space.
+
+    Pick a trivializing open cover $\cU$ for $\xi$, and for each $U\in\cU$
+an isomorphism $\xi|_U\cong U\times V_U$. Pick an inner product $g_U$
+on each of the vector spaces $V_U$. Pick a partition of unity subordinate 
+to $\cU$; that is, functions $\phi_U:U\to [0,1]$ such that the
+    preimage of the complement of $0$ is $U$ and
+    $$
+\sum_{x\in U} \phi_U(x) = 1\,.
+$$
+Now the sum
+    $$
+g \coloneqq \sum_{U}\phi_U g_U
+$$
+is a metric on $\xi$.
+\end{proof}
+\begin{corollary}\label{split}
+    Any exact sequence $0\to\xi^\prime\to\xi\to\xi^{\prime\prime}\to 0$ 
+of vector bundles (over the same base) splits.
+\end{corollary}
+\begin{proof}
+    Pick a metric for $\xi$. Using it, form the orthogonal complement 
+$\xi^{'\perp}$. The composite
+    $$
+{\xi^\prime}^\perp\hookrightarrow\xi\to\xi^{\prime\prime}
+$$
+is an isomorphism: the dimensions of the fibers are the same. 
+This provides a splitting of the surjection $\xi\to\xi''$ and hence 
+of the short exact sequence.
+\end{proof}
+

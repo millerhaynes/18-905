@@ -99,7 +99,7 @@ In the example $(D^n,S^{n-1})$, $\widetilde H_*(D^n)=0$ and so
 \partial:H_n(D^n,S^{n-1})\xrightarrow{\cong}\widetilde H_{n-1}(S^{n-1})\,.
 \]
 This even works when $n=0$; remember that $S^{-1}=\varnothing$ and 
-$\widetilde H_{-1}(\varnothing=\ZZ$. This is why I like this convention.
+$\widetilde H_{-1}(\varnothing)=\ZZ$. This is why I like this convention.
 
 The homology long exact sequence is often used in conjunction with 
 an elementary fact about a map between exact sequences known as the 
@@ -142,7 +142,7 @@ be a map of short exact sequences of chain complexes. If two of the three maps i
 
 Here's an application.
 \begin{prop}
-Let $(A,X)\to(B,Y)$ be a map of pairs, and assume that an two of 
+Let $(A,X)\to(B,Y)$ be a map of pairs, and assume that two of 
 $A\to B$, $X\to Y$, and $(X,A)\to(Y,B)$ induce isomorphims in homology. 
 Then the third one does as well.
 \end{prop}

@@ -7,13 +7,13 @@ characteristic map $D^n\to X_n$, and we have the diagram
 \[
 \xymatrix{
 \coprod(D^n,S^{n-1}) \ar[r] \ar[dr] & (X_n,X_{n-1}) \ar[d] \\
-& (\bigvee S^{n-1},\ast).
+& (\bigvee S^n,\ast).
 }\]
 We've shown that the vertical map induces an isomorphism in homology, and
 the diagonal does as well. (For example, $\coprod D^n$ has a CW structure 
 in which the $(n-1)$-skeleton is $\coprod S^{n-1}$.) So 
 \[
-H_n(\textstyle{\coprod}(D_n,S^{n-1}))\xrightarrow{\cong}C_n(X).
+H_n(\textstyle{\coprod}(D^n,S^{n-1}))\xrightarrow{\cong}C_n(X).
 \]
  
 We have a CW structure on $\RP^n$ with $\mathrm{Sk}_k(\RP^n)=\RP^k$;
@@ -36,7 +36,7 @@ The map $\pi:S^{n-1}\to\RP^{n-1}$ is the attaching map of the top cell of $RP^n$
 $\RP^{n-2}$ to a point. The composite map $S^{n-1}\to D^{n-1}/S^{n-2}$ 
 factors as follows: 
 \begin{equation*}
-\xymatrix{S^{n-1}\ar[r]^{\text{double cover}}\ar[dr] & \mathbf{RP}^{n-1}\ar[r]^{\text{pinch}} & D^{n-1}/S^{n-2}\\
+\xymatrix{S^{n-1}\ar[r]^{\text{double cover}}\ar[dr] & \mathbf{RP}^{n-1}\ar[r]^{\text{pinch}} & D^{n-1}/S^{n-2}\cong S^{n-1}\\
  & S^{n-1}/S^{n-2}=S^{n-1}\vee S^{n-1}\ar[ur]}
 \end{equation*}
 One of the maps $S^{n-1}\to S^{n-1}$ from the wedge is the identity, and the other map is the antipodal map $\alpha:S^{n-1}\to S^{n-1}$. Write $\sigma$ for a generator of $ H_{n-1}(S^{n-1})$. Then in $H_{n-1}$ we have $\sigma\mapsto (\sigma,\sigma)\mapsto \sigma+\alpha_\ast\sigma$. So we need to know the degree of the antipodal map on $S^{n-1}$. The antipodal map reverses all $n$ coordinates in $\RR^n$. Each reversal is a reflection, and acts on $S^{n-1}$ by a map of degree $-1$. So 
@@ -45,7 +45,8 @@ One of the maps $S^{n-1}\to S^{n-1}$ from the wedge is the identity, and the oth
 \]
 Therefore the cellular complex of $\RP^n$ is as follows: 
 \begin{equation*}
-\xymatrix{\hbox{dim} & -1 & 0 & 1 & \cdots & n & n+1 & \cdots \\
+\xymatrix@R=8pt{
+\hbox{dim} & -1 & 0 & 1 & \cdots & n & n+1 & \cdots \\
 & 0 & \Z\ar[l]_0 & \Z\ar[l]_2 & \cdots\ar[l]_0 & \Z\ar[l]_{2\text{ or }0} & 0\ar[l] & \cdots\ar[l]}
 \end{equation*}
 The homology is then easy to read off.
@@ -70,6 +71,7 @@ Here's a table. Missing entries are $0$.
 \RP^3 & \ZZ & \ZZ/2 & 0 & \ZZ \\
 \RP^4 & \ZZ & \ZZ/2 & 0 & \ZZ/2 \\
 \RP^5 & \ZZ & \ZZ/2 & 0 & \ZZ/2 & 0 & \ZZ 
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots
 }\]
 The moral: In real projective space, 
 odd cells create new generators; even cells (except for the zero-cell) create
@@ -82,7 +84,7 @@ of singular homology. A CW structure involves attaching maps
 \]
 Knowing these, up to homotopy, determines the full homotopy type of the CW 
 complex. Homology does not record all this information. Instead, it records 
-only information about the composite obtaind by pinching out $\Sk_{n-1}X$.
+only information about the composite obtained by pinching out $\Sk_{n-2}X$.
 \[
 \xymatrix{ 
 \coprod_{a\in A_n} S^{n-1}_a \ar[r] \ar[dr] & \Sk_{n-1} X \ar[d] \\

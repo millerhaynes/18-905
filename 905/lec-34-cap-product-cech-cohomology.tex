@@ -21,7 +21,7 @@ f_*(f^*(b)\cap x)=b\cap f_*(x)\,.
 \]
 \end{prop}
 \begin{proof}
-(1) We proved this in the last lecture.
+(1) Easy.
 
 \noindent
 (2) Let $\beta$ be a cocycle representing $b$, and $\sigma$ an $n$-simplex
@@ -73,7 +73,7 @@ Suppose $A\subseteq X$ is a subspace. We have:
 \begin{equation*}
 \xymatrix{
 	0\ar[d] & & 0\ar[d]\\
-	S^p(X)\otimes S_n(A)\ar[d]^{1\otimes i_\ast}\ar[r]^{i^\ast\otimes 1} & S^p(A)\otimes S_n(A)\ar[r]^{\cap} & S_q(A)\ar[d]^{i_*}\\
+	S^p(X)\otimes S_n(A)\ar[d]^{1\otimes i_\ast}\ar[r]^{i^\ast\otimes 1} & S^p(A)\otimes S_n(A)\ar[r]^-{\cap} & S_q(A)\ar[d]^{i_*}\\
 	S^p(X)\otimes S_n(X)\ar[rr]^\cap\ar[d] & & S_q(X)\ar[d]\\
 	S^p(X)\otimes S_n(X,A)\ar[d]\ar@{-->}[rr] & & S_q(X,A)\ar[d]\\
 	0 & & 0
@@ -131,7 +131,7 @@ The {\em \v{C}ech cohomology} of $K$ is
 \cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K} H^p(U)\,.
 \]
 \end{definition}
-I apologize for this bad notation; its apparent dependence on the way $K$ is sitting in $X$ is not recorded. The maps in this directed systen are all maps of graded algebras, so the direct limit is naturally a commutative graded algebra. 
+I apologize for this bad notation; its possible dependence on the way $K$ is sitting in $X$ is not recorded. The maps in this directed systen are all maps of graded algebras, so the direct limit is naturally a commutative graded algebra. 
 Since tensor product commutes with direct limits, we now get a cap product
 pairing 
 \[
@@ -160,13 +160,20 @@ Then let $U$ be a neighborhood of $K$ and let $x\in H^p(U)$ restrict to
 is an isomorphism. Then $x$ restricts to 0 in $H^p(V)$.
 \end{proof}
 
-On the other hand, here's an example that distinguishes $\cHH^\ast$ from $H^\ast$. This is a famous example. The ``topologist's sine curve'' is the subspace of $\RR^2$ defined as follows. It is union of two
-subsets, $A$ and $B$. $A$ is the graph of $\sin(\pi/x)$ where $0<x<1$. 
-$B$ is a continuous curve from $(0,-1)$ to $(1,0)$ and not meeting $A$. This is a counterexample for a lot of things; you've probably seen it in 18.901.
+On the other hand, here's an example that distinguishes $\cHH^\ast$ from $H^\ast$. This is a famous example. The ``topologist's sine curve'' is the subspace of $\RR^2$ defined as follows. It is union of three
+subsets, $A$, $B$, and $C$. $A$ is the graph of $\sin(\pi/x)$ where $0<x<1$.
+$B$ is the interval $0\times[-1,1]$.  
+$C$ is a continuous curve from $(0,-1)$ to $(1,0)$ and meeting $A\cup B$ 
+only at its endpoints. 
+This is a counterexample for a lot of things; you've probably seen it in 
+18.901.
 
-\fbox{picture}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/34-topologists-sine-curve.pdf}
+\end{center}
 
-What is the singular homology of the topologist sine curve? Use Mayer-Vietoris! I can choose $V$ to be some connected portion of the continuous curve from $(0,-1)$ to $(1,0)$, and $U$ to contain the rest of the space in a way that intersects $V$ in two open intervals. Then $V$ is contractible, and $U$ is made up of two contractible connected components. (This space is not locally connected, and one of these path components is not closed.)
+What is the singular homology of the topologist's sine curve? Use Mayer-Vietoris! I can choose $V$ to be some connected portion of the continuous curve from $(0,-1)$ to $(1,0)$, and $U$ to contain the rest of the space in a way that intersects $V$ in two open intervals. Then $V$ is contractible, and $U$ is made up of two contractible connected components. (This space is not locally path connected, and one of these path components is not closed.)
 
 The Mayer-Vietoris sequence looks like
 \[
@@ -177,7 +184,7 @@ and hence $H^*(X)\cong H^*(*)$.
 
 How about $\cHH^\ast$? Let $X\subset U$ be an open neighborhood. The interval
 $0\times[-1,1]$
-has an $\epsilon$-neighborhood, for some small $\epsilon$, that's contained in $U$. This implies that there exists a neighborhood $X\subseteq V\subseteq U$ such that $V\sim S^1$. This implies that 
+has an $\epsilon$-neighborhood, for some small $\epsilon$, that's contained in $U$. This implies that there exists a neighborhood $X\subseteq V\subseteq U$ such that $V\simeq S^1$. This implies that 
 \[
 \varinjlim_{U\in\mathcal{U}_X}H^\ast(U)\cong H^\ast(S^1)
 \]

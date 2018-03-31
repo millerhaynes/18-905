@@ -3,7 +3,7 @@
 Let  $M$ be a $n$-manifold and $K$ a compact subset. 
 By Theorem \ref{thm-fundamental-class}
 \[
-H_n(M,M-K)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)\,.
+H_n(M,M-K;R)\xrightarrow{\cong}\Gamma(K;o_M\otimes R)\,.
 \]
 An {\em orientation along $K$} is a section of $o_M\otimes R$ over $K$ that 
 restricts to a generator 
@@ -102,10 +102,10 @@ Now let $D^n$ be a disk centered at the origin and containing the compact
 set $K$, and consider the commutative diagram
 \[
 \xymatrix{
-H^p(K) \ar[r]^{\cap[\RR^n]_K} & H_q(\RR^n,\RR^n-K) \\
-H^p(D^n) \ar[u]_\cong \ar[r] \ar[d]^\cong & 
+H^p(K) \ar[rr]^{\cap[\RR^n]_K} && H_q(\RR^n,\RR^n-K) \\
+H^p(D^n) \ar[u]_\cong \ar[rr] \ar[d]^\cong && 
 H_q(\RR^n,\RR^n-D^n) \ar[u]_\cong \ar[d]^\cong \\
-H^p(\ast) \ar[r] & H_q(\RR^n,\RR^n-\ast) \,.
+H^p(\ast) \ar[rr] && H_q(\RR^n,\RR^n-\ast) \,.
 }\]
 The groups are zero unless $p=0,q=n$. 
 By naturality of the cap product, the bottom map is given by 

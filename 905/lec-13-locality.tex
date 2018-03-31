@@ -49,9 +49,8 @@ Define an open cover of $\Delta^n$ by
 \[
 \mathscr{U}:=\{\sigma^{-1}(\mathrm{Int}(A)):A\in\sca\}\,.
 \]
-The space $\Delta^n$ is a compact Hausdorff space, and so is subject to the
-Lebesgue covering lemma, which we apply to the open cover 
-$\{\mathrm{Int}B:B\in\mathscr{U}\}$. 
+The space $\Delta^n$ is a compact metric space, and so is subject to the
+Lebesgue covering lemma, which we apply to the open cover $\mathscr{U}$.
 \begin{lemma}[Lebesgue covering lemma]
 Let $M$ be a compact metric space, and let $\mathscr{U}$ be an open cover. Then there is $\epsilon> 0$ such that for all $x\in M$, 
 $B_\epsilon(x)\subseteq U$ for some $U\in \mathscr{U}$.
@@ -74,16 +73,18 @@ d(\$+1)T+(\$+1)Td=\$^2-1
 \]
 since $\$d=d\$$.
 
-So define $T_2=(\$+1)T$, and continuing, you see that we can define
+So define $T_2=(\$+1)T$. Continuing, you see that we can define
 \[
 T_k=(\$^{k-1}+\$^{k-2}+\cdots+1)T\,.
 \]
 \end{proof}
 
 We are now in position to prove the Locality Principle, which we recall:
-\begin{theorem}
+\begin{theorem}[The locality principle]
 Let $\mathscr{A}$ be a cover of a space $X$. 
-The inclusion $S^\mathscr{A}_\ast(X)\subseteq S_\ast(X)$ is a chain homotopy equivalence, so $H^\mathscr{A}_\ast(X)\to H_\ast(X)$ is an isomorphism.
+The inclusion $S^\mathscr{A}_\ast(X)\subseteq S_\ast(X)$ is a 
+quasi-isomorphism; that is, $H^\mathscr{A}_\ast(X)\to H_\ast(X)$ 
+is an isomorphism.
 \end{theorem}
 \begin{proof}
 To prove surjectivity let $c$ be an $n$-cycle in $X$. We want to find an $\sca$-small $n$-cycle that is homologous to $c$. There's only one thing to do. Pick $k$ such that $\$^k c$ is $\sca$-small. This is a cycle because because $\$^k$ is a chain map. I want to compare this new cycle with $c$. That's what the chain homotopy $T_k$ is designed for: 
@@ -104,3 +105,58 @@ Now, $\$^kb$ is $\sca$-small, by choice of $k$. Is $T_kc$ also $\sca$-small? I c
 \end{proof}
 
 This completes the proof of the Eilenberg Steenrod axioms for singular homology. In the next chapter, we will develop a variety of practical tools, using these axioms to compute the singular homology of many spaces. 
+
+\begin{landscape}
+\begin{center}
+\textbf{Lefschetz progeny}
+\end{center}
+\medskip
+\noindent
+According to the Mathematical Genealogy Project, Solomon Lefschetz had
+9312 academic descendents as of March 2018. Here are just a few, with special 
+attention to MIT faculty (marked with an asterisk).
+
+\scriptsize
+\[
+\xymatrix{
+&&& \mathrm{Solomon\,Lefschetz} \ar@{-}[dll] \ar@{-}[d] \ar@{-}[drr] \\
+& \mathrm{Norman\,Steenrod} \ar@{-}[dl] \ar@{-}[d] \ar@{-}[dr] &&
+\mathrm{Ralph\,Fox} \ar@{-}[d] \ar@{-}[dr] &&
+\mathrm{Albert\,Tucker} \ar@{-}[d] \ar@{-}[dr] \\
+\mathrm{Frank\,Peterson*} \ar@{-}[d] & 
+\mathrm{George\,Whitehead*} \ar@{-}[d] &
+\mathrm{Edgar\,Brown} \ar@{-}[d] & 
+\mathrm{Barry\,Mazur} \ar@{-}[d] & 
+\mathrm{John\,Milnor*} & 
+\mathrm{Marvin\,Minsky*} \ar@{-}[dl] \ar@{-}[d] \ar@{-}[dr] &
+\mathrm{John\,Nash*} \\
+\mathrm{David\,Anick*} & 
+\mathrm{John\,Moore} \ar@{-}[dl] \ar@{-}[d] \ar@{-}[dr] &
+\mathrm{Ralph\,Cohen} &
+\mathrm{Noam\,Elkes}  \ar@{-}[d] &
+\mathrm{Silvio\,Micali*} \ar@{-}[d] &
+\mathrm{Manuel\,Blum} \ar@{-}[d] \ar@{-}[dr] & 
+\mathrm{Patrick\,Winston*} \\
+\mathrm{Peter\,May} \ar@{-}[d] & 
+\mathrm{William\,Browder} \ar@{-}[d] \ar@{-}[dr] & 
+\mathrm{Haynes\,Miller*} &
+{\txt{Henry Cohn*\\Abhinav Kumar*}} &
+\mathrm{Bonnie\,Burger*} &
+\mathrm{Gary\,Lee\,Miller} \ar@{-}[dl] & 
+\mathrm{Mike\,Sipser*} \ar@{-}[dl] \ar@{-}[d] \\
+\mathrm{Mark\,Behrens*} &  
+\mathrm{Dennis\,Sullivan*} \ar@{-}[dl] \ar@{-}[dr] & 
+\mathrm{George\,Lusztig*} &&
+\mathrm{Tom\,Leighton*} \ar@{-}[dl] \ar@{-}[dr] &
+\mathrm{Dan\,Spielman*} &
+\mathrm{Andrew\,Sutherland*} \\
+\mathrm{Curt\,McMullen} &&
+\mathrm{Hal\,Abelson*} &
+\mathrm{Peter\,Shor*} &&
+\mathrm{Ankur\,Moitra*} 
+}
+\]
+\normalsize
+\end{landscape}
+
+

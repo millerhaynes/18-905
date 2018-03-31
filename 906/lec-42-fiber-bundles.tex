@@ -1,0 +1,181 @@
+\section{Fiber bundles, fibrations, cofibrations}
+\subsection{Fiber bundles}
+\begin{definition}\label{fiberbundle}
+    A {\em fiber bundle} is a map $p:E\to B$,
+    such that for every $b\in B$, there exists
+an open subset $U\subseteq B$ containing $b$ and
+a map $p^{-1}(U)\to p^{-1}(b)$ such that $p^{-1}(U)\to U\times p^{-1}(b)$ is a homeomorphism.
+\end{definition}    
+When $p:E\to B$ is a fiber bundle, $E$ is called the \emph{total space}, 
+$B$ the \emph{base space}, and $p$ the \emph{projection}.
+The point pre-image $p^{-1}(b)\subseteq$ for $b\in B$ is the 
+the \emph{fiber over $b$}.
+
+Here is an equivalent way of stating Definition \ref{fiberbundle}:
+there is an open cover $\cU$ (a ``trivializing cover'') of $B$
+such that for every $U\in\cU$
+there is a space $F$ and a homeomorphism
+$p^{-1}(U)\simeq U\times F$ that is compatible with the projections 
+down to $U$.
+
+A trivial example of a fiber bundle is a product projection. Such fiber 
+bundles are in fact called {\em trivial fiber bundles}, and the definition
+says that a fiber bundle is a map that is locally (in the base) a trivial
+fiber bundle. 
+
+Fiber bundles are naturally occurring objects.
+For instance, a covering space $E\to B$ is precisely 
+a fiber bundle with discrete fibers. 
+\begin{example}[The Hopf fibration]
+    The ``Hopf fibration'' provides a beautiful example of a fiber bundle.
+    Let $S^3\subset \cC^2$ be the $3$-sphere.
+    There is a map $p:S^3\to \CP^1 \cong S^2$ that is given by sending a vector $v$ to the
+    complex line through $v$ and the origin.
+    This is a non-nullhomotopic map, and is a fiber bundle whose fiber is $S^1$.
+    
+    Here is another way of thinking of the Hopf fibration.
+    Recall that $S^3 = SU(2)$; this contains as a subgroup
+    the collection of matrices $\begin{pmatrix}\lambda & \\ & \lambda^{-1}\end{pmatrix}$.
+	This subgroup is simply $S^1$, which acts on $S^3$ by translation; 
+	the orbit projection is the Hopf fibration is $p$.
+\end{example}
+The Hopf fibration is a map between smooth manifolds.
+A theorem of Ehresmann's says that it is not too hard to check the fiber bundle
+condition for a map between smooth manifolds. 
+\begin{theorem}[Ehresmann]
+    Suppose $E$ and $B$ are smooth manifolds, and let $p:E\to B$ be a smooth (i.e., $C^\infty$) map.
+    Then $p$ is a fiber bundle if $p$ is a {\emph proper} (preimages of compact
+sets are compact)
+\emph{submersion} (that is, $dp:T_e E\to T_{p(e)} B$ is a surjection for all $e\in E$).
+\end{theorem}
+Much of this course will consist of a study of fiber bundles through 
+various essentially algebraic lenses. To bring them into play, we will 
+always require a further condition on our bundles. 
+\begin{definition}\label{numerable}
+An open cover $\cU$ of a space  $X$  is \emph{numerable}
+    if there exists a subordinate partition of unity; i.e.,
+    there is a family of functions $f_U:X\to [0,1]=I$, indexed by the
+elements of $\cU$, such that $f^{-1}((0,1]) = U$
+    and any $x\in X$ belongs to only finitely many $U\in\cU$.
+    The space $X$ is \emph{paracompact} if any open cover admits a numerable refinement.
+    A fiber bundle is \emph{numerable} if it admits a numerable trivializing cover.
+\end{definition}
+So any fiber bundle over a paracompact space is numerable. 
+This isn't too restrictive for us:
+\begin{prop}
+CW-complexes are paracompact.
+\end{prop}
+
+\subsection{Fibrations and path liftings}
+During the 1940s and '50's, much effort was devoted to extracting 
+homotopy-theoretic features of fiber bundles. It came to be understood
+that these consequences relied entirely on a ``homotopy lifting property.''
+One of the revolutions in topology around 1960 was the realization that
+it was adantageous to take that property as a {\em definition}.
+This extension of the notion of a fiber bundle included 
+wonderful new examples, but still retained the homotopy theoretic 
+consequences. Here is the definition. 
+\begin{definition}\label{fibration}
+    A {\em (Hurewicz) fibration} is a map $p:E\to B$ that satisfies the
+    \emph{homotopy lifting property} (commonly abbreviated as HLP):
+Given any $f:W\to E$ and any homotopy $h:I\times W\to B$ with 
+$h(0,w)=pf(w)$, there is a map $\overline{h}$ that lifts $h$ and extends $f$:
+that is, making the following diagram commute. 
+    \begin{equation}\label{hlp}
+	\xymatrix{
+	    W\ar[r]^f\ar[d]_{\mathrm{in}_0} & E\ar[d]^p\\
+	    I\times W\ar[r]_h\ar@{-->}[ur]^{\overline{h}} & B,
+	    }
+    \end{equation}
+\end{definition}
+At first sight, this seems like an alarming definition, since
+the HLP has to be checked for \emph{all} spaces, \emph{all} maps, and \emph{all} homotopies! 
+The HLP is not impossible to check, though.
+
+\begin{exercise}\label{productfibration}
+    Check that the projection $\mathrm{pr}_1: B\times F\to B$ is a fibration.
+\end{exercise}
+
+\begin{exercise}
+Check that the class of fibrations is closed under the following operations.
+     \begin{itemize}
+	\item Base change: If $p:E\to B$ is a fibration and $X\to B$ is any map, then the induced map $E\times_B X\to X$ is again a fibration.
+	\item Products: If $p_i:E_i\to B_i$ 
+is a family of fibrations then the product map $\prod p_i$ is again a 
+fibration.
+\item Exponentiation: If $p:E\to B$ is a fibration and $A$ is any space,
+then $E^A\to B^A$ is again fibration.
+	\item Composition: If $p:E\to B$ and $q:B\to X$ are both fibrations,
+then the composite $qp:E\to X$ is again a fibration.
+    \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+    Let $p:E_0 \to B_0$ be a fibration, and let $f:B \to B_0$ be a homotopy equivalence.
+    Prove that the induced map $B\times_{B_0} E_0 \to E_0$ is a homotopy equivalence.
+    (Warning: this exercise has a lot of technical details!) 
+\end{exercise}
+
+
+There is a simple geometric interpretation of what it means for a map to be a fibration, in terms of ``path liftings''. We'll use Cartesian closure! 
+The adjoint of the solid arrow part of \eqref{hlp} is
+\begin{equation}\label{hlp2}
+    \xymatrix{
+	E\ar[r]^p & B\\
+	W\ar[u]^f\ar[r]_{\widehat{h}} & B^I\ar[u]_{\mathrm{ev}_0}
+    }
+\end{equation}
+By the definition of the pullback, the data of this diagram is equivalent to a map $W\to B^I\times_B E$.
+Explicitly,
+\[
+B^I\times_B E = \{(\omega, e) \in B^I\times E \text{ such that } \omega(0) = p(e)\}\,.
+\]
+This space comes equipped with a map from $E^I$, given by sending a path
+$\omega:I\to E$ to 
+\[
+\widetilde{p}(\omega)=(p\omega,\omega(0))\in B^I\times_BE\,.
+\]
+In these terms, giving a lift $\overline{h}$ in \eqref{hlp} is equivalent to
+giving a lift 
+\begin{equation*}
+    \xymatrix{
+	& E^I\ar[d]^{\widetilde{p}}\\
+	W\ar[r]\ar@{-->}[ur]^{\widehat{h}} & B^I\times_B E
+    }
+\end{equation*}
+This again needs to be checked for every $W$ and every map to $B^I\times_BE$. 
+But at least there is now a universal case to consider: $W=B^I\times_BE$ 
+mapping by the identity map! 
+So $p$ is a fibration if and only if the lift $\lambda$ 
+exists in the following diagram.
+%and if I can lift for any $W$, I can obviously construct the lift in the following diagram:
+%idk why the above line was typed in
+\begin{equation*}
+    \xymatrix{
+	& E^I\ar[d]^{\widetilde{p}}\\
+	B^I\times_B E\ar@{-->}[ur]^\lambda\ar[r]^1 & B^I\times_B E
+    }
+\end{equation*}
+The section $\lambda$ is called a \emph{path lifting function}.
+To understand why, suppose $(\omega, e) \in B^I\times_B E$, so that $\omega$
+is a path in $B$ with $\omega(0)=p(e)$. 
+$\lambda(\omega,e)$ is then a path in $E$ lying over $\omega$ and starting at
+$e$. The path lifting function provides a continuous lift of paths in $B$. 
+The existence (or not) of a {\em section} of $\widetilde{p}$ provides a single
+condition that needs to be checked if you want to see that $p$ is a fibration. 
+
+There is no mention of local triviality in this definition.
+You have shown in Exercise \ref{productfibration} that a product projection 
+is a fibration.
+This implies that any (numerable) fiber bundle is a fibration, 
+by the following theorem of Albrecht Dold.
+\begin{theorem}[Dold]
+    Let $p:E\to B$ be a map. Assume that there is a numerable cover of $B$, 
+say $\cU$, such that for every $U\in\cU$
+    the restriction $p|_{p^{-1}(U)}:p^{-1}U\to U$ is a fibration.
+    (In other words, $p$ is \emph{locally} a fibration over the base).
+    Then $p$ itself is a fibration.
+\end{theorem}
+\begin{corollary}
+Any numerable fiber bundle is a fibration.
+\end{corollary}

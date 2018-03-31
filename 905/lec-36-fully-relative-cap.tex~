@@ -15,8 +15,8 @@ cohomology and relative homology and reversing the dimensions.
 We'll try to show that such a map is an isomorphism by embedding it 
 in a map of long exact sequences and using the five-lemma. 
 
-For a start, let's think about how these maps vary as I change $K$.
-So let $L$ be a closed subset of $K$, so $X-K\subseteq X-L$ and I get 
+For a start, let's think about how these maps vary as we change $K$.
+So let $L$ be a closed subset of $K$, so $X-K\subseteq X-L$ and we get 
 a ``restriction map''
 \[
 i_\ast:H_n(X,X-K)\to H_n(X,X-L)\,.
@@ -28,7 +28,9 @@ Define $x_L$ as the image of $x_K$. The diagram
 H_q(X,X-K)\ar[r] & H_q(X,X-L)
 }
 \end{equation*}
-commutes by the projection formula. This embeds in a bigger diagram:
+commutes by the projection formula. This embeds into a ladder
+shown in the theorem below. We will accompany this ladder with a second
+one, to complete the picture.
 \begin{theorem}
 There is a ``fully relative'' cap product
 \[
@@ -105,11 +107,12 @@ The diagram
 	H_q(X,X-L)\ar[r]^{\partial} & H_{q-1}(X-L,X-K)
 }
 \end{equation*}
-says that
+provides us with the memorable formula
 \begin{equation*}
-(\delta b)\cap x_K=\partial(b\cap x_L)
+(\delta b)\cap x_K=\partial(b\cap x_L)\,.
 \end{equation*}
-The construction of the Mayer-Vietoris sequences then gives:
+
+The construction of the Mayer-Vietoris sequences now gives:
 \begin{theorem}
 \label{thm-mayer-vietoris-ladder}
 Let $A, B$ be closed in a normal space or compact in a Hausdorff space. 

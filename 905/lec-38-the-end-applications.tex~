@@ -163,7 +163,7 @@ $g\sigma$ joining $gb$ to $g(-b)=-g(b)$. The class of this 1-simplex thus
 generates $H_1(\RP^{n-1})$. 
 
 Therefore $\overline g$ is nontrivial in $H_1(-;\FF_2)$,
-and hence also in $H^1(-\FF_2)$: Writing $a_n$ for the generator of
+and hence also in $H^1(-;\FF_2)$: Writing $a_n$ for the generator of
 $H^1(\RP^n;\FF_2)$, we must have $a_n=g^*a_{n-1}$, and consequently
 $a_n^n=(g^*a_{n-1})^n=g^*(a_{n-1}^n)$.
 But $H^n(\RP^{n-1};\FF_2)=0$, so $a_{n-1}^n=0$; while $a_n^n\neq0$.

@@ -1,0 +1,162 @@
+\section{Homotopy fibers}
+
+Fix a map $p:E\to Y$. The pullback of $E$ along a map $f:X\to Y$ can vary
+wildly as $f$ is deformed; it is far from being a homotopy invariant. 
+Just think of the case $X=*$, for example, when the pullback along 
+$f:*\to Y$ is the point preimage $p^{-1}(f(*))$. One of the great
+features of fibrations is this:
+
+\begin{prop}
+Let $p:E\to Y$ be a fibration and $f_0,f_1:X\to Y$ two maps.  
+Write $E_0$ and $E_1$ for pullbacks of $E$ along $f_0$ and $f_1$.
+If $f_0$ and $f_1$ are homotopic then $E_0$ and $E_1$ are homotopy
+equivalent 
+\end{prop}
+\begin{proof}
+Let $h:I\times X\to Y$ be a homotopy from $f_0$ to $f_1$. Its adjoint
+is a path $\widehat h:I\to Y^X$ from $f_0$ to $f_1$. The fibration $p:E\to Y$
+induces a fibration $E^X\to Y^X$, and the path determines a homotopy 
+equivalence from the fiber over $f_0$ to the fiber over $f_1$. 
+These two fibers are $E_0$ and $E_1$. 
+\end{proof}
+
+\subsection{``Fibrant replacements''}
+This result makes fibrations extremely valuable in homotopy theory. 
+Not every map is a fibration, but every map can be ``replaced'' by one, up
+to homotopy.
+\begin{theorem}\label{fibrep}
+    For any map $f:X\to Y$, there is a space $T(f)$, along with a fibration $p:T(f) \to Y$ and
+    a homotopy equivalence $X \xar{\simeq} T(f)$, such that the following diagram
+    commutes:
+    \begin{equation*}
+	\xymatrix{
+	    X\ar[r]^{\simeq}\ar[dr]_f & T(f)\ar[d]^p\\
+	    & Y.
+	    }
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+We already have one example of this in hand: The diagonal map 
+$\Delta:X\to X\times X$ factors as 
+    \begin{equation*}
+	\xymatrix{
+	    X\ar[r]^{c}\ar[dr]_\Delta & X^I\ar[d]^{\mathrm{ev}_{0,1}}\\
+	    & X\times X.
+	    }
+    \end{equation*}
+where $p$ evaluates at the end points of the unit interval and $c$ sends
+$x$ to the constant path at $x$. We've seen that $\mathrm{ev}_{0,1}$ 
+is a fibration.
+The map $c$ has as homotopy inverse any evaluation map, say $\mathrm{ev}_0$.
+The composite $\mathrm{ev}_0\circ c$ is the identity, while 
+$c\circ\mathrm{ev}_0$ is homotopic to the identity via the homotopy $h$ with
+\[
+h(s,\omega)(t)=\omega(st)\,.
+\]
+This ``spaghette move'' shortens the path from $\omega$ at $s=1$ to the 
+constant path $c_{\omega(0)}$ at $s=0$. 
+
+Now we can construct the general case by considering the graph of $f$ instead 
+of the diagonal (which is the graph of the identity map). So form the pullback
+	\begin{equation*}
+	    \xymatrix{
+T(f)\ar[r]\ar[d] \ar@/_3pc/[dd]_p & Y^I\ar[d]^{\mathrm{ev}_{0,1}}\\
+		    X\times Y\ar[r]_{f\times 1} \ar[d]^{\pr_2} & Y\times Y\\
+Y & \,.
+		}
+	\end{equation*}
+So
+\[
+T(f)=\{(x,\omega)\in X\times Y^I:f(x) = \omega(0)\}\,.
+\]
+The map $T(f)\to X\times Y$ 
+is a base-change of the fibration $\mathrm{ev}_{0,1}$ and so is
+a fibration; the projection map $\pr_2:X\times Y\to Y$ is a fibration; so
+their composite $p$ is a fibration. To get $X$ involved, look at the diagram
+\[
+\xymatrix{
+X \ar[r]^f \ar[d]^\Delta \ar@{.>}[dr] & Y \ar[dr]^c \\
+X\times X \ar[dr]^{1\times f} & T(f) \ar[r] \ar[d] & 
+Y^I \ar[d]^{\mathrm{ev}_{01}} \\
+& X\times Y \ar[r]^{f\times1} \ar[d]^{\pr_1} & Y\times Y\\
+& X && \,.
+}\]
+The outside diagram commutes, so we get a map from $X$ to the pullback $T(f)$. 
+In symbols,
+\[
+x\mapsto(x,c_{f(x)})\,.
+\]
+We claim that the composite  $T(f)\to X\times Y\to X$ is a homotopy inverse. 
+The composite $X\to T(f)\to X\times Y\to X$ is the identity, so we just need
+a homotopy joining the other composite to the identity. Such a homotopy
+$I\times T(f)\to T(f)$ is provided by the same spaghetti move: 
+\[
+(s,x,\omega)\mapsto(x,t\mapsto\omega(st))\,.
+\]
+\end{proof}
+
+\begin{example}[Path-loop fibration]
+        If $X = \ast$, the space $T(f)$ consists of paths $\omega$ in $Y$ such that $\omega(0) = \ast$.
+    In other words, $T(f) = Y^I_\ast$; this is called the \emph{path space} of $Y$, and is denoted by $P(Y,\ast)$, or simply by $PY$. It is
+contractible, via the spaghetti move. 
+    The fiber over $\ast$ of the fibration $p:T(f) = PY \to Y$ consists of paths that begin and end at $\ast$, i.e., 
+    loops on $Y$ based at $\ast$.
+    This is denoted $\Omega Y$, and is called the \emph{loop space} of $Y$.
+    The fibration $p:PY \to Y$ is called the \emph{path-loop fibration}.
+\end{example}
+
+\begin{exercise}[``Cofibrant replacements'']\label{cofibrep}
+    In this exercise, you will prove the analogue of Theorem \ref{fibrep} for cofibrations.
+    Let $f:X\to Y$ be any map.
+    Show that $f$ factors (functorially) as a composite $X \to M \to Y$, where $X\to M$ is a cofibration and $M\to Y$ is a homotopy
+    equivalence.
+\end{exercise}
+
+\subsection{Homotopy fibers}
+Let $f:E\to Y$ a map. As you move around $Y$, the point preimages
+generally vary, even up to homotopy type. They may become empty,
+for example. We saw above that assuming that $f$ cures this problem,
+and we have just seen that any map can be replaced, up to homotopy,
+by a fibration. So it is sensible to make the following definition:
+\begin{definition}
+Let $(Y,*)$ be a pointed space. 
+The \emph{homotopy fiber} of a map $f:E\to Y$ is the fiber over $*$ of
+the fibration replacing $f$; that is, it is the pullback in
+    \begin{equation*}
+	\xymatrix{
+	    F(f,\ast)\ar[r]\ar[d] & T(f)\ar[r]^\simeq \ar[d]^p & X\ar[dl]^f\\
+	    \ast \ar[r] & Y & \,.
+	    }
+    \end{equation*}
+\end{definition}
+Homotopy fibers over different points in the same path component are homotopy
+equivalent. 
+
+As a set, 
+\begin{equation}
+\label{sethomotopyfiber}
+F(f,\ast) = \{(x,\omega)\in E\times Y^I: \omega(0)=f(x), \omega(1) = \ast\}.
+\end{equation}
+So an element in the homotopy fiber of $f$ over $*$ is not just a
+point in $E$ lying over $*\in Y$; it is a point $x\in E$ together with a path 
+in $Y$ joining $f(x)$ to $\ast$ in $Y$. 
+
+The inclusion of the fiber over $*\in Y$, $f^{-1}(*)\hookrightarrow E$,
+is univeral among maps $g:W\to E$ such that $fg=*$. What is the corresponding
+universal property of the homotopy fiber? Adjointing a map $W\to T(f)$ 
+gives us a map $g:W\to E$ together with a homotopy from $fg$ to the constant 
+map with value $*$: a {\em null homotopy} of the composite. 
+
+\begin{remark} In forming the homotopy fiber of $f$, we replaced $f$ by
+a homotopy equivalent fibration and formed the pullback over $*$. 
+We could alternatively have replaced the map $*\to Y$ by a fibration
+(the path-loop fibration!) and formed the pullback along $f$. The result of
+this operation is
+\[
+\{(x,\omega)\in X\times Y^I:\omega(0) = \ast, \omega(1) = f(x)\}\,.
+\]
+
+Our description of $F(f,\ast)$ in \eqref{sethomotopyfiber} is almost exactly the same --- except that
+the directions of the paths are reversed. These two ways of thinking of the
+homotopy fiber are completely equivalent.
+\end{remark}

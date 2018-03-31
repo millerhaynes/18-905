@@ -26,7 +26,7 @@ of them with the barycenter of the 2-simplex. This gives us a decomposition of
 the 2-simplex into six sub-simplices. 
 
 \begin{center}
-\includegraphics[width=3in]{905/Figures/12-subdivision.pdf}
+\includegraphics[width=1.75in]{905/Figures/12-subdivision.pdf}
 \end{center}
 
 We want to formalize this process, and extend it to singular simplices (using
@@ -42,14 +42,20 @@ Here's the definition. When $n=0$, define $\$$ to be the identity; i.e., $\$\iot
 \[
 \$\iota_n:=b_n\ast\$ d\iota_n
 \]
-where $b_n$ is the barycenter of $\Delta^n$. This makes a \emph{lot} of sense if you draw out a picture, and it's a very clever definition that captures the geometry we described. Here's what we'll prove.
+where $b_n$ is the barycenter of $\Delta^n$. This makes a lot of sense if you draw out a picture, and it's a very clever definition that captures the geometry we described. 
+
+The dollar sign symbol is a little odd, but consider: it derives from the
+symbol for the Spanish piece of eight, which was meant to be subdivided 
+(so for example two bits is a quarter). 
+
+Here's what we'll prove.
 \begin{prop}
 $\$$ is a natural chain map $S_\ast(X)\to S_\ast(X)$ that is naturally chain-homotopic to the identity. 
 \end{prop}
 
 \noindent
 \begin{proof}
-Let's try to prove that it's a chain map. We'll use induction on $n$. It's enough to show that $d\$\iota_n=\$ d\iota_n$, because then, for any $n$-simplex $\sigma$,
+Let's begin by proving that it's a chain map. We'll use induction on $n$. It's enough to show that $d\$\iota_n=\$ d\iota_n$, because then, for any $n$-simplex $\sigma$,
 $$
 d\$\sigma=d\$\sigma_\ast\iota_n=\sigma_\ast d\$\iota_n=\sigma_\ast \$d\iota_n=\$ d\sigma_\ast\iota_n=\$ d\sigma\,.
 $$
@@ -82,8 +88,10 @@ T\iota_n = b_n\ast(\$\iota_n - \iota_n - Td\iota_n)\in S_{n+1}(\Delta^n) \,.
 \]
 Once again, we're going to check that $T$ is a chain homotopy by induction, and, again, we need to check only on the universal case.
 
-When $n=0$, the formula gives $T\iota_0=0$, so it's true that $dT\iota_0-Td\iota_0=\$\iota_0-\iota_0$.
-Now let's assume that $dTc-Tdc=\$c-c$ for every $(n-1)$-chain. Let's start by computing $dT\iota_n$:
+When $n=0$, the formula gives $T\iota_0=0$ (which starts the inductive
+definition!) so it's true that $dT\iota_0-Td\iota_0=\$\iota_0-\iota_0$.
+Now let's assume that $dTc-Tdc=\$c-c$ for every $(n-1)$-chain $c$. 
+Let's start by computing $dT\iota_n$:
 \begin{align*}
 dT\iota_n & = d_n(b_n\ast(\$\iota_n - \iota_n - Td\iota_n)) \\
 & = (1-b_n\ast d)(\$\iota_n - \iota_n - Td\iota_n) \\

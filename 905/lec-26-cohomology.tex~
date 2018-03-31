@@ -41,7 +41,7 @@ After all, the tensor product is defined by a universal property for maps
 Still, it's often useful, and we pause to fill in some of its properties.
 
 \begin{definition}
-Let $R$ be a ring. A (graded) coalgebra over $R$ is a (graded) $R$-module $M$ equipped with a comultiplication $\Delta:M\to M\otimes_R M$ and a counit map $\varepsilon:M\to R$ such that the following diagrams commute.
+Let $R$ be a ring. A {\em (graded) coalgebra} over $R$ is a (graded) $R$-module $M$ equipped with a ``comultiplication'' $\Delta:M\to M\otimes_R M$ and a ``counit'' map $\varepsilon:M\to R$ such that the following diagrams commute.
 \begin{equation*}
 \xymatrix{ & M\ar[d]^\Delta\ar[dr]^=\ar[dl]_= & \\
 R\otimes_R M & M\otimes_R M\ar[l]_{\varepsilon\otimes 1}\ar[r]^{1\otimes\varepsilon} & M\otimes_R R}
@@ -102,7 +102,7 @@ S^n(X;N)=\Map(\Sin_n(X),N)=\Hom_R(S_n(X;R),N)\,.
 \end{notation}
 This is going to give us something contravariant, that's for sure. But we 
 haven't quite finished dualizing. The differential 
-$d:S_{n+1}(X;N)\to S_n(X;R)$ 
+$d:S_{n+1}(X;R)\to S_n(X;R)$ 
 induces a ``coboundary map'' 
 \[
 d:S^n(X;N)\to S^{n+1}(X;N)
@@ -125,6 +125,8 @@ H^n(X;N)=
 \frac{\ker(S^n(X;N)\to S^{n+1}(X;N))}{\img(S^{n-1}(X;N)\to S^n(X;N))}\,.
 \]
 \end{definition}
+
+If $N$ is an $R$-module, then $H^n(X;N)$ is again an $R$-module.
 
 Let's first compute $H^0(X;N)$. A $0$-cochain is a function $\Sin_0(X)\to N$;
 that is, a function (not required to be continuous!) $f:X\to N$. To compute 
@@ -159,7 +161,7 @@ complex, albeit a negatively graded one. Form the graded tensor product, with
 \bigoplus_{p+q=n}S^\vee_p(X;N)\otimes S_q(X)\,.
 \]
 
-Now evaluation is a degree zero chain map
+Now evaluation is a map of graded abelian groups
 \[
 \langle-,-\rangle:S^\vee_\ast(X;N)\otimes S_\ast(X)\to N\,,
 \]

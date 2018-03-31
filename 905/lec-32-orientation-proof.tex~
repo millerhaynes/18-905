@@ -74,7 +74,7 @@ Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence
 of compact subsets of $M$, and assume that the theorem holds for each $A_n$.
 Then it holds for the intersection $A=\bigcap A_i$. 
 \end{prop}
-The proof of this lemma entails two lemmas, which we'll prove first.
+The proof of this proposition entails two lemmas, which we'll dispose of first.
 \begin{lemma}
 \label{lem-lim-cpt}
 Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence of compact
@@ -84,15 +84,15 @@ subsets of a space $X$, with intersection $A$. Then
 \]
 \end{lemma}
 \begin{proof}
-Let $\sigma:\Delta^q\to M$ be any $q$-simplex in $M-A$. The subsets $M-A_i$
+Let $\sigma:\Delta^q\to X$ be any $q$-simplex in $x-A$. The subsets $X-A_i$
 form an open cover of $\img(\sigma)$, so by compactness it lies in some
-single $M-A_i$. This shows that 
+single $X-A_i$. This shows that 
 \[
-\varinjlim_iS_q(M-A_i)\xrightarrow{\cong}S_q(M-A)\,.
+\varinjlim_iS_q(X-A_i)\xrightarrow{\cong}S_q(X-A)\,.
 \]
 Thus
 \[
-\varinjlim_iS_q(M|A_i)\xrightarrow{\cong}S_q(M|A_i)
+\varinjlim_iS_q(X|A_i)\xrightarrow{\cong}S_q(X|A_i)
 \]
 by exactness of direct limit, and the claim then follows for the same reason. 
 \end{proof}
@@ -101,11 +101,9 @@ Let $A_1\supseteq A_2\supset\cdots$ be a decreasing sequence of
 compact subsets in a Hausdorff space $X$ with intersection $A$. 
 For any open neighborhood $U$ of $A$ there exists $i$ such that 
 $A_i\subseteq U$.
+\end{lemma}
 \begin{proof}
 $A$ is compact, being a closed subset of the compact Hausdorff space $A_1$.
-$A_1$ is covered by the increasing sequence of open sets $(X-A_i)\cup U$, 
-and hence by one of them; that is, $A_1\subseteq(X-A_i)\cup U$ for some $i$. 
-
 Since $A$ is the intersection of the $A_i$, and $A\subseteq U$, 
 the intersection of the decreasing sequence of compact sets $A_i-U$ is empty. 
 Thus by the finite intersection property one of them must be empty;
@@ -113,11 +111,11 @@ but that says that $A_i\subseteq U$.
 \end{proof}
 \begin{proof}[Proof of Proposition \ref{prop-lim}]
 By Lemma \ref{lem-lim-cpt},
-$H_q(M|A)=0$ for $q>n$. In dimension $n$ we contemplate 
+$H_q(M|A)=0$ for $q>n$. In dimension $n$, we contemplate 
 the commutative diagram 
 \[
 \xymatrix{
-\displaystule{\varinjlim_i}H_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & 
+\displaystyle{\varinjlim_i}H_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & 
 H_n(M|A) \ar[d] \\
 \displaystyle{\varinjlim_i}\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
 }\]
@@ -177,13 +175,14 @@ $H_n(\RR^n,\RR^n-D^n)\to H_n(\RR^n,\RR^n-0)$ since
 $\RR^n-D$ is a deformation retract of $\RR^n-0$. The local system $o_{\RR^n}$ 
 is trivial, since $\RR^n$ is simply connected, so restricting to the origin
 gives an isomorphism $\Gamma(D^n,o_{\RR^n})\to H_n(\RR^n,\RR^n-0)$. 
-This implies that $j:H_n(\RR^n,\RR^n-D^n)\to\Gamma(D^n,o_{\RR^n})$
+This implies that $j_{D^n}:H_n(\RR^n,\RR^n-D^n)\to\Gamma(D^n,o_{\RR^n})$
 is an isomorphism. The restriction 
 $\Gamma(D^n,o_{\RR^n})\to\Gamma(A,o_{\RR^n})$ is also an isomorphism, since
 $A\to D^n$ is a deformation retract. So by the commutative diagram
 \[
 \xymatrix{
-H_n(\RR^n,\RR^n-D^n) \ar[r]^\cong \ar[d]^j & H_n(\RR^n,\RR^n-A) \ar[d]^j \\
+H_n(\RR^n,\RR^n-D^n) \ar[r]^\cong \ar[d]^{j_{D^n}} & 
+H_n(\RR^n,\RR^n-A) \ar[d]^{j_A} \\
 \Gamma(D^n,o_{\RR^n}) \ar[r] & \Gamma(A,o_{\RR^n}) 
 }\]
 we find that $j:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.

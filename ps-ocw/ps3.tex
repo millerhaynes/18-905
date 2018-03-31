@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath}
+\usepackage{xypic}
+
+\textwidth 6in
+\textheight 9in
+\topmargin -.5in
+\oddsidemargin .25in
+\evensidemargin .25in
+\parskip 3pt
+\parindent 0pt
+\pagestyle{empty}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\def\da#1{\downarrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+\def\ua#1{\uparrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+
+\def\coker{\mathrm{coker}\,}
+\def\im{\mathrm{im}\,}
+\def\ker{\mathrm{ker}\,}
+\def\NN{\mathbb N}
+\def\ZZ{\mathbb Z}
+\def\RR{\mathbf R}
+\def\Ext{\mathrm{Ext}}
+\def\Tor{\mathrm{Tor}}
+\def\Hom{\mathrm{Hom}}
+\def\Der{\mathrm{Der}}
+\def\Map{\mathrm{Map}}
+\def\Gp{\mathbf{Gp}}
+\def\Mon{\mathbf{Mon}}
+\def\mod{\hbox{mod}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\tensor{\otimes}
+\def\iso{\cong}
+\def\Ho{\mathrm{Ho}\,}
+\def\rin{\mathrm{in}}
+\def\la#1{\mathop{\longleftarrow}\limits^{#1}}
+\def\ra#1{\mathop{\longrightarrow}\limits^{#1}}
+\def\bS{\mathbf{S}}
+
+\def\inj{\mathrm{in}}
+\def\pr{\mathrm{pr}}
+\def\div{\mathrm{div}}
+\def\grad{\mathrm{grad}}
+\def\curl{\mathrm{curl}}
+\def\Sin{\mathrm{Sin}}
+
+\def\SF{\mathcal{C}^\infty}
+\def\VF{\mathcal{VF}^\infty}
+
+
+\def\TT{\mathbb{T}}
+\def\Tensor{\bigotimes}
+\def\bDelta{\mathbf{\Delta}}
+\def\bSet{\mathbf{Set}}
+\def\bAb{\mathbf{Ab}}
+\def\bTop{\mathbf{Top}}
+\def\bC{\mathbf{C}}
+\def\ob{\mathrm{ob}}
+\def\bVS{\mathbf{VS}}
+
+
+
+\begin{center}
+{\bf 18.905: Problem Set III}
+\end{center}
+
+Due October 19, 2016, in class. 
+
+Homework is an important part of this class. I hope you gain from the
+struggle. Collaboration can be effective, but be sure that you
+grapple with each problem on your own as well. If you do work with others,
+you must indicate with whom on your solution sheet. Scores will be posted
+on the Stellar website.
+
+\bigskip
+{\bf 11. (a)} In class I discussed a monoid homomorphism
+\[
+\deg:[S^n,S^n]\to\ZZ_\times
+\]
+(where $\ZZ_\times$ is the integers with monoid structure given by 
+multiplication, and $n\geq1$),
+given by sending $f$ to its effect on $H_n(S^n)$. 
+I asserted that it was surjective, but this was an induction based on
+the case $n=1$. Regard $S^1$ as the unit circle in the complex plane. 
+In class I claimed that the map $z\mapsto z^d$ has degree $d$.
+Please verify this claim. 
+
+{\bf (b)} Regard $S^{n-1}$ as the unit sphere in $\RR^n$. 
+Let $L$ be a line through the origin in $\RR^n$, and $L^\perp$ its 
+orthogonal complement. Let $\rho_L$ be the linear map given by $-1$ on $L$
+and $+1$ on $L^\perp$. What is $\deg\rho_L$?
+
+{\bf(c)} What is the degree of the ``antipodal map,'' 
+$\alpha:S^{n-1}\to S^{n-1}$ sending $x$ to $-x$? 
+
+{\bf(d)} The tangent space to a point $x$ on the sphere $S^{n-1}$  can be
+regarded as the subspace of $\RR^n$ of vectors perpendicular to $x$. 
+A ``vector field'' on $S^{n-1}$ is thus a continuous function 
+$v:S^{n-1}\to\RR^n$ such that $v(x)\perp x$ for all $x\in S^{n-1n}$.
+
+Show that if $n$ is odd then every vector field vanishes at some point on
+the sphere. (When $n-1=2$, this is the ``hairy ball theorem.'')
+
+On the other hand, construct a nowhere vanishing vector field on $S^{n-1}$
+for any even $n$.
+
+\medskip
+{\bf 12.} Use the Mayer-Vietoris sequence to compute the homology groups of
+the projective plane $P$, the Klein bottle $K$, and the torus $T$. 
+(The projective
+plane is obtained by sewing a disk onto a M\"obius band along their
+boundaries. The Klein bottle is obtained either by sewing two M\"obius bands 
+together, or by sewing the two boundary components of a cylinder together 
+in a funny way. 
+A torus is obtained by sewing the boundary components of a cylinder together
+in a less funny way. In each case, it's a good idea to give yourself a hem: 
+glue open ``collars'' together.)
+
+{\bf(b)} Hopefully you computed that $H_2(T)$ is an infinite cyclic group.
+Say something sensible about whether the ``fundamental class'' you 
+constructed in Problem {\bf 2} is indeed a generator of that abelian group.
+
+\medskip
+{\bf 13.} $\varnothing$.
+
+\medskip
+{\bf 14.} 
+The constructions sketched in Problem {\bf 12} are examples of the following
+general procedure. Take two closed surfaces,
+$\Sigma_1$ and $\Sigma_2$, cut a disk out from each one, and glue them 
+together along the hem. This is the {\em connected sum} $\Sigma_1\#\Sigma_2$. 
+Write $T_1$ for the torus, and $T_g=T_1\# T_{g-1}$. Write $P_1$ for the 
+projective plane, and $P_g=P_1\#P_{g-1}$.
+A theorem of Rado asserts that this is a complete list of compact connected 
+2-manifolds. 
+
+{\bf (a)} What is the Klein bottle, in this notation?
+
+{\bf (b)} Complete the work from Problem {\bf 12}: compute the homology groups
+of these closed surfaces. 
+
+\end{document}
+ 
+
+
+
+Recall the Eilenberg-Zilber chain: 
+\[
+\zeta_{p,q}=\sum_\omega(-1)^{|A|}\omega\in S_{p+q}(\Delta^p\times\Delta^q)
+\]
+where $\omega:[p+q]\to[p]\times[q]$ runs over the injections such that 
+$\pr_1\omega:[p+q]\t[p]$ and $\pr_2\omega:[p+q]\to[q]$ are both order
+preserving. Actually $\omega$ in the formula denotes the affine map 
+$\Delta^{p+q}\to\Delta^p\times\Delta^q$ sending
+verticies in the manner dictated by $\omega$; and $\pr_1,\pr_2$ denote
+the two projections, $\pr_1:\Delta^p\times\Delta^q\to\Delta^p$ and
+$\pr_2:\Delta^p\times\Delta^q\to\Delta^q$. 
+
+Draw a picture of this chain when $(p,q)=(1,1)$ and $(p,q)=(1,2)$. 
+Show that this chain has property
+\[
+\partial\zeta_{p,1}=\
+
+
+
+
+
+
+ Show that a bilinear map $A\times\ZZ\to C$ is no more and 
+no less than a homomorphism $A\to C$. 
+
+Let $cI$ denote the following chain complex: 
+$cI_0$ is the free abelian group generated by elements $e_0$ and $e_1$;
+$cI_1$ is the free abelian group generated by an element $e$; all
+other degrees are the zero group; and $\partial e=e_0-e_1$. 
+Write $\ZZ$ for the chain complex with $\ZZ$ in degree 0 and zero everywhere
+else. Let $i_0:\ZZ\to\cI$ send $1$ to $e_0$ and $i_1:\ZZ\to\cI$ send $1$ to 
+$e_1$. 
+
+(b) Let $A$ and $C$ be chain complexes, and $f_0,f_1:A\to C$ chain maps.
+Show that a chain-homotopy $f_0\tilde f_1$ is no more and no less than
+
+

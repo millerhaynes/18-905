@@ -5,13 +5,13 @@ a general space $X$ to this example. There's always a unique map $X\to\ast$: $\a
 \[ 
 H_n(X)\to H_n(\ast)=
 \begin{cases}\mathbf{Z} & n=0\\
-0 & \text{else}\end{cases}\,.
+0 & \text{otherwise}\,.\end{cases}
 \]
 Any formal linear combination $c=\sum a_i x_i$ of points of $X$ is a 0-cycle. 
 The map to $\ast$ sends $c$ to $\sum a_i\in\mathbf{Z}$. This defines
-an ``augmentation'' $\epsilon:H_*(X)\to H_*(\ast)$. 
+the {\em augmentation} $\epsilon:H_*(X)\to H_*(\ast)$. 
 If $X$ is nonempty, the map $X\to\ast$ is split by any choice of point in $X$,
-so the augmentation is also split. The kernel of $\epsilon$ is the 
+so the augmentation is also split epi. The kernel of $\epsilon$ is the 
 {\em reduced homology} $\widetilde H_*(X)$ of $X$, and we get a canonical 
 splitting 
 \[
@@ -32,6 +32,7 @@ and you get the same answer as above. But
 \end{cases}
 \]
 This convention is not universally accepted, but I find it useful.
+$\widetilde H_*(X)$ is the {\em reduced homology} of $X$.
 
 What other spaces have trivial homology? A slightly non-obvious way to reframe
 the question is this:
@@ -55,7 +56,7 @@ A key result about homology is this:
 \begin{theorem}[Homotopy invariance of homology]\label{thm-homotopy-invariance}
 If $f_0\simeq f_1$, then $ H_\ast(f_0)= H_\ast(f_1)$: homology cannot distinguish between homotopic maps.
 \end{theorem}
-Suppose I have two maps $f_0,f_1:X\to Y$ with a homotopy $h:f_0\simeq f_1$, and a map $g:Y\to Z$. Composing $h$ with $g$ gives a homotopy between $g\circ f_0$ and $g\circ f_1$. Precomposing also works: If $g:W\to X$ is a map and $f_0,f_1:X\to Y$ are homotopic, then $f_0g\simeq f_1g$. This lets us compose homotopy classes: we can complete the diagram:
+Suppose I have two maps $f_0,f_1:X\to Y$ with a homotopy $h:f_0\simeq f_1$, and a map $g:Y\to Z$. Composing $h$ with $g$ gives a homotopy between $g\circ f_0$ and $g\circ f_1$. Precomposing also works: If $g:W\to X$ is a map and $f_0,f_1:X\to Y$ are homotopic, then $f_0\circ g\simeq f_1\circ g$. This lets us compose homotopy classes: we can complete the diagram:
 \begin{equation*}
 \xymatrix{\mathbf{Top}(Y,Z)\times\mathbf{Top}(X,Y)\ar[d]\ar[r] & \mathbf{Top}(X,Z)\ar[d]\\
 [Y,Z]\times[X,Y]\ar@{-->}[r] & [X,Z]}
@@ -79,7 +80,7 @@ Such a map $g$ is a {\em homotopy inverse} for $f$; it is well-defined
 only up to homotopy.
 
 Most topological properties are not preserved by homotopy equivalences.
-For example, compactness is not a homotopy-invariant property: Consider the inclusion $S^{n-1}\subseteq \mathbf{R}^n-\{0\}$. A homotopy inverse $p:\mathbf{R}^n-\{0\}\to S^{n-1}$ can be obtained by dividing a (always nonzero!) vector by its length. Clearly $p\circ i=1_{S^{n-1}}$. We have to find a homotopy $i\circ p\simeq1_{\mathbf{R}^n-\{0\}}$. This is a map $(\mathbf{R}^n-\{0\})\times I\to \mathbf{R}^n-\{0\}$, and we can use $(v,t)\mapsto tv+(1-t)\frac{v}{||v||}$.
+For example, compactness is not a homotopy-invariant property: Consider the inclusion $i:S^{n-1}\subseteq \mathbf{R}^n-\{0\}$. A homotopy inverse $p:\mathbf{R}^n-\{0\}\to S^{n-1}$ can be obtained by dividing a (always nonzero!) vector by its length. Clearly $p\circ i=1_{S^{n-1}}$. We have to find a homotopy $i\circ p\simeq1_{\mathbf{R}^n-\{0\}}$. This is a map $(\mathbf{R}^n-\{0\})\times I\to \mathbf{R}^n-\{0\}$, and we can use $(v,t)\mapsto tv+(1-t)\frac{v}{||v||}$.
 
 On the other hand:
 \begin{corollary}
@@ -118,14 +119,14 @@ This relation takes some getting used to. It is an equivalence relation.
 Here's a picture (not a commutive diagram).
 \begin{equation*}\xymatrix{
 \cdots \ar[r] & 
-C_{n+1}\ar[d]\ar[r]^d & C_n\ar@{-->}[dl]^h\ar[d]\ar[r]^d &
-C_{n-1}\ar@{-->}[dl]^h\ar[d]\ar[r] & \cdots \\
+C_{n+1}\ar[d]\ar[r]^d & C_n\ar@{-->}[dl]_h\ar[d]\ar[r]^d &
+C_{n-1}\ar@{-->}[dl]_h\ar[d]\ar[r] & \cdots \\
 \cdots \ar[r] & D_{n+1}\ar[r]^d & D_n \ar[r]^d & D_{n-1}\ar[r] & \cdots
 }\end{equation*}
 
 \begin{lemma}
 If $f_0,f_1:C_\ast\to D_\ast$ are chain homotopic, then 
-$f_{0,\ast}=f_{1,\ast}: H_\ast(C)\to H_\ast(D)$.
+$f_{0\ast}=f_{1\ast}: H_\ast(C)\to H_\ast(D)$.
 	\end{lemma}
 		\begin{proof}
 We want to show that for every $c\in Z_n(C_\ast)$, the difference 
@@ -151,7 +152,7 @@ lies in $X$.
 \end{definition}
 
 \begin{center}
-\includegraphics[width=3in]{905/Figures/05-star-shaped.pdf}
+\includegraphics[width=2in]{905/Figures/05-star-shaped.pdf}
 \end{center}
 
 Any nonempty convex region is star shaped.
@@ -169,9 +170,9 @@ $S_*(X)\to\mathbf{Z}$ is a chain homotopy equivalence.
 
 		\begin{proof}
 		We have maps $S_\ast(X)\xrightarrow{\epsilon}\mathbf{Z}\xrightarrow{\eta}S_\ast(X)$ where $\eta(1)=c_b^0$. Clearly $\epsilon\eta=1$, and the claim is that $\eta\epsilon\simeq1:S_\ast(X)\to S_\ast(X)$. The chain map 
-$\eta\epsilon$ concentrates everything at the origin: 
+$\eta\epsilon$ concentrates everything at the point $b$: 
 $\eta\epsilon\sigma=c_b^n$ for all $\sigma\in\Sin_n(X)$. 
-Our chain homotopy $h:S_q(X)\to S_{q+1}(X)$ will actually send simplices to simplices. For $\sigma\in\Sin_q(X)$, define the chain homotopy evaluated on $\sigma$ by means of the following ``cone construction'':
+Our chain homotopy $h:S_q(X)\to S_{q+1}(X)$ will actually send simplices to simplices. For $\sigma\in\Sin_q(X)$, define the chain homotopy evaluated on $\sigma$ by means of the following ``cone construction'': $h(\sigma)=b*\sigma$, where
 \[
 (b*\sigma)(t_0,\ldots,t_{q+1})=t_0b+(1-t_0)\sigma\left(\frac{(t_1,\ldots,t_{q+1})}{1-t_0}\right)\,.
 \]

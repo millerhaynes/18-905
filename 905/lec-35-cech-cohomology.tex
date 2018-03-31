@@ -94,16 +94,17 @@ ususal order, and $(\NN_{>0},|)$ the same set but with the divisiblity order.
 There is an order-preserving map $\varphi:(\NN_{>0},<)\to(\NN_{>0},|)$ given
 by $n\mapsto n!$. This map is far from surjective, but any integer $n$ 
 divides some factorial ($n$ divides $n!$, for example), so $\varphi$ is cofinal. 
-We claimed that both these systems produce $\QQ$ as dirct limit.
+We claimed that both these systems produce $\QQ$ as direct limit.
 \end{example}
 \begin{lemma}
 If $\varphi:\cJ\to\cI$ is cofinal then $\varinjlim_{\cJ}A\varphi\to\varinjlim_{\cI}A$ is an isomorphism.
 \end{lemma}
 \begin{proof}
-Check that $\{A_{f(j)}\to\varinjlim_{\cI}A\}$ satisfies the necessary and sufficient conditions to be $\lim_{\cI}A$.
+Check that $\{A_{\varphi(j)}\to\varinjlim_{\cI}A\}$ satisfies the necessary and sufficient conditions to be $\varinjlim_{\cJ}A\varphi$.
 \begin{enumerate}
-\item For each $a\in\varinjlim_{I}A$ there exists $j\in\cJ$ and $a_j\in A_{\varphi(j)}$ such that $a_j\mapsto a$: We know that there exists some $i\in\cI$ and $a_i\in A$ such that $a_i\mapsto a$. Pick $j$ such that $i\leq\varphi(j)$. Then $a_i\mapsto a_{\varphi(j)}$, and by compatibility we get $a_{\varphi(j)}\mapsto a$.
-\item Suppose $a\in A_{\varphi(j)}$ maps to $0\in\lim_{\cI}A$. Then there is
+\item For each $a\in\varinjlim_{\cI}A$ there exists $j\in\cJ$ and $a_j\in A_{\varphi(j)}$ such that $a_j\mapsto a$: We know that there exists some $i\in\cI$ and $a_i\in A$ such that $a_i\mapsto a$. Pick $j$ such that $i\leq\varphi(j)$. Then $a_i\mapsto a_{\varphi(j)}$, and by compatibility we get $a_{\varphi(j)}\mapsto a$.
+\item Suppose $a\in A_{\varphi(j)}$ maps to $0\in\varinjlim_{\cI}A$. 
+Then there is
 some $i\in\cI$ such that $\varphi(j)\leq i$ and $a\mapsto0$ in $A_i$. 
 But then there is $j'\in\cJ$ such that $i\leq\varphi(j')$, and 
 $a\mapsto0\in A_{\varphi(j')}$ as well.
@@ -157,7 +158,10 @@ then $U\in\mathcal{U}_A$, $V\in\mathcal{U}_B$, and $(U,V)=(U\cup V,V)$.
 To see that the right map is cofinal, start with 
 $(U,V)\in\mathcal{U}_{A,A\cap B}$.
 
-\fbox{picture}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/35-cofinal-pair-lemma.pdf}
+\end{center}
 
 \noindent
 Note that $A$ is disjoint from $B\cap(X-V)$, so by normality,

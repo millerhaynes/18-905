@@ -6,16 +6,16 @@ I'll leave it to you to spell out the definition, but notice that there is a uni
 
 Then a contravariant functor from $\cc$ to $\cd$ is the same thing as a (``covariant'') functor from $\cc^{op}$ to $\cd$. 
 
-Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\mathbf{Set}$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor {\em represented by} $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(X,-)$ is a covariant functor.
+Let $\cc$ be a category, and let $Y\in\mathrm{ob}(\cc)$. We get a map $\cc^{op}\to\mathbf{Set}$ that takes $X\mapsto \cc(X,Y)$, and takes a map $X\to W$ to the map defined by composition $\cc(W,Y)\to \cc(X,Y)$. This is called the functor {\em represented by} $Y$. It is very important to note that $\cc(-,Y)$ is contravariant, while, on the other hand, for any fixed $X$, $\cc(X,-)$ is a covariant functor (and is said to be ``corepresentable'' by $X$).
 
 \begin{example}
 Recall that the simplex category $\Deltab$ has objects the totally ordered sets
-$[n]=\{0,1,\ldots,n\}$, with order preserving maps as morphisms. The ``standard simplex'' gives us a functor $\Delta\colon\Deltab^{op}\to\mathbf{Top}$. Now fix a space $X$, and consider 
+$[n]=\{0,1,\ldots,n\}$, with order preserving maps as morphisms. The ``standard simplex'' gives us a functor $\Delta\colon\Deltab\to\mathbf{Top}$. Now fix a space $X$, and consider 
 \[
 [n]\mapsto\mathbf{Top}(\Delta^n,X)\,.
 \]
-This gives us a contravariant functor $\Deltab\to\mathbf{Top}$, or a covariant
-functor $\Deltab^{op}\to\mathbf{Top}$. This functor carries in it all the face and degeneracy maps we discussed earlier, and their compositions. Let us make a definition.
+This gives us a contravariant functor $\Deltab\to\Set$, or a covariant
+functor $\Deltab^{op}\to\Set$. This functor carries in it all the face and degeneracy maps we discussed earlier, and their compositions. Let us make a definition.
 \end{example}
 
 \begin{definition} Let $\cc$ be any category. A {\em simplicial object} in $\cc$ is a functor $K:\Deltab^{op}\to\cc$. Simplicial objects in $\cc$ form a category with natural transformations as morphisms. Similarly, {\em semi-simplicial object} in $\cc$ is a functor $\Deltab_{inj}^{op}\to\cc$,
@@ -32,13 +32,13 @@ A morphism $f:X\to Y$ in a category $\cc$ is a \textit{split epimorphism} (``spl
 In the category of sets, a map $f:X\to Y$ is a split epimorphism exactly when, 
 for every element of $Y$ there exists some element of $X$ whose image in $Y$ is the original element. So $f$ is surjective. Is every surjective map a split epimorphism? This is equivalent to the axiom of choice! because a section of $f$ is precisely a choice of $x\in f^{-1}(y)$ for every $y\in Y$.
 \end{example}
-Every categorical definition is accompanied by a dual definition. 
+Every categorical definition is accompanied by a ``dual'' definition. 
 \begin{definition}
 A map $g:Y\to X$ is a {\em split monomorphism} (``split mono'' for short) if there is $f:X\to Y$ such that $f\circ g=1_Y$.
 \end{definition}
 \begin{example}
-Again let $\cc=\Set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $f(g(y))=y=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
-is a split monomorphism only if $Y=\varnothing$. So there's an assymetry 
+Again let $\cc=\Set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $y=f(g(y))=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
+is a split monomorphism only if $Y=\varnothing$. So there's an asymmetry 
 in the category of sets.
 \end{example}
 \begin{lemma}

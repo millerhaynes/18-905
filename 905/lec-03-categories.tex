@@ -9,10 +9,10 @@ Our discussion of category theory will be interspersed throughout the text, intr
 \begin{definition}
 A \emph{category} $\cc$ consists of the following data.
 \begin{itemize}
-\item a class $\mathrm{ob}(\cc)$ of objects;
+\item a class $\mathrm{ob}(\cc)$ of {\em objects};
 \item for every pair of objects $X$ and $Y$, a set of \emph{morphisms} 
 $\cc(X,Y)$;
-\item for every object $X$ a {\em identity morphism} $1_X\in\cc(X,X)$; and
+\item for every object $X$ an {\em identity morphism} $1_X\in\cc(X,X)$; and
 \item for every triple of objects $X,Y,Z$, a {\em composition} map
 $\cc(X,Y)\times\cc(Y,Z)\to\cc(X,Z)$, written $(f,g)\mapsto g \circ f$. 
 \end{itemize}
@@ -45,7 +45,7 @@ Many common mathematical structures can be arranged in categories.
 \item A monoid is the same as a category with one object, where the elements of the monoid are the morphisms in the category. It's a small category.
 \item The sets $[n]=\{0,\ldots,n\}$ for $n\geq 0$ together with weakly order-preserving maps between them form the {\em simplex category} $\Deltab$, 
 another small category. It contains as a subcategory the {\em semi-simplex
-category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps. This is a small category. 
+category} $\Deltab_{inj}$ with the same objects but only injective weakly order-preserving maps.  
 \item A partially ordered set or ``poset'' forms a category in which there is a morphism from $x$ to $y$ iff $x\leq y$. A small category is a poset exactly
 when (1) there is at most one morphism between any two objects, and
 (2) the only isomorphisms are identities. This is to be distinguished from
@@ -62,11 +62,11 @@ of the data of
 \begin{itemize}
 \item an assignment  $F:\mathrm{ob}(\cc)\to\mathrm{ob}(\cd)$, and
 \item for all $X,Y\in\mathrm{ob}(\cc)$, a function 
-$F:\cc(X,Y)\to\cc(F(X),F(Y))$ \,.
+$F:\cc(X,Y)\to\cd(F(X),F(Y))$ \,.
 \end{itemize}
 These data are required to satisfy the following two properties:
 \begin{itemize}
-\item For all $X\in\mathrm{ob}\cc$, $F(1_X)=1_{F(X)}\in\cd(F(X),F(X))$, and
+\item For all $X\in\mathrm{ob}(\cc)$, $F(1_X)=1_{F(X)}\in\cd(F(X),F(X))$, and
 \item For all composable pairs of morphisms $f,g$ in $\cc$, 
 $F(g\circ f)=F(g)\circ F(f)$.
 \end{itemize}
@@ -104,6 +104,6 @@ and check the axioms. We needed to assume that $\cc$ is small in order to
 guarantee that there is no more than a set of natural transformations between
 functors.
 
-For example, let $G$ be a group (or a monoid) viewed as a one-object category. An object $F\in\mathrm{Fun}(G,\mathbf{Ab})$ is simply a group action of $G$ on $F(\ast)=A$, i.e., a representation of $G$ in abelian groups. Given another $F^\prime\in\mathrm{Fun}(G,\mathbf{Ab})$ with $F^\prime(\ast)=A^\prime$, then a natural transformation from $F\to F^\prime$ is precisely a $G$-equivariant homomorphism $A\to A^\prime$.
+For example, let $G$ be a group (or a monoid) viewed as a one-object category. An object $F\in\mathrm{Fun}(G,\mathbf{Ab})$ is simply a group action of $G$ on $F(\ast)=A$, i.e., a representation of $G$ in abelian groups. Given another $F^\prime\in\mathrm{Fun}(G,\mathbf{Ab})$ with $F^\prime(\ast)=A^\prime$, a natural transformation from $F\to F^\prime$ is precisely a $G$-equivariant homomorphism $A\to A^\prime$.
 \end{example}
 

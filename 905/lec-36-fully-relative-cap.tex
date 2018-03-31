@@ -32,6 +32,7 @@ commutes by the projection formula. This embeds into a ladder
 shown in the theorem below. We will accompany this ladder with a second
 one, to complete the picture.
 \begin{theorem}
+Let $L\subseteq K$ be closed subspaces of a space  $X$.
 There is a ``fully relative'' cap product
 \[
 \cap:\cHH^p(K,L)\otimes H_n(X,X-K)\to H_q(X-L,X-K)\,,\quad p+q=n\,,
@@ -61,8 +62,8 @@ What I have to do is define a cap product along the bottom row of the
 diagram (with $p+q=n$)
 \begin{equation*}
 \xymatrix{
-\cHH^p(K)\otimes H_n(X,X-K)\ar[r]^{\cap} & H_q(X,X-K)\\
-\cHH^p(K,L)\otimes H_n(X,X-K)\ar[u]\ar@{.>}[r]^{\cap} & H_q(X-L,X-K) \ar[u]
+\cHH^p(K)\otimes H_n(X,X-K)\ar[r]^-{\cap} & H_q(X,X-K)\\
+\cHH^p(K,L)\otimes H_n(X,X-K)\ar[u]\ar@{-->}[r]^-{\cap} & H_q(X-L,X-K) \ar[u]
 }
 \end{equation*}
 
@@ -103,8 +104,8 @@ We leave the checks of commutativity to the listener.
 The diagram
 \begin{equation*}
 \xymatrix{
-	\cHH^p(L)\ar[r]^\delta\ar[d]^{-\cap x_L} & \cHH^{p+1}(K,L)\ar[d]^{-\cap x_K}\\
-	H_q(X,X-L)\ar[r]^{\partial} & H_{q-1}(X-L,X-K)
+	\cHH^p(L)\ar[r]^-\delta\ar[d]^{-\cap x_L} & \cHH^{p+1}(K,L)\ar[d]^{-\cap x_K}\\
+	H_q(X,X-L)\ar[r]^-{\partial} & H_{q-1}(X-L,X-K)
 }
 \end{equation*}
 provides us with the memorable formula

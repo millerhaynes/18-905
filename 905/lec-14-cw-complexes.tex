@@ -34,7 +34,7 @@ by a universal property: any solid-arrow commutative diagram
 B\ar[r]\ar[drr]_{\overline{g}} & X\cup_f B\ar@{-->}[dr] & \\
  & & Y}
 \end{equation*}
-can be filled in. It's a ``push-out.''
+can be uniquely filled in. It's a ``push-out.''
 \begin{example}
 If $X=\ast$, then $\ast\cup_f B=B/A$.
 \end{example}
@@ -78,7 +78,14 @@ Again there's just one choice for $f$, and
 $\ast\cup_f(D^1\sqcup D^1)$ is a figure $8$, because you start with 
 two $1$-disks and identify the four boundary points together. Let me write 
 $S^1\vee S^1$ for this space. We can go on and attach a single 2-cell to 
-manufacture a torus. Think of the figure 8 as the perimeter of a square with opposite sides identified. Then the inside of the square is a 2-cell, attached to the perimeter by a map I'll denote by $aba^{-1}b^{-1}$: 
+manufacture a torus. Think of the figure 8 as the perimeter of a square with opposite sides identified.
+
+\medskip
+\begin{center}
+\includegraphics[width=1.75in]{905/Figures/14-torus-CW-structure.pdf}
+\end{center}
+
+The inside of the square is a 2-cell, attached to the perimeter by a map I'll denote by $aba^{-1}b^{-1}$: 
 \begin{equation*}
 \xymatrix{S^1\ar[r]^{aba^{-1}b^{-1}}\ar@{^(->}[d] & S^1\vee S^1\ar[d]\\
 D^2\ar[r] & (S^1\vee S^1)\cup_f D^2=T^2\,.
@@ -96,9 +103,9 @@ such that
 \item $X$ is the union of the $\Sk_nX$'s, and 
 \item for all $n$, there is a pushout diagram like this:
 \begin{equation*}
-\xymatrix{\coprod_{\alpha\in A_n}S^{n-1}_\alpha\ar[r]^{f_n}\ar@{^(->}[d] 
+\xymatrix{\coprod_{\alpha\in A_n}S^{n-1}_\alpha\ar[r]^-{f_n}\ar@{^(->}[d] 
 & \Sk_{n-1}X\ar[d]\\
-\coprod_{\alpha\in A_n}D^n_\alpha\ar[r]^{g_n} & \Sk_nX}\,.
+\coprod_{\alpha\in A_n}D^n_\alpha\ar[r]^-{g_n} & \Sk_nX}\,.
 \end{equation*}
 \end{itemize}
 \end{definition}
@@ -115,7 +122,7 @@ A CW-complex is \emph{finite-dimensional} if $\Sk_nX=X$ for some $n$;
 of \emph{finite type} if each $A_n$ is finite, i.e., finitely many cell in each dimension; and \emph{finite} if it's finite-dimensional and of finite type.
 \end{definition}
 The {\em dimension} of a CW complex is the largest $n$ for which there are 
-$n$ cells. This is not obviously a topological invariant, but, have no fear,
+$n$-cells. This is not obviously a topological invariant, but, have no fear,
 it turns out that it is.
 
 In ``CW,'' the ``C'' is for cell, and the ``W'' is for weak, because of the topology on a CW-complex. This definition is due to J. H. C. Whitehead. Here are a couple of important facts about them. 

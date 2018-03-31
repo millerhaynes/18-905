@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath}
+\usepackage{xypic}
+
+\textwidth 6in
+\textheight 9in
+\topmargin -.5in
+\oddsidemargin .25in
+\evensidemargin .25in
+\parskip 3pt
+\parindent 0pt
+\pagestyle{empty}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\def\da#1{\downarrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+\def\ua#1{\uparrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+
+\def\coker{\mathrm{coker}\,}
+\def\im{\mathrm{im}\,}
+\def\ker{\mathrm{ker}\,}
+\def\NN{\mathbb N}
+\def\ZZ{\mathbb Z}
+\def\RR{\mathbf R}
+\def\Ext{\mathrm{Ext}}
+\def\Tor{\mathrm{Tor}}
+\def\Hom{\mathrm{Hom}}
+\def\Der{\mathrm{Der}}
+\def\Map{\mathrm{Map}}
+\def\Gp{\mathbf{Gp}}
+\def\Mon{\mathbf{Mon}}
+\def\mod{\hbox{mod}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\tensor{\otimes}
+\def\iso{\cong}
+\def\Ho{\mathrm{Ho}\,}
+\def\rin{\mathrm{in}}
+\def\la#1{\mathop{\longleftarrow}\limits^{#1}}
+\def\ra#1{\mathop{\longrightarrow}\limits^{#1}}
+\def\bS{\mathbf{S}}
+
+\def\inj{\mathrm{in}}
+\def\pr{\mathrm{pr}}
+\def\div{\mathrm{div}}
+\def\grad{\mathrm{grad}}
+\def\curl{\mathrm{curl}}
+\def\Sin{\mathrm{Sin}}
+
+\def\SF{\mathcal{C}^\infty}
+\def\VF{\mathcal{VF}^\infty}
+
+
+\def\TT{\mathbb{T}}
+\def\Tensor{\bigotimes}
+\def\bDelta{\mathbf{\Delta}}
+\def\bSet{\mathbf{Set}}
+\def\bAb{\mathbf{Ab}}
+\def\bTop{\mathbf{Top}}
+\def\bC{\mathbf{C}}
+\def\ob{\mathrm{ob}}
+\def\bVS{\mathbf{VS}}
+
+
+
+\begin{center}
+{\bf 18.905: Problem Set II}
+\end{center}
+
+Due October 5, 2016, in class. 
+
+Homework is an important part of this class. I hope you gain from the
+struggle. Collaboration can be effective, but be sure that you
+grapple with each problem on your own as well. If you do work with others,
+you must indicate with whom on your solution sheet. Scores will be posted
+on the Stellar website.
+
+\bigskip
+
+{\bf 5. (a)} Let $A$ be a chain complex (of abelian groups). 
+It is {\em acyclic} if $H(A)=0$, and 
+{\em contractible} if it is chain-homotopy-equivalent to the trivial 
+chain complex. Prove that a chain complex is contractible if and only
+if it is acyclic and for every $n$ the inclusion 
+$Z_nA\hookrightarrow A_n$ is a split monomorphism of abelian groups. 
+
+{\bf(b)} Give an example of an acyclic chain complex that is not 
+contractible. 
+
+\medskip
+{\bf 6.} Propose a construction of the product and the coproduct of 
+two spaces in the homotopy category, and check that your proposal serves
+the purpose.
+ 
+\medskip
+{\bf 7.(a)} Let $S$ and $T$ be sets and $A$ an abelian group. Establish 
+a bijection between the set of maps of sets from $S\times T$ to $A$ and
+the set of bilinear maps $\ZZ S\times\ZZ T\to A$.
+
+{\bf(b)} For positive integers $m,n$, let $\ZZ/m$, $\ZZ/n$ denote the cyclic 
+groups of order $m,n$.
+Construct a surjective bilinear map $\mu:\ZZ/m\times\ZZ/n\to\ZZ/\gcd\{m,n\}$.
+Show that any bilinear map $\ZZ/m\times\ZZ/n\to A$ factors uniquely as 
+$f\circ\mu$ where $f:\ZZ/\gcd\{m,n\}\to A$ is a homomorphism.
+
+\medskip
+{\bf8. (a)} Let $0\ra{}A\ra{i}B\ra{p}C\ra{}0$ be a short exact sequence.
+Show that the following three sets are in bijection with one another.
+
+(i) The set of homomorphisms $\sigma:C\rightarrow B$ such that $p\sigma=1_C$.
+
+(ii) The set of homomorphisms $\pi:B\rightarrow A$ such that $\pi i=1_A$.
+
+(iii) The set of homomorphisms $\alpha:A\oplus C\rightarrow B$ such that 
+$\alpha(a,0)=ia$ for all $a\in A$ and $p\alpha(a,c)=c$ for all 
+$(a,c)\in A\oplus C$.
+
+Moreover, show that any homomorphism as in (iii) is an isomorphism.
+
+Any one of these structures 
+is a {\em splitting} of the short exact sequence, and
+the sequence is then said to be {\em split}.
+
+
+{\bf(b)} Suppose that 
+\[
+\xymatrix{
+\cdots \ar[r] & A_n \ar[r] \ar[d] & B_n \ar[r] \ar[d] & C_n \ar[r] \ar[d]^\iso
+& A_{n-1} \ar[r] \ar[d] & \cdots \\
+\cdots \ar[r] & A'_n \ar[r] & B'_n \ar[r] & C'_n \ar[r] & 
+A'_{n-1} \ar[r] & \cdots
+}
+\]
+is a ``ladder'': a map of long exact sequences. So both rows are exact
+and each square commutes. Suppose also that every third vertical map is
+an isomorphism, as indicated. Prove that these data naturally 
+determine a long exact sequence 
+\[
+\cdots\ra{}A_n\ra{}A'_n\oplus B_n\ra{}B'_n\ra{}A_{n-1}\ra{}\cdots
+\]
+
+\medskip
+{\bf 9. (a)} (``$3\times3$ lemma.'') Let  
+\[
+\xymatrix{
+& 0 \ar[d] & 0 \ar[d] & 0 \ar[d] \\
+0 \ar[r] & A' \ar[d] \ar[r] & B' \ar[d] \ar[r] & C' \ar[d] \ar[r] & 0 \\
+0 \ar[r] & A \ar[d] \ar[r] & B \ar[d] \ar[r] & C \ar[d] \ar[r] & 0 \\
+0 \ar[r] & A'' \ar[d] \ar[r] & B'' \ar[d] \ar[r] & C'' \ar[d] \ar[r] & 0 \\
+& 0 & 0 & 0
+}
+\]
+be a commutative diagram of abelian groups. Assume that all three
+columns are exact, that all but one of the rows is exact,
+and that the compositions in the remaining row are trivial.
+Prove that the remaining row is also exact. (Hint: view each 
+row as a chain complex \ldots.)
+
+{\bf(b)} (``Long exact homology sequence of a triple.'')
+Let $(C,B,A)$ be a ``triple,'' so $C$ is a space, $B$ is a
+subspace of $C$, and $A$ is a subspace of $B$. Show that there  are
+natural transformations $\partial:H_n(C,B)\rightarrow H_{n-1}(B,A)$ such 
+that 
+\[
+\cdots\ra{}H_n(B,A)\ra{i_*}H_n(C,A)\ra{j_*}H_n(C,B)\ra{\partial}H_{n-1}(B,A)
+\ra{}\cdots
+\]
+is exact, where $i:(B,A)\rightarrow(C,A)$ and $j:(C,A)\rightarrow(C,B)$ are
+the inclusions of pairs. ({\bf 9 (a)} might be useful.)
+
+\medskip
+{\bf 10.} This exercise generalizes our computation of the homology of
+spheres, and introduces several important constructions.
+
+The {\em cone} on a space $X$ is the quotient space 
+$CX=X\times I/X\times\{0\}$, where $I$ is the unit interval $[0,1]$. 
+The cone is a pointed space, with basepoint $*$ given by the ``cone point,''
+i.e. the image of $X\times\{0\}$. (By convention, the cone on the empty
+space $\varnothing$
+is a single point, the cone point.) Regard $X$ as the subspace of $CX$
+of all points of the form $(x,1)$.
+
+Define the {\em suspension} of a space $X$ to be $SX=CX/X$. 
+Make $SX$ a pointed space by declaring
+the image of $X\subseteq CX$ to be the basepoint in $SX$. 
+(By convention, the quotient $W/\varnothing$ is the disjoint union of $W$ with
+a single point, which is declared to be the basepoint. So 
+$S\varnothing=*/\varnothing$ is the discrete two-point space, with the
+new point as basepoint.)
+
+The quotient map induces a map of pairs $f:(CX,X)\rightarrow(SX,*)$.
+
+{\bf(a)} Show that $CX$ is contractible.
+
+{\bf(b)} Show that there is a natural isomorphism 
+$\widetilde{H}_{n-1}(X)\rightarrow H_n(SX,*)$, for any $n$.
+
+\end{document}
+ 

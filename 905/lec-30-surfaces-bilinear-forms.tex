@@ -8,7 +8,7 @@ every point has an open neighborhood that is homeomorphic to some (finite
 dimensional) Euclidean space. 
 \end{definition}
 
-If all these Euclidean space can be chosen to be $\RR^n$, we have an 
+If all these Euclidean spaces can be chosen to be $\RR^n$, we have an 
 $n$-manifold. 
 
 In this lecture we will state a case of the Poincar\'e duality theorem
@@ -40,7 +40,7 @@ for all $p$.
 Combining this pairing with the universal coefficient theorem, we get 
 isomorphisms
 \[
-H^{n-p}(M)\xrightarrow{\cong}\Hom(H^p(M),\FF_2)\xleftarrow{\cong}H_p(M)\,.
+H^p(M)\xrightarrow{\cong}\Hom(H^p(M),\FF_2)\xleftarrow{\cong}H_q(M)\,.
 \]
 The homology and cohomology classes corresponding to each other under this 
 isomorphism are said to be ``Poincar\'e dual.'' 
@@ -67,19 +67,24 @@ the source of the symbol for the cup product.
 \begin{example}
 Let $M=T^2=S^1\times S^1$. We know that 
 \[
-H^1(M)=\FF_2\langle\alpha,\beta\rangle
+H^1(M)=\FF_2\langle a,b\rangle
 \]
-and $\alpha^2=\beta^2=0$, while $\alpha\beta=\beta\alpha$ generates $H^2(M)$.
-The Poincar\'e duals of these classes are represented by cycles wrapping 
+and $a^2=b^2=0$, while $ab=ba$ generates $H^2(M)$.
+The Poincar\'e duals of these classes are represented by cycles $\alpha$
+and $\beta$ wrapping 
 around one or the other of the two factor circles. They can be made to 
 intersect in a single point. This reflects the fact that 
 \[
-\langle\alpha\cup\beta,[M]\rangle=1\,.
+\langle a\cup b,[M]\rangle=1\,.
 \]
-Similarly, the fact that $\alpha^2=0$ reflects the fact that its Poincar\'e 
-dual cycle can be moved so as not to intersect itself. 
+Similarly, the fact that $a^2=0$ reflects the fact that its Poincar\'e 
+dual cycle $\alpha$ can be moved so as not to intersect itself. The picture 
+below shows two possible $\alpha$'s.
 
-\fbox{Picture would be great}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/30-torus-cycle-intersections.pdf}
+\end{center}
 
 \end{example}
 
@@ -90,10 +95,11 @@ $H^k(M)$. As indicated above, this can equally well be considered a bilinear
 form on $H_k(M)$, and it is then to be thought of as describing the number of
 points (mod 2) two $k$-cycles intersect in, when put in general position 
 relative to one another. It's called the {\em intersection form}. We'll 
-denote it by
+denote it by 
 \[
-\alpha\cdot\beta=\langle\alpha\cup\beta,[M]\rangle\,.
+\alpha\cdot\beta=\langle a\cup b,[M]\rangle\,,
 \]
+where again $a$ and $\alpha$ are Poincar\'e dual, and $b$ and $\beta$ are dual.
 
 \begin{example} In terms of the basis $\alpha,\beta$, the intersection form
 for $T^2$ has matrix 
@@ -138,7 +144,7 @@ $\left[\begin{array}{cc}0&1\\1&0\end{array}\right]$.
 \end{prop}
 
 Let $\mathbf{Bil}$ be the set of isomorphism classes of finite dimensional 
-nondegenerate symmetric bilinear forms over $\FF_2$. I've just given a classification of these things. This is a commutative monoid under orthogonal
+nondegenerate symmetric bilinear forms over $\FF_2$. We've just given a classification of these things. This is a commutative monoid under orthogonal
 direct sum. It can be
 regarded as the set of nonsingular symmetric matrices modulo the equivalence
 relation of ``similarity'': Two matrices $M$ and $N$ are {\em similar} if  

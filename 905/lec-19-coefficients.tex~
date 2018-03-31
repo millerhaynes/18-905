@@ -24,17 +24,21 @@ ring $R$}. It satisfies all the Eilenberg-Steenrod axioms, but
 H_n(\ast;R)=
 \begin{cases}R\,\,&\hbox{for}\quad n=0\\0\,\,&\hbox{otherwise}\,.\end{cases}
 \]
-We could actually have replaced the ring $R$ by any abelian group here, 
-but this will become much clearer after we have the tensor product as a tool.
+(We could actually have replaced the ring $R$ by any abelian group here, 
+but this will become much clearer after we have the tensor product as a tool.)
+This means that all the work we have done for ``integral homology'' carries
+over to homology with any coefficients. In particular, if $X$ is a CW complex
+we have the cellular homology with coefficients in $R$, $C_*(X;R)$, and its
+homology is isomorphic to $H_*(X;R)$. 
 
 The coefficient rings that are most important in algebraic topology are 
 simple ones: the integers and the prime fields $\FF_p$ and $\QQ$; 
-typically, a PID.
+almost always a PID.
 
 As an experiment, let's compute $ H_\ast(\RP^n;R)$ for various rings $R$.
 Let's start with $R=\FF_2$, the field with 2 elements. This is a favorite
 among algebraic topologists, because using it for coefficients eliminates 
-all sign issues. The cellular chain complex has $S_k(\RP^n;\FF_2)=\FF_2$ for 
+all sign issues. The cellular chain complex has $C_k(\RP^n;\FF_2)=\FF_2$ for 
 $0\leq k\leq n$, and the differential alternates between multiplication by 
 2 and by 0. But in $\FF_2$, $2=0$: so $d=0$, and the cellular chains
 coincide with the homology:
@@ -58,12 +62,12 @@ for $n$ even, and
 R\xleftarrow{0}R\xleftarrow{\cong}R\xleftarrow{0}R
 \xleftarrow{\cong}\cdots\xleftarrow{0}R
 \]
-for $n$ odd. Therefore
+for $n$ odd. Therefore for $n$ even
 \[
 H_k(\RP^n;R)=
 \begin{cases}R\,&\hbox{for}\quad k=0\\0\,&\,\hbox{otherwise}\end{cases}
 \]
-for $n$ even, and 
+and for $n$ odd
 \[
 H_k(\RP^n;R)=
 \begin{cases}R\,&\hbox{for}\quad k=0\\

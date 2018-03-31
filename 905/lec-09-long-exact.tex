@@ -12,15 +12,15 @@ sequence of chain complexes,
 \[
 0\to A_*\to B_*\to C_*\to0\,,
 \]
-and investigate what happens in homology. 
+and study what happens in homology. 
 Clearly the composite $H_*(A)\to H_*(B)\to H_*(C)$ is trivial. Is this sequence
 exact?  
-Let $[b]\in H_n(B)$ such that $g([b])=0$. It's determined by some $b\in B_n$ such that $d(b)=0$. If $g([b])=0$, then there is some $\overline{c}\in C_{n+1}$ such that $d\overline{c}=gb$. Now, $g$ is surjective, so there is some $\overline{b}\in B_{n+1}$ such that $g(\overline{b})=\overline{c}$. Then we can consider $d\overline{b}\in B_n$, and $g(d(\overline{b}))=d(\overline{c})\in C_n$. What is $b-d\overline{b}$? This maps to zero in $C_n$, so by exactness there is some $a\in A_n$ such that $f(a)=b-d\overline{b}$. Is $a$ a cycle? Well, $f(da)=d(fa)=d(b-d\overline{b})=db-d^2\overline{b}=db$, but we assumed that $db=0$, so $f(da)=0$. This means that $da$ is zero because $f$ is an injection by exactness. Therefore $a$ is a cycle. What is $[a]\in H_n(A)$? Well, $f([a])=[b-d\overline{b}]=[b]$ because $d\overline{b}$ is a cycle. This proves exactness of $ H_n(A)\to H_n(B)\to H_n(C)$.
+Let $[b]\in H_n(B)$ such that $g([b])=0$. It's determined by some $b\in B_n$ such that $d(b)=0$. If $g([b])=0$, then there is some $\overline{c}\in C_{n+1}$ such that $d\overline{c}=gb$. Now, $g$ is surjective, so there is some $\overline{b}\in B_{n+1}$ such that $g(\overline{b})=\overline{c}$. Then we can consider $d\overline{b}\in B_n$, and $g(d(\overline{b}))=d(\overline{c})\in C_n$. What is $b-d\overline{b}$? This maps to zero in $C_n$, so by exactness there is some $a\in A_n$ such that $f(a)=b-d\overline{b}$. Is $a$ a cycle? Well, $f(da)=d(fa)=d(b-d\overline{b})=db-d^2\overline{b}=db$, but we assumed that $db=0$, so $f(da)=0$. This means that $da$ is zero because $f$ is an injection by exactness. Therefore $a$ is a cycle. What is $[a]\in H_n(A)$? Well, $f([a])=[b-d\overline{b}]=[b]$. This proves exactness of $ H_n(A)\to H_n(B)\to H_n(C)$.
 
 On the other hand, $H_*(A)\to H_*(B)$ may fail to be injective, and 
 $H_*(B)\to H_*(C)$ may fail to be surjective. Instead:
 
-\begin{theorem}[homology long exact sequence]
+\begin{theorem}[The homology long exact sequence]
 Let $0\to A_\ast\to B_\ast\to C_\ast\to 0$ be a short exact sequence of chain complexes. Then there is a natural homomorphism $\partial: H_n(C)\to H_{n-1}(A)$ such that the sequence 
 \begin{equation*}
 \xymatrix{ & \cdots \ar[r] & H_{n+1}(C) \ar[dll]_\partial \\
@@ -58,7 +58,7 @@ sequence in homology:
 \[
 \partial:H_q(D^n,S^{n-1})\to H_{q-1}(S^{n-1})
 \] 
-is an isomorphism for $i>1$. The bottom of the long exact sequence looks like 
+is an isomorphism for $q>1$. The bottom of the long exact sequence looks like 
 this: 
 \[
 \xymatrix{
@@ -75,8 +75,8 @@ When $n=1$, we discover that
 H_1(D^1,S^0)=\mathbf{Z} \quad\hbox{and}\quad H_0(D^1,S^0)=0\,.
 \]
 The generator of $H_1(D^1,S^0)$ is represented by any 1-simplex 
-$\iota_1:\Delta^1\to D^1$ such that $d_0\iota=1$ and $d_1\iota=0$ (or vice 
-versa). 
+$\iota_1:\Delta^1\to D^1$ such that $d_0\iota=c^0_1$ and $d_1\iota=c^0_0$ 
+(or vice versa). 
 To go any further in this analysis, we'll need another tool, known as
 ``excision.'' 
 \end{example}
@@ -96,8 +96,9 @@ and hence a long exact sequence
 \end{equation*}
 In the example $(D^n,S^{n-1})$, $\widetilde H_*(D^n)=0$ and so 
 \[
-\partial:H_n(D^n,S^{n-1})\xrightarrow{\cong}\widetilde H_{n-1}(S^{n-1})\,.
+\partial:H_q(D^n,S^{n-1})\xrightarrow{\cong}\widetilde H_{q-1}(S^{n-1})
 \]
+for all $n$ and $q$.
 This even works when $n=0$; remember that $S^{-1}=\varnothing$ and 
 $\widetilde H_{-1}(\varnothing)=\ZZ$. This is why I like this convention.
 

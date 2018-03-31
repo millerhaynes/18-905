@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage{xypic}
+\usepackage{hyperref}
+
+\textwidth 6in
+\textheight 9in
+\topmargin -.5in
+\oddsidemargin .25in
+\evensidemargin .25in
+\parskip 3pt
+\parindent 0pt
+\pagestyle{empty}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\def\da#1{\downarrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+\def\ua#1{\uparrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+
+\def\coker{\mathrm{coker}\,}
+\def\im{\mathrm{im}\,}
+\def\ker{\mathrm{ker}\,}
+\def\NN{\mathbb N}
+\def\ZZ{\mathbb Z}
+\def\RR{\mathbb R}
+\def\QQ{\mathbb Q} 
+\def\CC{\mathbb C}
+\def\FF{\mathbb F}
+\def\Ext{\mathrm{Ext}}
+\def\Tor{\mathrm{Tor}}
+\def\Hom{\mathrm{Hom}}
+\def\Der{\mathrm{Der}}
+\def\Map{\mathrm{Map}}
+\def\Gp{\mathbf{Gp}}
+\def\Mon{\mathbf{Mon}}
+\def\mod{\hbox{mod}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\tensor{\otimes}
+\def\iso{\cong}
+\def\Ho{\mathrm{Ho}\,}
+\def\rin{\mathrm{in}}
+\def\Fun{\mathrm{Fun}}
+\def\id{\mathrm{id}}
+\def\nt{\mathrm{nt}}
+
+\def\la#1{\mathop{\longleftarrow}\limits^{#1}}
+\def\ra#1{\mathop{\longrightarrow}\limits^{#1}}
+
+
+\def\bS{\mathbf{S}}
+
+\def\inj{\mathrm{in}}
+\def\pr{\mathrm{pr}}
+\def\div{\mathrm{div}}
+\def\grad{\mathrm{grad}}
+\def\curl{\mathrm{curl}}
+\def\Sin{\mathrm{Sin}}
+
+\def\SF{\mathcal{C}^\infty}
+\def\VF{\mathcal{VF}^\infty}
+
+
+\def\TT{\mathbb{T}}
+\def\Tensor{\bigotimes}
+\def\bDelta{\mathbf{\Delta}}
+\def\bSet{\mathbf{Set}}
+\def\bAb{\mathbf{Ab}}
+\def\bTop{\mathbf{Top}}
+\def\bC{\mathbf{C}}
+\def\ob{\mathrm{ob}}
+\def\bVS{\mathbf{VS}}
+
+\def\cP{\mathcal{P}}
+\def\cE{\mathcal{E}}
+
+
+\begin{center}
+{\bf 18.905: Problem Set V}
+\end{center}
+
+Due November 16, 2016, in class. 
+
+Homework is an important part of this class. I hope you gain from the
+struggle. Collaboration can be effective, but be sure that you
+grapple with each problem on your own as well. If you do work with others,
+you must indicate with whom on your solution sheet. Scores will be posted
+on the Stellar website. Extra credit for calling attention to mistakes!
+
+\bigskip
+{\bf 19. (a)} Verify the Lemma stated in lecture on Nov 4:
+Let $I$ be a directed set, $L$ an abelian group, and $A:I\to\bAb$ an 
+$I$-directed diagram of abelian groups, with bonding maps
+$f_{ij}:A_i\to A_j$ for $i\leq j$. A map $A\to c_L$, given by 
+compatible maps $f_i:A_i\to L$, is a direct limit if and only if:\\
+(i) For any $b\in L$ there exists $i\in I$ and $a_i\in A_i$ such that 
+$f_ia_i=b$, and\\
+(ii) For any $a_i\in A_i$ such that $f_ia_i=0\in L$, there exists $j\geq i$
+such that $f_{ij}a_i=0\in A_j$.
+
+\medskip
+{\bf 20. (a)}
+Embed $\ZZ/p^n\ZZ$ into $\ZZ/p^{n+1}\ZZ$ by sending $1$ to $p$, 
+and write $\ZZ_{p^\infty}$ for the union. It's called the Pr\"ufer group (at 
+$p$). Show that $\ZZ_{p^\infty}\iso\ZZ[1/p]/\ZZ$ and that 
+\[
+\QQ/\ZZ\iso\bigoplus_p\ZZ_{p^\infty}
+\]
+where the sum runs over the prime numbers. 
+
+{\bf(b)} Compute $\ZZ_{p^\infty}\tensor_\ZZ A$ for $A$ each of the following
+abelian groups: $\ZZ/n\ZZ$, 
+$\ZZ[1/q]$ (for $q$ a prime), and $\ZZ_{q^\infty}$ (for $q$ a prime). 
+
+{\bf(c)} Compute $\Tor_1^{\ZZ}(M,\ZZ[1/p])$ and 
+$\Tor_1^{\ZZ}(M,\ZZ_{p^\infty})$, for any abelian group $M$ in terms of the
+self-map $p:M\to M$. 
+
+\medskip
+{\bf 21.} Show that if $f:X\to Y$ induces an isomorphism in homology 
+with coefficients in
+the prime fields $\FF_p$ (for all primes $p$) and $\QQ$, then it induces an
+isomorphism in homology with coefficients in $\ZZ$. 
+(Hint: {\bf 18 (c)}.)
+
+\medskip
+{\bf 22.} The construction of an isomorphism between the singular homology
+and the cellular homology of a CW complex carries over {\em verbatim} with any
+coefficients. Use this observation to compute the homology of $\RR P^n$ with
+coefficients in $\QQ$, $\FF_p$, $\ZZ_{p^\infty}$, and $\ZZ[1/p]$. 
+
+\medskip
+{\bf 23.} $\varnothing$
+
+\medskip
+{\bf 24.} Suppose that $f:X\to Y$ induces an isomorphism in homology with
+coefficients in $\ZZ/n\ZZ$. Show that it induces an isomorphism in homology
+with coefficients in any abelian group in which every element is killed by
+some power of $n$. 
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

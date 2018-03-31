@@ -6,22 +6,25 @@
 \input{header1.tex}
 %\usepackage[urw-garamond]{mathdesign}
 
+\usepackage{lscape}
 \usepackage{graphicx}
 
 \begin{document}
 \title{Algebraic Topology}
 \author{Lectures by Haynes Miller\\
-\medskip
 
-Notes based on live{\TeX}ed record made by Sanath Devalapurkar
+Notes based on a live{\TeX}ed record made by Sanath Devalapurkar\\
+
+Pictures by Xianglong Ni
+
 
 }
-%\date{Fall 2016 -- Spring 2017}
+\date{Fall 2016}
 
 \frontmatter
 
 \maketitle
-\input{preface.tex}
+\input{preface1.tex}
 \newpage
 \tableofcontents
 \newpage
@@ -87,6 +90,11 @@ Proc. Amer. Math. Soc. 13 (1962) 293--297.
 
 \bibitem{bredon}
 G. Bredon, {\em Topology and Geometry}, Springer-Verlag, 1993.
+
+\bibitem{dold}
+A. Dold,
+{\em Lectures on Algebraic Topology},
+Springer-Verlag, 1980.
 
 \bibitem{eilenberg-moore}
 S. Eilenberg and J. C. Moore, 

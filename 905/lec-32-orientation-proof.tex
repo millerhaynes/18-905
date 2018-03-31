@@ -52,7 +52,7 @@ holds for $A$, $B$, and $A\cap B$. Then it holds for $A\cup B$.
 \label{prop-mv}
 \end{prop}
 \begin{proof}
-The relative Mayer-Vietoris theorem and the inductive hypothesis that 
+The relative Mayer-Vietoris theorem and the hypothesis that 
 $H_{n+1}(M|A\cap B)=0$ gives us exactness of the top row in the ladder
 \[
 \xymatrix{
@@ -84,7 +84,7 @@ subsets of a space $X$, with intersection $A$. Then
 \]
 \end{lemma}
 \begin{proof}
-Let $\sigma:\Delta^q\to X$ be any $q$-simplex in $x-A$. The subsets $X-A_i$
+Let $\sigma:\Delta^q\to X$ be any $q$-simplex in $X-A$. The subsets $X-A_i$
 form an open cover of $\img(\sigma)$, so by compactness it lies in some
 single $X-A_i$. This shows that 
 \[
@@ -97,7 +97,7 @@ Thus
 by exactness of direct limit, and the claim then follows for the same reason. 
 \end{proof}
 \begin{lemma}\label{lem-fip} 
-Let $A_1\supseteq A_2\supset\cdots$ be a decreasing sequence of 
+Let $A_1\supseteq A_2\supseteq\cdots$ be a decreasing sequence of 
 compact subsets in a Hausdorff space $X$ with intersection $A$. 
 For any open neighborhood $U$ of $A$ there exists $i$ such that 
 $A_i\subseteq U$.
@@ -115,9 +115,9 @@ $H_q(M|A)=0$ for $q>n$. In dimension $n$, we contemplate
 the commutative diagram 
 \[
 \xymatrix{
-\displaystyle{\varinjlim_i}H_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & 
+\displaystyle{\varinjlim_i}\,H_n(M|A_i) \ar[r]^\cong \ar[d]^\cong & 
 H_n(M|A) \ar[d] \\
-\displaystyle{\varinjlim_i}\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
+\displaystyle{\varinjlim_i}\,\Gamma(A_i;o_M) \ar[r]^\cong & \Gamma(A;o_M) \,.
 }\]
 The top map an isomorphism by Lemma \ref{lem-lim-cpt}.
 
@@ -152,7 +152,7 @@ There are five steps. In describing them, we will call a subset of $M$
 (3) $M=\RR^n$, $A$ any compact subset.
 
 \noindent
-(4) $M$ arbitrary, $A$ a finite union of compact subsets of Euclidean opens.
+(4) $M$ arbitrary, $A$ a finite union of compact Euclidean subsets.
 
 \noindent
 (5) $M$ arbitrary, $A$ an arbitrary compact subset. 
@@ -185,7 +185,7 @@ H_n(\RR^n,\RR^n-D^n) \ar[r]^\cong \ar[d]^{j_{D^n}} &
 H_n(\RR^n,\RR^n-A) \ar[d]^{j_A} \\
 \Gamma(D^n,o_{\RR^n}) \ar[r] & \Gamma(A,o_{\RR^n}) 
 }\]
-we find that $j:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.
+we find that $j_A:H_n(\RR^n,\RR^n-A)\to\Gamma(A;o_{\RR^n})$ is an isomorphism.
 
 (2) by Proposition \ref{prop-mv}. 
 

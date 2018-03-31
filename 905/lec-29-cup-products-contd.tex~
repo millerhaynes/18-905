@@ -35,7 +35,7 @@ A graded $R$-algebra $A$ is {\em commutative} if the following diagram commutes:
 \end{equation*}
 where $\tau(x\otimes y)=(-1)^{pq}y\otimes x$. 
 \end{definition}
-We claim that $ H^\ast(X;R)$ forms a commutative graded $R$-algebra under the cup product. This is nontrivial. On the cochain level, this is clearly not graded commutative. We're going to have to work hard -- in fact, so hard that you're going to do some of it for homework. What needs to be checked is that the following 
+We claim that $ H^\ast(X;R)$ forms a commutative graded $R$-algebra under the cup product. This is nontrivial. On the cochain level, this is clearly not graded commutative. We're going to have to work hard -- in fact, so hard that you're going to do it for homework. What needs to be checked is that the following 
 diagram commutes up to natural chain homotopy.
 \begin{equation*}
 \xymatrix{S_\ast(X\times Y)\ar[r]^{T_\ast}\ar[d]_{\alpha_{X,Y}} & S_\ast(Y\times X)\ar[d]^{\alpha_{Y,X}}\\
@@ -84,16 +84,16 @@ Let $\alpha_1,\alpha_2\in H^\ast(X)$ and $\beta_1,\beta_2\in H^\ast(Y)$. Then $\
 (\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2) & = \Delta_{X\times Y}^\ast(\alpha_1\times\beta_1\times\alpha_2\times\beta_2)\\
 & = (\Delta_X\times\Delta_Y)^\ast(1\times T\times 1)^\ast(\alpha_1\times\beta_1\times\alpha_2\times\beta_2)\\
 & = (\Delta_X\times\Delta_Y)^\ast(\alpha_1\times T^\ast(\beta_1\times\alpha_2)\times\beta_2)\\
-& = (-1)^{|\alpha_2|\cdot|\beta_1|}(\Delta_X\times\Delta_Y)^\ast(\alpha_1\times\alpha_2\times\beta_1\times\beta_2)
+& = (-1)^{|\alpha_2|\cdot|\beta_1|}(\Delta_X\times\Delta_Y)^\ast(\alpha_1\times\alpha_2\times\beta_1\times\beta_2)\,.
 \end{align*}
-Now, I have a diagram:
+Naturality of the cross product asserts that the diagram
 \begin{equation*}
 \xymatrix{
-	 H^\ast(X\times Y) & \ar[l]^{\times_{X\times Y}} H^\ast(X)\otimes_R H^\ast(Y)\\
-	 H^\ast(X\times X\times Y\times Y)\ar[u]^{(\Delta_X\times\Delta_Y)^\ast} & H^\ast(X\times X)\otimes H^\ast(Y\times Y)\ar[l]_{\times_{X\times X,Y\times Y}}\ar[u]^{\Delta_X^\times\otimes\Delta_Y^\ast}
+	 H^\ast(X\times Y) && \ar[ll]^{\times_{X\times Y}} H^\ast(X)\otimes_R H^\ast(Y)\\
+	 H^\ast(X\times X\times Y\times Y)\ar[u]^{(\Delta_X\times\Delta_Y)^\ast} && H^\ast(X\times X)\otimes H^\ast(Y\times Y)\ar[ll]_{\times_{X\times X,Y\times Y}}\ar[u]^{\Delta_X^\times\otimes\Delta_Y^\ast}\,.
 }
 \end{equation*}
-This diagram commutes because the cross product is natural. We learn:
+commute. We learn:
 \begin{align*}
 (\alpha_1\times\beta_1)\cup(\alpha_2\times\beta_2) & = (-1)^{|\alpha_2|\cdot|\beta_1|}(\Delta_X\times\Delta_Y)^\ast(\alpha_1\times\alpha_2\times\beta_1\times\beta_2)\\
 & = (-1)^{|\alpha_2|\cdot|\beta_1|}(\alpha_1\cup\alpha_2)\times(\beta_1\cup\beta_2)\,.
@@ -128,10 +128,11 @@ $f^*:H^*(S^p\times S^q)\to H^*(S^{p+q})$. This map must kill $\alpha$ and
 $\beta$, for degree reasons. But then it also kills their product, since
 $f^*$ is multiplicative. 
 \end{proof}
-The space $S^p\vee S^q\vee S^{p+q}$ has the same cohomology groups as
+The space $S^p\vee S^q\vee S^{p+q}$ has the same homology and 
+cohomology groups as
 $S^p\times S^q$. Both are built as CW complexes with cells in dimensions
 $0, p, q$, and $p+q$. But they are not homotopy equivalent. We can see this
-now because there {\em is} a map $S^p\vee S^q\vee S^{p+q}\to S^{p+q}$
-inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the map that pinches
-the other two factors to the basepoint. 
+now because there {\em is} a map $S^{p+q}\to S^p\vee S^q\vee S^{p+q}$
+inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the inclusion
+of that summand.
 \end{example}

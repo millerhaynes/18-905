@@ -13,31 +13,31 @@
 \contentsline {section}{\numberline {11}The Eilenberg Steenrod axioms and the locality principle}{25}{section.1.11}
 \contentsline {section}{\numberline {12}Subdivision}{28}{section.1.12}
 \contentsline {section}{\numberline {13}Proof of the Locality Principle}{30}{section.1.13}
-\contentsline {chapter}{\chapternumberline {2}Computational methods}{33}{chapter.2}
-\contentsline {section}{\numberline {14}CW-complexes}{33}{section.2.14}
-\contentsline {section}{\numberline {15}CW-complexes II}{35}{section.2.15}
-\contentsline {section}{\numberline {16}Homology of CW-complexes}{37}{section.2.16}
-\contentsline {section}{\numberline {17}Real projective space}{40}{section.2.17}
-\contentsline {section}{\numberline {18}Euler characteristic, and homology approximation}{42}{section.2.18}
-\contentsline {section}{\numberline {19}Coefficients}{44}{section.2.19}
-\contentsline {section}{\numberline {20}Tensor product}{46}{section.2.20}
-\contentsline {section}{\numberline {21}Tensor and Tor}{50}{section.2.21}
-\contentsline {section}{\numberline {22}The fundamental theorem of homological algebra}{52}{section.2.22}
-\contentsline {section}{\numberline {23}Hom and Lim}{55}{section.2.23}
-\contentsline {section}{\numberline {24}Universal coefficient theorem}{58}{section.2.24}
-\contentsline {section}{\numberline {25}K\"{u}nneth and Eilenberg-Zilber}{60}{section.2.25}
-\contentsline {chapter}{\chapternumberline {3}Cohomology and duality}{65}{chapter.3}
-\contentsline {section}{\numberline {26}Coproducts, cohomology}{65}{section.3.26}
-\contentsline {section}{\numberline {27}Ext and UCT}{69}{section.3.27}
-\contentsline {section}{\numberline {28}Products in cohomology}{72}{section.3.28}
-\contentsline {section}{\numberline {29}Cup product, continued}{73}{section.3.29}
-\contentsline {section}{\numberline {30}Surfaces and nondegenerate symmetric bilinear forms}{76}{section.3.30}
-\contentsline {section}{\numberline {31}Local coefficients and orientations}{79}{section.3.31}
-\contentsline {section}{\numberline {32}Proof of the orientation theorem}{84}{section.3.32}
-\contentsline {section}{\numberline {33}A plethora of products}{87}{section.3.33}
-\contentsline {section}{\numberline {34}Cap product and ``Cech'' cohomology}{89}{section.3.34}
-\contentsline {section}{\numberline {35}Cech cohomology as a cohomology theory}{93}{section.3.35}
-\contentsline {section}{\numberline {36}The fully relative cap product}{96}{section.3.36}
-\contentsline {section}{\numberline {37}Poincar\'{e} duality}{98}{section.3.37}
-\contentsline {section}{\numberline {38}Applications}{100}{section.3.38}
-\contentsline {chapter}{Bibliography}{105}{section*.4}
+\contentsline {chapter}{\chapternumberline {2}Computational methods}{35}{chapter.2}
+\contentsline {section}{\numberline {14}CW-complexes}{35}{section.2.14}
+\contentsline {section}{\numberline {15}CW-complexes II}{38}{section.2.15}
+\contentsline {section}{\numberline {16}Homology of CW-complexes}{40}{section.2.16}
+\contentsline {section}{\numberline {17}Real projective space}{42}{section.2.17}
+\contentsline {section}{\numberline {18}Euler characteristic and homology approximation}{44}{section.2.18}
+\contentsline {section}{\numberline {19}Coefficients}{47}{section.2.19}
+\contentsline {section}{\numberline {20}Tensor product}{48}{section.2.20}
+\contentsline {section}{\numberline {21}Tensor and Tor}{53}{section.2.21}
+\contentsline {section}{\numberline {22}The fundamental theorem of homological algebra}{55}{section.2.22}
+\contentsline {section}{\numberline {23}Hom and Lim}{58}{section.2.23}
+\contentsline {section}{\numberline {24}Universal coefficient theorem}{61}{section.2.24}
+\contentsline {section}{\numberline {25}K\"{u}nneth and Eilenberg-Zilber}{63}{section.2.25}
+\contentsline {chapter}{\chapternumberline {3}Cohomology and duality}{69}{chapter.3}
+\contentsline {section}{\numberline {26}Coproducts, cohomology}{69}{section.3.26}
+\contentsline {section}{\numberline {27}Ext and UCT}{73}{section.3.27}
+\contentsline {section}{\numberline {28}Products in cohomology}{76}{section.3.28}
+\contentsline {section}{\numberline {29}Cup product, continued}{77}{section.3.29}
+\contentsline {section}{\numberline {30}Surfaces and nondegenerate symmetric bilinear forms}{80}{section.3.30}
+\contentsline {section}{\numberline {31}Local coefficients and orientations}{83}{section.3.31}
+\contentsline {section}{\numberline {32}Proof of the orientation theorem}{88}{section.3.32}
+\contentsline {section}{\numberline {33}A plethora of products}{91}{section.3.33}
+\contentsline {section}{\numberline {34}Cap product and ``Cech'' cohomology}{93}{section.3.34}
+\contentsline {section}{\numberline {35}Cech cohomology as a cohomology theory}{97}{section.3.35}
+\contentsline {section}{\numberline {36}The fully relative cap product}{100}{section.3.36}
+\contentsline {section}{\numberline {37}Poincar\'{e} duality}{102}{section.3.37}
+\contentsline {section}{\numberline {38}Applications}{105}{section.3.38}
+\contentsline {chapter}{Bibliography}{109}{section*.4}

@@ -1,0 +1,219 @@
+%\usepackage[protrusion=true,expansion=true]{microtype}
+
+%\usepackage[center]{titlesec}
+
+\usepackage[pdftex,
+	    pdftitle={Algebraic topology}]{hyperref}
+\usepackage{spectralsequences}
+
+\usepackage{mathtools}
+%\usepackage{listings}
+
+\usepackage[T1]{fontenc}
+
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage[left=2in,right=2in,top=2in,bottom=2.5in]{geometry}
+%\usepackage[margin=1.25in]{geometry}
+%\pagestyle{plain}
+%\usepackage{fullpage}
+
+\usepackage{setspace}
+%\setstretch{1.1}
+
+\usepackage{todonotes}
+
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{comment}
+%\usepackage{amscd}
+
+%\usepackage{txfonts} % Thanks to Eric for showing me that this font exists.
+%%\usepackage{kpfonts}
+%\renewcommand{\Top}{\mathbf{Top}}
+\newcommand{\Top}{\mathbf{Top}}
+
+\usepackage{color}
+\usepackage[all]{xy}
+\usepackage{verbatim}
+
+\usepackage[mathscr]{eucal}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+
+\usepackage{chngcntr} % to number sections consecutively across chapters
+
+\setcounter{chapter}{3}
+\setcounter{section}{38}
+
+
+\counterwithout{section}{chapter}
+
+\tikzset{%
+    symbol/.style={%
+        draw=none,
+        every to/.append style={%
+            edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+    }
+}
+
+
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm-defn}[theorem]{Theorem-Definition}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{terminology}[theorem]{Terminology}
+\newtheorem{construction}[theorem]{Construction}
+%\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{slogan}[theorem]{Slogan}
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{property}[theorem]{Property}
+
+\DeclareMathOperator{\Th}{Th}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\coeq}{coeq}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\hocolim}{hocolim}
+\DeclareMathOperator{\holim}{holim}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\img}{im}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\rank}{Rank}
+\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\rla}{\rightleftarrows}
+\DeclareMathOperator{\lra}{\leftrightarrows}
+
+\def\llarrow{  \hspace{.05cm}\mbox{\,\put(0,-2){$\leftarrow$}\put(0,2){$\leftarrow$}\hspace{.45cm}}}
+\def\rrarrow{  \hspace{.05cm}\mbox{\,\put(0,-2){$\rightarrow$}\put(0,2){$\rightarrow$}\hspace{.45cm}}}
+\def\lllarrow{ \hspace{.05cm}\mbox{\,\put(0,-3){$\leftarrow$}\put(0,1){$\leftarrow$}\put(0,5){$\leftarrow$}\hspace{.45cm}}}
+\def\rrrarrow{ \hspace{.05cm}\mbox{\,\put(0,-3){$\rightarrow$}\put(0,1){$\rightarrow$}\put(0,5){$\rightarrow$}\hspace{.45cm}}}
+
+\def\cA{\mathcal A}\def\cB{\mathcal B}
+\def\cc{\mathcal C}\def\cC{\mathbf C}
+\def\cd{\mathcal D}
+\def\ce{\mathcal E}\def\cf{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
+\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathbf O}\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
+\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
+
+\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbf C}\def\DD{\mathbb D}
+\def\EE{\mathbb E}\def\FF{\mathbf F}\def\GG{\mathbb G}\def\HH{\mathbf H}
+\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
+\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbf P}
+\def\QQ{\mathbf Q}\def\RR{\mathbf R}\def\SS{\mathbb S}\def\TT{\mathbb T}
+\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
+\def\YY{\mathbb Y}\def\ZZ{\mathbf Z}
+
+\usepackage{amsbsy}
+
+\newcommand{\CP}{\mathbf{CP}}
+\newcommand{\RP}{\mathbf{RP}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Gra}{\mathrm{Gr}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\gl}{\mathit{gl}}
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\nid}{\noindent}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\xra}{\xrightarrow}
+\newcommand{\xla}{\xleftarrow}
+
+\newcommand{\weq}{\xrightarrow{\sim}}
+\newcommand{\cofib}{\rightarrowtail}
+\newcommand{\fib}{\twoheadrightarrow}
+%\newcommand{\cofib}{\to}
+%\newcommand{\fib}{\to}
+
+\newcommand\cHH{\check{H}}
+\newcommand{\Fl}{\mathrm{Fl}}
+\newcommand{\Fr}{\mathrm{Fr}}
+\newcommand\cCC{\check{C}}
+\newcommand{\MFGL}{\mathcal M_{\mathit{FGL}}}
+\newcommand{\calO}{{\mathcal O}}
+\newcommand{\calC}{{\mathcal C}}
+\newcommand{\set}{{\mathrm{Set}}}
+\newcommand{\Deltab}{{\mathbf{\Delta}}} 
+%change this to bold Delta. This is like this
+%here because garamond messes up bold things.
+\newcommand{\spec}{\mathrm{Spec}}
+\newcommand{\Z}{\mathbf Z}
+\newcommand{\Sin}{\mathrm{Sin}}
+\newcommand{\htop}{\mathrm{Ho}(\mathbf{Top})}
+\newcommand{\sca}{\mathcal{A}}
+\DeclareMathOperator{\Spf}{Spf}
+\newcommand{\CG}{\mathbf{CG}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Bun}{\mathrm{Bun}}
+\newcommand{\Ho}{\mathrm{Ho}}
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\sk}{\mathrm{sk}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\newcommand{\wt}[1]{\widetilde{{#1}}}
+\newcommand{\xar}[1]{\xrightarrow{{#1}}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\inc}{\mathrm{in}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\String}{\mathrm{String}}
+\newcommand{\Sk}{\mathrm{Sk}}
+\newcommand{\Gp}{\mathbf{Gp}}
+
+
+\newcommand{\downsubseteq}{\mathbin{\rotatebox[origin=c]{-90}{$\subseteq$}}}
+
+% for pullback and pushout squares
+\usepackage{pigpen}
+\newcommand{\po}{\ar@{}[dr]|{\text{\pigpenfont R}}}
+\newcommand{\pb}{\ar@{}[dr]|{\text{\pigpenfont J}}}
+%%%%%%%%%%%%%%%%
+
+%\usepackage{ebgaramond}
+%\usepackage{fancyhdr}
+% 
+%\newcommand{\myheader}{
+%    \ifnum\value{section} > 38
+%    18.906
+%    \else
+%    18.905
+%    \fi
+%}
+%
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LE]{Notes by Sanath Devalapurkar}
+%\fancyhead[LO]{Taught by Haynes Miller}
+%\chead{Notes for \myheader}
+%\rhead{Lecture \thesection}
+%\cfoot{\thepage}

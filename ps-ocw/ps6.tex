@@ -1,0 +1,316 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage{xypic}
+\usepackage{hyperref}
+
+\textwidth 6in
+\textheight 9in
+\topmargin -.5in
+\oddsidemargin .25in
+\evensidemargin .25in
+\parskip 3pt
+\parindent 0pt
+\pagestyle{empty}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\def\da#1{\downarrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+\def\ua#1{\uparrow\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+
+\def\coker{\mathrm{coker}\,}
+\def\im{\mathrm{im}\,}
+\def\ker{\mathrm{ker}\,}
+\def\NN{\mathbb N}
+\def\ZZ{\mathbb Z}
+\def\RR{\mathbb R}
+\def\QQ{\mathbb Q} 
+\def\CC{\mathbb C}
+\def\FF{\mathbb F}
+\def\Ext{\mathrm{Ext}}
+\def\Tor{\mathrm{Tor}}
+\def\Hom{\mathrm{Hom}}
+\def\Der{\mathrm{Der}}
+\def\Map{\mathrm{Map}}
+\def\Gp{\mathbf{Gp}}
+\def\Mon{\mathbf{Mon}}
+\def\mod{\hbox{mod}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\tensor{\otimes}
+\def\iso{\cong}
+\def\Ho{\mathrm{Ho}\,}
+\def\rin{\mathrm{in}}
+\def\Fun{\mathrm{Fun}}
+\def\id{\mathrm{id}}
+\def\nt{\mathrm{nt}}
+
+\def\la#1{\mathop{\longleftarrow}\limits^{#1}}
+\def\ra#1{\mathop{\longrightarrow}\limits^{#1}}
+
+
+\def\bS{\mathbf{S}}
+
+\def\inj{\mathrm{in}}
+\def\pr{\mathrm{pr}}
+\def\div{\mathrm{div}}
+\def\grad{\mathrm{grad}}
+\def\curl{\mathrm{curl}}
+\def\Sin{\mathrm{Sin}}
+
+\def\SF{\mathcal{C}^\infty}
+\def\VF{\mathcal{VF}^\infty}
+
+
+\def\TT{\mathbb{T}}
+\def\Tensor{\bigotimes}
+\def\bDelta{\mathbf{\Delta}}
+\def\bSet{\mathbf{Set}}
+\def\bAb{\mathbf{Ab}}
+\def\bTop{\mathbf{Top}}
+\def\bC{\mathbf{C}}
+\def\ob{\mathrm{ob}}
+\def\bVS{\mathbf{VS}}
+
+\def\cP{\mathcal{P}}
+\def\cE{\mathcal{E}}
+
+
+\begin{center}
+{\bf 18.905: Problem Set VI}
+\end{center}
+
+Due November 30, 2016, in class. A couple more problems to follow.
+
+Homework is an important part of this class. I hope you gain from the
+struggle. Collaboration can be effective, but be sure that you
+grapple with each problem on your own as well. If you do work with others,
+you must indicate with whom on your solution sheet. Scores will be posted
+on the Stellar website. Extra credit for calling attention to mistakes!
+
+\bigskip
+{\bf 25.} $\varnothing$.
+
+\medskip
+{\bf 26.} (Another $3\times3$ puzzle.) Suppose all the rows and columns in
+the commutative diagram
+\[
+\xymatrix{
+& 0 \ar[d] & 0 \ar[d] & 0 \ar[d] & \\
+0 \ar[r] & A' \ar[d] \ar[r] & A \ar[d] \ar[r] & A'' \ar[d] \ar[r] & 0 \\
+0 \ar[r] & B' \ar[d] \ar[r] & B \ar[d] \ar[r] & B'' \ar[d] \ar[r] & 0 \\
+0 \ar[r] & C' \ar[d] \ar[r] & C \ar[d] \ar[r] & C'' \ar[d] \ar[r] & 0 \\ 
+& 0 & 0 & 0 &
+}\]
+are exact. Construct from this a natural exact sequence 
+\[
+0\to A'\to A\oplus B'\to B\to C''\to0\,,
+\]
+It may be easiest to construct two short exact sequences and then splice them
+together.
+
+What is the dual statement? 
+
+\medskip
+{\bf 27. (a)} Let $0\ra{}M'\ra{i}M\ra{p}M''\ra{}0$ be a short exact sequence
+of abelian groups, and let $C_*$ be a chain complex of free abelian groups.
+Construct and prove exactness of the ``long exact coefficient sequence'' 
+\[
+\cdots\ra{}H_n(C_*\tensor M')\ra{i_*}H_n(C_*\tensor M)\ra{p_*}
+H_n(C_*\tensor M'')\ra{\partial}H_{n-1}(C_*\tensor M')\ra{}\cdots
+\]
+
+{\bf(b)} For example, the short exact sequence 
+$0\ra{}\ZZ/2\ra{}\ZZ/4\ra{}\ZZ/2\ra{}0$ induces a natural transformation
+\[
+\beta:H_n(X;\ZZ/2)\ra{}H_{n-1}(X;\ZZ/2)\,.
+\]
+(called the ``Bockstein operator'').
+Show that $\beta^2=0:H_n(X;\ZZ/2)\ra{}H_{n-2}(X;\ZZ/2)$.
+
+{\bf (c)} 
+Compute this operator in the mod 2 homology of real projective $n$ space.
+
+
+\medskip
+{\bf 28.} 
+Recall that $\alpha_p:\Delta^p\to\Delta^n$ is the affine map sending the vertex
+$i$ to the vertex $i$ (for $0\leq i\leq p$), and 
+$\omega_q:\Delta^q\to\Delta^n$ is the affine map sending the vertex
+$j$ to the vertex $p+j$ (for $0\leq j\leq q$). The {\em Alexander-Whitney map}
+\[
+\alpha_{X,Y}:S_*(X\times Y)\to S_*(X)\tensor S_*(Y)
+\]
+sends a simplex $\sigma:\Delta^n\to X\times Y$, with components
+$\sigma_1:\Delta^n\to X$ and $\sigma_2:\Delta^n\to Y$, to the sum
+\[
+\alpha(\sigma)=
+\sum_{p+q=n}(\sigma_1\circ\alpha_p)\tensor(\sigma_2\circ\omega_q)\,.
+\]
+
+{\bf (a)} Check that this is a chain map. 
+
+{\bf (b)} Check that it is ``associative'' and ``unital'':
+\[
+\xymatrix{
+S_*(X\times Y\times Z) \ar[r]^{\alpha_{X\times Y,Z}} 
+\ar[d]^{\alpha_{X,Y\times Z}} & 
+S_*(X\times Y)\tensor S_*(Z) \ar[d]^{\alpha_{X,Y}\tensor1} \\
+S_*(X)\tensor S_*(Y\times Z) \ar[r]^{1\tensor\alpha_{Y,Z}} &
+S_*(X)\tensor S_*(Y)\tensor S_*(Z)
+}\]
+and
+\[
+\xymatrix{
+& S_*(*\times X) \ar[dl]_c \ar[d]^{\alpha_{*,X}} & 
+S_*(X\times *) \ar[dr]^c \ar[d]_{\alpha_{X,*}} \\
+S_*(X) & S_*(*)\tensor S_*(X) \ar[l]_{\epsilon\cdot1} & 
+S_*(X)\tensor S_*(*) \ar[r]^{1\cdot\epsilon} & S_*(X)
+}\]
+Here the map $c$ is induced from one of the projection isomorphisms
+$*\times X\to X$ or $X\times*\to X$, 
+\[
+\epsilon\cdot1:S_*(*)\tensor S_*(X)\ra{\epsilon\tensor1}\ZZ\tensor S_*(X)
+\ra{\iso}S_*(X)
+\]
+and $1\cdot\epsilon$ is similar.
+
+{\bf(c)} Now observe that $\alpha$ is {\em not} ``commutative'': give an
+example to show that 
+\[
+\xymatrix{
+S_*(X\times Y) \ar[r]^{S_*(T)} \ar[d]^{\alpha_{X,Y}} & 
+S_*(Y\times X) \ar[d]^{\alpha_{Y,X}} \\
+S_*(X)\tensor S_*(Y) \ar[r]^{\tau} & S_*(Y)\tensor S_*(X)
+}\]
+cannot commute for either sign in $\tau(x\tensor y)=\pm y\tensor x$. 
+
+{\bf(d)} But show that this diagram {\em is} naturally homotopy 
+commutative, with 
+\[
+\tau(x\tensor y)=(-1)^{pq}y\tensor x\,,\quad x\in S_p(X)\,,\quad y\in S_q(Y)\,.
+\]
+
+\medskip
+{\bf 29.} Construct a ``semi-relative cross product,'' 
+natural in $X$ and the pair $(Y,B)$:
+\[
+\times:H^p(X;R)\tensor_R H^q(Y,B;R)\to H^{p+q}(X\times Y,X\times B;R)
+\]
+that agrees with the cross product we constructed in class if $B=\varnothing$ 
+and that makes ($R$ coefficients understood)
+\[
+\xymatrix{
+H^p(X)\tensor H^q(B) \ar[r]^\times \ar[d]^{1\tensor\partial} & 
+H^{p+q}(X\times B) \ar[d]^\partial \\
+H^p(X)\tensor H^{q+1}(Y,B) \ar[r]^\times & H^{p+q+1}(X\times Y,X\times B)
+}
+\]
+commute, at least up to sign. Give conditions under which it is an isomorphism.
+
+\medskip
+{\bf 30.} Let $A\subseteq X$ and $B\subseteq Y$ be subsets. 
+Construct a natural chain map
+\[
+S_*(X,A)\tensor S_*(Y,B)\to S_*(X\times Y,A\times Y\cup X\times B)
+\]
+that is a homology isomorphism if $A$ and $B$ are open. (Hint: Problem 
+{\bf 26.}, or its proof, might be useful.) So 
+there is a natural ``relative cross product'' map
+\[
+H_*(X,A;R)\tensor_R H_*(Y,B;R)\to H_*(X\times Y,A\times Y\cup X\times B;R)
+\]
+that is an isomorphism if $A$ and $B$ are open, $R$ is a PID, and either 
+$H_*(X,A;R)$ or $H_*(Y,B;R)$ is free over $R$.
+
+\medskip
+{\bf 31. (a)} What is the $k$th Betti number of $(S^1)^n$?
+
+{\bf(b)} Define an equivalence relation on $\RR^n$ by saying that two vectors
+are equivalent if they differ by a vector with entries in $\ZZ$. Identify the
+quotient space of $\RR^n$ by this equivalence relation with the product space 
+$(S^1)^n$. Let $M$ be an $n\times n$ matrix with entries in $\ZZ$. 
+It defines a linear map $\RR^n\to\RR^n$ in the usual way. Show that this
+map descends to a self-map of $(S^1)^n$. Compute the effect of this map on
+$H_n((S^1)^n)$. 
+
+
+
+
+
+
+\end{document}
+
+
+\medskip
+{\bf 27. (a)} Let 
+\[
+\alpha_{X,Y}:S_*(X\times Y)\to S_*(X)\tensor S_*(Y)
+\]
+be any natural chain map covering the canonical isomorphism 
+$H_0(X\times Y)\to H_0(X)\tensor H_0(Y)$. Show that the diagram
+\[
+\xymatrix{
+S_*(X\times Y) \ar[r]^{S_*(T)} \ar[d]^{\alpha_{X,Y}} & 
+S_*(Y\times X) \ar[d]^{\alpha_{Y,X}} \\
+S_*(X)\tensor S_*(Y) \ar[r]^T & S_*(Y)\tensor S_*(X)
+}\]
+commutes up to natural chain homotopy. Here $T:X\times Y\to Y\times X$
+sends $(x,y)$ to $(y,x)$, and $T:C_*\tensor D_*\to D_*\tensor C_*$
+(for graded abelian groups $C_*$ and $D_*$) sends $x\tensor y$ to
+$(-1)^{|x||y|}y\tensor x$. Hint: Acyclic models.
+
+{\bf(b)} Explain why this proves that the cup product on $H^*(X;R)$ is 
+graded commutative: 
+\[
+\alpha\cup\beta=(-1)^{|\alpha||\beta|}\beta\cup\alpha\,.
+\]
+
+
+
+{\bf 27. (a)} Show that for any choice of chain-level cross product,
+(i.e. natrual map $\times:S_*(X)\tensor S_*(Y)\to S_*(X\times Y)$ covering 
+the canonical map $H_0(X)\tensor H_0(Y)\to H_0(X\times Y)$) the diagrams 
+\[
+\xymatrix{
+S_*(X)\tensor S_*(Y)\tensor S_*(X) \ar[r]^{\times\tensor1} 
+\ar[d]^{1\tensor\times} & S_*(X\times Y)\tensor S_*(Z) \ar[d]^{\times} \\
+S_*(X)\tensor S_*(Y\times Z) \ar[r]^\times & S_*(X\times Y\times Z)
+}\]
+and
+\[
+\xymatrix{
+S_*(X)\tensor S_*(Y) \ar[r]^T \ar[d]^\times & 
+S_*(Y)\tensor S_*(X) \ar[d]^\times \\
+S_*(X\times Y) \ar[r]^{S_*(T)} & S_*(Y\times X)
+}\]
+commute. In the second diagram the bottom $T$ denotes the swap map 
+$(x,y)\mapsto(y,x)$, while the top map is defined on decomposable tensors by
+\[
+x\tensor y\mapsto(-1)^{|x||y|}y\tensor x\,.
+\]
+Hint: use acyclic models!
+
+{\bf (b)} Let $\epsilon:H_*(X)\to\ZZ$ be the augmentation. Check that 
+\[
+\xymatrix{
+H_0(X)\tensor\ZZ \ar[d]^{c} & 
+H_0(X)\tensor H_0(Y) 
+\ar[l]_{1\tensor\epsilon} \ar[d]^{\times} \ar[r]^{\epsilon\tensor1} &
+\ZZ\tensor H_0(Y) \ar[d]^{c} \\
+H_0(X) & H_0(X\times Y) \ar[l]_{\pr_1} \ar[r]^{\pr_2} & H_0(Y)
+}\]
+where $c$ denotes the canonical map, twice.

@@ -38,7 +38,7 @@ A map $g:Y\to X$ is a {\em split monomorphism} (``split mono'' for short) if the
 \end{definition}
 \begin{example}
 Again let $\cc=\Set$. Any split monomorphism is an injection: If $y,y^\prime\in Y$, and $g(y)=g(y^\prime)$, we want to show that $y=y^\prime$. Apply $f$, to get $f(g(y))=y=f(g(y^\prime))=y^\prime$. But the injection $\varnothing\to Y$ 
-is a split monomorphism only if $Y=\varnothing$. So there's an asymetry 
+is a split monomorphism only if $Y=\varnothing$. So there's an assymetry 
 in the category of sets.
 \end{example}
 \begin{lemma}

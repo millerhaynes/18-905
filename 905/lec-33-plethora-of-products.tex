@@ -4,14 +4,14 @@ We are now heading towards a statement of Poincar\'e duality.
 
 Recall that we have the Kronecker pairing 
 \[
-\langle-,-\rangle: H^p(X:R)\otimes H_p(X:R)\to R\,.
+\langle-,-\rangle: H^p(X;R)\otimes H_p(X;R)\to R\,.
 \]
 It's obviously not ``natural,'' because $ H^p$ is contravariant while homology is covariant. But given $f:X\to Y$, $b\in H^p(Y)$, and $x\in H_p(X)$, we can ask: How does $\langle f^\ast b,x\rangle$ relate to $\langle b,f_\ast x\rangle$?
 \begin{claim}
 $\langle f^\ast b,x\rangle=\langle b,f_\ast x\rangle$.
 \end{claim}
 \begin{proof}
-This is easy! I find it useful to write out diagrams of where things are. We're going to work on the chain level.
+This is easy! I find it useful to write out diagrams to show where things are. We're going to work on the chain level.
 \begin{equation*}
 	\xymatrix{
 \Hom(S_p(Y),R)\otimes S_p(X)\ar[r]^{1\otimes f_\ast}\ar[d]^{f^\ast\otimes 1} & 
@@ -19,7 +19,8 @@ This is easy! I find it useful to write out diagrams of where things are. We're 
 \Hom(S_p(X),R)\otimes S_p(X)\ar[r]^{\langle-,-\rangle} & R
 	}
 \end{equation*}
-We want this diagram to commute. Suppose $[\beta]=b$ and $[\xi]=x$. Then from the to left, going to the right and then down gives 
+We want this diagram to commute. Suppose $[\beta]=b$ and $[\xi]=x$. Then 
+going to the right and then down gives 
 \[
 \beta\otimes\xi\mapsto\beta\otimes f_\ast(\xi)\mapsto\beta(f_\ast\xi)\,.
 \]
@@ -52,15 +53,15 @@ cohomology. Still, they're related:
 \label{lemma-cp-cross}
 Let $a\in H^p(X),b\in H^q(Y),x\in H_p(X), y\in H_q(Y)$. Then:
 \begin{equation*}
-\langle a\times b,x\times y\rangle=(-1)^{|x|\cdot |b|}\langle a,x\rangle\langle b,y\rangle
+\langle a\times b,x\times y\rangle=(-1)^{|x|\cdot |b|}\langle a,x\rangle\langle b,y\rangle\,.
 \end{equation*}
 \end{lemma}
 \begin{proof}
-Look at the chain-level cross product and the Alexander-Whitney map
+Look at the chain-level cross product and the Alexander-Whitney maps:
 \[
 \times:S_*(X)\otimes S_*(Y)\leftrightarrows S_*(X\times Y):\alpha
 \]
-Both of them are the identity in dimension 0, 
+They are inverse isomorphisms in dimension 0, 
 and both sides are projective resolutions with respect to the models
 $(\Delta^p,\Delta^q)$; so by acyclic models they are natural chain 
 homotopy inverses. 
@@ -100,11 +101,11 @@ is an isomorphism. The homology K\"unneth theorem guarantees that the
 bottom map in the following diagram is an isomorphism.
 \[
 \xymatrix{
-\bigoplus_{p+q=n}H^p(X)\otimes H^q(Y) \ar[rr]^\times\ar[d]^\cong && 
-H^n(X\times Y) \ar[d]^\cong \\
-\bigoplus_{p+q=n}H_p(X)^\vee\otimes H_q(Y)^\vee \ar[r]^\cong &
+\bigoplus_{p+q=n}H^p(X)\otimes H^q(Y) \ar[rr]^-\times\ar[d]^\cong && 
+H^n(X\times Y) \ar[d]^-\cong \\
+\bigoplus_{p+q=n}H_p(X)^\vee\otimes H_q(Y)^\vee \ar[r]^-\cong &
 \left(\bigoplus_{p+q=n}H_p(X)\otimes H_q(Y)\right)^\vee &
-H_n(X\times Y)^\vee \ar[l]_\cong
+H_n(X\times Y)^\vee \ar[l]_-\cong
 }\]
 Commutativity of this diagram is exactly the content of 
 Lemma \ref{lemma-cp-cross}. 
@@ -151,17 +152,9 @@ This composite is a chain map, and so induces a map in homology:
 \[
 \cap:H^p(X)\otimes H_n(X)\to H_{n-p}(X)\,.
 \]
-Here are some properties of the cap product.
-\begin{lemma}
-$(\alpha\cup\beta)\cap x=\alpha\cap(\beta\cap x)$ and $1\cap x=x$.
-\end{lemma}
-\begin{proof}
-Easy to check from the definition.
-\end{proof}
-Thus $ H_\ast(X)$ is a module over $ H^\ast(X)$. Notice how the dimensions work. Long ago a bad choice was made: we should index cohomology with negative numbers, so that the grading in 
-\[
-\cap: H^p(X)\otimes H_n(X)\to H_{n-p}(X)
-\]
-would make sense. 
+
+Notice how the dimensions work. Long ago a bad choice was made: If cohomology
+were graded with negative integers, the way the gradations work here would
+look better.
 
 There are also two slant products. Maybe I won't talk about them. In the next lecture, I'll check a few things about cap products, and then get into the machinery of Poincar\'{e} duality.

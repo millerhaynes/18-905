@@ -2,13 +2,13 @@
 
 We will now show that the $R$-modules $\Tor^R_n(M,N)$ are well-defined 
 and functorial. This will be an application of a very general principle.
-\begin{theorem}[Fundamental theorem of Homological Algebra]
+\begin{theorem}[Fundamental Theorem of Homological Algebra]
 \label{thm-ftha}
 Let $M$ and $N$ be $R$-modules; let
 \[
 0\leftarrow M\leftarrow E_0\leftarrow E_1\leftarrow\cdots
 \]
-be a sequence in which each $E_n$ is free, and 
+be a sequence in which each $E_n$ is free; let
 \[
 0\leftarrow N\leftarrow F_0\leftarrow F_1\leftarrow\cdots
 \]
@@ -19,37 +19,38 @@ homotopy.
 \begin{proof} Let's try to construct $f_0$. Consider:
 \begin{equation*}
 \xymatrix{0\ar[r] & K_0=\ker(\epsilon_M)\ar[r]\ar@{-->}[d]^{g_0} & E_0\ar[r]^{\epsilon_M}\ar@{-->}[d]^{f_0} & M\ar[d]^f &\\
-0\ar[r] & L_0=\ker(\epsilon_N)\ar[r] & F_0\ar@{->>}[r]^{\epsilon_N} & N\ar[r] & 0}
+0\ar[r] & L_0=\ker(\epsilon_N)\ar[r] & F_0\ar[r]^{\epsilon_N} & N\ar[r] & 0}
 \end{equation*}
-We know that $E_0=R\langle S\rangle$. What we do is push the generators of $E$ into $M$ via $\epsilon_M$ and then into $F$ via $f$, and then lift them to $F_0$ via  $\epsilon_N$ (which is possible because it's surjective). Then extend to
-a homomorphism, to get $f_0$. You can restrict it to kernels to get $g_0$. 
+We know that $E_0=RS$ for some set $S$. What we do is map the generators of $E_0$ into $M$ via $\epsilon_M$ and then into $F$ via $f$, and then lift them to $F_0$ via  $\epsilon_N$ (which is possible because it's surjective). Then extend to
+a homomorphism, to get $f_0$. You can restrict $f_0$ to kernels to get $g_0$. 
 
 Now the map $d:E_1\to E_0$ satisifes $\epsilon_M\circ d=0$, and so factors through a map to $K_0=\ker\epsilon_M$. Similarly, $d:F_1\to F_0$ factors through 
-a map $F_1\to L_1$, and this map must be surjective because the sequence
+a map $F_1\to L_0$, and this map must be surjective because the sequence
 $F_1\to F_0\to N$ is exact. We find ourselves in exactly the same situation:
 \begin{equation*}
 \xymatrix{0\ar[r] & K_1\ar[r]\ar@{-->}[d]^{g_1} & E_1\ar[r]\ar@{-->}[d]^{f_1} & K_0\ar[d]^{g_0} &\\
 0\ar[r] & L_1\ar[r] & F_1\ar[r] & L_0\ar[r] & 0}
 \end{equation*}
-So by we construct $f_*$ by induction.
+So we construct $f_*$ by induction.
 
-Now we need to prove the chain homotopy claim. So suppose I have $f_\ast,f'_\ast:E_\ast\to F_\ast$, both lifting $f:M\to N$. Then $f^\prime_n-f_n$ (which we'll rename $\ell_n$) is a chain map lifting $0:M\to N$. 
-We want to consruct a chain null-homotopy of $\ell_\ast$; that is, we want $h:E_n\to F_{n+1}$ such that $dh+hd=\ell_n$. At the bottom, $E_{-1}=0$ so we want
+Now we need to prove the chain homotopy claim. So suppose I have $f_\ast,f_\ast':E_\ast\to F_\ast$, both lifting $f:M\to N$. Then $f_n^\prime-f_n$ (which we'll rename $\ell_n$) is a chain map lifting $0:M\to N$. 
+We want to consruct a chain null-homotopy of $\ell_\ast$; that is, we want $h:E_n\to F_{n+1}$ such that $dh+hd=\ell_n$. At the bottom, $E_{-1}=0$, so we want
 $h:E_0\to F_1$ such that $dh=\ell_0$. This factorization happens in two steps. 
 \begin{equation*}
 \xymatrix{ & & E_0\ar[d]_{\ell_0}\ar[dl]\ar@{-->}[dll]_h \ar[r] & M\ar[d]^0 \\
-F_1\ar@{->>}[r] & L_0\ar[r] & F_0 \ar[r] & N \,.
+F_1\ar@{->>}[r] & L_0\ar[r] & F_0 \ar[r]^{\epsilon_N} & N \,.
 }\end{equation*}
-First, $d\ell_0=0$ implies that $\ell_0$ factors through $L_1=\ker\epsilon_N$.
-Next, $F_1\to L_0$ is surjective, by exactness, and $E_0$ is free, so we can lift generators and extend $R$-linearly as indicated. 
+First, $\epsilon_N\ell_0=0$ implies that $\ell_0$ factors through $L_0=\ker\epsilon_N$.
+Next, $F_1\to L_0$ is surjective, by exactness, and $E_0$ is free, so we can lift generators and extend $R$-linearly to get $h:E_0\to F_1$.. 
 
 The next step is organized by the diagram
 \begin{equation*}
 \xymatrix{ & & E_1\ar[r]^d\ar[d]^{\ell_1}\ar@{-->}[dl]\ar@{-->}[dll]_h & 
 E_0\ar[d]^{\ell_0}\ar[dl]_h & \\
-F_2\ar@{->>}[r]\ar@/_/[rr]_d & L_1\ar[r] & F_1\ar[r]^d & F_0}
+F_2\ar@{->>}[r]\ar@/_3pt/[rr]_d & L_1\ar[r] & F_1\ar[r]^d & F_0}
 \end{equation*}
-This diagram doesn't commute; while $dh=\ell_0$, we want to construct 
+This diagram doesn't commute; $dh=\ell_0$, but the $(d,h,\ell_1$ triangle
+doesn't commute. Rather, we want to construct 
 $h:E_1\to F_2$ such that $dh=\ell_1-hd$. Since 
 \[
 d(\ell_1-hd)=\ell_0d-dhd=(\ell_0-dh)d=0\,.
@@ -71,14 +72,16 @@ any surjection:
 P\ar@{-->}[ur]\ar[r] & N}
 \end{equation*}
 \end{definition}
-Every free module is projective; this is what we have been using;
-our proof of the Fundamental Theorem of Homological Algebra uses only that 
-$E_n$ is projective. 
+Every free module is projective, and this is the property of freeness that we 
+jave been using; the Fundamental Theorem of Homological Algebra holds under
+the weaker assumption that each $E_n$ is projective.
+ 
 Anything that's a direct summand in a projective is also projective. Any projective module is a direct summand of a free module. Over a PID, every projective is free, because any submodule of a free is free. But there are examples of
 nonfree projectives: 
 \begin{example}
 Let $k$ be a field and let $R$ be the product ring $k\times k$. It acts on $k$
-in two ways, via $(a,b)c=ac$ and via $(a,b)c=bc$. This are both projective $R$-modules that are not free.
+in two ways, via $(a,b)c=ac$ and via $(a,b)c=bc$. These are both projective 
+$R$-modules that are not free.
 \end{example}
 
 Now we will apply Theorem \ref{thm-ftha}
@@ -89,19 +92,20 @@ Suppose I have $f:N'\to N$. Pick arbitrary free resolutions
 $N'\leftarrow F'_*$ and $N\leftarrow F_*$, and pick any chain map 
 $f_*:F'_*\to F_*$ lifting $f$. We claim that the map
 induced in homology by $1\otimes f_*:M\otimes_RF'_*\to M\otimes_RF_*$
-is independent of the choice of lift. Suppose $f'_*$ is another lift,
-and pick a chain homotopy $h:f\simeq f'$. Since $M\otimes_R-$ is additive, 
+is independent of the choice of lift. Suppose $f_*'$ is another lift,
+and pick a chain homotopy $h:f_*\simeq f'_*$. Since $M\otimes_R-$ is additive, 
 the relation 
 \[
-1\otimes h:1\otimes f\simeq 1\otimes f'
+1\otimes h:1\otimes f_*\simeq 1\otimes f'_*
 \] 
-still holds. So $1\otimes f$ and $1\otimes f'$ induce the same map in homology.
+still holds. So $1\otimes f_*$ and $1\otimes f'_*$ 
+induce the same map in homology.
 
-For example, suppose that $F_*$ and $F'_*$ are two projective resolutions of 
+For example, suppose that $F_*$ and $F_*'$ are two projective resolutions of 
 $N$. Any two lifts of the identity map are chain-homotopic, and so induce
-the same map $H_*(M\otimes_RF_*)\to H_*(M\otimes_RF'_*)$. So if $f:F_*\to F'_*$
+the same map $H_*(M\otimes_RF_*)\to H_*(M\otimes_RF_*')$. So if $f:F_*\to F_*'$
 and $g:F'_*\to F_*$ are chain maps lifing the identity, then $f_*\circ g_*$
-induces the same self-map of $H_*(M\otimes_RF'_*)$ as the identity self-map 
+induces the same self-map of $H_*(M\otimes_RF_*')$ as the identity self-map 
 does, and so (by functoriality) is the identity. Similarly, $g_*\circ f_*$
 induces the identity map on $H_*(M\otimes_RF_*)$. So they induce inverse
 isomorphisms. 
@@ -111,29 +115,31 @@ induce canonically isomorphic modules $\Tor_n^R(M,N)$, and that a homomorphism
 $f:N'\to N$ induces a well defined map $\Tor_n^R(M,N')\to\Tor_n^R(M,N)$
 that renders $\Tor^R_n(M,-)$ a functor. 
 
-Last comment about $\Tor$ is that there's a symmetry there. Of course, $M\otimes_R N\cong N\otimes_R M$. This uses the fact that $R$ is commutative. This leads right on to saying that $\Tor^R_n(M,N)\cong \Tor^R_n(N,M)$. We've been computing $\Tor$ by taking a resolution of the second variable. But I could equally have taken a resolution of the first variable. This follows from Theorem
+My 
+last comment about $\Tor$ is that there's a symmetry there. Of course, $M\otimes_R N\cong N\otimes_R M$. This uses the fact that $R$ is commutative. This leads right on to saying that $\Tor^R_n(M,N)\cong \Tor^R_n(N,M)$. We've been computing $\Tor$ by taking a resolution of the second variable. But I could equally have taken a resolution of the first variable. This follows from Theorem
 \ref{thm-ftha}.
 
 
 \begin{example}
-I want to give an example when you do have higher $\Tor$ modules. Let $k$ be a field, and let $R=k[d]/(d^2)$. This is sometimes called the ``dual numbers'', or the exterior algebra over $k$. We're going to consider $R$-modules. Let's construct a projective resolution of $k$. What is an $R$-module $M$? It's just a $k$-vector space $M$ with an operator $d$ (given by multiplication by $e$) that satisfies $d^2=0$. Even though there's no grading around, I can still define the ``homology'' of $M$:
+I want to give an example when you do have higher $\Tor$ modules. Let $k$ be a field, and let $R=k[d]/(d^2)$. This is sometimes called the ``dual numbers,'' or the exterior algebra over $k$. 
+What is an $R$-module? It's just a $k$-vector space $M$ with an operator $d$ (given by multiplication by $d$) that satisfies $d^2=0$. Even though there's no grading around, I can still define the ``homology'' of $M$:
 \[
 H(M;d)=\frac{\ker d}{\img d}\,.
 \]
 
-This $k$-algebra is {\em augmented} by an algebra map $\epsilon:R\to k$ splitting the unit; $\epsilon(d)=0$. Let's construct a free $R$-module resolution of this module. Here's a picture.
+This $k$-algebra is {\em augmented} by an algebra map $\epsilon:R\to k$ splitting the unit; $\epsilon(d)=0$. This renders $k$ an $R$-module. Let's construct a free $R$-module resolution of this module. Here's a picture.
 \[
 \xymatrix@R=8pt{
-&&&& \bullet \ar@{..}[r] \ar@{-}[d] & \\
+&&&& \bullet \ar@{<--}[r] \ar@{-}[d] & \\
 &&& \bullet \ar@{-}[d] & \bullet \ar[l]  \\
 && \bullet \ar@{-}[d] & \bullet \ar[l] \\
 & \bullet \ar@{-}[d] & \bullet \ar[l] \\
 \bullet & \bullet \ar[l]
 }\]
-The vertical lines indicate multiplication by $e$. We could write this as
+The vertical lines indicate multiplication by $d$. We could write this as
 \[
 0\leftarrow 
-k\xleftarrow{\epsilon}R\xleftarrow{e}R\xleftarrow{e}R\leftarrow\cdots\,.
+k\xleftarrow{\epsilon}R\xleftarrow{d}R\xleftarrow{d}R\leftarrow\cdots\,.
 \]
 
 Now tensor this over $R$ with an $R$-module $M$; so $M$ is a vector space 

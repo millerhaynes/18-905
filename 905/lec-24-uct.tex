@@ -9,8 +9,7 @@ First, there's a natural map
 \[
 \alpha: H_n(C_\ast)\otimes M\to H_n(C_\ast\otimes M)\,,
 \]
-sending $[z]\otimes m$ to $[z\otimes m]$. (This is a special case
-of our comparison map $\mu$; regard $M$ as a very short chain complex.) 
+sending $[z]\otimes m$ to $[z\otimes m]$.
 We propose to find conditions under which it is 
 injective. The map $\alpha$ fits into a commutative 
 diagram with exact columns like this:
@@ -31,7 +30,7 @@ all $n$. Then the submodule $B_{n-1}(C_*)\subseteq C_{n-1}$ is again free,
 so the short exact sequence 
 \[
 \xymatrix{
-0 \ar[r] & Z_n(C_*) \ar[r] & C_n \ar[r] \ar[dr] & 
+0 \ar[r] & Z_n(C_*) \ar[r] & C_n \ar[r] \ar[dr]^d & 
 B_{n-1}(C_*) \ar[r] \ar[d] & 0 \\
 &&& C_{n-1} 
 }\]
@@ -96,18 +95,18 @@ coefficient short exact sequences:
 \[
 \xymatrix{
 0 \ar[r] & H_2(\RP^2)\otimes\Z/2\Z \ar[d]^0 \ar[r] & 
-H_2(\RP^2;\Z/2\Z) \ar[d]^\cong \ar[r]^\cong & 
+H_2(\RP^2;\Z/2\Z) \ar[d]^\cong \ar[r]^-\cong & 
 \Tor_1(H_1(\RP^2),\Z/2\Z) \ar[d]^0 \ar[r] & 0 \\
-0 \ar[r] & H_2(S^2)\otimes\Z/2\Z \ar[r]^\cong & H_2(S^2;\Z/2\Z) \ar[r] &
+0 \ar[r] & H_2(S^2)\otimes\Z/2\Z \ar[r]^-\cong & H_2(S^2;\Z/2\Z) \ar[r] &
 \Tor_1(H_1(S^2),\Z/2\Z) \ar[r] & 0 
 }\]
 This shows that the splitting of the universal coefficient short exact 
 sequence cannot be made natural, and it explains the mystery that we began 
 with.
 \end{example}
-\begin{remark}
-The hypotheses are essential. Exercise: construct two counterexamples:
+\begin{exercise}
+The hypotheses are essential. Construct two counterexamples:
 one with $R=\Z$ but in which the groups in the chain complex are not free,
 and one in which $R=k[d]/d^2$ and the modules in $C_*$ are free over $R$.  
-\end{remark}
+\end{exercise}
 

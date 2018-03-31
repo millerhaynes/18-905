@@ -4,7 +4,7 @@ Abelian groups can be quite complicated, even finitely generated ones. Vector sp
 
 We can do this, and more. Let $R$ be any commutative ring at all.
 Instead of forming the free abelian group on $\Sin_*(X)$, we could just as 
-form the free $R$-module:
+well form the free $R$-module:
 \[
 S_*(X;R)=R\Sin_*(X)
 \]
@@ -19,7 +19,7 @@ H_n(X;R)=\frac{\ker(d:S_n(X;R)\to S_{n-1}(X;R))}
 \]
 
 This is the {\em singular homology of $X$ with coefficients in the commutative 
-ring $R$}. It satisfies all the Eilenberg-Steenrod axioms, but 
+ring $R$}. It satisfies all the Eilenberg-Steenrod axioms, with 
 \[
 H_n(\ast;R)=
 \begin{cases}R\,\,&\hbox{for}\quad n=0\\0\,\,&\hbox{otherwise}\,.\end{cases}
@@ -33,7 +33,7 @@ homology is isomorphic to $H_*(X;R)$.
 
 The coefficient rings that are most important in algebraic topology are 
 simple ones: the integers and the prime fields $\FF_p$ and $\QQ$; 
-typically, a PID.
+almost always a PID.
 
 As an experiment, let's compute $ H_\ast(\RP^n;R)$ for various rings $R$.
 Let's start with $R=\FF_2$, the field with 2 elements. This is a favorite
@@ -75,13 +75,13 @@ R\,&\,\hbox{for}\quad k=n\\
 0\,&\,\hbox{otherwise}\,.
 \end{cases}
 \]
-You get a much simpler result: Away from 2, even projective spaces look like a point, and odd projective spaces look like a sphere!
+You get a much simpler result: Away from 2, even projective spaces look like points, and odd projective spaces look like spheres!
 
 I'd like to generalize this process a little bit, and allow coefficients 
 not just in
 a commutative ring, but more generally in a module $M$ over a commutative ring;
 in particular, any abelian group. This is most cleanly done using the
-mechinism of the tensor product. That mechanism will also let us address
+mechanism of the tensor product. That mechanism will also let us address
 the following natural question: 
 \begin{question}
 Given $H_*(X;R)$, can we deduce $H_*(X;M)$ for an $R$-module $M$?

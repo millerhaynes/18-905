@@ -1,7 +1,7 @@
 \section{The Eilenberg Steenrod axioms and the locality principle}
 
 
-Before we proceed to prove the excision theorem, let's review the properties of homology theory as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod \cite{eilenberg-steenrod}. 
+Before we proceed to prove the excision theorem, let's review the properties ofsingular homology as we have developed them. They are captured by a set of axioms, due to Sammy Eilenberg and Norman Steenrod \cite{eilenberg-steenrod}. 
 \begin{definition}
 A {\em homology theory} (on $\mathbf{Top}$) is:
 \begin{itemize}
@@ -10,7 +10,7 @@ A {\em homology theory} (on $\mathbf{Top}$) is:
 \end{itemize}
 such that:
 \begin{itemize}
-\item If $f_0,f_1:(X,A)\to (Y,B)$ are homotopic, then $f_{0,\ast}=f_{1,\ast}:h_n(X,A)\to h_n(Y,B)$.
+\item If $f_0,f_1:(X,A)\to (Y,B)$ are homotopic, then $f_{0\ast}=f_{1\ast}:h_n(X,A)\to h_n(Y,B)$.
 \item Excisions induce isomorphisms.
 \item For any pair $(X,A)$, the sequence 
 \begin{equation*}
@@ -24,7 +24,7 @@ We add the following ``Milnor axiom'' \cite{milnor}
 to our definition. To state it,
 let $I$ be a set and suppose that for each $i\in I$ we have a space $X_i$. We can form their disjoint union or {\em coproduct} $\coprod X_i$. The inclusion maps $X_i\to\coprod X_i$ induce maps $h_n(X_i)\to h_n(\coprod X_i)$, and these in turn induce a map from the direct sum, or coproduct in $\Ab$:
 \[
-\alpha:\bigoplus_i h_n(X_i)\to h_n\left(\coprod_{i\in I} X_i\right)\,.
+\alpha:\bigoplus_{i\in I} h_n(X_i)\to h_n\left(\coprod_{i\in I} X_i\right)\,.
 \]
 Then:
 \begin{itemize}
@@ -47,14 +47,14 @@ Let $X$ be a topological space. A family $\mathscr{A}$ of subsets of $X$ is a
 \begin{definition}
 Let ${\mathscr{A}}$ be a cover of $X$. An $n$-simplex $\sigma$ is ${\mathscr{A}}$-{\em small} if there is $A\in \mathscr{A}$ such that the image of $\sigma$ is entirely in $A$.
 \end{definition}
-Notice that if $\sigma:\Delta^n\to X$ is ${\mathscr{A}}$-small, then so is $d^i\sigma$; in fact, for any simplicial operator $\phi$, $\phi^*\sigma$ is again $\mathscr{A}$-small. Let's denote by $\Sin^{\mathscr{A}}_*(X)$ the graded set of ${\mathscr{A}}$-small simplices. This us a sub-simplicial set of $\Sin_*(X)$.
+Notice that if $\sigma:\Delta^n\to X$ is ${\mathscr{A}}$-small, then so is $d_i\sigma$; in fact, for any simplicial operator $\phi$, $\phi^*\sigma$ is again $\mathscr{A}$-small. Let's denote by $\Sin^{\mathscr{A}}_*(X)$ the graded set of ${\mathscr{A}}$-small simplices. This us a sub-simplicial set of $\Sin_*(X)$.
 Applying the free abelian group functor, we get the subcomplex 
 \[
 S^{\mathscr{A}}_\ast(X)
 \]
-of $\mathscr{A}$-{\em small simplices}. Write $H^{\mathscr{A}}_*(X)$ for its
+of $\mathscr{A}$-{\em small singular chains}. Write $H^{\mathscr{A}}_*(X)$ for its
 homology.
-\begin{theorem}
+\begin{theorem}[The locality principle]
 The inclusion $S^\mathscr{A}_\ast(X)\subseteq S_\ast(X)$ is a chain homotopy equivalence, so $H^\mathscr{A}_\ast(X)\to H_\ast(X)$ is an isomorphism.
 \end{theorem}
 This will take a little time to prove. Let's see right now how it implies excision.
@@ -129,9 +129,8 @@ Suppose we have a map of long exact sequences
 \begin{equation*}
 \xymatrix{
 \cdots\ar[r] & C'_{n+1} \ar[r]^k\ar[d]^h & A'_n\ar[r]\ar[d]^f & 
-B'_n\ar[r]\ar[d]^\cong & C'_n\ar[r]^k\ar[d]^h &  \cdots\\
-\cdots\ar[r] & C_{n+1} \ar[r]^k & A_n \ar[r] & B_n \ar[r] & C_n \ar[r]^k & 
-\cdots
+B'_n\ar[r]\ar[d]^\cong & C'_n\ar[r]\ar[d]^h &  \cdots\\
+\cdots\ar[r] & C_{n+1} \ar[r]^k & A_n \ar[r] & B_n \ar[r] & C_n \ar[r] & \cdots
 }
 \end{equation*}
 in which every third arrow is an isomorphism as indicated.

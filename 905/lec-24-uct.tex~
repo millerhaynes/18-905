@@ -1,7 +1,7 @@
 \section{Universal coefficient theorem}
 
 Suppose that we are given $ H_\ast(X;\Z)$. Can we compute $ H_\ast(X;\Z/2\Z)$? 
-This is non-obvious. Consider the map $\RP^2\to S^2$ that pinches $\RP^1$ to a point. Now $H_2(\RP^2;\Z)=0$, so in $H_2$ this map is zero. But in $\Z/2\Z$-coefficients, in dimension $2$, this map gives an isomorphism. This shows that there's not a {\em functorial} determination of $ H_\ast(X;\Z/2)$ by $ H_\ast(X;\Z)$; the effect of a map in integral homology does not determine its effect in mod 2 homology. So how \emph{do} we go between different coefficients?
+This is non-obvious. Consider the map $\RP^2\to S^2$ that pinches $\RP^1$ to a point. Now $H_2(\RP^2;\Z)=0$, so in $H_2$ this map is zero. But in $\Z/2\Z$-coefficients, in dimension $2$, this map gives an isomorphism. This shows that there's no {\em functorial} determination of $ H_\ast(X;\Z/2)$ in terms of $ H_\ast(X;\Z)$; the effect of a map in integral homology does not determine its effect in mod 2 homology. So how \emph{do} we go between different coefficients?
 
 Let $R$ be a commutative ring and $M$ an $R$-module, and suppose we have a chain complex $C_\ast$ of $R$-modules. It could be the singular complex of a space, but it doesn't have to be. Let's compare $ H_n(C_\ast)\otimes M$ with $ H_n(C_\ast\otimes M)$. (Here and below we'll just write $\otimes$ for $\otimes_R$.) The latter thing gives homology with coefficients in $M$. How can we compare these two? Let's investigate, and build up conditions on $R$ and $C_\ast$ as we go along. 
 
@@ -9,8 +9,7 @@ First, there's a natural map
 \[
 \alpha: H_n(C_\ast)\otimes M\to H_n(C_\ast\otimes M)\,,
 \]
-sending $[z]\otimes m$ to $[z\otimes m]$. (This is a special case
-of our comparison map $\mu$; regard $M$ as a very short chain complex.) 
+sending $[z]\otimes m$ to $[z\otimes m]$.
 We propose to find conditions under which it is 
 injective. The map $\alpha$ fits into a commutative 
 diagram with exact columns like this:
@@ -31,7 +30,7 @@ all $n$. Then the submodule $B_{n-1}(C_*)\subseteq C_{n-1}$ is again free,
 so the short exact sequence 
 \[
 \xymatrix{
-0 \ar[r] & Z_n(C_*) \ar[r] & C_n \ar[r] \ar[dr] & 
+0 \ar[r] & Z_n(C_*) \ar[r] & C_n \ar[r] \ar[dr]^d & 
 B_{n-1}(C_*) \ar[r] \ar[d] & 0 \\
 &&& C_{n-1} 
 }\]
@@ -105,9 +104,9 @@ This shows that the splitting of the universal coefficient short exact
 sequence cannot be made natural, and it explains the mystery that we began 
 with.
 \end{example}
-\begin{remark}
-The hypotheses are essential. Exercise: construct two counterexamples:
+\begin{exercise}
+The hypotheses are essential. Construct two counterexamples:
 one with $R=\Z$ but in which the groups in the chain complex are not free,
 and one in which $R=k[d]/d^2$ and the modules in $C_*$ are free over $R$.  
-\end{remark}
+\end{exercise}
 

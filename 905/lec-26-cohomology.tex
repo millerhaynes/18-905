@@ -41,7 +41,7 @@ After all, the tensor product is defined by a universal property for maps
 Still, it's often useful, and we pause to fill in some of its properties.
 
 \begin{definition}
-Let $R$ be a ring. A (graded) coalgebra over $R$ is a (graded) $R$-module $M$ equipped with a comultiplication $\Delta:M\to M\otimes_R M$ and a counit map $\varepsilon:M\to R$ such that the following diagrams commute.
+Let $R$ be a ring. A {\em (graded) coalgebra} over $R$ is a (graded) $R$-module $M$ equipped with a ``comultiplication'' $\Delta:M\to M\otimes_R M$ and a ``counit'' map $\varepsilon:M\to R$ such that the following diagrams commute.
 \begin{equation*}
 \xymatrix{ & M\ar[d]^\Delta\ar[dr]^=\ar[dl]_= & \\
 R\otimes_R M & M\otimes_R M\ar[l]_{\varepsilon\otimes 1}\ar[r]^{1\otimes\varepsilon} & M\otimes_R R}
@@ -60,7 +60,7 @@ It is {\em commutative} if in addition
 commutes, where $\tau(x\otimes y)=(-1)^{|x|\cdot|y|}y\otimes x$ is the twist map.
 \end{definition}
 
-Using acyclic models, we saw that the 
+Using acyclic models, you saw for homework that the 
 the K\"{u}nneth map is associative and commutative: The diagrams
 \[
 \xymatrix{S_\ast(X)\otimes S_\ast(Y)\otimes S_\ast(Z) \ar[r]^{\times\otimes1}
@@ -161,7 +161,7 @@ complex, albeit a negatively graded one. Form the graded tensor product, with
 \bigoplus_{p+q=n}S^\vee_p(X;N)\otimes S_q(X)\,.
 \]
 
-Now evaluation is a degree zero chain map
+Now evaluation is a map of graded abelian groups
 \[
 \langle-,-\rangle:S^\vee_\ast(X;N)\otimes S_\ast(X)\to N\,,
 \]

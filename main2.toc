@@ -1,0 +1,99 @@
+\contentsline {section}{Preface}{i}{section*.1}
+\contentsline {chapter}{Contents}{ii}{section*.2}
+\contentsline {chapter}{\chapternumberline {4}Basic homotopy theory}{1}{chapter.4}
+\contentsline {section}{\numberline {39}Limits, colimits, and adjunctions}{1}{section.4.39}
+\contentsline {subsection}{Limits and colimits}{1}{section*.3}
+\contentsline {subsection}{Adjoint functors}{3}{section*.4}
+\contentsline {subsection}{The Yoneda lemma}{4}{section*.5}
+\contentsline {section}{\numberline {40}Cartesian closure and compactly generated spaces}{5}{section.4.40}
+\contentsline {subsection}{CGHW spaces}{6}{section*.6}
+\contentsline {subsection}{Mapping spaces}{7}{section*.7}
+\contentsline {section}{\numberline {41}Weak Hausdorff, Basepoints}{8}{section.4.41}
+\contentsline {subsection}{Basepoints}{9}{section*.8}
+\contentsline {section}{\numberline {42}Fiber bundles, fibrations, cofibrations}{11}{section.4.42}
+\contentsline {subsection}{Fiber bundles}{11}{section*.9}
+\contentsline {subsection}{Fibrations and path liftings}{12}{section*.10}
+\contentsline {section}{\numberline {43}Fibrations and cofibrations}{14}{section.4.43}
+\contentsline {subsection}{Comparing fibers over different points}{14}{section*.11}
+\contentsline {subsection}{Cofibrations}{15}{section*.12}
+\contentsline {section}{\numberline {44}Homotopy fibers}{17}{section.4.44}
+\contentsline {subsection}{``Fibrant replacements''}{17}{section*.14}
+\contentsline {subsection}{Homotopy fibers}{19}{section*.15}
+\contentsline {section}{\numberline {45}Barratt-Puppe sequence}{20}{section.4.45}
+\contentsline {subsection}{Fiber sequences}{20}{section*.16}
+\contentsline {subsection}{Iterating fiber sequences}{21}{section*.17}
+\contentsline {section}{\numberline {46}Relative homotopy groups}{23}{section.4.46}
+\contentsline {subsection}{Spheres and homotopy groups}{23}{section*.19}
+\contentsline {subsection}{The homotopy category}{24}{section*.20}
+\contentsline {subsection}{The long exact sequence of a fiber sequence}{26}{section*.21}
+\contentsline {section}{\numberline {47}Action of $\pi _1$, simple spaces, and the Hurewicz theorem}{27}{section.4.47}
+\contentsline {subsection}{$\pi _1$-action}{28}{section*.22}
+\contentsline {subsection}{Hurewicz theorem}{30}{section*.23}
+\contentsline {section}{\numberline {48}Examples of CW-complexes}{32}{section.4.48}
+\contentsline {subsection}{Bringing you up-to-speed on CW-complexes}{32}{section*.24}
+\contentsline {section}{\numberline {49}Relative Hurewicz and J.\nobreakspace {}H.\nobreakspace {}C.\nobreakspace {}Whitehead}{33}{section.4.49}
+\contentsline {subsection}{The relative Hurewicz theorem}{34}{section*.25}
+\contentsline {subsection}{The Whitehead theorems}{34}{section*.26}
+\contentsline {section}{\numberline {50}Cellular approximation, cellular homology, obstruction theory}{36}{section.4.50}
+\contentsline {subsection}{Cellular approximation}{36}{section*.27}
+\contentsline {subsection}{Cellular homology}{37}{section*.28}
+\contentsline {subsection}{Obstruction theory}{38}{section*.31}
+\contentsline {section}{\numberline {51}Conclusions from obstruction theory}{39}{section.4.51}
+\contentsline {subsection}{Postnikov and Whitehead towers}{40}{section*.32}
+\contentsline {chapter}{\chapternumberline {5}Vector bundles}{45}{chapter.5}
+\contentsline {section}{\numberline {52}Vector bundles, principal bundles}{45}{section.5.52}
+\contentsline {subsection}{Constructions with vector bundles}{47}{section*.34}
+\contentsline {subsection}{Metrics and splitting exact sequences}{48}{section*.35}
+\contentsline {section}{\numberline {53}Principal bundles, associated bundles}{49}{section.5.53}
+\contentsline {subsection}{$I$-invariance}{49}{section*.36}
+\contentsline {subsection}{Principal bundles}{50}{section*.37}
+\contentsline {section}{\numberline {54}$I$-invariance of $\mathrm {Bun}_G$, and $G$-CW-complexes}{52}{section.5.54}
+\contentsline {subsection}{$G$-CW-complexes}{52}{section*.38}
+\contentsline {subsection}{Proof of $I$-invariance}{53}{section*.39}
+\contentsline {section}{\numberline {55}Classifying spaces: the Grassmann model}{55}{section.5.55}
+\contentsline {section}{\numberline {56}Simplicial sets}{58}{section.5.56}
+\contentsline {subsection}{Review}{58}{section*.41}
+\contentsline {subsection}{Realization}{59}{section*.42}
+\contentsline {section}{\numberline {57}Properties of the classifying space}{60}{section.5.57}
+\contentsline {section}{\numberline {58}Classifying spaces of groups}{61}{section.5.58}
+\contentsline {section}{\numberline {59}Classifying spaces and bundles}{64}{section.5.59}
+\contentsline {subsection}{Topological properties of $BG$}{65}{section*.44}
+\contentsline {subsection}{Examples}{66}{section*.45}
+\contentsline {chapter}{\chapternumberline {6}Spectral sequences}{69}{chapter.6}
+\contentsline {section}{\numberline {60}The spectral sequence of a filtered complex}{69}{section.6.60}
+\contentsline {subsection}{Serre spectral sequence}{72}{section*.46}
+\contentsline {section}{\numberline {61}Exact couples}{73}{section.6.61}
+\contentsline {section}{\numberline {62}Applications}{75}{section.6.62}
+\contentsline {subsection}{The Serre exact sequence}{79}{section*.48}
+\contentsline {section}{\numberline {63}Edge homomorphisms, transgression}{79}{section.6.63}
+\contentsline {subsection}{An example}{82}{section*.49}
+\contentsline {section}{\numberline {64}Serre classes}{83}{section.6.64}
+\contentsline {section}{\numberline {65}Mod $\mathbf C$ Hurewicz, Whitehead, cohomology spectral sequence}{86}{section.6.65}
+\contentsline {subsection}{Cohomology sseq}{87}{section*.51}
+\contentsline {section}{\numberline {66}A few examples, double complexes, Dress sseq}{87}{section.6.66}
+\contentsline {subsection}{Double complexes}{89}{section*.53}
+\contentsline {section}{\numberline {67}Dress spectral sequence, Leray-Hirsch}{90}{section.6.67}
+\contentsline {subsection}{Dress' sseq}{91}{section*.54}
+\contentsline {subsection}{Leray-Hirsch}{91}{section*.55}
+\contentsline {section}{\numberline {68}Integration, Gysin, Euler, Thom}{93}{section.6.68}
+\contentsline {subsection}{Umkehr}{94}{section*.56}
+\contentsline {subsection}{Gysin}{94}{section*.57}
+\contentsline {subsection}{Some facts about the Euler class}{95}{section*.58}
+\contentsline {subsection}{Time for Thom}{95}{section*.59}
+\contentsline {chapter}{\chapternumberline {7}Characteristic classes}{97}{chapter.7}
+\contentsline {section}{\numberline {69}Grothendieck's construction of Chern classes}{97}{section.7.69}
+\contentsline {subsection}{Generalities on characteristic classes}{97}{section*.60}
+\contentsline {subsection}{Chern classes}{98}{section*.61}
+\contentsline {subsection}{Grothendieck's construction}{99}{section*.62}
+\contentsline {section}{\numberline {70}$H^\ast (BU(n))$, splitting principle}{100}{section.7.70}
+\contentsline {subsection}{The cohomology of $BU(n)$}{101}{section*.63}
+\contentsline {subsection}{The splitting principle}{102}{section*.64}
+\contentsline {section}{\numberline {71}The Whitney sum formula}{103}{section.7.71}
+\contentsline {subsection}{Where do the Chern classes go?}{104}{section*.65}
+\contentsline {subsection}{Proving the Whitney sum formula}{105}{section*.66}
+\contentsline {section}{\numberline {72}Stiefel-Whitney classes, immersions, cobordisms}{106}{section.7.72}
+\contentsline {subsection}{Immersions of manifolds}{107}{section*.67}
+\contentsline {subsection}{Cobordism, characteristic numbers}{109}{section*.68}
+\contentsline {section}{\numberline {73}Oriented bundles, Pontryagin classes, Signature theorem}{110}{section.7.73}
+\contentsline {subsection}{Applications}{113}{section*.70}
+\contentsline {chapter}{Bibliography}{115}{section*.72}

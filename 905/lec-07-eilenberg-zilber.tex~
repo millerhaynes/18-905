@@ -16,7 +16,11 @@ Let's abstract a little bit. Suppose we have three chain complexes $A_*$, $B_*$,
 These data determine a bilinear map $\times:H_p(A)\times H_q(B)\to H_{p+q}(C)$.
 \end{lemma}
 \begin{proof}
-Let $a\in Z_p(A)$ and $b\in Z_q(A)$. We want to define $[a]\times [b]\in H_{p+q}(C)$. We hope that $[a]\times [b]=[a\times b]$. We need to check that $a\times b$ is a cycle. By Leibniz, $d(a\times b)=da\times b+(-1)^pa\times db$. Because $a,b$ are boundaries, this is zero. Now we need to check that homology class depens only on the homology classes we started with.
+Let $a\in Z_p(A)$ and $b\in Z_q(B)$. We want to define $[a]\times [b]\in H_{p+q}(C)$. We hope that $[a]\times [b]=[a\times b]$. We need to check that $a\times b$ is a cycle. By Leibniz, $d(a\times b)=da\times b+(-1)^pa\times db$, which 
+vanishes becauxe $a,b$ are cycles.
+
+Now we need to check that homology class depends only on the homology classes 
+we started with.
 So pick other cycles $a^\prime$ and $b^\prime$ in the same homology classes. We want $[a\times b]=[a^\prime\times b^\prime]$. In other words, we need to show that $a\times b$ differs from $a^\prime\times b^\prime$ by a boundary. We can write $a^\prime=a+d\overline{a}$ and $b^\prime=b+d\overline{b}$, and compute, using bilinearity:
 	\begin{equation*}
 	a^\prime\times b^\prime=(a+d\overline{a})+(b+d\overline{b})
@@ -65,11 +69,12 @@ determines an affine map $\Delta^{p+q}\to\Delta^p\times\Delta^q$ of the same nam
 the singular simplices making up $\iota_p\times\iota_q$. To specify the coefficients, think of $\omega$ as a staircase in the rectangle $[0,p]\times[0,q]$. 
 Let $A(\omega)$ denote the area under that staircase. Then the Eilenberg-Zilber chain is given by 
 \[
-\iota_p\times\iota_q=\sum(-1)^{A(\omega)}\overline{\omega}
+\iota_p\times\iota_q=\sum(-1)^{A(\omega)}\omega
 \]
 
+\medskip
 \begin{center}
-\includegraphics[width=3in]{905/Figures/07-EZ-triangulation.pdf}
+\includegraphics[width=2in]{905/Figures/07-EZ-triangulation.pdf}
 \end{center}
 
 

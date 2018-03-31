@@ -1,6 +1,6 @@
 \section{Products in cohomology}
 
-We'll talk about the cohomology cross product first. Actually, the first
+We'll talk about the cohomology cross product first. The first
 step is to produce a map on chains that goes in the reverse direction from
 the cross product we constructed in Lecture 7. 
 
@@ -21,10 +21,10 @@ a $p$-simplex in $X$ and a $q$-simplex in $Y$.
 First define two maps in the simplex category: 
 
 \smallskip
-the ``front face''  $\alpha_p:[p]\to[p+q]$, sending $i$ to $i$ for $0\leq i\leq p$, 
+-- the ``front face''  $\alpha_p:[p]\to[p+q]$, sending $i$ to $i$ for $0\leq i\leq p$, and
 
 \smallskip
-and the ``back face'' $\omega_q:[q]\to[p+q]$, sending $j$ to $j+p$ for $0\leq j\leq q$. 
+-- the ``back face'' $\omega_q:[q]\to[p+q]$, sending $j$ to $j+p$ for $0\leq j\leq q$. 
 
 \smallskip\noindent
 Use the same symbols for the affine 
@@ -57,7 +57,7 @@ $\Hom_R(D_\ast,R)$, and construct a chain map
 by 
 \begin{equation*}
 f\otimes g\mapsto\begin{cases}
-(x\otimes y\mapsto (-1)^{pq}f(x)g(y)) & |x|=|f|=p, |y|=|g|=q\\
+(x\otimes y\mapsto (-1)^{pq}f(x)g(y)) & |x|=|f|=p,\, |y|=|g|=q\\
 0 & \text{otherwise}.
 \end{cases}
 \end{equation*}
@@ -74,7 +74,7 @@ H^\ast(S^\ast(X)\otimes S^\ast(Y))\to H^\ast(X\times Y)\,.
 I'm not quite done! As in the K\"unneth theorem, there is an evident natural 
 map 
 \[
- H^\ast(X)\otimes H^\ast(Y)\to H^\ast(S^\ast(X)\otimes S^\ast(Y))\,.
+\mu: H^\ast(X)\otimes H^\ast(Y)\to H^\ast(S^\ast(X)\otimes S^\ast(Y))\,.
 \] 
 The composite
 \[
@@ -97,7 +97,7 @@ I claim that $ H^0(X;R)\cong\Map(\pi_0(X),R)$ as rings. When $p=q=0$, both $\alp
 pointwise product of functions. 
 
 There's a distinguished element in $H^0(X)$, namely the the function $\pi_0(X)\to R$ that takes on the value 1 on every path component. 
-This is the identity for the cup product. This comes out because when $p=0$ in our above story, then $\alpha_0$ is just including the $0$-simplex, and $\omega_q$ is the identity. 
+This is the identity for the cup product. This comes about because when $p=0$ in our above story, then $\alpha_0$ is just including the $0$-simplex, and $\omega_q$ is the identity. 
 
 The cross product is also associative, even on the chain level. 
 \begin{prop}
@@ -124,7 +124,7 @@ $0\leq\ell\leq q$. In other words,
 ((f\times g)\times h)(\sigma)=(-1)^{pq+qr+rp}
 f(\sigma_1\circ\alpha_p)g(\sigma_2\circ\mu_q)h(\sigma_3\circ\omega_r)\,.
 \]
-I've used associativity of the ring. But you get exactly the same thing when
+I've used associativity of the ring. You get exactly the same thing when
 you expand $(f\times(g\times h))(\sigma)$, so the cross product is associative.
 \end{proof}
 

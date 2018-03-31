@@ -13,19 +13,20 @@ We'll discuss the following topics.
     \item Basics of category theory
     \item Homological algebra
     \item The K\"{u}nneth theorem
-    \item Universal coefficient theorems, cohomology
+    \item Cohomology
+    \item Universal coefficient theorems
     \item Cup and cap products
     \item Poincar\'{e} duality.
 \end{enumerate}
 The objects of study are of course topological spaces, and the machinery
 we develop in this course is designed to be applicable to a general space. 
-But we are really interested in geometrically important spaces. Here are 
-some examples. 
+But we are really mainly interested in geometrically important spaces. 
+Here are some examples. 
 \begin{itemize}
     \item The most basic example is \emph{$n$-dimensional Euclidean space}, $\mathbf{R}^n$.
     \item The \emph{$n$-sphere} $S^n=\{x\in \mathbf{R}^{n+1}:|x|=1\}$, topologized as a subspace of $\mathbf{R}^{n+1}$.
     \item Identifying antipodal points in $S^n$ gives \emph{real projective space} $\mathbf{RP}^n=S^n / (x\sim -x)$, i.e. the space of lines through the origin in $\mathbf{R}^{n+1}$.
-    \item Call an ordered collection of $k$ orthonormal vectors an \emph{orthonormal $k$-frame}. The space of orthonormal $k$-frames in $\mathbf{R}^n$ forms the \emph{Stiefel manifold} $V_k(\mathbf{R}^n)$, which is topologized as a subspace of $(S^{n-1})^k$.
+    \item Call an ordered collection of $k$ orthonormal vectors an \emph{orthonormal $k$-frame}. The space of orthonormal $k$-frames in $\mathbf{R}^n$ forms the \emph{Stiefel manifold} $V_k(\mathbf{R}^n)$, topologized as a subspace of $(S^{n-1})^k$.
    \item The \emph{Grassmannian}  $\mathrm{Gr}_k(\mathbf{R}^n)$ is the space of
 $k$-dimensional linear subspaces of $\mathbf{R}^n$. Forming the span gives us
 a surjection $V_k(\mathbf{R}^n)\to\mathrm{Gr}_k(\mathbf{R}^n)$, and the
@@ -45,7 +46,7 @@ The standard simplices are related by face inclusions $d^i\colon \Delta^{n-1} \t
 verticies to vertices, in order, and omits the vertex $e_i$.
 
 \begin{center}
-\includegraphics[width=3in]{905/Figures/01-2-simplex.pdf}
+\includegraphics[width=2in]{905/Figures/01-2-simplex.pdf}
 \end{center}
 
 \begin{definition}
@@ -116,10 +117,12 @@ homology groups. The homology forms a graded abelian group.
 
 Both $Z_n(X)$ and $B_n(X)$ are free abelian groups because they are subgroups of the free abelian group $S_n(X)$, but the quotient $H_n(X)$ isn't necessarily free. While $Z_n(X)$ and $B_n(X)$ are uncountably generated, $H_n(X)$ turns out to be finitely generated for the spaces we are interested in. If $T$ is the torus, for example, then we will see that $H_1(T) \cong \mathbf{Z} \oplus \mathbf{Z}$, with generators given by the 1-cycles illustrated below. 
 
+\medskip
 \begin{center}
 \includegraphics[width=3in]{905/Figures/01-torus-generating-cycles}
 \end{center}
 
+\medskip
 We will learn to compute the homology groups of a wide variety of spaces. 
 The $n$-sphere for example has the following homology groups:
 \[

@@ -1,0 +1,63 @@
+\section{Examples of CW-complexes}
+\subsection{Bringing you up-to-speed on CW-complexes}
+\begin{definition}
+    A \emph{relative CW-complex} is a pair $(X,A)$, together with a filtration
+    $$A=X_{-1}\subseteq X_0\subseteq X_1\subseteq\cdots\subseteq X,$$
+    such that for all $n$, the space $X_n$ sits in a pushout square:
+    $$
+    \xymatrix{
+	\coprod_{\alpha\in \Sigma_n}S^{n-1}\ar[r]\ar[d]_{\text{attaching maps}} & \coprod_{\alpha\in \Sigma_n}D^n\ar[d]^{\text{characteristic maps}}\\
+	X_{n-1}\ar[r] & X_n,
+    }
+    $$
+    and $X=\varinjlim X_n$.
+\end{definition}
+If $A=\emptyset$, this is just the definition of a CW-complex.
+In this case, $X$ is also compactly generated.
+(This is one of the reasons for defining compactly generated spaces.)
+Often, $X$ will be a CW-complex, and $A$ will be a subcomplex.
+If $A$ is Hausdorff, then so is $X$.
+
+If $X$ and $Y$ are both CW-complexes, define
+$$(X\times^k Y)_n = \bigcup_{i+j = n}X_i\times Y_j;$$
+this gives a CW-structure on the product $X\times^k Y$.
+Any closed smooth manifold admits a CW-structure. 
+
+\begin{example}[Complex projective space]
+    The complex projective $n$-space $\CP^n$ is a CW-complex, with skeleta $\CP^0\subseteq\CP^1\subseteq\cdots\subseteq \CP^n$.
+    Indeed, any complex line through the origin meets the hemisphere defined by
+    $\begin{pmatrix}z_0\\\vdots\\z_n\end{pmatrix}$ with $||z||=1$, $\Im(z_n) = 0$, and $\Re(z_n)\geq 0$.
+	Such a line meets this hemisphere (which is just $D^{2n}$) at one point --- unless it's on the equator;
+	this gives the desired pushout diagram:
+    \begin{equation*}
+	\xymatrix{
+	    S^{2n-1}\ar[r]\ar[d] & D^{2n}\ar[d]\\
+	    \CP^{n-1}\ar[r] & \CP^n.
+	    }
+    \end{equation*}
+\end{example}
+\begin{example}[Grassmannians]
+    Let $V=\RR^n$ or $\cC^n$ or $\mathbf{H}^n$, for some fixed $n$.
+    Define the Grassmannian $\Gra_k(\RR^n)$ to be the collection of $k$-dimensional subspaces of $V$.
+    This is equivalent to specifying a $k\times n$ rank $k$ matrix.
+
+    %just linalg here, nothing to see
+    %The span of rows of $A$ is the row space $V_A$. This is the span of the rows of the reduced reduced echelon form of $A$. An entry is a \emph{pivot} if its leftmost nonzero is in its row. A column is \emph{pivotal} if it contains a pivot. Any matrix is reduced echelon if the $i$th pivotal column is $e_i$.
+
+    For instance, $\Gra_2(\RR^4)$ is, as a set, the disjoint union of:
+    \begin{equation*}
+	\begin{pmatrix}& 1 & \\ & & 1\end{pmatrix},\begin{pmatrix}&1&\ast\\&&1\end{pmatrix},\begin{pmatrix}1&\ast&\ast\\&&1\end{pmatrix},\begin{pmatrix}&1&\ast\\&1&\ast\end{pmatrix},\begin{pmatrix}1&\ast&\ast\\&1&\ast\end{pmatrix},\begin{pmatrix}1&\ast&\ast\\1&\ast&\ast\end{pmatrix}.
+    \end{equation*}
+    Motivated by this, define:
+    \begin{definition}
+	The $j$-skeleton of $\Gra(V)$ is
+	$$\mathrm{sk}_j\Gra_k(V) = \{A:\text{row echelon representation with at most $j$ free entries}\}.$$
+    \end{definition}
+    For a proof that this is indeed a CW-structure, see \cite[\S 6]{milnorstasheff}.
+    %They don't know it in 18.06, but they're constructing a CW-structure for the Grassmannian.
+\end{example}
+The top-dimensional cell tells us that
+$$\dim\Gra_k(\RR^n) = k(n-k).$$
+The complex Grassmannian has cells in only even dimensions.
+We know the homology of Grassmannians: Poincar\'e duality is visible if we count the number of cells.
+(Consider, for instance, in $\Gra_2(\RR^4)$).

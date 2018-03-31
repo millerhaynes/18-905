@@ -6,8 +6,8 @@ Suppose $X$ is a CW complex, with skeleton filtration
 $\varnothing=X_{-1}\subseteq X_0\subseteq X_1\subseteq\cdots\subseteq X$ and 
 cell structure
 \begin{equation*}
-\xymatrix{\coprod_{\alpha\in A_n}S^{n-1}_\alpha\ar[r]^{f_n}\ar@{^(->}[d] & X_{n-1}\ar[d]\\
-\coprod_{\alpha\in A_n}D^n_\alpha\ar[r]^{g_n} & X_{n}}\,.
+\xymatrix{\coprod_{\alpha\in A_n}S^{n-1}_\alpha\ar[r]^-{f_n}\ar@{^(->}[d] & X_{n-1}\ar[d]\\
+\coprod_{\alpha\in A_n}D^n_\alpha\ar[r]^-{g_n} & X_{n}}\,.
 \end{equation*}
 In each case, the boundary of a cell gets identified with part of the previous skeleton, but the ``interior''
 \[
@@ -24,7 +24,7 @@ and (except when $n=0$) they are not homeomorphic to compact disks.
 
 \begin{definition}
 Let $X$ be a CW-complex with a cell structure 
-$\{g_\alpha:D^n_\alpha\to X_n:\alpha\in A_n\}$. A {\em subcomplex} is a subspace $Y\subseteq X$ such that for all $n$, there is a subset $B_n$ of $A_n$ such that $Y_n=Y\cap X_n$ provides $Y$ with a CW-structure with characteristic maps $\{g_\beta:\beta\in B_n\}$.
+$\{g_\alpha:D^n_\alpha\to X_n:\alpha\in A_n,n\geq0\}$. A {\em subcomplex} is a subspace $Y\subseteq X$ such that for all $n$, there is a subset $B_n$ of $A_n$ such that $Y_n=Y\cap X_n$ provides $Y$ with a CW-structure with characteristic maps $\{g_\beta:\beta\in B_n,n\geq0\}$.
 \end{definition}
 \begin{example}
 $\Sk_nX\subseteq X$ is a subcomplex.
@@ -58,7 +58,10 @@ and define
 \mathrm{Sk}_kS^n=S^n\cap\RR^{k+1}=S^k\,.
 \]
 
-\fbox{picture needed}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/15-sphere-CW-structure.pdf}
+\end{center}
 
 Now there are two $k$-cells for each $k$ with $0\leq k\leq n$, given by the
 two hemispheres of $S^k$. For each $k$ there are two characteristic maps,

@@ -5,7 +5,7 @@ We have constructed an explicit map $S^p(X)\otimes S^q(Y)\xrightarrow{\times} S^
 \end{equation*}
 where $\alpha_p:\Delta^p\to\Delta^{p+q}$ sends $i$ to $i$ for 
 $0\leq i\leq p$ and $\omega_q:\Delta^q\to\Delta^{p+q}$ sends $j$ to $j+p$ 
-for  $0\leq j\leq q$. This is a chain map; it induces a ``cross product''
+for  $0\leq j\leq q$. This is a cochain map; it induces a ``cross product''
 $ H^p(X)\otimes H^q(Y)\to H_{p+q}(X\times Y)$, and, by composing with the
 map induced by the diagonal embedding, the ``cup product''
 \[
@@ -54,7 +54,7 @@ Some spaces are
 easy! There is no choice for the product structure on $H^*(S^n)$, for example.
 (When $n=0$, we get a free module of rank 2 in dimension 0. This admits
 a variety of commutative algebra structures; but we have already seen that
-$H^0(S_0)=\Z\times\Z$ as an algebra.) Maybe the next thing to try is a 
+$H^0(S^0)=\Z\times\Z$ as an algebra.) Maybe the next thing to try is a 
 product of spheres. More generally, we should ask whether there is an 
 algebra structure on $H^\ast(X)\otimes H^\ast(Y)$ making the cross product an
 algebra map. If $A$ and $B$ are two graded algebras, there {\em is} a natural
@@ -89,8 +89,8 @@ Let $\alpha_1,\alpha_2\in H^\ast(X)$ and $\beta_1,\beta_2\in H^\ast(Y)$. Then $\
 Naturality of the cross product asserts that the diagram
 \begin{equation*}
 \xymatrix{
-	 H^\ast(X\times Y) && \ar[ll]^{\times_{X\times Y}} H^\ast(X)\otimes_R H^\ast(Y)\\
-	 H^\ast(X\times X\times Y\times Y)\ar[u]^{(\Delta_X\times\Delta_Y)^\ast} && H^\ast(X\times X)\otimes H^\ast(Y\times Y)\ar[ll]_{\times_{X\times X,Y\times Y}}\ar[u]^{\Delta_X^\times\otimes\Delta_Y^\ast}\,.
+	 H^\ast(X\times Y) && \ar[ll]_{\times_{X\times Y}} H^\ast(X)\otimes_R H^\ast(Y)\\
+	 H^\ast(X\times X\times Y\times Y)\ar[u]^{(\Delta_X\times\Delta_Y)^\ast} && H^\ast(X\times X)\otimes H^\ast(Y\times Y)\ar[ll]_{\times_{X\times X,Y\times Y}}\ar[u]^{\Delta_X^\ast\otimes\Delta_Y^\ast}\,.
 }
 \end{equation*}
 commute. We learn:
@@ -132,7 +132,7 @@ The space $S^p\vee S^q\vee S^{p+q}$ has the same homology and
 cohomology groups as
 $S^p\times S^q$. Both are built as CW complexes with cells in dimensions
 $0, p, q$, and $p+q$. But they are not homotopy equivalent. We can see this
-now because there {\em is} a map $S^p\vee S^q\vee S^{p+q}\to S^{p+q}$
-inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the map that pinches
-the other two factors to the basepoint. 
+now because there {\em is} a map $S^{p+q}\to S^p\vee S^q\vee S^{p+q}$
+inducing an {\em isomorphism} in $H^{p+q}(-)$, namely, the inclusion
+of that summand.
 \end{example}

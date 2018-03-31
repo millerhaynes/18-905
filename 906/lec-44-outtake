@@ -1,0 +1,116 @@
+
+\begin{solution}
+    Define $Mf$ via the pushout:
+    \begin{equation*}
+	\xymatrix{
+	    X\ar[r]^f \ar[d]_{\mathrm{in}_0} & Y\ar[d]^g\\
+	    I\times X\ar[r] & Mf.
+	    }
+    \end{equation*}
+    Define $r:Mf\to Y$ via $r(y) = y$ on $Y$ and $r(x,s) = f(x)$ on $X\times I$.
+    Then, clearly, $rg = \mathrm{id}_Y$.
+    There is a homotopy $\mathrm{id}_{Mf}\simeq gr$ given by the map $h:Mf\times I\to Mf$,
+    defined by the formulae
+    $$h(y,t) = y,\text{ and }h((x,s),t) = (x,(1-t)s).$$
+    %Essentially, one's pushing the cylinder $X\times I$ down.
+    
+    We now have to check that $X\to Mf$ is a cofibration, i.e., that
+    $Mf\times I$ retracts onto $Mf\times\{0\}\cup_X (X\times I)$.
+    This can be done by ``pushing'' $Y\times I$ to $Y\times\{0\}$ and $X\times I\times I$ down to $X\times I$,
+    while fixing $X\times\{0\}$.
+    
+    It is easy to see that this factorization is functorial:
+    if $f:X\to Y$ is sent to $g:W\to Z$ via $p:X\to W$ and $q:Y\to Z$,
+    then $Mf\to Mg$ can be defined as the dotted map in the following diagram
+    (which exists, by the universal property of the pushout):
+    \begin{equation*}
+	\xymatrix{
+	    X\ar[rr]^f\ar[dd]_{\mathrm{in}_0}\ar[dr]|p & & Y\ar[dd]|\hole\ar[dr]|q & \\
+	    & W\ar[rr]_g\ar[dd] & & Z\ar[dd]\\
+	    X\times I\ar[rr]\ar[dr]_{p\times \mathrm{id}} & & Mf\ar@{-->}[dr] & \\
+	    & W\times I\ar[rr] & & Mg.
+	    }
+    \end{equation*}
+    \todo{Fix the overlapping arrows here, I don't know how to do this...}
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{prop}\label{strictcomparison}
+    Suppose $p:X\to Y$ is a fibration.
+    Then the canonical map $p^{-1}(\ast)\to F(p,\ast)$ is a homotopy equivalence.
+\end{prop}
+You will prove this in a series of exercises.
+
+\begin{exercise}\label{sectionuptohomotopy}
+    Prove Proposition \ref{strictcomparison} by working through the following statements.
+    \begin{enumerate}
+	\item Let $p:E\to B$ be a fibration.
+	    Suppose $g:X \to B$ lifts across $p$ up to homotopy, i.e., there exists a map $f:X\to E$ such that
+	    $p \circ f \simeq g$.
+	    Prove that there exists a map $f^\prime:X\to E$ that is homotopic to $f$, such that $p \circ f^\prime = g$
+	    (on the nose).
+%	\item Let $p:E_0 \to B_0$ be a fibration, and let $f:B \to B_0$ be a homotopy equivalence.
+%	    Prove that the induced map $B\times_{B_0} E_0 \to E_0$ is a homotopy equivalence.
+%	    (Warning: this exercise has a lot of technical details! The end of this chapter describes an
+%	    alternative\footnote{``Alternative'' in the sense that the proof uses statements
+%	    not covered yet in this book.}
+%	    solution to this exercise, when $E_0$ and $B\times_{B_0} E_0$ are CW-complexes.)
+%	    \todo{Don't forget to do this!}
+	\item Show that if $p:E\to B$ and $p^\prime:E^\prime \to B$ are fibrations, and $f:E \to E^\prime$ such that
+	    $p^\prime \circ f = p$, the map $f$ is a \emph{fiber homotopy equivalence}: there is a homotopy inverse
+	    $g: E^\prime \to E$ such that $g$, and the two homotopies $fg \simeq \mathrm{id}_{E^\prime}$ and
+	    $gf \simeq \mathrm{id}_{E}$ are all fiber preserving (e.g., $p\circ g = p^\prime$).
+	\item Conclude Proposition \ref{strictcomparison}.
+   \end{enumerate}
+\end{exercise}
+
+
+
+
+\begin{remark}
+    One could also replace both $f:X\to Y$ and $\ast\to Y$ by fibrations, and the resulting pullback is also homeomorphic
+    to $F(f,\ast)$. (Prove this, if the statement is not immediate.)
+\end{remark}
+
+%Here's what you'll prove for homework.
+%\begin{theorem}
+%    Suppose you have two fibrations $p$ and $p^\prime$ such that the following diagram commutes, where $f$ is a homotopy equivalence.
+%    \begin{equation*}
+%	\xymatrix{
+%	    E\ar[r]^p\ar[dr]^p & E^\prime\ar[d]^{p^\prime}\\
+%	    & B
+%	    }
+%    \end{equation*}
+%    Then $f$ is a fiber homotopy equivalence. That means that it's a homotopy equivalence in $\Top_{/B}$. What this means is that there is a map $g:E^\prime\to E$ over $B$ compatible with the fibrations and homotopies $I\times E\to E$ over $B$ and $I\times E^\prime\to E^\prime$ over $B$. I.e., the following three diagrams commute:
+%    \begin{equation*}
+%	\xymatrix{
+%	    E^\prime\ar[r]^g\ar[dr]^{p^\prime} & E\ar[d]^p\\
+%	    & B
+%	    }
+%    \end{equation*}
+%    and 
+%    \begin{equation*}
+%	\xymatrix{
+%	    I\times E\ar[r]^{1\sim gf}\ar[dr] & E\ar[d]^p\\
+%	    & B
+%	    }
+%    \end{equation*}
+%    and
+%    \begin{equation*}
+%	\xymatrix{
+%	    I\times E^\prime\ar[r]^{1\sim fg}\ar[dr] & E^\prime\ar[d]^{p^\prime}\\
+%	    & B
+%	    }
+%    \end{equation*}
+%\end{theorem}
+%So we find that for all $b$, $p^{-1}(b)\xrightarrow{\simeq} (p^\prime)^{-1}(b)$. So in particular, the fiber $F(f,\ast)$, i.e., the homotopy fiber, of $T(f)\to B$ and the fiber $f^{-1}(\ast)$ of $f:E\to B$ are homotopy equivalent if $f$ is a fibration.

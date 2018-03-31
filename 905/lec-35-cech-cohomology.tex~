@@ -113,7 +113,7 @@ $a\mapsto0\in A_{\varphi(j')}$ as well.
 \begin{proof}[Proof of Theorem \ref{cech-les}, the long exact sequence]
 Let $(K,L)$ be a closed pair in the space $X$. We have
 \[
-\cHH^p(K,L)=\varinjlim_{(U,V)\in\mathcal{U}_{K,L}}H^p(U,V)\,.
+\cHH^p(K,L)=\varinjlim_{(U,V)\in\mathcal{U}_{K,L}}H^p(U,V)\,,
 \quad
 \cHH^p(K)=\varinjlim_{U\in\mathcal{U}_K}H^p(U)\,,
 \quad\hbox{and}\quad 
@@ -157,7 +157,10 @@ then $U\in\mathcal{U}_A$, $V\in\mathcal{U}_B$, and $(U,V)=(U\cup V,V)$.
 To see that the right map is cofinal, start with 
 $(U,V)\in\mathcal{U}_{A,A\cap B}$.
 
-\fbox{picture}
+\medskip
+\begin{center}
+\includegraphics[width=2in]{905/Figures/35-cofinal-pair-lemma.pdf}
+\end{center}
 
 \noindent
 Note that $A$ is disjoint from $B\cap(X-V)$, so by normality,

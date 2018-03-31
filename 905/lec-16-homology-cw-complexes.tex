@@ -64,13 +64,13 @@ if $c\in S_q(X_k)$ is a boundary in $X$, then it's a boundary in $X_\ell$
 for some $\ell\geq k$. This shows that the map $H_q(X_{q+1})\to H_q(X)$ is
 injective. We summarize:
 \begin{prop} 
-Let $q\geq 0$. Then 
+Let $k,q\geq 0$. Then 
 \[
-H_q(X_k)=0\,\,\hbox{\em for}\,\,q<k
+H_q(X_k)=0\quad\hbox{\em for}\,\,k<q
 \]
 and
 \[
-H_q(X_k)\xrightarrow{\cong}H_q(X)\,\,\hbox{\em for}\,\,q>k\,.
+H_q(X_k)\xrightarrow{\cong}H_q(X)\quad\hbox{\em for}\,\,k>q\,.
 \]
 In particular, $H_q(X)=0$ if $q$ exceeds the dimension of $X$. 
 \end{prop}
@@ -83,11 +83,9 @@ and found that it is the free abelian group on the set of $n$ cells.
 We claim that these abelian groups are related to each other; they form 
 the groups in a chain complex. 
 
-What should the boundary of an $n$-cell be? It is represented by 
+What should the boundary of an $n$-cell be? It's represented by 
 a characteristic map $D^n\to X_n$ whose boundary is the attaching map 
-\[
-\alpha:S^{n-1}\to X_{n-1}
-\]
+$\alpha:S^{n-1}\to X_{n-1}$.
 This is a lot of information, and hard to interpret because $X_{n-1}$ is itself
 potentially a complicated space. But things get much simpler if I pinch out
 $X_{n-2}$. This suggests defining 
@@ -131,7 +129,6 @@ For a CW complex $X$, there is an isomorpphism
 H_\ast(C_\ast(X))\cong H_\ast(X)
 \]
 natural with respect to filtration-preserving maps between CW complexes.
-We have proven:
 \end{theorem}
 This has an immediate and surprisingly useful corollary.
 \begin{corollary}
